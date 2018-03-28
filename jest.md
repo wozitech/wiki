@@ -23,3 +23,7 @@ Before the devDependencies, insert:
     }
   },
   ```
+	
+	# Test Files
+	Test filenames to have the convention: `<name>.test.js`. By default, jest will do a full subdirectory search for any such file.
+	

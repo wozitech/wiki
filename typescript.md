@@ -27,6 +27,9 @@ export { ThatClass as ThisClass} from './thatClass';
 
 export default class DefClass {
 }
+
+// CommonJS style
+export = MyClass;
 ```
 
 Imports:
@@ -43,4 +46,8 @@ import DefClass from '/.types';
 // import the entire set of definitions
 import * as MyTypes from './types';
 let myVar = new MyTypes.MyClass();
+
+// CommonJS style - must use require
+import MyType = require("./type");
+let MyInst = new MyType();
 ```

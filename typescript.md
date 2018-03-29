@@ -3,9 +3,41 @@
 
 # Inheritance
 ```
-class MyClass {
+interface IType {
+	methodA():void {}
+	methodB(param1:String):Integer {}
+}
+// an interface can extend another interface
+interface ITypeTwo extend IType {
+	methodD():Integer {}
+}
+
+class MyBaseClass {
+	constructor(param1:IType) {
+	}
+	
+	// method with callback (taking a String and return Integer)
+	methodC(cbk(thisParam:String) => Integer):void {}
+}
+
+class ThisClass implements ITypeTwo {
+	methodA():void {}
+	methodB(param1:String):Integer {}
+	methodD():Integer {}
+	
+	private myMethod():void {}
+}
+
+class MyClass extends MyBaseClass {
 	private MyType _myAttr;
-	String
+	String myVar;
+	
+	// a class must provide concretes for all constructors
+	constructor() {
+	}
+	constructor(param1:IType) {
+		super(param1);
+	}
 }
 ```
 

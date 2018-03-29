@@ -5,8 +5,13 @@
 ```
 class MyClass {
 	private MyType _myAttr;
-	integer
+	String
 }
+```
+
+> When a class both implements and extends, then extends must come first.
+```
+class MyClass extends BaseClass implements IFunc
 ```
 # Import/Export
 Exports:

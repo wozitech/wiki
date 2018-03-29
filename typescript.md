@@ -2,11 +2,13 @@
 <!-- SUBTITLE: A collection of Typescript -->
 
 # Inheritance
-```class MyClass {
-}```
-
+```
+class MyClass {
+}
+```
 # Import/Export
-```export const PI = 3.14959;
+```
+export const PI = 3.14959;
 export interface Iface {
 };
 export class MyClass {
@@ -19,4 +21,4 @@ export { MyClassTwo as ThatClass };
 
 // re-export
 export { ThatClass as ThisClass} from './thatClass';
-
+```

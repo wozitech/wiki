@@ -9,6 +9,7 @@ class MyClass {
 }
 ```
 # Import/Export
+Exports:
 ```
 export const MY_PI = 3.14959;
 export interface Iface {
@@ -28,6 +29,7 @@ export default class DefClass {
 }
 ```
 
+Imports:
 ```
 import {MY_PI} from './types';
 import {MY_PI as THIS_PI} from './types';

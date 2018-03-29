@@ -3,5 +3,6 @@
 
 # WOZiTech WIKI
 
-* JavaScript
+* [JavaScript](/javscript)
+* [TypeScript](/typescript)
 * [Jest](/jest)

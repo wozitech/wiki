@@ -7,6 +7,6 @@
 
 
 
-* [JavaScript](/javscript)
+* [JavaScript](/javascript)
 * [TypeScript](/typescript)
 * [Jest](/jest)

@@ -1,7 +1,6 @@
+![Typescript Logo](/uploads/logos/typescript-logo.png "Typescript Logo"){.pagelogo}
 <!-- TITLE: Typescript -->
 <!-- SUBTITLE: A collection of Typescript -->
-
-![Typescript Logo](/uploads/typescript-logo.png "Typescript Logo")
 # Inheritance
 ```
 interface IType {

@@ -3,10 +3,5 @@
 <!-- SUBTITLE: WOZiTech Limited wiki -->
 
 # WOZiTech WIKI
-
-
-
-
-* [JavaScript](/javascript)
-* [TypeScript](/typescript)
-* [Jest](/jest)
+* [Technologies](/technologies)
+* Projects

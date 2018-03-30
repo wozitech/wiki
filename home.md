@@ -1,9 +1,9 @@
-![Wiki Official Blue Circle](/uploads/wiki-official-blue-circle.png "Wiki Official Blue Circle"){.pagelogo}
+![Wiki Official](/uploads/corporate/wiki-official.png "Wiki Official"){.pagelogo}
 <!-- TITLE: Home -->
 <!-- SUBTITLE: WOZiTech Limited wiki -->
 
 # WOZiTech WIKI
-![Wiki Official](/uploads/corporate/wiki-official.png "Wiki Official")
+
 
 
 

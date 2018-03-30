@@ -1,3 +1,4 @@
+![Jest Logo](/uploads/logos/jest-logo.png "Jest Logo"){.pagelogo}
 <!-- TITLE: Jest -->
 <!-- SUBTITLE: Adding Jest to a node project -->
 

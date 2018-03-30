@@ -2,6 +2,6 @@
 <!-- SUBTITLE: These are the technologies I used -->
 
 # Technologies
-* [JavaScript](/javascript)
-* [TypeScript](/typescript)
-* [Jest](/jest)
+* [JavaScript](/technologies/javascript)
+* [TypeScript](/technologies/typescript)
+* [Jest](/technologies/jest)

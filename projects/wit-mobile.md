@@ -1,3 +1,4 @@
+![Wiki Official White Circle](/uploads/corporate/wiki-official-white-circle.png "Wiki Official White Circle"){.pagelogo}
 <!-- TITLE: wit-mobile -->
 <!-- SUBTITLE: The base platform of WIT mobile applications -->
 

@@ -4,4 +4,4 @@
 
 # WOZiTech WIKI
 * [Technologies](/technologies)
-* Projects
+* [Projects](/projects)

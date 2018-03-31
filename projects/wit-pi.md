@@ -13,4 +13,4 @@ All `wit-pi` applications will be using:
 * [Quaser Framework](http://quasar-framework.org/) - quality UI components for VueJS
 * [Electron (JS)](https://electronjs.org/) - for running JS apps (like VueJS) natively on the Raspberry PI
 
-![Vuejs Logo](/uploads/logos/vuejs-logo.png "Vuejs Logo") ![Quasar Logo](/uploads/logos/quasar-logo.png "Quasar Logo"){.align-center} ![Electron Logo](/uploads/logos/electron-logo.png "Electron Logo"){.align-right}
+![Vuejs Logo](/uploads/logos/vuejs-logo.png "Vuejs Logo") ![Quasar Logo](/uploads/logos/quasar-logo.png "Quasar Logo") ![Electron Logo](/uploads/logos/electron-logo.png "Electron Logo") {.align-center}

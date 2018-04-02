@@ -1,4 +1,5 @@
-<!-- TITLE: qit-piDash -->
+![2018 Corporare Official Wit Pidash](/uploads/corporate/2018-corporare-official-wit-pidash.png "2018 Corporare Official Wit Pidash")
+<!-- TITLE: wit-piDash -->
 <!-- SUBTITLE: The Raspberry PI powered Dashboard -->
 
 # Intro

@@ -1,3 +1,4 @@
+![Wit Dash](/uploads/corporate/wit-dash.png "Wit Dash"){.pagelogo}
 <!-- TITLE: wit-dash -->
 <!-- SUBTITLE: WIT dashboard central administration -->
 

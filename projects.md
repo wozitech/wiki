@@ -5,6 +5,6 @@ WOZiTech Projects are presented on [WOZiTech Company Website](http://www.wozitec
 # Projects
 * [wit-domain](/projects/wit-domain)
 * [wit-serve](/projects/wit-serve)
-* [wit-pie](/projects/wit-pi)
+* [wit-pi](/projects/wit-pi)
 	* [wit-piDash](/projects/wit-piDash)
 * [wit-mobile](/projects/wit-mobile)

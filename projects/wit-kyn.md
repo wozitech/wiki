@@ -10,3 +10,8 @@ This is the server side application for "Know Your Numbers"; a mobile applicatio
 * mongodb
 
 ![Nest Framework Logo](/uploads/logos/nest-framework-logo.png "Nest Framework Logo")
+
+# Project Initialisation
+`wit-kyn` uses nest.js. Initialise the project, which includes add to github repo, integrating `dotenv-extended` to handle environment configuration, bunyan logging and Jest unit testing.
+
+More detail [here](/projects/wit-kyn/init).

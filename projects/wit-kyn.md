@@ -1,4 +1,4 @@
-<!-- TITLE: wit-kyn -->
+![2018 Wit Kyn](/uploads/corporate/2018-wit-kyn.png "2018 Wit Kyn"){.pagelogo}<!-- TITLE: wit-kyn -->
 <!-- SUBTITLE: Know Your Numbers - collaboration with Jazz Holverson -->
 
 # wit-kyn

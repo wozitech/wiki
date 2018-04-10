@@ -9,3 +9,6 @@ WOZiTech Projects are presented on [WOZiTech Company Website](http://www.wozitec
 	* [wit-piDash](/projects/wit-piDash)
 * [wit-mobile](/projects/wit-mobile)
 * [wit-dash](/projects/wit-dash)
+* Know Your Numbers
+	* [wit-kyn](/projects/wit-kyn)
+	* [kyn]

@@ -1,6 +1,7 @@
 ![2018 Wit Kyn](/uploads/corporate/2018-wit-kyn.png "2018 Wit Kyn"){.pagelogo}<!-- TITLE: wit-kyn -->
 <!-- SUBTITLE: Know Your Numbers - collaboration with Jazz Holverson -->
 
+[wit-kyn repo](https://github.com/wozitech/wit-kyn.git)
 # wit-kyn
 This is the server side application for "Know Your Numbers"; a mobile application to support corporate well-being and fitness.
 

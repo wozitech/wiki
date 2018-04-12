@@ -26,8 +26,10 @@ Common to all `wit` projects is `bunyan`/`winston` [logging](/projects/wit-proje
 * interface (domain types)
 * guard (protection - authentication, schema validation)
 
-A common theme throughout `wit` projects is data storage. `wit-kyn` uses our preferred data store, [MongoDB](https://www.mongodb.com/). As a common
+These specialised classes allow for `wit` specific behaviour around logging, authentication, validation, monitoring, metrics, caching, refreshing et al. More information on these specialised classes can be found here: [wit-nestjsSpecialisms](/projects/wit-nestjsSpecialisms).
 
-## gun.js (Graph distributed database)
-Realtime 
+A common theme throughout `wit` projects is data storage. `wit-kyn` uses our preferred data store, [MongoDB](https://www.mongodb.com/). As a common store for `wit` projects, we provide our own MongoDB nest.js module allowing for its reuse across any project specific module: [wit-nestjsMongoDB](/projects/wit-nestjsMongoDB).
 
+# gun.js (Graph distributed database)
+Realtime distributed database both reads and writes; perfect for team based updates and accumulations - e.g. leaderboards. Requires a `wit` specialised module.
+![Gun Js](/uploads/logos/gun-js.png "Gun Js")

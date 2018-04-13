@@ -7,7 +7,7 @@
 
 Given `wit-mobile` is a platform to showcase React, then React Native is an obvious choice for cross-platform deployment.
 # Reference
-Will be following [this article](https://medium.com/the-web-tub/creating-a-cordova-hybrid-app-with-react-redux-and-webpack-13fe24b6b272) for my first application example. And deployment to iOS/Andorid using React Native as covered by [this article](https://www.cubettech.com/blog/building-deploying-ios-and-android-app-with-react-native/).
+Will be following [this article](https://medium.com/the-web-tub/creating-a-cordova-hybrid-app-with-react-redux-and-webpack-13fe24b6b272) for my first application example. And deployment to iOS/Andorid using React Native as covered by [this article]().
 
 # Technologies
 `wit-mobile` platform is a web platform running 'native' on mobile devices is built on:

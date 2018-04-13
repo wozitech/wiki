@@ -9,7 +9,7 @@
 * [Apache Cordova](https://cordova.apache.org/)
 
 # Reference
-Will be following [this article](https://medium.com/the-web-tub/creating-a-cordova-hybrid-app-with-react-redux-and-webpack-13fe24b6b272) for my first application example.
+Will be following [this article](https://medium.com/the-web-tub/creating-a-cordova-hybrid-app-with-react-redux-and-webpack-13fe24b6b272) for my first application example. And deployment to iOS/Andorid using React Native as covered by [this article](https://www.cubettech.com/blog/building-deploying-ios-and-android-app-with-react-native/).
 
 ![Cordova Bot](/uploads/logos/cordova-bot.png "Cordova Bot")
 ![React Logo](/uploads/logos/react-logo.jpg "React Logo")

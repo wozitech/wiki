@@ -11,6 +11,7 @@ Note, you may observe some projects/products may be called by a slight variant i
 All `wit-pi` applications will be using:
 * [VueJS](https://vuejs.org/) - one of the best JS frameworks for building responsive applications
 	* [Awesome Vue](https://github.com/vuejs/awesome-vue)
+	* [VueJS Developer](https://vuejsdevelopers.com)
 * [Quaser Framework](http://quasar-framework.org/) - quality UI components for VueJS
 * [Electron (JS)](https://electronjs.org/) - for running JS apps (like VueJS) natively on the Raspberry PI
 

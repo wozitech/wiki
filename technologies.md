@@ -5,3 +5,4 @@
 * [JavaScript](/technologies/javascript)
 * [TypeScript](/technologies/typescript)
 * [Jest](/technologies/jest)
+* [React/Redux] (/technologies/react)

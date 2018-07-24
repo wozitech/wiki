@@ -6,10 +6,10 @@
 * web proxy - 192.168.1.205 (to be removed)/192.168.100.17 (DGW: 192.168.1.1)
 * mongoserver - 192.168.100.18 (DGW: 192.168.1.1)
 
-/etc/sysconfig/network-scripts/ifcfg-eth0:
+Example network script: `/etc/sysconfig/network-scripts/ifcfg-eth0`:
 ```
 TYPE=Ethernet
-**BOOTPROTO=none**
+BOOTPROTO=none
 DEFROUTE=yes
 PEERDNS=yes
 PEERROUTES=yes
@@ -25,7 +25,15 @@ NAME=eth0
 UUID=14419f76-a2a6-486f-9e01-c405eaceb542
 DEVICE=eth0
 ONBOOT=yes
-**IPADDR=192.168.100.18
+IPADDR=192.168.100.18
 NETWORK=192.168.100.0
-GATEWAY=192.168.100.2**
+GATEWAY=192.168.100.2
 ```
+The important changes are:
+* `BOOTPROTO`
+* `IPADDR`
+* `NETWORK`
+* `GATEWAY`
+
+For DNS resolution, to `/etc/resolv.conf`:
+* `nameserver 192.168.1.1`

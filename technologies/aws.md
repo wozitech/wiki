@@ -52,4 +52,7 @@ Virtual Privte Gateway above is your VPN.
 Steps to Create a VPC:
 * Create the VPC - within a specific zone; give it an IP address range and a name. 
 * Create one of more subnets within the VPC, each with their own IP range and in a given availability zone.
-* Create separate route table for each subnets, and remember to assoicate it to the relevant subnet.
+* Create separate route table for each subnets, and remember to assoicate it to the relevant subnet (beause be default all subnets get associated to the VPC's default route).
+* Create an IGW, and associate it to the VPC.
+* For public subnets, update the routing table adding a default route to IGW: `0.0.0.0/0` (IPv4) and `::/0` (IPv6)
+* For public subnets, update network configuration to 'auto-assign public IPs' (disabled by default).

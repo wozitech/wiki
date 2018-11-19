@@ -31,7 +31,7 @@ With a VPC, you have one or more subnets. A default subnet is created within the
 * x.x.x.3 - reserved (for future use)
 * x.x..x.N - broadcast
 
-By default, traffic can only pass between subnets as defined by the default routing table (created with the VPC). When creating a subnet, by default, it will inherit the default route. It is good practice to create separate routing tables for each subnet and good practice to NOT associate any IGW with the default route.
+By default, traffic can only pass between subnets as defined by the default routing table (created with the VPC). When creating a subnet, by default, it will inherit the default route. It is good practice to NOT associate any IGW with the default route, and good practice to create separate routing tables for each subnet and define a route to the IGW individually - thus retaining control.
 
 It is typical within a single VPC to have both public and private subnets:
 * A public subnet is presented to the VPC's IGW (a default route).

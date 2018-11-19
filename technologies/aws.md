@@ -56,3 +56,4 @@ Steps to Create a VPC:
 * Create an IGW, and associate it to the VPC.
 * For public subnets, update the routing table adding a default route to IGW: `0.0.0.0/0` (IPv4) and `::/0` (IPv6)
 * For public subnets, update network configuration to 'auto-assign public IPs' (disabled by default).
+* Create necessary security groups to define ingres rules; note, you'll need at least one security group to allow SSH inbound (regardless of origin). This is true even if SSH'ing from a public EC2 instance/bastion to a private instance (both EC2 instances will need to allow SSH inbound).

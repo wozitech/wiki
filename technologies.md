@@ -9,3 +9,5 @@
 * [Anisble](/technologies/ansible)
 * [Terraform](/technologies/terraform)
 * [Docker](/technologies/docker)
+
+* [AWS](/technologies/aws)

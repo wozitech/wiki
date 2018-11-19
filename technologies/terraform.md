@@ -5,7 +5,7 @@
 # Overview
 Hashicorp's  [Terraform](https://www.terraform.io/) is Infrastructure As Code; able to provision resources across a wide variety of infrastructure including, but not limited to, private (VMware, OpenStack, KVM/libvirt) & public clouds (AWS, GCP, Azure), servers, network switches and firewalls, SANs, local & wide area networks and application platforms (Heruko).
 
-In this respect, it is akin to AWS's CloudFormation and Hashicorp's other product, [vagrant](https://www.vagrantup.com/ target="_blank").
+In this respect, it is akin to AWS's CloudFormation and Hashicorp's other product, [vagrant](https://www.vagrantup.com/).
 
 In this respect, it is nothing like puppet, chef and [ansible](/technologies/ansible); they are configuration management tools. Terraform can natively call upon chef having provided a server to consequently configure (provisioned) that server. Terraform can be made to play nice with ansible.
 

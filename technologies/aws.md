@@ -20,11 +20,18 @@ A VPC can exist in a single region only.
 
 A VPC allows each customer to perform detailed network configuration, restricting and presenting services/resources.
 
-A VPC is typically presented to the Internet by attaching an Internet Gateway (IGW). But it does not have to be, allowing you to create private cloud environments. You can control which aspects of your private cloud environment do have Internet access (for example, being able to download OS patches or for deploying an SSH jumpbox) through tactical deployment of an IGW. Fully private cloud environments can be attained by presenting the VPC to AWS DirectConnect or creating a VPN between you internal (corporate) data centre and the VPC.
+A VPC is typically presented to the Internet by attaching an Internet Gateway (IGW). But it does not have to be, allowing you to create private cloud environments. You can control which aspects of your private cloud environment do have Internet access (for example, being able to download OS patches or for deploying an SSH jumpbox/bastion) through tactical deployment of an IGW. Fully private cloud environments can be attained by presenting the VPC to AWS DirectConnect or creating a VPN between you internal (corporate) data centre and the VPC. Note, only one IGW can be assigned to a VPC (you cannot increase Internet bandwidth by attaching more!). Conversely, an IGW can be attached to just one VPC only.
 
 Note, to access shared AWS services (such as, lambda, S3 & DynamoDB), the resource from which you are wanting access must be presented to the Internet - OR, depending on the shared service you can use VPC Peering. Word of caution, VPC Peering will consume some of the IP addresses in your VPC and significantly for lambda, their start up time is significantly impacted owing the lambda instance being dynamically assigned an IP address from your VPC.
 
-With a VPC, you have one or more subnets. A default subnet is created within the default VPC for each availability zone within the zone. A subnet cannot span more than one availability zone.
+With a VPC, you have one or more subnets. A default subnet is created within the default VPC for each availability zone within the zone, with a default route to the IGW (all subnets are public). A subnet cannot span more than one availability zone. Note, AWS reserves two IPs within each subnet, along with the typical 3 already reserved ([AWS Docs](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)):
+* x.x.x.0 - the network address
+* x.x.x.1 - the default gateway
+* x.x.x.2 - reserved (typically DNS)
+* x.x.x.3 - reserved (for future use)
+* x.x..x.N - broadcast
+
+Traffic can only pass between subnets if you create a route.
 
 It is typical within a single VPC to have both public and private subnets:
 * A public subnet is presented to the VPC's IGW (a default route).
@@ -32,9 +39,11 @@ It is typical within a single VPC to have both public and private subnets:
 
 You would typically deploy your web servers to the public subnets and application/database servers to your private subnet.
 
-Within a VPC you have available muplie layers of "network" security:
+Within a VPC you have available multiple layers of "network" security:
 * Network ACL - allow/deny in priority order
-* Security Groups - allow only - all apply
+* Security Groups - allow only and all must apply
 
 
 ![VPC Topology](/uploads/aws/aws-vpc-topology.png "AWS VPC Topology")
+
+Virtual Privte Gateway above is your VPN.

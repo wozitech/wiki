@@ -37,4 +37,4 @@ Within a VPC you have available muplie layers of "network" security:
 * Security Groups - allow only - all apply
 
 
-[VPC Topology](/uploads/aws/aws-vpc-topology.png "AWS VPC Topology")
+![VPC Topology](/uploads/aws/aws-vpc-topology.png "AWS VPC Topology")

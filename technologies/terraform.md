@@ -33,7 +33,19 @@ Terraform supports the big public cloud providers: AWS (lambda but no step funct
 By default, Terraform supports local/remote commands, file (copies files/directory to remote resource) along with chef/habitat/salt. No direct support for ansible, but here's a guide on how to incorporate ansible: [https://alex.dzyoba.com/blog/terraform-ansible/](https://alex.dzyoba.com/blog/terraform-ansible/).
 
 # Modules
+Terraform uses modules to decompose large complex infrastructures. 
 
+Modules can be local (referenced by a relative path) or remote. 
+
+Remote modules can in two forms:
+* static repos like github/S3
+* versioned repos as per Terraform's public repository (akin to Ansible Galaxy/Docker Hub) or private 
+
+Terraform Enterprise providesa local private repository. 
+
+This article *here* describes how to use Nexus3 as a local private repo. 
+
+Multiple instances of the same module can be created allowing for consistently duplicated target infrastructure. 
 # Backend
 
 # Enterprise

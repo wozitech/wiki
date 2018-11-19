@@ -43,10 +43,19 @@ Remote modules can in two forms:
 
 Terraform Enterprise providesa local private repository. 
 
-This article *here* describes how to use Nexus3 as a local private repo. 
+This article here describes how to use Nexus3 as a local private repo: insert url. 
 
 Multiple instances of the same module can be created allowing for consistently duplicated target infrastructure. 
 # Backend
+Terraform's Backend is the focus of maintaining state (knowledge) of the target infrastructure. 
+
+Out of the box, terraform default to local file. This is acceptable when there is just one developer (ignoring issues of availability) but does not allow for team support. 
+
+
+
+Multiple backends
+
+
 
 # Enterprise
 Terraform is an open source product. Hashicorp provide the main product to the community with no restrictions on its use. Hashicorp does also provide an Enterprise (paid for) edition. The enterprise edition includes:

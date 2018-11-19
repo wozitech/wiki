@@ -59,7 +59,7 @@ Out of the box, terraform default to local file. This is acceptable when there i
 
 Multiple backends are supported, but of specific interest to me are:
 * S3 - insert url
-* Nexus - insert url
+* Nexus - https://medium.com/@arnobroekhof/using-sonatype-nexus-3-as-backend-provider-for-terraform-41e16d275fd7
 
 Although you could store state in a github repo, it is not recommended. Why? 
 

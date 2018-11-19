@@ -20,9 +20,9 @@ A VPC can exist in a single region only.
 
 A VPC allows each customer to perform detailed network configuration, restricting and presenting services/resources.
 
-A VPC is typically presented to the Internet by attaching an Internet Gateway (IGW). But it does not have to be, allowing you to create private cloud environments. You can control which aspects of your private cloud environment do have Internet access (for example, being able to download OS patches or for deploying an SSH jumpbox) through tactical deployment of an IGW. Fully private cloud environments can be attained by presenting the VPC to AWS DirectConnect.
+A VPC is typically presented to the Internet by attaching an Internet Gateway (IGW). But it does not have to be, allowing you to create private cloud environments. You can control which aspects of your private cloud environment do have Internet access (for example, being able to download OS patches or for deploying an SSH jumpbox) through tactical deployment of an IGW. Fully private cloud environments can be attained by presenting the VPC to AWS DirectConnect or creating a VPN between you internal (corporate) data centre and the VPC.
 
-Note, to access shared AWS services (such as, lambda, S3 & DynamoDB), the resource from which you are wanting access must be presented to the Internet - OR, depending on the shared service you can use VPC Peering. Word of cautin, VPC Peering will consume some of the IP addresses in your VPC and significantly for lambda, their start up time is significantly impacted owing the lambda instance being dynamically assigned an IP address from your VPC.
+Note, to access shared AWS services (such as, lambda, S3 & DynamoDB), the resource from which you are wanting access must be presented to the Internet - OR, depending on the shared service you can use VPC Peering. Word of caution, VPC Peering will consume some of the IP addresses in your VPC and significantly for lambda, their start up time is significantly impacted owing the lambda instance being dynamically assigned an IP address from your VPC.
 
 With a VPC, you have one or more subnets. A default subnet is created within the default VPC for each availability zone within the zone. A subnet cannot span more than one availability zone.
 
@@ -35,3 +35,6 @@ You would typically deploy your web servers to the public subnets and applicatio
 Within a VPC you have available muplie layers of "network" security:
 * Network ACL - allow/deny in priority order
 * Security Groups - allow only - all apply
+
+
+[VPC Topology](/uploads/aws/aws-vpc-topology.png "AWS VPC Topology")

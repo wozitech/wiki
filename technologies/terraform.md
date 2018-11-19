@@ -27,8 +27,10 @@ CloudFormation has an in-built ability to wait on resources - for example, wait 
 CloudFormation supports canary style/rolling updates across auto-scaling infrastructure; this is not currently supported by Terraform.
 
 # Providers
+Terraform supports the big public cloud providers: AWS (lambda but no step functions), Azure and GCP. I am using vagrant against a home KVM/libvirt server. Terraform also supports [KVM/libvirt](https://github.com/dmacvicar/terraform-provider-libvirt).
 
 # Provisioners
+By default, Terraform supports local/remote commands, file (copies files/directory to remote resource) along with chef/habitat/salt. No direct support for ansible, but here's a guide on how to incorporate ansible: [https://alex.dzyoba.com/blog/terraform-ansible/](https://alex.dzyoba.com/blog/terraform-ansible/).
 
 # Modules
 

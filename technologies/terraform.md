@@ -53,9 +53,11 @@ Out of the box, terraform default to local file. This is acceptable when there i
 
 
 
-Multiple backends
+Multiple backends are supported, but of specific interest to me are:
+* S3 - insert url
+* Nexus - insert url
 
-
+Although you could store state in a github repo, it is not recommended. Why? 
 
 # Enterprise
 Terraform is an open source product. Hashicorp provide the main product to the community with no restrictions on its use. Hashicorp does also provide an Enterprise (paid for) edition. The enterprise edition includes:

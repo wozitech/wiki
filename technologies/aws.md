@@ -31,7 +31,7 @@ With a VPC, you have one or more subnets. A default subnet is created within the
 * x.x.x.3 - reserved (for future use)
 * x.x..x.N - broadcast
 
-Traffic can only pass between subnets if you create a route.
+By default, traffic can only pass between subnets as defined by the default routing table (created with the VPC). When creating a subnet, by default, it will inherit the default route. It is good practice to create separate routing tables for each subnet and good practice to NOT associate any IGW with the default route.
 
 It is typical within a single VPC to have both public and private subnets:
 * A public subnet is presented to the VPC's IGW (a default route).
@@ -47,3 +47,9 @@ Within a VPC you have available multiple layers of "network" security:
 ![VPC Topology](/uploads/aws/aws-vpc-topology.png "AWS VPC Topology")
 
 Virtual Privte Gateway above is your VPN.
+
+
+Steps to Create a VPC:
+* Create the VPC - within a specific zone; give it an IP address range and a name. 
+* Create one of more subnets within the VPC, each with their own IP range and in a given availability zone.
+* Create separate route table for each subnets, and remember to assoicate it to the relevant subnet.

@@ -6,5 +6,6 @@
 * [TypeScript](/technologies/typescript)
 * [Jest](/technologies/jest)
 * [React Redux](/technologies/react)
+* [Anisble](/technologies/ansible)
 * [Terraform](/technologies/terraform)
 * [Docker](/technologies/docker)

@@ -38,14 +38,18 @@ Terraform uses modules to decompose large complex infrastructures.
 Modules can be local (referenced by a relative path) or remote. 
 
 Remote modules can in two forms:
-* static repos like github/S3
-* versioned repos as per Terraform's public repository (akin to Ansible Galaxy/Docker Hub) or private 
+* static repos like github/S3 - although these endpoints themselves support code maintenance, they do not support module versioning 
+* versioned repos as per Terraform's [public repository] (https://registry.terraform.io) - akin to Ansible Galaxy/Docker Hub - or private 
 
-Terraform Enterprise providesa local private repository. 
+Terraform Enterprise provides a local private repository. 
 
-This article here describes how to use Nexus3 as a local private repo: insert url. 
+It is recommended to specify a module version to ensure expected behaviour. 
 
-Multiple instances of the same module can be created allowing for consistently duplicated target infrastructure. 
+This article here describes how to use Nexus3 as a local private repo: https://dzone.com/articles/setting-up-a-docker-private-registry-with-authenti. 
+
+Modules have input & output variables. Multiple instances of the same module can be created allowing for consistently duplicated target infrastructure. 
+
+Dependencies can be created between resources across modules. The project top directory is the root module. 
 # Backend
 Terraform's Backend is the focus of maintaining state (knowledge) of the target infrastructure. 
 

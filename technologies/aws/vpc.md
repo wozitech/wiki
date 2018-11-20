@@ -56,8 +56,10 @@ Steps to Create a VPC:
 	* __Note, it is good practice to have specific security group to control SSH ingres on private subnets, where the source CIDR (security group scope) is that of the public subnet.__
 
 # NAT Gateway
-NAT instance to be phased out; they are deployed into a given subnet/availabiity zone - does not scale easily (__instance type/AV zone__). But a `NAT Instance` you deploy into a public subnet, which is then used by private subnets to provide tactical Internet outbound access (the private subnet is NAT'd on the outbound to the Internet thus retaining its private status).
+NAT instance to be phased out; they are deployed into a given subnet/availabiity zone - does not scale easily (*instance type/AV zone/Bandwidth*). But a `NAT Instance` you deploy into a public subnet, which is then used by private subnets to provide tactical Internet outbound access (the private subnet is NAT'd on the outbound to the Internet thus retaining its private status).
 
-A NAT Gateway is the preferred method having instant availability/scalability. Like a NAT instance, a NAT Gateway is provisioned into a pubnet subnet (so an AV), which can then be used by any private subnet within that AV. A NAT Gateway when provisioning requires an Elastic IP (from your public subnet). It takes about 10 to 15 minutes for AWS to provision a NAT Gateway.
+A NAT Gateway is the preferred method having instant availability/scalability. Like a NAT instance, a NAT Gateway is provisioned into a pubnet subnet (so an AV), which can then be used by any private subnet within that AV. A NAT Gateway when provisioning requires an Elastic IP (from your public subnet). It takes about 10 to 15 minutes for AWS to provision a NAT Gateway. NAT Gateways are a cluster (providing availability) not requiring any patching/anti-virus/maintenance or failover configuration, supporting upto 10Gbit Internet bandwidth and do not need to be associated with a security group. NAT Gateways cannot be accessed and therefore are more secure than a NAT instance (which is only as secure as your configuration of it!).
 
 **Then remember to update the routing table associated to the private subnet to have a default route 0.0.0.0/0 to the NAT gateway.**
+
+It is noted, that a NAT Instance can be reused as a jumpbox/bastion.

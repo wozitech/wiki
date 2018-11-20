@@ -4,8 +4,6 @@
 # The VPC
 Virtual Private Cloud (VPC) unique describes the hosted provision of a given customer environment; it's a virtual data centre. Each customer account can have upto five VPC (default; can be increased) and every customer's VPC is unique to that customer, thus providing the separation of each customer's environment.
 
-Further information on [VPC](/technologies/aws/vpc) can be found [here](/technologies/aws/vpc).
-
 All VPC use private IP address space:
 * 10.0.0.0/8 IP addresses: 10.0.0.0 -- 10.255.255.255
 * 172.16.0.0/12 IP addresses: 172.16.0.0 -- 172.31.255.255

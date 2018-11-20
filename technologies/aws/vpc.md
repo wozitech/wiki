@@ -64,6 +64,8 @@ A NAT Gateway is the preferred method having instant availability/scalability. L
 
 It is noted, that a NAT Instance can be reused as a jumpbox/bastion.
 
+![VPC Revised Topology](/uploads/aws/aws-vpc-topology-2.png "AWS VPC Revised Topology")
+
 # Bastion (jumpbox)
 A secure approach to access EC2 instances in private subnets. An [AWS reference deployment](https://aws.amazon.com/quickstart/architecture/linux-bastion/) is available.
 

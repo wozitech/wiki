@@ -53,9 +53,11 @@ Steps to Create a VPC:
 * For public subnets, update the routing table adding a default route to IGW: `0.0.0.0/0` (IPv4) and `::/0` (IPv6)
 * For public subnets, update network configuration to 'auto-assign public IPs' (disabled by default).
 * Create necessary security groups to define ingres rules; note, you'll need at least one security group to allow SSH inbound (regardless of origin). This is true even if SSH'ing from a public EC2 instance/bastion to a private instance (both EC2 instances will need to allow SSH inbound).
-	* Note, it is good practice to have specific security group to control SSH ingres on private subnets, where the source CIDR (security group scope) is that of the public subnet.
+	* __Note, it is good practice to have specific security group to control SSH ingres on private subnets, where the source CIDR (security group scope) is that of the public subnet.__
 
 # NAT Gateway
-NAT instance to be phased out. But a `NAT Instance` you deploy into a public subnet, which is then used by private subnets to provide tactical Internet outbound access (the private subnet is NAT'd on the outbound to the Internet thus retaining its private status).
+NAT instance to be phased out; they are deployed into a given subnet/availabiity zone - does not scale easily (__instance type/AV zone__). But a `NAT Instance` you deploy into a public subnet, which is then used by private subnets to provide tactical Internet outbound access (the private subnet is NAT'd on the outbound to the Internet thus retaining its private status).
 
-A NAT Gateway
+A NAT Gateway is the preferred method having instant availability/scalability. Like a NAT instance, a NAT Gateway is provisioned into a pubnet subnet (so an AV), which can then be used by any private subnet within that AV. A NAT Gateway when provisioning requires an Elastic IP (from your public subnet). It takes about 10 to 15 minutes for AWS to provision a NAT Gateway.
+
+**Then remember to update the routing table associated to the private subnet to have a default route 0.0.0.0/0 to the NAT gateway.**

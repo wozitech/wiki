@@ -63,3 +63,21 @@ A NAT Gateway is the preferred method having instant availability/scalability. L
 **Then remember to update the routing table associated to the private subnet to have a default route 0.0.0.0/0 to the NAT gateway.**
 
 It is noted, that a NAT Instance can be reused as a jumpbox/bastion.
+
+# Network ACL
+A Network ACL (NACL) sits between a VPC's router and each of the its subnets. 
+
+A subnet can be associated with a single NACL; but the same NACL can be used across multipl subnets (for example, the same NACL used across all public web subnets in each AV zone within the VPC).
+
+A default NACL is created for each VPC and by default allow all traffic inbound and all traffic outbound. A NACL is the only VPC network service that can specifically block. A NACL is the only VPC network service that can control outbound flow. Conversely, when creating a new NACL, by default all traffic is block (inbound and outbound).
+
+When editting NACL rules, it is recommended to use ID increments of 100, making it easy to insert new rules.
+
+NACL rules are stateless, which means you must explicitly define outbound rules; so where a service has ephemeral ports, those ports must be defined on the outbound set of NACL rules.
+
+*You must remember to associate a NACL to a subnet to utilise the NACL rules.*
+
+# Security Group
+A security group is a network service that explicitly allows inbound traffic. Think of it as a filter to a given subnet.
+
+Unlike NACL (above), a security group only allows (can't block) and only covers inbound traffic (no outbound). A subnet can be associated to one or more security groups, making it easy to build complex relationships by adding (composing) security groups.

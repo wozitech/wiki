@@ -82,7 +82,7 @@ NACL rules are evaluated in sequence; as soon as a rule is matched to allow or d
 *You must remember to associate a NACL to a subnet to utilise the NACL rules.*
 
 # Security Group
-A security group is a network service that explicitly allows inbound traffic. Think of it as a filter to a given subnet.
+A security group is a network service that explicitly allows inbound traffic to a given destination; think of it as a filter into a given subnet. This compares to a NACL which is a network filter to **and** from the router
 
 Unlike NACL (above), a security group only allows (can't block) and only covers inbound traffic (no outbound). A subnet can be associated to one or more security groups, making it easy to build complex relationships by adding (composing) security groups.
 

@@ -50,6 +50,8 @@ This article here describes how to use Nexus3 as a local private repo: https://d
 Modules have input & output variables. Multiple instances of the same module can be created allowing for consistently duplicated target infrastructure. 
 
 Dependencies can be created between resources across modules. The project top directory is the root module. 
+
+Recommended structure for a terraform project with local modules: [recommended structure](https://www.terraform.io/docs/enterprise/workspaces/repo-structure.html).
 # Backend
 Terraform's Backend is the focus of maintaining state (knowledge) of the target infrastructure. 
 

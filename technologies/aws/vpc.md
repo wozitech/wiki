@@ -55,6 +55,12 @@ Steps to Create a VPC:
 * Create necessary security groups to define ingres rules; note, you'll need at least one security group to allow SSH inbound (regardless of origin). This is true even if SSH'ing from a public EC2 instance/bastion to a private instance (both EC2 instances will need to allow SSH inbound).
 	* __Note, it is good practice to have specific security group to control SSH ingres on private subnets, where the source CIDR (security group scope) is that of the public subnet.__
 
+Steps to Delete a VPC:
+* First, shutdown/terminate EC2 instances.
+* Delete any NAT Gateways/Instances.
+* Detach any IGW.
+* Delete VPC, which deletes subnets, routing tables, security groups et al.
+
 # NAT Gateway
 NAT instance to be phased out; they are deployed into a given subnet/availabiity zone - does not scale easily (*instance type/AV zone/Bandwidth*). But a `NAT Instance` you deploy into a public subnet, which is then used by private subnets to provide tactical Internet outbound access (the private subnet is NAT'd on the outbound to the Internet thus retaining its private status).
 
@@ -68,6 +74,15 @@ It is noted, that a NAT Instance can be reused as a jumpbox/bastion.
 
 # Bastion (jumpbox)
 A secure approach to access EC2 instances in private subnets. An [AWS reference deployment](https://aws.amazon.com/quickstart/architecture/linux-bastion/) is available.
+
+# VPC Endpoint
+A VPC Endpoint allows a private subnet direct access to AWS shared services, viz. S3, DynamoDB, SNS/SQS and Kinesis. Note, lambda/API GW is not listed; however, in June 2017, AWS launched [private endpoint for API GW](https://aws.amazon.com/blogs/compute/introducing-amazon-api-gateway-private-endpoints).
+
+*Note - your EC2 instances must have an IAM role that allows it to invoke other AWS services.*
+
+Two types of endpoints are supported:
+1. Interface Endpoint; this is essentially an elastic IP that is assigned to a specifc EC2 instance
+2. Gateway Endpoint; this (like a NAT gateway) can be shared across instances/subnets
 
 # Network ACL
 A Network ACL (NACL) sits between a VPC's router and each of the its subnets. 

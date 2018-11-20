@@ -71,9 +71,13 @@ A subnet can be associated with a single NACL; but the same NACL can be used acr
 
 A default NACL is created for each VPC and by default allow all traffic inbound and all traffic outbound. A NACL is the only VPC network service that can specifically block. A NACL is the only VPC network service that can control outbound flow. Conversely, when creating a new NACL, by default all traffic is block (inbound and outbound).
 
+When creating a subnet, by default, it is assoicated to the default NACL.
+
 When editting NACL rules, it is recommended to use ID increments of 100, making it easy to insert new rules.
 
 NACL rules are stateless, which means you must explicitly define outbound rules; so where a service has ephemeral ports, those ports must be defined on the outbound set of NACL rules.
+
+NACL rules are evaluated in sequence; as soon as a rule is matched to allow or deny, then that is applied to the traffic.
 
 *You must remember to associate a NACL to a subnet to utilise the NACL rules.*
 
@@ -81,3 +85,5 @@ NACL rules are stateless, which means you must explicitly define outbound rules;
 A security group is a network service that explicitly allows inbound traffic. Think of it as a filter to a given subnet.
 
 Unlike NACL (above), a security group only allows (can't block) and only covers inbound traffic (no outbound). A subnet can be associated to one or more security groups, making it easy to build complex relationships by adding (composing) security groups.
+
+Unlike NACLs, all assigned security groups are evaulated before allowing traffic. Unlike NACLs, security groups are stateful (automatically allows outbound traffic associated with already allowed inbound traffic).

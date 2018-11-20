@@ -64,6 +64,9 @@ A NAT Gateway is the preferred method having instant availability/scalability. L
 
 It is noted, that a NAT Instance can be reused as a jumpbox/bastion.
 
+# Bastion (jumpbox)
+A secure approach to access EC2 instances in private subnets. An [AWS reference deployment](https://aws.amazon.com/quickstart/architecture/linux-bastion/) is available.
+
 # Network ACL
 A Network ACL (NACL) sits between a VPC's router and each of the its subnets. 
 
@@ -87,3 +90,20 @@ A security group is a network service that explicitly allows inbound traffic to 
 Unlike NACL (above), a security group only allows (can't block) and only covers inbound traffic (no outbound). A subnet can be associated to one or more security groups, making it easy to build complex relationships by adding (composing) security groups.
 
 Unlike NACLs, all assigned security groups are evaulated before allowing traffic. Unlike NACLs, security groups are stateful (automatically allows outbound traffic associated with already allowed inbound traffic).
+
+# Flow Logs
+Network logging. First, you must capture the traffic at one of the three levels:
+* VPC
+* Subnet
+* NIC
+
+Logging is to a `CloudWatch Log Group`. Must create the `Log Group` before creating the flow log.
+
+You can stream a CloudWatch Log Group to lamba/elasticsearch for realtime analysis.
+
+What is not logged:
+* Traffic to the subnet DNS (x.x.x.[2])
+* Windows License Activation
+* Traffic to/from 169.254.169.254 (instance metadata) - essentially this is internal to the EC2 instance not network traffic
+* DHCP traffic
+* Any traffic to the reserved IP address for the default VPC router

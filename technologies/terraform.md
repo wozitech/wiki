@@ -51,7 +51,7 @@ Modules have input & output variables. Multiple instances of the same module can
 
 Dependencies can be created between resources across modules. The project top directory is the root module. 
 
-Recommended structure for a terraform project with local modules: [recommended structure](https://www.terraform.io/docs/enterprise/workspaces/repo-structure.html).
+[Recommended structure](https://www.terraform.io/docs/enterprise/workspaces/repo-structure.html) for a terraform project with local modules.
 # Backend
 Terraform's Backend is the focus of maintaining state (knowledge) of the target infrastructure. 
 

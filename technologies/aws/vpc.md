@@ -42,7 +42,7 @@ Within a VPC you have available multiple layers of "network" security:
 
 ![VPC Topology](/uploads/aws/aws-vpc-topology.png "AWS VPC Topology")
 
-Virtual Privte Gateway above is your VPN.
+`Virtual Private Gateway`above is your VPN.
 
 
 Steps to Create a VPC:
@@ -53,4 +53,9 @@ Steps to Create a VPC:
 * For public subnets, update the routing table adding a default route to IGW: `0.0.0.0/0` (IPv4) and `::/0` (IPv6)
 * For public subnets, update network configuration to 'auto-assign public IPs' (disabled by default).
 * Create necessary security groups to define ingres rules; note, you'll need at least one security group to allow SSH inbound (regardless of origin). This is true even if SSH'ing from a public EC2 instance/bastion to a private instance (both EC2 instances will need to allow SSH inbound).
-** Note, it is good practice to have specific security group to control SSH ingres on private subnets, where the source CIDR (security group scope) is that of the public subnet.
+	* Note, it is good practice to have specific security group to control SSH ingres on private subnets, where the source CIDR (security group scope) is that of the public subnet.
+
+# NAT Gateway
+NAT instance to be phased out. But a `NAT Instance` you deploy into a public subnet, which is then used by private subnets to provide tactical Internet outbound access (the private subnet is NAT'd on the outbound to the Internet thus retaining its private status).
+
+A NAT Gateway

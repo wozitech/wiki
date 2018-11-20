@@ -1,3 +1,4 @@
+![AWS Logo](/uploads/logos/aws-logo.png "AWS Logo"){.pagelogo}
 <!-- TITLE: AWS VPC -->
 <!-- SUBTITLE: A quick summary on AWS VPC -->
 

@@ -9,6 +9,7 @@ Tips & Tricks: https://blog.gruntwork.io/terraform-tips-tricks-loops-if-statemen
 terraform plan
 terrafrom apply
 terraform destroy
+terraform init         <!-- when adding new modules -->
 ```
 
 WOZiTech public github repo: https://github.com/wozitech/terraform.

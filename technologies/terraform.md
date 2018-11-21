@@ -3,7 +3,9 @@
 <!-- SUBTITLE: A quick summary of Terraform -->
 
 # Quick Reference
-Tips & Tricks: https://blog.gruntwork.io/terraform-tips-tricks-loops-if-statements-and-gotchas-f739bbae55f9.
+Tips & Tricks:
+* https://blog.gruntwork.io/terraform-tips-tricks-loops-if-statements-and-gotchas-f739bbae55f9.
+* https://itnext.io/things-i-wish-i-knew-about-terraform-before-jumping-into-it-43ee92a9dd65
 
 ```
 terraform plan

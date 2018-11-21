@@ -2,6 +2,14 @@
 <!-- TITLE: Terraform -->
 <!-- SUBTITLE: A quick summary of Terraform -->
 
+# Quick Reference
+```
+terraform plan
+terrafrom apply
+terraform destroy
+```
+
+WOZiTech public github repo: https://github.com/wozitech/terraform.
 # Overview
 Hashicorp's  [Terraform](https://www.terraform.io/) is Infrastructure As Code; able to provision resources across a wide variety of infrastructure including, but not limited to, private (VMware, OpenStack, KVM/libvirt) & public clouds (AWS, GCP, Azure), servers, network switches and firewalls, SANs, local & wide area networks and application platforms (Heruko).
 

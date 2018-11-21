@@ -3,6 +3,8 @@
 <!-- SUBTITLE: A quick summary of Terraform -->
 
 # Quick Reference
+Tips & Tricks: https://blog.gruntwork.io/terraform-tips-tricks-loops-if-statements-and-gotchas-f739bbae55f9.
+
 ```
 terraform plan
 terrafrom apply

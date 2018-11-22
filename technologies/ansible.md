@@ -12,7 +12,11 @@ Ansible is a server configuration management tool. It is agentless, requiring no
 
 Fedora 29 is supports ansible for python V3; but much of ansible is mainly python V2, with some V3 (depending on modules consumed).
 
-Why does WOZ*iTech* use ansible? To create [idempotent ](https://www.google.com/search?q=idempotent&ie=utf-8&oe=utf-8&client=firefox-b-ab) and [immutable](https://www.google.com/search?q=immutable&ie=utf-8&oe=utf-8&client=firefox-b-ab). When building an infrastructure there are many good and best practices; remembering to do all them is not possible. But having them all scripted and building your own portfolio of activities means you can start quicker and safer next time. This is especially true in todays DevSecOps world; knowing and demonstrating good build acumen.
+Why does WOZ*iTech* use ansible? First and foremost; it is simple and easy to learn for any sysadmin. True, YAML is not my preferred format; which a node.js background I prefer JSON. But you soon get used to the identation of YAML and whether to dash prefix your list or not.
+
+Second, it's agentless. All you need is an SSH connection to your target.
+
+WOZ*iTech* using ansible to create [idempotent ](https://www.google.com/search?q=idempotent&ie=utf-8&oe=utf-8&client=firefox-b-ab) and [immutable](https://www.google.com/search?q=immutable&ie=utf-8&oe=utf-8&client=firefox-b-ab). When building an infrastructure there are many good and best practices; remembering to do all them is not possible. But having them all scripted and building your own portfolio of activities means you can start quicker and safer next time. This is especially true in todays DevSecOps world; knowing and demonstrating good build acumen.
 
 We have crafted our own CentOS minimal build Ansible script; there are plenty out there, but this one does what we want it to do and will continue to invest time and knowledge on it over time. It means we can ensure all our CentOS servers are built consistently, but moreso, that they can be built faster. Idempotence means we can rerun the CentOS Base OS script on any server without error or data loss and applying the latest knowledge.
 
@@ -86,7 +90,7 @@ One interesting aspect of ansible is the ability to copy/template tasks target f
 
 Ansibles `lineinfile` is of particular to note; a simple method of managing any existing file content ensuring the presence/absence of given text; [used to maintain a set of DNS entries](https://github.com/wozitech/vagrant/blob/master/enterprise/ansible/hosts/proxy/tasks/dns.yml).
 
-In most cases, these tasks execute on the target using information gathered by the  modules run on the ansible host (not the target). But some modules do have target dependencies as I found out with docker [`docker-py`](https://github.com/wozitech/vagrant/blob/master/common/ansible/tasks/docker_prep.yml).
+In most cases, these tasks execute on the target using information gathered on that target, with the task formulating the necessary commands to run remotely on that target host. However, some tasks rely upon some dependencies on the target as we found out with docker [`docker-py`](https://github.com/wozitech/vagrant/blob/master/common/ansible/tasks/docker_prep.yml).
 
 You can of course compose large provisioning projects into separate sets of tasks (*local modules*) using a simple directory structure and explicitly include such *modules*:
 ```
@@ -133,7 +137,7 @@ Inside `.../my.yaml`:
 Ansible templates use [jinja2](https://docs.ansible.com/ansible/2.6/user_guide/playbooks_templating.html); an expressive templating language, great at easily creating customised configuration files, such as, [nginx conf](https://github.com/wozitech/vagrant/blob/master/enterprise/ansible/hosts/proxy/templates/wiki-reverse.conf.j2) and [networking conf](https://github.com/wozitech/vagrant/blob/master/common/ansible/templates/ifcfg.j2).
 
 ## Roles
-TBC
+TBC - better modules!
 
 *mention galaxy*
 

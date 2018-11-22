@@ -6,11 +6,17 @@
 Tips and Tricks:
 * https://blog.serverdensity.com/what-ive-learnt-from-using-ansible-exclusively-for-2-years/
 
-WOZiTech public github repo: https://github.com/wozitech/ansible.
+WOZ*iTech* public github repo: https://github.com/wozitech/ansible.
 # Overview
 Ansible is a server configuration management tool. It is agentless, requiring no software to be deployed; with the subtle exception of SSH and for some activities, such as, docker containers, python 2/3.
 
 Fedora 29 is supports ansible for python V3; but much of ansible is mainly python V2, with some V3 (depending on modules consumed).
+
+Why does WOZ*iTech* use ansible? To create [idempotent ](https://www.google.com/search?q=idempotent&ie=utf-8&oe=utf-8&client=firefox-b-ab) and [immutable](https://www.google.com/search?q=immutable&ie=utf-8&oe=utf-8&client=firefox-b-ab). When building an infrastructure there are many good and best practices; remembering to do all them is not possible. But having them all scripted and building your own portfolio of activities means you can start quicker and safer next time. This is especially true in todays DevSecOps world; knowing and demonstrating good build acumen.
+
+We have crafted our own CentOS minimal build Ansible script; there are plenty out there, but this one does what we want it to do and will continue to invest time and knowledge on it over time. It means we can ensure all our CentOS servers are built consistently, but moreso, that they can be built faster. Idempotence means we can rerun the CentOS Base OS script on any server without error or data loss and applying the latest knowledge.
+
+When it comes to patching, there is always that risk that patching a server will fail. Well why not simply build a new instance of the server (virtual of course) with the latest patches; apply necessary tests and then swap out the current instance? Immutable means we can build as many instances as we need knowing they are all built the same and service easily transferred between them.
 
 # Core Ansible
 Firstly, ansible uses YAML (as taken from the Ruby language) for its definition.
@@ -135,7 +141,7 @@ TBC
 *TBC - not yet got to work with an inventory; calling ansible provision direct from Vagrant assuming a single host through given the entry playbook.*
 
 # TODO
-WOZiTech journey into Ansible is only just starting. On our journey ahead is:
+WOZ*iTech* journey into Ansible is only just starting. On our journey ahead is:
 * Transform the [custom tasks](https://github.com/wozitech/vagrant/tree/master/common/ansible/tasks) to Ansible roles
 * Hashicorp's Vault is great for storing keys/passwords; fetch provisioning secrets:
 	* User public/private keys of passwordless SSH authentication

@@ -57,6 +57,47 @@ One interesting aspect of ansible is the ability to copy/template target files a
 
 In most cases, these modules run on the ansible host (not the target). But some modules do have target dependencies as I found out with docker [`docker-py`](https://github.com/wozitech/vagrant/blob/master/common/ansible/tasks/docker_prep.yml).
 
+You can of course create your own 'local modules' through a simple directory structure and explicitly include such 'modules':
+```
+.../
+  my.yml
+  files/
+	tasks/
+	templates/
+	vars/
+	modules/
+		moduleA/
+			files/
+			tasks/
+			templates/
+			vars/
+```
+
+Inside `.../my.yaml`:
+```
+---
+- hosts: all
+  vars_files:
+    - ../../../../common/ansible/vars/centosVars.yml
+    - ../../vars.yml
+
+  vars:
+    NON_SSL_PORT: 80
+    SSL_PORT: 443
+		
+  pre_tasks:
+    - import_tasks: tasks/network.yml
+
+  roles:
+    - { role: bertvv.dnsmasq, become: yes }
+    
+  tasks:
+    - import_tasks: tasks/nginx.yml
+    - import_tasks: tasks/letsencrypt.yml
+
+	post-tasks: []
+```
+
 ## Templates
 Ansible templates use [jinja2](https://docs.ansible.com/ansible/2.6/user_guide/playbooks_templating.html); an expressive templating language, great at easily creating customised configuration files, such as, [nginx conf](https://github.com/wozitech/vagrant/blob/master/enterprise/ansible/hosts/proxy/templates/wiki-reverse.conf.j2) and [networking conf](https://github.com/wozitech/vagrant/blob/master/common/ansible/templates/ifcfg.j2).
 

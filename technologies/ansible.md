@@ -26,6 +26,7 @@ The start of the playbook must look like (the triple dash is significant):
 - hosts: all
 ```
 
+
 ## Variables
 Variables are as with any programming language; they hold a value that can be used elsewhere; namely, used within other variables (composites) or within task definitions. Variables in ansible are evaluated using the double brace syntax: `{{ variable_name }}`. Depending on the context, you are most like required to enclose the double brace within quotes, viz:
 ```
@@ -50,8 +51,21 @@ netmask: "255.255.255.0"
 webserver_ip: "10.0.0.21"
 ```
 
-## Core Modules
-Ansible has an extensive set of core modules for crafting Linux servers, including `users`, `groups`, `yum/apt`, `systemd` and `firewalld` and easily extended with other modules via `pip` (itself a core module).
+## Core Tasks
+Tasks are the mainstay of ansible; they are actionable work, e.g.:
+```
+- name: Enable DNS inbound on public zone
+  become: true
+  firewalld:
+    state: enabled
+    zone: public
+    service: "{{ item }}"
+  with_items:
+    - dns
+  when: DISABLE_HOST_FIREWALL is undefined or not DISABLE_HOST_FIREWALL
+	```
+
+Ansible has an extensive set of core tasks for crafting Linux servers, including `users`, `groups`, `yum/apt`, `systemd` and `firewalld` and easily extended with other tasks via `pip` (itself a core module).
 
 One interesting aspect of ansible is the ability to copy/template target files and then run the resutling file through validation; an example is that of [sudoers configuration](https://github.com/wozitech/vagrant/blob/master/common/ansible/tasks/centosTasks.yml).
 

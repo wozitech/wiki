@@ -2,6 +2,11 @@
 <!-- TITLE: Ansible -->
 <!-- SUBTITLE: A quick summary of Ansible -->
 
+# Quick Reference
+Tips and Tricks:
+* https://blog.serverdensity.com/what-ive-learnt-from-using-ansible-exclusively-for-2-years/
+
+WOZiTech public github repo: https://github.com/wozitech/ansible.
 # Overview
 Ansible is a server configuration management tool. It is agentless, requiring no software to be deployed; with the subtle exception of SSH and for some activities, such as, docker containers, python 2/3.
 
@@ -44,3 +49,27 @@ network_gw: "10.0.0.2"      # gateway firewall
 netmask: "255.255.255.0"
 webserver_ip: "10.0.0.21"
 ```
+
+## Core Modules
+Ansible has an extensive set of core modules for crafting Linux servers, including `users`, `groups`, `yum/apt`, `systemd` and `firewalld` and easily extended with other modules via `pip` (itself a core module).
+
+One interesting aspect of ansible is the ability to copy/template target files and then run the resutling file through validation; an example is that of [sudoers configuration](https://github.com/wozitech/vagrant/blob/master/common/ansible/tasks/centosTasks.yml).
+
+In most cases, these modules run on the ansible host (not the target). But some modules do have target dependencies as I found out with docker [`docker-py`](https://github.com/wozitech/vagrant/blob/master/common/ansible/tasks/docker_prep.yml).
+
+## Templates
+Ansible templates use [jinja2](https://docs.ansible.com/ansible/2.6/user_guide/playbooks_templating.html); an expressive templating language, great at easily creating customised configuration files, such as, [nginx conf](https://github.com/wozitech/vagrant/blob/master/enterprise/ansible/hosts/proxy/templates/wiki-reverse.conf.j2) and [networking conf](https://github.com/wozitech/vagrant/blob/master/common/ansible/templates/ifcfg.j2).
+
+## Roles
+
+*mention galaxy*
+
+## 
+
+# TODO
+WOZiTech journey into Ansible is only just starting. On our journey ahead is:
+* Transform the [custom tasks](https://github.com/wozitech/vagrant/tree/master/common/ansible/tasks) to Ansible roles
+* Hashicorp's Vault is great for storing keys/passwords; fetch provisioning secrets:
+	* User public/private keys of passwordless SSH authentication
+	* wiki.js users including default admin) from Vault
+

@@ -76,7 +76,7 @@ Tasks are the mainstay of ansible; they are actionable work, e.g.:
 		- DISABLE_HOST_FIREWALL is undefined or not DISABLE_HOST_FIREWALL
 		- dnsmap.changed
 	register: dns_enabled
-	```
+```
 
 Ansible has an extensive set of core tasks for crafting Linux servers, including `users`, `groups`, `yum/apt`, `systemd` and `firewalld` and easily extended with other tasks via `pip` (itself a core module).
 

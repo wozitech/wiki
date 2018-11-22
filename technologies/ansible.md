@@ -62,16 +62,27 @@ Tasks are the mainstay of ansible; they are actionable work, e.g.:
     service: "{{ item }}"
   with_items:
     - dns
-  when: DISABLE_HOST_FIREWALL is undefined or not DISABLE_HOST_FIREWALL
+  when:
+		- DISABLE_HOST_FIREWALL is undefined or not DISABLE_HOST_FIREWALL
+		- dnsmap.changed
+	register: dns_enabled
 	```
 
 Ansible has an extensive set of core tasks for crafting Linux servers, including `users`, `groups`, `yum/apt`, `systemd` and `firewalld` and easily extended with other tasks via `pip` (itself a core module).
 
-One interesting aspect of ansible is the ability to copy/template target files and then run the resutling file through validation; an example is that of [sudoers configuration](https://github.com/wozitech/vagrant/blob/master/common/ansible/tasks/centosTasks.yml).
+Any tasks can be repeated using `with_items` which can be a simple list (value) or complex objects. Note, do not use `apt`/`yum` with `with_items`, as it will call apt/yum on each package listed; simply pass as a list all packages to `name` attribute - this is equivalent to writing multiple packages on the command line (`yum install -y packageA packageB packageC`).
 
-In most cases, these modules run on the ansible host (not the target). But some modules do have target dependencies as I found out with docker [`docker-py`](https://github.com/wozitech/vagrant/blob/master/common/ansible/tasks/docker_prep.yml).
+There are times when you need to control if a task runs. Any task can capture its output using the `register` attribute; just give it a name and it becomes a variable that can be used in subsequent tasks or for debugging. One of the best uses of the registered variable is to control the running of another tasks, such as a service restart if a given task has changed anything. Ansible has the `when` attribute is the typical set of conditional operators; shown in the above example the Enabling of DNS inbound task will only run is a previously registered variable `dnsmap` has the `changed` result state.
 
-You can of course create your own 'local modules' through a simple directory structure and explicitly include such 'modules':
+Ansible is not 'write once, run anywhere'; you have to know if your target is ubuntu and therefore need to use `apt` to add/remove packages, or your target is CentOS and therefore need to use `yum`. Ansible when it runs has the (default) option to gather facts about its target, which includes information such as OS type. Using the `when` attribute you can therefore target multiple platforms using different tasks.
+
+One interesting aspect of ansible is the ability to copy/template tasks target files and then run the resulting file through validation; an example is that of [sudoers configuration](https://github.com/wozitech/vagrant/blob/master/common/ansible/tasks/centosTasks.yml).
+
+Ansibles `lineinfile` is of particular to note; a simple method of managing any existing file content ensuring the presence/absence of given text; [used to maintain a set of DNS entries](https://github.com/wozitech/vagrant/blob/master/enterprise/ansible/hosts/proxy/tasks/dns.yml).
+
+In most cases, these tasks execute on the target using information gathered by the  modules run on the ansible host (not the target). But some modules do have target dependencies as I found out with docker [`docker-py`](https://github.com/wozitech/vagrant/blob/master/common/ansible/tasks/docker_prep.yml).
+
+You can of course compose large provisioning projects into separate sets of tasks (*local modules*) using a simple directory structure and explicitly include such *modules*:
 ```
 .../
   my.yml
@@ -116,10 +127,12 @@ Inside `.../my.yaml`:
 Ansible templates use [jinja2](https://docs.ansible.com/ansible/2.6/user_guide/playbooks_templating.html); an expressive templating language, great at easily creating customised configuration files, such as, [nginx conf](https://github.com/wozitech/vagrant/blob/master/enterprise/ansible/hosts/proxy/templates/wiki-reverse.conf.j2) and [networking conf](https://github.com/wozitech/vagrant/blob/master/common/ansible/templates/ifcfg.j2).
 
 ## Roles
+TBC
 
 *mention galaxy*
 
-## 
+## Inventory
+*TBC - not yet got to work with an inventory; calling ansible provision direct from Vagrant assuming a single host through given the entry playbook.*
 
 # TODO
 WOZiTech journey into Ansible is only just starting. On our journey ahead is:

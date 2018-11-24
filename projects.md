@@ -14,6 +14,15 @@ cd ..
 rm -rf microservice-reference.git
 ```
 
+Now customise the repo:
+1. `README.md`
+2. `package.json`:
+	2.1. `name` and `description`
+	2.2. `repository.url`
+3. `serverless.yml`
+	3.1. `service`
+	3.2. (optional): `provider.profile` and`provider.region`
+	
 # Projects
 * [wit-domain](/projects/wit-domain)
 * [wit-serve](/projects/wit-serve)

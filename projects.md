@@ -22,6 +22,8 @@ Now customise the repo:
 3. `serverless.yml`
 	3.1. `service`
 	3.2. (optional): `provider.profile` and`provider.region`
+	3.3. (add): `provider.role` (to a known IAM role)
+	3.4. (add) `provider.timeout` and `provider.memorySize`
 	
 # Projects
 * [wit-domain](/projects/wit-domain)

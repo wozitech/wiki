@@ -11,7 +11,8 @@ Tips & Tricks:
 terraform plan
 terrafrom apply
 terraform destroy
-terraform init         <!-- when adding new modules -->
+terraform init                                          <!-- when adding new modules -->
+terraform taint -module my-vpc aws_instance.bastions.0  <!-- to mark a resource within a module as tainted - namely; to be rebuitl -->
 ```
 
 WOZiTech public github repo: https://github.com/wozitech/terraform.

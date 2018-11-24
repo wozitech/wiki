@@ -76,6 +76,8 @@ resource "aws_instance" "bastions" {
 ```
 
 Above shows an AWS resource ([a bastion](https://github.com/wozitech/terraform/blob/master/modules/vpc/main.tf)), showing the security group allowing SSH inbound, the key pair `wozitech-1` and a `connection` definition which locates the private key for that key pair.
+
+In the WOZ*iTech* reference AWS infrastucture, the bastion is the only host through which remote access is available. Need to consider how to provision with ansible and `connection` via a jumpbox. In addition, look at the following comment concerning `null_resource` on how to simulate a `vagrant provision` alternative with terraform taint.
 # Modules
 Terraform uses modules to decompose large complex infrastructures. 
 

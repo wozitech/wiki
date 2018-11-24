@@ -5,7 +5,7 @@ WOZiTech Projects are presented on [WOZiTech Company Website](http://www.wozitec
 # Reference
 WOZ*iTech* reference microservice (AWS lambda/APIGW node.js project: https://github.com/wozitech/microservice-reference.
 
-To duplicate the reference repo, where the target repo name is `new-repo`:
+To duplicate the reference repo, where the target repo name is `new-repo` (**THIS REPO MUST ALREADY EXIST):
 ```
 git clone --bare https://github.com/wozitech/microservice-reference.git
 cd microservice-reference.git

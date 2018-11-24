@@ -45,6 +45,36 @@ Terraform supports the big public cloud providers: AWS (lambda but no step funct
 # Provisioners
 By default, Terraform supports local/remote commands, file (copies files/directory to remote resource) along with chef/habitat/salt. No direct support for ansible, but here's a guide on how to incorporate ansible: [https://alex.dzyoba.com/blog/terraform-ansible/](https://alex.dzyoba.com/blog/terraform-ansible/).
 
+Note, when remotely provisioning AWS resources, the terraform host will need to connect to the remote instance; typically using SSH. This requires being able to SSH to the `ec2-user` (Amazon AMIs at least) having sudo privileges:
+```
+resource "aws_instance" "bastions" {
+  ami           = "${data.aws_ami.bastion_ami.id}"
+  instance_type = "t2.micro"
+  vpc_security_group_ids = [
+    "${aws_security_group.bastion-ssh-proxy.id}"
+  ]
+  key_name = "wozitech-1"
+  depends_on = ["aws_internet_gateway.igw"]
+  
+  tags {
+    Company = "wozitech"
+  }
+
+
+  connection {
+    user = "ec2-user"
+    private_key = "${file("${path.module}/priv.key")}"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo groupadd -g 10000 aylingw"
+    ]
+  }
+}
+```
+
+Above shows an AWS resource ([a bastion](https://github.com/wozitech/terraform/blob/master/modules/vpc/main.tf)), showing the security group allowing SSH inbound, the key pair `wozitech-1` and a `connection` definition which locates the private key for that key pair.
 # Modules
 Terraform uses modules to decompose large complex infrastructures. 
 

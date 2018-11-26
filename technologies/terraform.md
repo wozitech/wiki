@@ -6,6 +6,7 @@
 Tips & Tricks:
 * https://blog.gruntwork.io/terraform-tips-tricks-loops-if-statements-and-gotchas-f739bbae55f9.
 * https://itnext.io/things-i-wish-i-knew-about-terraform-before-jumping-into-it-43ee92a9dd65
+* https://github.com/terraform-aws-modules/terraform-aws-vpc - Build an AWS VPC
 
 ```
 terraform plan

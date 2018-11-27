@@ -28,7 +28,7 @@ Now customise the repo:
 	3.6. (add) `provider.timeout` and `provider.memorySize`
 	
 # Projects
-* [wit-myBuses](/projects/wit-myBuses] - an Alexa skill to tell me when my next bus is for given locations
+* [wit-myBuses](/projects/wit-myBuses) - an Alexa skill to tell me when my next bus is for given locations
 * [wit-domain](/projects/wit-domain)
 * [wit-serve](/projects/wit-serve)
 * [wit-pi](/projects/wit-pi)

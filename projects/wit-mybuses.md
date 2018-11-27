@@ -37,8 +37,148 @@ The `{Destination}` slot is marked as required within `Slot Filling`. If not giv
 
 > The Alexa Skills builds, but it fails on test for both intents.
 
+```
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "my next bus",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "whenIsNextBus",
+                    "slots": [
+                        {
+                            "name": "Destination",
+                            "type": "LIST_OF_DESTINATIONS"
+                        }
+                    ],
+                    "samples": [
+                        "when is my next bus to {Destination}"
+                    ]
+                },
+                {
+                    "name": "howLongUntil",
+                    "slots": [
+                        {
+                            "name": "Destination",
+                            "type": "LIST_OF_DESTINATIONS"
+                        }
+                    ],
+                    "samples": [
+                        "how long until my next bus to {Destination}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "LIST_OF_DESTINATIONS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Clapham"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Brixton"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Streatham"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Croydon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Norwood Junction"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "whenIsNextBus",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.423052006003"
+                    },
+                    "slots": [
+                        {
+                            "name": "Destination",
+                            "type": "LIST_OF_DESTINATIONS",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Confirm.Intent.423052006003"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "howLongUntil",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.423052006003"
+                    },
+                    "slots": [
+                        {
+                            "name": "Destination",
+                            "type": "LIST_OF_DESTINATIONS",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Confirm.Intent.423052006003"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Confirm.Intent.423052006003",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "To which destination?"
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
 # Lambda Function
+The lambda function is described 
 
 # TODO
-* A customised source; currently assumes 'my house'
-* A customised set of destinations; currently assumes 'my given destinations' only
+* A customised source; currently assumes 'my house'. Should locate the "tfl stop points" nearest to the location of the given Alexa when the skill is added. Allow for the 'Alexa location' to be overriden.
+* A customised set of destinations; currently assumes 'my given destinations' only. For each source, show the lines that run through that source, allowing a 'destination' to be assigned.

@@ -22,7 +22,7 @@ The skill is named: `myNextBus`.
 The invocation name is: `my next bus`.
 The skill id: `amzn1.ask.skill.2ba78764-0a67-481f-907a-3f7c08287aeb`.
 
-Other than the default 'built-in' intents, one new intent called `whenIsNextBus`; this has a single utterance: `when is my next bus to {Destination}`. Another intent called `howLongUntil`; this has a single utterance: `how long until my next bus to {Destination}`.
+Other than the default 'built-in' intents, one new intent called `whenIs`; this has a single utterance: `when is my next bus to {Destination}`. Another intent called `howLong`; this has a single utterance: `how long until my next bus to {Destination}`.
 
 `{Destination}` is the slot; this is a list of known destinations (known to me):
 * Brixton
@@ -31,7 +31,7 @@ Other than the default 'built-in' intents, one new intent called `whenIsNextBus`
 * Crystal Palace
 * ...
 
-The `{Destination}` slot is marked as required within `Slot Filling`. If not given, Alexa will prompt; this applied to both `whenIsNextBus` and `howLongUntil` intents. For example:
+The `{Destination}` slot is marked as required within `Slot Filling`. If not given, Alexa will prompt; this applied to both `whenIs` and `howLong` intents. For example:
 * I ask: Alexa, when is my next bus?
 	* Akexa responds with: To which destination?
 		* I say: Clapham.
@@ -65,7 +65,7 @@ The `{Destination}` slot is marked as required within `Slot Filling`. If not giv
                     "samples": []
                 },
                 {
-                    "name": "whenIsNextBus",
+                    "name": "whenIs",
                     "slots": [
                         {
                             "name": "Destination",
@@ -77,7 +77,7 @@ The `{Destination}` slot is marked as required within `Slot Filling`. If not giv
                     ]
                 },
                 {
-                    "name": "howLongUntil",
+                    "name": "howLong",
                     "slots": [
                         {
                             "name": "Destination",
@@ -125,7 +125,7 @@ The `{Destination}` slot is marked as required within `Slot Filling`. If not giv
         "dialog": {
             "intents": [
                 {
-                    "name": "whenIsNextBus",
+                    "name": "whenIs",
                     "confirmationRequired": true,
                     "prompts": {
                         "confirmation": "Confirm.Intent.423052006003"
@@ -143,7 +143,7 @@ The `{Destination}` slot is marked as required within `Slot Filling`. If not giv
                     ]
                 },
                 {
-                    "name": "howLongUntil",
+                    "name": "howLong",
                     "confirmationRequired": true,
                     "prompts": {
                         "confirmation": "Confirm.Intent.423052006003"

@@ -20,6 +20,7 @@ This skill has a follow on to the first question, that being:
 
 The skill is named: `myNextBus`.
 The invocation name is: `my next bus`.
+The skill id: `amzn1.ask.skill.2ba78764-0a67-481f-907a-3f7c08287aeb`.
 
 Other than the default 'built-in' intents, one new intent called `whenIsNextBus`; this has a single utterance: `when is my next bus to {Destination}`. Another intent called `howLongUntil`; this has a single utterance: `how long until my next bus to {Destination}`.
 
@@ -177,8 +178,40 @@ The `{Destination}` slot is marked as required within `Slot Filling`. If not giv
 ```
 
 # Lambda Function
-The lambda function is described 
+The lambda function is described and deployed using `serverless framework`:
+```
+functions:
+  myBuses:
+    handler: myBuses.handler
+    environment:
+      TFL_API_SECRET_ID: 'TFL_API_Portal'
+    role: arn:aws:iam::#{AWS::AccountId}:role/WOZiTech_eu_west_1_tfl_lambda_role
+		events:
+      - alexaSkill: amzn1.ask.skill.2ba78764-0a67-481f-907a-3f7c08287aeb
+    tags:
+      application: "wit-home"
+      company: "WOZiTech"
+    package:
+      include:
+        - myBuses.js
 
+```
+
+It triggers (events) from an `alexaSkill`; the resulting CloudFormation stack on deploy includes setting up permissions on AlexaSkill to invoke lambda for the given skill; `amzn1.ask.skill.2ba78764-0a67-481f-907a-3f7c08287aeb`. This ensures the lambda function can only be called by my skill.
+
+The `TFL_API_SECRET_ID` is simply the AWS Secrets Manager resource name, which is used within the lambda function to fetch the TFL API app id/app key. The role `WOZiTech_eu_west_1_tfl_lambda_role` grants permission to this lambda function to look up the secret; the IAM role is maintained with Terraform and WOZ*iTech* preferred practice is to restrict roles to operate within an given region:
+```
+        {
+            "Effect": "Allow",
+            "Action": [
+              "secretsmanager:DescribeSecret",
+              "secretsmanager:GetSecretValue"
+            ],
+            "Resource": "arn:aws:secretsmanager:${var.region}:${var.account}:secret:TFL_API_Portal-jT6jsf"
+        }
+```
+
+The `...tfl_lambda_role` role is attributed to "eu-west-1", rather than "eu-west_2" because Alexa Skill triggers not available in "eu-west-2".
 # TODO
 * A customised source; currently assumes 'my house'. Should locate the "tfl stop points" nearest to the location of the given Alexa when the skill is added. Allow for the 'Alexa location' to be overriden.
 * A customised set of destinations; currently assumes 'my given destinations' only. For each source, show the lines that run through that source, allowing a 'destination' to be assigned.

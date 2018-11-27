@@ -12,17 +12,219 @@ Assumes:
 
 # Alexa Skill
 This skill is to be invoked with utterances such as:
-* Alexa, when is my next bus to Clapham?  -> Alexa will return with the expected time for up to three buses.
-* Alexa, how long until my next bus to Croydon? -> Alexa will return with the number of minutes.
+* Alexa, when is **my next bus** to Clapham?  -> Alexa will return with the expected time for up to three buses.
+* Alexa, how long until **my next bus** to Croydon? -> Alexa will return with the number of minutes.
+
+Turns out, to invoke a custom skill, you need to invoke the skill with a name and with the verbs such as, tell and ask. So rather than being able to use "my next bus" as the invocation name, I've decided to use one of my cats name (the chatty one, "Becks"):
+* Alexa, ask Becks when is my next bus to Clapham
+* Alexa, ask Becks when will my next bus to Clapham will arrive
+* Alexa, ask Becks when I should leave for Crystal Palace
+* Alexa, ask Becks how long until the next bus for Croydon
 
 This skill has a follow on to the first question, that being:
 * Would you like me to remind you?
 
 The skill is named: `myNextBus`.
-The invocation name is: `my next bus`.
+The invocation name is: `Becks`.
 The skill id: `amzn1.ask.skill.2ba78764-0a67-481f-907a-3f7c08287aeb`.
 
-Other than the default 'built-in' intents, one new intent called `whenIs`; this has a single utterance: `when is my next bus to {Destination}`. Another intent called `howLong`; this has a single utterance: `how long until my next bus to {Destination}`.
+Other than the default 'built-in' intents, one new intent called `whenIs`. `whenIs` is to return a set of times, e.g. 10:05, 10:07 and 10:15. This has the utterances:
+* `when is my next bus to {Destination}`.
+* `when is my bus to {Destination} likely to arrive`
+* `when should I leave for {Destination}`
+* `when will my bus to {Destination} arrive`
+* `when will my next bus to {Destination} arrive`
+* `when will my {Destination} bus get here`
+* `when is my next {Destination} bus`
+
+When invoking the lambda endpoint, the event passed looks like:
+```
+{
+    "event": {
+        "version": "1.0",
+        "session": {
+            "new": true,
+            "sessionId": "amzn1.echo-api.session.2f8f91d4-fed4-445f-bd2a-923c27db6072",
+            "application": {
+                "applicationId": "amzn1.ask.skill.2ba78764-0a67-481f-907a-3f7c08287aeb"
+            },
+            "user": {
+                "userId": "amzn1.ask.account.AEGDLGI2QMONKDWOIBWRN7KLRXOYMNXOCN3MCECKPBE7SVWDSIEEVKVF7ZVHHPRBBMSETSBSB4BVV3RJVFEO4JT2TSJVTG7FJAGIS5RP2RTUFT5464HJRBTEI4C6BAMHLW6ZTNQ3QJHXBUKIE7ZX5YGOYBCEJCN57BDV7JAHWBH7ZR67C2TLUGQBW5TVVVVMHHUVYVAPADEAWWQ"
+            }
+        },
+        "context": {
+            "System": {
+                "application": {
+                    "applicationId": "amzn1.ask.skill.2ba78764-0a67-481f-907a-3f7c08287aeb"
+                },
+                "user": {
+                    "userId": "amzn1.ask.account.AEGDLGI2QMONKDWOIBWRN7KLRXOYMNXOCN3MCECKPBE7SVWDSIEEVKVF7ZVHHPRBBMSETSBSB4BVV3RJVFEO4JT2TSJVTG7FJAGIS5RP2RTUFT5464HJRBTEI4C6BAMHLW6ZTNQ3QJHXBUKIE7ZX5YGOYBCEJCN57BDV7JAHWBH7ZR67C2TLUGQBW5TVVVVMHHUVYVAPADEAWWQ"
+                },
+                "device": {
+                    "deviceId": "amzn1.ask.device.AE5J4BFMBNHEMPR6LEU467UGCDM526KOZYDQI4G6AT6DVK3ZMGYIZ47HWWJBMDTASR4AR3MU73RNOOZWIANDZ45AVAA6FWAFC57NJMU6L4JBNV6DDZJ7TIGBHBGFQS6ILEHMJKW53E25KMH4JS3NKQR4FKK5EAQ6HUW7L7AMR63CE23ZOAVRO",
+                    "supportedInterfaces": {}
+                },
+                "apiEndpoint": "https://api.eu.amazonalexa.com",
+                "apiAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjJiYTc4NzY0LTBhNjctNDgxZi05MDdhLTNmN2MwODI4N2FlYiIsImV4cCI6MTU0MzMzMzcwOSwiaWF0IjoxNTQzMzMwMTA5LCJuYmYiOjE1NDMzMzAxMDksInByaXZhdGVDbGFpbXMiOnsiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUU1SjRCRk1CTkhFTVBSNkxFVTQ2N1VHQ0RNNTI2S09aWURRSTRHNkFUNkRWSzNaTUdZSVo0N0hXV0pCTURUQVNSNEFSM01VNzNSTk9PWldJQU5EWjQ1QVZBQTZGV0FGQzU3TkpNVTZMNEpCTlY2RERaSjdUSUdCSEJHRlFTNklMRUhNSktXNTNFMjVLTUg0SlMzTktRUjRGS0s1RUFRNkhVVzdMN0FNUjYzQ0UyM1pPQVZSTyIsInVzZXJJZCI6ImFtem4xLmFzay5hY2NvdW50LkFFR0RMR0kyUU1PTktEV09JQldSTjdLTFJYT1lNTlhPQ04zTUNFQ0tQQkU3U1ZXRFNJRUVWS1ZGN1pWSEhQUkJCTVNFVFNCU0I0QlZWM1JKVkZFTzRKVDJUU0pWVEc3RkpBR0lTNVJQMlJUVUZUNTQ2NEhKUkJURUk0QzZCQU1ITFc2WlROUTNRSkhYQlVLSUU3Wlg1WUdPWUJDRUpDTjU3QkRWN0pBSFdCSDdaUjY3QzJUTFVHUUJXNVRWVlZWTUhIVVZZVkFQQURFQVdXUSJ9fQ.dJ9Kqwo_hRfw7kwqje9EpUUrHAy1ilPevpYIAYD_R_IuX-_WFLGu40xkRKs7B2vQAExwk0F3J7Eg6vb4QxEyuFku1yUR4G-NLPnGRIL9ZzjKhonHrTWCTyoOwMFQuHGWkPKLcIT42a-TePlf0HaUL3_1PNuHdig6ehdRCXplCy0qgIY7-AH510ywDJ3YbkbLhx-gVMnLFokrhdYZjcywIBE4qQgZULUSugKzZWDO0s3S_ii6bfxARmgrT-0oC_qXkcYd89zBKmL8X2d25L4aLtn6lC-EIIzp6g6962I92P1BtQ-bjH9jebceoXqTrR-XqQu4XEJbjxclPtxnA_LIsQ"
+            },
+            "Viewport": {
+                "experiences": [
+                    {
+                        "arcMinuteWidth": 246,
+                        "arcMinuteHeight": 144,
+                        "canRotate": false,
+                        "canResize": false
+                    }
+                ],
+                "shape": "RECTANGLE",
+                "pixelWidth": 1024,
+                "pixelHeight": 600,
+                "dpi": 160,
+                "currentPixelWidth": 1024,
+                "currentPixelHeight": 600,
+                "touch": [
+                    "SINGLE"
+                ]
+            }
+        },
+        "request": {
+            "type": "IntentRequest",
+            "requestId": "amzn1.echo-api.request.833e1635-eda6-4fb5-ae8b-f06e0453c135",
+            "timestamp": "2018-11-27T14:48:29Z",
+            "locale": "en-GB",
+            "intent": {
+                "name": "whenIs",
+                "confirmationStatus": "NONE",
+                "slots": {
+                    "Destination": {
+                        "name": "Destination",
+                        "value": "Clapham",
+                        "resolutions": {
+                            "resolutionsPerAuthority": [
+                                {
+                                    "authority": "amzn1.er-authority.echo-sdk.amzn1.ask.skill.2ba78764-0a67-481f-907a-3f7c08287aeb.LIST_OF_DESTINATIONS",
+                                    "status": {
+                                        "code": "ER_SUCCESS_MATCH"
+                                    },
+                                    "values": [
+                                        {
+                                            "value": {
+                                                "name": "Clapham",
+                                                "id": "5a0251c093f8679f79d2fc9d474dd768"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "confirmationStatus": "NONE",
+                        "source": "USER"
+                    }
+                }
+            },
+            "dialogState": "STARTED"
+        }
+    }
+}
+```
+
+Another intent called `howLong`. `howLong` is to return a set of durations, e.g. 3 minutes, 5 minutes and 10 minutes. This has the utterances:
+* `how long until {Destination} bus`
+* `how long until I can leave for {Destination}`
+* `how long until my next bus to {Destination}`
+* `how long must I wait for the {Destination} bus`
+* `how much longer for the {Destination} bus`
+* `how long must I wait before leaving to {Destination}`
+* `how long till my next bus to {Destination}`
+
+When invoking the lambda endpoint, the event passed looks like:
+```
+{
+	"version": "1.0",
+	"session": {
+		"new": true,
+		"sessionId": "amzn1.echo-api.session.2af9885a-7f55-4e56-96a4-79057d0dd0bf",
+		"application": {
+			"applicationId": "amzn1.ask.skill.2ba78764-0a67-481f-907a-3f7c08287aeb"
+		},
+		"user": {
+			"userId": "amzn1.ask.account.AEGDLGI2QMONKDWOIBWRN7KLRXOYMNXOCN3MCECKPBE7SVWDSIEEVKVF7ZVHHPRBBMSETSBSB4BVV3RJVFEO4JT2TSJVTG7FJAGIS5RP2RTUFT5464HJRBTEI4C6BAMHLW6ZTNQ3QJHXBUKIE7ZX5YGOYBCEJCN57BDV7JAHWBH7ZR67C2TLUGQBW5TVVVVMHHUVYVAPADEAWWQ"
+		}
+	},
+	"context": {
+		"System": {
+			"application": {
+				"applicationId": "amzn1.ask.skill.2ba78764-0a67-481f-907a-3f7c08287aeb"
+			},
+			"user": {
+				"userId": "amzn1.ask.account.AEGDLGI2QMONKDWOIBWRN7KLRXOYMNXOCN3MCECKPBE7SVWDSIEEVKVF7ZVHHPRBBMSETSBSB4BVV3RJVFEO4JT2TSJVTG7FJAGIS5RP2RTUFT5464HJRBTEI4C6BAMHLW6ZTNQ3QJHXBUKIE7ZX5YGOYBCEJCN57BDV7JAHWBH7ZR67C2TLUGQBW5TVVVVMHHUVYVAPADEAWWQ"
+			},
+			"device": {
+				"deviceId": "amzn1.ask.device.AE5J4BFMBNHEMPR6LEU467UGCDM526KOZYDQI4G6AT6DVK3ZMGYIZ47HWWJBMDTASR4AR3MU73RNOOZWIANDZ45AVAA6FWAFC57NJMU6L4JBNV6DDZJ7TIGBHBGFQS6ILEHMJKW53E25KMH4JS3NKQR4FKK5EAQ6HUW7L7AMR63CE23ZOAVRO",
+				"supportedInterfaces": {}
+			},
+			"apiEndpoint": "https://api.eu.amazonalexa.com",
+			"apiAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjJiYTc4NzY0LTBhNjctNDgxZi05MDdhLTNmN2MwODI4N2FlYiIsImV4cCI6MTU0MzMzNjczNCwiaWF0IjoxNTQzMzMzMTM0LCJuYmYiOjE1NDMzMzMxMzQsInByaXZhdGVDbGFpbXMiOnsiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUU1SjRCRk1CTkhFTVBSNkxFVTQ2N1VHQ0RNNTI2S09aWURRSTRHNkFUNkRWSzNaTUdZSVo0N0hXV0pCTURUQVNSNEFSM01VNzNSTk9PWldJQU5EWjQ1QVZBQTZGV0FGQzU3TkpNVTZMNEpCTlY2RERaSjdUSUdCSEJHRlFTNklMRUhNSktXNTNFMjVLTUg0SlMzTktRUjRGS0s1RUFRNkhVVzdMN0FNUjYzQ0UyM1pPQVZSTyIsInVzZXJJZCI6ImFtem4xLmFzay5hY2NvdW50LkFFR0RMR0kyUU1PTktEV09JQldSTjdLTFJYT1lNTlhPQ04zTUNFQ0tQQkU3U1ZXRFNJRUVWS1ZGN1pWSEhQUkJCTVNFVFNCU0I0QlZWM1JKVkZFTzRKVDJUU0pWVEc3RkpBR0lTNVJQMlJUVUZUNTQ2NEhKUkJURUk0QzZCQU1ITFc2WlROUTNRSkhYQlVLSUU3Wlg1WUdPWUJDRUpDTjU3QkRWN0pBSFdCSDdaUjY3QzJUTFVHUUJXNVRWVlZWTUhIVVZZVkFQQURFQVdXUSJ9fQ.fUrdX09dXIG15kQaXXVW_EPkSWVvdTiEgFRerttdsi5W3o3tcYaAAME6_BQ5yfGP1GDvgqgq_TcugZVhceTNVJJnirYbB21A1AdGg2FLYtUh67ndsqXhr5dlbwPugGDZ7k5FOhfQr516a7u6CZezL3kTAjiI4XbHauttkkcalrPCpeFEWBBww7HaXYXChI4smSze4Ktf8JHbMPMyMOeFsFfbPK5AEboyMJCfWjCMJmuz66m9h0-sOL9E8cxet2l-yHM1osv_2zJ7GkcAl5cJiBF85nCl2j7fIBD5legGjRpxuMaV9vtHVtfiMU41khcXMgxnyquqjqTTsqr2JCNZOQ"
+		},
+		"Viewport": {
+			"experiences": [
+				{
+					"arcMinuteWidth": 246,
+					"arcMinuteHeight": 144,
+					"canRotate": false,
+					"canResize": false
+				}
+			],
+			"shape": "RECTANGLE",
+			"pixelWidth": 1024,
+			"pixelHeight": 600,
+			"dpi": 160,
+			"currentPixelWidth": 1024,
+			"currentPixelHeight": 600,
+			"touch": [
+				"SINGLE"
+			]
+		}
+	},
+	"request": {
+		"type": "IntentRequest",
+		"requestId": "amzn1.echo-api.request.3d2fe165-8a8f-425d-b286-5dc4a0fa5e4d",
+		"timestamp": "2018-11-27T15:38:54Z",
+		"locale": "en-GB",
+		"intent": {
+			"name": "howLong",
+			"confirmationStatus": "NONE",
+			"slots": {
+				"Destination": {
+					"name": "Destination",
+					"value": "Clapham",
+					"resolutions": {
+						"resolutionsPerAuthority": [
+							{
+								"authority": "amzn1.er-authority.echo-sdk.amzn1.ask.skill.2ba78764-0a67-481f-907a-3f7c08287aeb.LIST_OF_DESTINATIONS",
+								"status": {
+									"code": "ER_SUCCESS_MATCH"
+								},
+								"values": [
+									{
+										"value": {
+											"name": "Clapham",
+											"id": "5a0251c093f8679f79d2fc9d474dd768"
+										}
+									}
+								]
+							}
+						]
+					},
+					"confirmationStatus": "NONE",
+					"source": "USER"
+				}
+			}
+		},
+		"dialogState": "STARTED"
+	}
+}
+```
 
 `{Destination}` is the slot; this is a list of known destinations (known to me):
 * Brixton
@@ -36,13 +238,16 @@ The `{Destination}` slot is marked as required within `Slot Filling`. If not giv
 	* Akexa responds with: To which destination?
 		* I say: Clapham.
 
-> The Alexa Skills builds, but it fails on test for both intents.
+The `Destination` slot also has valiation, enforcing that it must be one of the listed slot values.
 
+> When using the Alexa Developer Console Test Simulator, when the intent is fired and a request is sent to lambda, the simulator will show the JSON sent in the lambda `event` object
+
+The Alexa Skill JSON:
 ```
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "my next bus",
+            "invocationName": "becks",
             "intents": [
                 {
                     "name": "AMAZON.FallbackIntent",
@@ -73,6 +278,12 @@ The `{Destination}` slot is marked as required within `Slot Filling`. If not giv
                         }
                     ],
                     "samples": [
+                        "when is my next {Destination} bus",
+                        "when will my {Destination} bus get here",
+                        "when is my bus to {Destination} likely to arrive",
+                        "when should I leave for {Destination}",
+                        "when will my bus to {Destination} arrive",
+                        "when will my next bus to {Destination} arrive",
                         "when is my next bus to {Destination}"
                     ]
                 },
@@ -85,7 +296,13 @@ The `{Destination}` slot is marked as required within `Slot Filling`. If not giv
                         }
                     ],
                     "samples": [
-                        "how long until my next bus to {Destination}"
+                        "how long until {Destination} bus",
+                        "how long until I can leave for {Destination}",
+                        "how long until my next bus to {Destination}",
+                        "how long must I wait for the {Destination} bus",
+                        "how much longer for the {Destination} bus",
+                        "how long must I wait before leaving to {Destination}",
+                        "how long till my next bus to {Destination}"
                     ]
                 }
             ],
@@ -178,6 +395,8 @@ The `{Destination}` slot is marked as required within `Slot Filling`. If not giv
 ```
 
 # Lambda Function
+All code can be found here: https://github.com/wozitech/alexa.
+
 The lambda function is described and deployed using `serverless framework`:
 ```
 functions:

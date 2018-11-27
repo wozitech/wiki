@@ -207,11 +207,11 @@ The `TFL_API_SECRET_ID` is simply the AWS Secrets Manager resource name, which i
               "secretsmanager:DescribeSecret",
               "secretsmanager:GetSecretValue"
             ],
-            "Resource": "arn:aws:secretsmanager:${var.region}:${var.account}:secret:TFL_API_Portal-jT6jsf"
+            "Resource": "arn:aws:secretsmanager:eu-west-2:${var.account}:secret:TFL_API_Portal-jT6jsf"
         }
 ```
 
-The `...tfl_lambda_role` role is attributed to "eu-west-1", rather than "eu-west_2" because Alexa Skill triggers not available in "eu-west-2".
+The `...tfl_lambda_role` role is attributed to "eu-west-1", rather than "eu-west_2" because Alexa Skill triggers not available in "eu-west-2". But note the IAM role, whereby the region is fixed with "eu-west-2"  in granting access to the TFL API Portal secret.
 # TODO
 * A customised source; currently assumes 'my house'. Should locate the "tfl stop points" nearest to the location of the given Alexa when the skill is added. Allow for the 'Alexa location' to be overriden.
 * A customised set of destinations; currently assumes 'my given destinations' only. For each source, show the lines that run through that source, allowing a 'destination' to be assigned.

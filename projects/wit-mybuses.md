@@ -1,0 +1,44 @@
+<!-- TITLE: wit-myBuses -->
+<!-- SUBTITLE: An Alexa skill to tell me when the next bus is due for my given destinations -->
+
+# Overview
+A personalised Alexa skill, called `myNextBus` that calls upon an AWS Lambda function, maintained and deployed using `serverless framework`. Calls upon TFL's public API, https://api-portal.tfl.gov.uk, using Axios, passing an `API App ID` and `API App Key` generated from my account; the details of which are held in an AWS Secret Manager resource. The IAM role assumed by the lambda is managed by Terraform; granting access to the `TFL_API_Portal` SecretManager resource only.
+# Assumptions
+Assumes:
+* A fixed set of locations as known from my house, e.g. Brixton, Clapham.
+	* These destinations is a `slot type` and a given list of `slot values` defined with the skill.
+* That fixed set of destinations and paired with a given source, based on the known TFL 'stop point' for a preferred bus route.
+* Each known source has a given 'travel time'; that is the time it takes to walk from my house to the bus stop. This is used when setting a reminder.
+
+# Alexa Skill
+This skill is to be invoked with utterances such as:
+* Alexa, when is my next bus to Clapham?  -> Alexa will return with the expected time for up to three buses.
+* Alexa, how long until my next bus to Croydon? -> Alexa will return with the number of minutes.
+
+This skill has a follow on to the first question, that being:
+* Would you like me to remind you?
+
+The skill is named: `myNextBus`.
+The invocation name is: `my next bus`.
+
+Other than the default 'built-in' intents, one new intent called `whenIsNextBus`; this has a single utterance: `when is my next bus to {Destination}`. Another intent called `howLongUntil`; this has a single utterance: `how long until my next bus to {Destination}`.
+
+`{Destination}` is the slot; this is a list of known destinations (known to me):
+* Brixton
+* Clapham
+* Croydon
+* Crystal Palace
+* ...
+
+The `{Destination}` slot is marked as required within `Slot Filling`. If not given, Alexa will prompt; this applied to both `whenIsNextBus` and `howLongUntil` intents. For example:
+* I ask: Alexa, when is my next bus?
+	* Akexa responds with: To which destination?
+		* I say: Clapham.
+
+> The Alexa Skills builds, but it fails on test for both intents.
+
+# Lambda Function
+
+# TODO
+* A customised source; currently assumes 'my house'
+* A customised set of destinations; currently assumes 'my given destinations' only

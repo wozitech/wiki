@@ -276,7 +276,10 @@ The Alexa Skill JSON:
                     "slots": [
                         {
                             "name": "Destination",
-                            "type": "LIST_OF_DESTINATIONS"
+                            "type": "LIST_OF_DESTINATIONS",
+                            "samples": [
+                                "{Destination}"
+                            ]
                         }
                     ],
                     "samples": [
@@ -294,7 +297,10 @@ The Alexa Skill JSON:
                     "slots": [
                         {
                             "name": "Destination",
-                            "type": "LIST_OF_DESTINATIONS"
+                            "type": "LIST_OF_DESTINATIONS",
+                            "samples": [
+                                "{Destination}"
+                            ]
                         }
                     ],
                     "samples": [
@@ -312,6 +318,11 @@ The Alexa Skill JSON:
                 {
                     "name": "LIST_OF_DESTINATIONS",
                     "values": [
+                        {
+                            "name": {
+                                "value": "Crystal Palace"
+                            }
+                        },
                         {
                             "name": {
                                 "value": "Clapham"
@@ -357,7 +368,13 @@ The Alexa Skill JSON:
                             "elicitationRequired": true,
                             "prompts": {
                                 "elicitation": "Confirm.Intent.423052006003"
-                            }
+                            },
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.1445897530190.1427925612691.1531545622963"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -375,7 +392,13 @@ The Alexa Skill JSON:
                             "elicitationRequired": true,
                             "prompts": {
                                 "elicitation": "Confirm.Intent.423052006003"
-                            }
+                            },
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.885844913883.869449845389.472556168862"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -388,6 +411,24 @@ The Alexa Skill JSON:
                     {
                         "type": "PlainText",
                         "value": "To which destination?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1445897530190.1427925612691.1531545622963",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "I only know of the following destinations, {Destination}"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.885844913883.869449845389.472556168862",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Sorry, I only know of the following destinations, {Destination}"
                     }
                 ]
             }

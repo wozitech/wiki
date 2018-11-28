@@ -240,6 +240,8 @@ The `{Destination}` slot is marked as required within `Slot Filling`. If not giv
 
 The `Destination` slot also has valiation, enforcing that it must be one of the listed slot values.
 
+> When using the Alxea Developer Console Build, be sure to select the "+" buttons when defining dialog content; nothing happens until you **add**.
+
 > When using the Alexa Developer Console Test Simulator, when the intent is fired and a request is sent to lambda, the simulator will show the JSON sent in the lambda `event` object
 
 The Alexa Skill JSON:

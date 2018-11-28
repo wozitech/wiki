@@ -282,6 +282,7 @@ The Alexa Skill JSON:
                             "name": "Destination",
                             "type": "LIST_OF_DESTINATIONS",
                             "samples": [
+                                "to {Destination}",
                                 "{Destination}"
                             ]
                         }
@@ -303,6 +304,7 @@ The Alexa Skill JSON:
                             "name": "Destination",
                             "type": "LIST_OF_DESTINATIONS",
                             "samples": [
+                                "to {Destination}",
                                 "{Destination}"
                             ]
                         }
@@ -412,6 +414,14 @@ The Alexa Skill JSON:
             {
                 "id": "Confirm.Intent.423052006003",
                 "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Sorry, but where are you going"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Where are you going to"
+                    },
                     {
                         "type": "PlainText",
                         "value": "To which destination?"

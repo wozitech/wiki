@@ -233,12 +233,16 @@ When invoking the lambda endpoint, the event passed looks like:
 * Crystal Palace
 * ...
 
-The `{Destination}` slot is marked as required within `Slot Filling`. If not given, Alexa will prompt; this applied to both `whenIs` and `howLong` intents. For example:
+The `{Destination}` slot is marked as required within `Slot Filling`. If not given, Alexa will prompt (dialog); this applied to both `whenIs` and `howLong` intents. For example:
 * I ask: Alexa, when is my next bus?
 	* Akexa responds with: To which destination?
 		* I say: Clapham.
 
+Be sure to add a few responses for missing slots; Alexa Skill will choose at random from the list, giving a more natural response.
+
 The `Destination` slot also has valiation, enforcing that it must be one of the listed slot values.
+
+> Note, I was expecting Alexa Skill to hold it's own conversation if the `{Destination}` was not populated. Oh so no, the request is sent to your handler (lambda in my case), you must determine that the `{Destination}` is missing and return a `Dialog.Delegate`: https://developer.amazon.com/docs/custom-skills/define-the-dialog-to-collect-and-confirm-required-information.html#intent-slots-order.
 
 > When using the Alxea Developer Console Build, be sure to select the "+" buttons when defining dialog content; nothing happens until you **add**.
 

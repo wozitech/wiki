@@ -504,3 +504,4 @@ In https://github.com/wozitech/alexa/blob/master/src/aws/secrets.js:
 # TODO
 * A customised source; currently assumes 'my house'. Should locate the "tfl stop points" nearest to the location of the given Alexa when the skill is added. Allow for the 'Alexa location' to be overriden.
 * A customised set of destinations; currently assumes 'my given destinations' only. For each source, show the lines that run through that source, allowing a 'destination' to be assigned.
+* When formatting the response, for the assumed source of the given destination, need to allow for the walking time to the bus stop.

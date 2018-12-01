@@ -572,6 +572,7 @@ To the lamba function, have added "SLACK_LEVEL" environment variable:
 AWS Secrets Manager used to store the Slack WebHook.
 
 A good guide to producing a Slack notification from a lambda function: https://www.scrivito.com/posting-form-content-to-a-slack-channel-via-an-aws-lambda-function-e73e3fb7a95c76f3.
+And the Slack npm API: https://www.npmjs.com/package/slack.
 
 # TODO
 * A customised source; currently assumes 'my house'. Should locate the "tfl stop points" nearest to the location of the given Alexa when the skill is added. Allow for the 'Alexa location' to be overriden.

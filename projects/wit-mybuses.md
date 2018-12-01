@@ -556,6 +556,21 @@ This SDK is available (of course) for Javascript: https://www.npmjs.com/package/
 
 I've not used it here, so I can appreciate more the Alexa Skill output/response interface.
 
+## Slack
+This Alexa skill notifies within Slack; a dedicated (wozitech.myBuses) channel. Not just a simple text messaging solution, Slack allows for rich formatted messages and bidirectional flow. Currently, we're interested in recording the process of the skill function; like logging, to various levels.
+
+To the lamba function, have added "SLACK_LEVEL" environment variable:
+* 0 - disabled;
+* 1 - errors,
+* 2 - warnings
+* 3 - info
+* 4 - debug
+* 5 - trace
+
+> Can Slack be used to update the lambda's env LOG_LEVEL variable?
+
+AWS Secrets Manager used to store the Slack WebHook.
+
 # TODO
 * A customised source; currently assumes 'my house'. Should locate the "tfl stop points" nearest to the location of the given Alexa when the skill is added. Allow for the 'Alexa location' to be overriden.
 * A customised set of destinations; currently assumes 'my given destinations' only. For each source, show the lines that run through that source, allowing a 'destination' to be assigned.

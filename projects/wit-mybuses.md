@@ -501,6 +501,61 @@ In https://github.com/wozitech/alexa/blob/master/src/aws/secrets.js:
     });
 ```
 
+## Response
+A typical response to an Alexa skill looks like:
+```
+{
+    "version": "1.0",
+    "sessionAttributes": {
+        "key": "value"
+    },
+    "response": {
+        "outputSpeech": {
+            "type": "PlainText",
+            "text": "Plain text string to speak",
+            "ssml": "<speak>SSML text string to speak</speak>",
+            "playBehavior": "REPLACE_ENQUEUED"      
+        },
+        "card": {
+            "type": "Standard",
+            "title": "Title of the card",
+            "content": "Content of a simple card",
+            "text": "Text content for a standard card",
+            "image": {
+                "smallImageUrl": "https://url-to-small-card-image...",
+                "largeImageUrl": "https://url-to-large-card-image..."
+            }
+        },
+        "reprompt": {
+            "outputSpeech": {
+                "type": "PlainText",
+                "text": "Plain text string to speak",
+                "ssml": "<speak>SSML text string to speak</speak>",
+                "playBehavior": "REPLACE_ENQUEUED"             
+            }
+        },
+        "directives": [
+            {
+                "type": "InterfaceName.Directive"
+                (...properties depend on the directive type)
+            }
+        ],
+        "shouldEndSession": true
+    }
+  }
+	```
+	
+The `card` is for non-audio type responses; such as, the Alexa mobile app, Echo Spot or Echo Show devices (those with visual output). The `response` is the main output, with either simple or "plainText" and "ssml" .
+
+The response from lambda back to the Alexa Skill, must be via the lambda handler's callback: `return callback(null, skillResponse)`. `skillResponse` here is a properly formed Javascript object; do not JSON stringify the object.
+
+## Alexa SDK
+The good folks at Amazon have written an impressive (would you expect otherwise) [Alexa Skills KIt (ASK) SDK](https://developer.amazon.com/alexa-skills-kit/sdk), which helps in processing and responding to Alexa Skill events.
+
+This SDK is available (of course) for Javascript: https://www.npmjs.com/package/alexa-sdk.
+
+I've not used it here, so I can appreciate more the Alexa Skill output/response interface.
+
 # TODO
 * A customised source; currently assumes 'my house'. Should locate the "tfl stop points" nearest to the location of the given Alexa when the skill is added. Allow for the 'Alexa location' to be overriden.
 * A customised set of destinations; currently assumes 'my given destinations' only. For each source, show the lines that run through that source, allowing a 'destination' to be assigned.

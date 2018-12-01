@@ -569,10 +569,12 @@ To the lamba function, have added "SLACK_LEVEL" environment variable:
 
 > Can Slack be used to update the lambda's env LOG_LEVEL variable?
 
-AWS Secrets Manager used to store the Slack WebHook.
+AWS Secrets Manager used to store the Slack WebHook; key name: `SLACK_MY_BUSES`; resolved as `SLACK_WEBHOOK` environment variable.
 
 A good guide to producing a Slack notification from a lambda function: https://www.scrivito.com/posting-form-content-to-a-slack-channel-via-an-aws-lambda-function-e73e3fb7a95c76f3.
 And the Slack npm API: https://www.npmjs.com/package/slack.
+
+Before writing any code, you first need to create the incoming web hook, for which you first need to create a Slack application: https://api.slack.com/incoming-webhooks. I created Slack app called `wit-alexa-myBuses`, and then create an incoming webhook against it having nominated your channel.
 
 # TODO
 * A customised source; currently assumes 'my house'. Should locate the "tfl stop points" nearest to the location of the given Alexa when the skill is added. Allow for the 'Alexa location' to be overriden.

@@ -574,6 +574,8 @@ AWS Secrets Manager used to store the Slack WebHook; key name: `SLACK_MY_BUSES`;
 A good guide to producing a Slack notification from a lambda function: https://www.scrivito.com/posting-form-content-to-a-slack-channel-via-an-aws-lambda-function-e73e3fb7a95c76f3.
 And the Slack npm API: https://www.npmjs.com/package/slack.
 
+And for formatting messages: https://api.slack.com/docs/message-attachments.
+
 Before writing any code, you first need to create the incoming web hook, for which you first need to create a Slack application: https://api.slack.com/incoming-webhooks. I created Slack app called `wit-alexa-myBuses`, and then create an incoming webhook against it having nominated your channel.
 
 # TODO

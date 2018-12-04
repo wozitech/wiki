@@ -628,10 +628,10 @@ This returns a much richer data set for that given stop point:
 * Common Name
 * Significantly though, a list of `children` (these are the physical stop locations on either side of the road).
 
-It is in the `children.id` that is required for a particular stop, to then be able to call upon the TFL API to get the list of next arrivals at that stop (the same data that would otherwise be displayed on the countdown within the bus shelter):
-* https://api.tfl.gov.uk/StopPoint/children.id/Arrivals?app_key=appkey&app_id=appid
+It is in the `children.naptanId` that is required for a particular stop, to then be able to call upon the TFL API to get the list of next arrivals at that stop (the same data that would otherwise be displayed on the countdown within the bus shelter):
+* https://api.tfl.gov.uk/StopPoint/children.naptanId/Arrivals?app_key=appkey&app_id=appid
 
-The significant point to note in the above URL is the base name "StopPoint", followed by the ID of that stop point as identified for the above shortlist with the action "Arrivals". This returns back a JSON array of the next set of arrivals at that stop point. I have observed that they are not necessarily in time order. Each array item includes the "line" (route, e.g 417) making it easy to differentiate multiple bus routes running through the same stop point.
+The significant point to note in the above URL is the base name "StopPoint", followed by the ID of that stop point (Naptan ID) as identified for the above shortlist with the action "Arrivals". This returns back a JSON array of the next set of arrivals at that stop point. I have observed that they are not necessarily in time order. Each array item includes the "line" (route, e.g 417) making it easy to differentiate multiple bus routes running through the same stop point.
 
 For me, depending on where I want to get to, I can use one of many stops. I might not choose the stop nearest me, preferring one which is easier for me to catch, or have better protection from the weather. So I queried multiple stop points in different locations based on my preferance.
 

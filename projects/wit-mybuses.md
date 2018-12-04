@@ -589,7 +589,7 @@ For my purposes here, I am interested in buses, and more so, the next set of arr
 Bus Stops (as all locations where you catch a mode of transport within the TFL API) are known as Stop Points. It is typical in London that bus stops are positioned across from each other on each side of the road; each such stop has a different stop point ID. It is also typical in London that even if the bus stops are position closely either side of the road, then can be identified as different names, as per the side road nearest to it.
 
 You can search for stop points by their common name (name as it is known whilst sat on the bus as is come to arrive at the stop); in the example below, the Stop Point I am searching for is "MY STOP" (note, the URL encode for space):
-* https://api.tfl.gov.uk/StopPoint/Search?query=MY%20STOP&app_key=<app key>&app_id=<app id>
+* https://api.tfl.gov.uk/StopPoint/Search?query=MY%20STOP&app_key=appkey&app_id=appid
 
 The JSON data returned is of the format (I've removed unnecessary attributes, like latitude/longitude and modes of transport and of course I have obfruscated the actual data - those ids are made up):
 ```
@@ -621,13 +621,29 @@ The JSON data returned is of the format (I've removed unnecessary attributes, li
 The above shows that for a given stop point by name "MY STOP", there are four matches; this is because "MY STOP" is a cross road and there are indeed four different directions. Each of the above is a stop point group (because at this crossroad, a bus can go in one of two directions in four ways - 8 different routes).
 
 Need to take each given match, `/matches/id` and do a second lookup, with the example below showing the lookup for the third match above:
-* https://api.tfl.gov.uk/StopPoint/490G00025643?app_key=<app key>&app_id=<app id>
+* https://api.tfl.gov.uk/StopPoint/490G00025643?app_key=appkey&app_id=appid
 
 This returns a much richer data set for that given stop point:
-* gdgdf
-* gdgdfgf
+* lines - a list of all bus routes that pass through that stop point group (on either side of the road)
+* Common Name
+* Significantly though, a list of `children` (these are the physical stop locations on either side of the road).
 
-For me, depending on where I want to get to, I can use one of many stops. I might not choose the stop nearest me, preferring one which is easier for me to catch, or have better protection from the weather, so I queried multiple stop points in different locations.
+It is in the `children.id` that is required for a particular stop, to then be able to call upon the TFL API to get the list of next arrivals at that stop (the same data that would otherwise be displayed on the countdown within the bus shelter):
+* https://api.tfl.gov.uk/StopPoint/children.id/Arrivals?app_key=appkey&app_id=appid
+
+The significant point to note in the above URL is the base name "StopPoint", followed by the ID of that stop point as identified for the above shortlist with the action "Arrivals". This returns back a JSON array of the next set of arrivals at that stop point. I have observed that they are not necessarily in time order. Each array item includes the "line" (route, e.g 417) making it easy to differentiate multiple bus routes running through the same stop point.
+
+For me, depending on where I want to get to, I can use one of many stops. I might not choose the stop nearest me, preferring one which is easier for me to catch, or have better protection from the weather. So I queried multiple stop points in different locations based on my preferance.
+
+So I have prepared the following data for each of my preferred destination:
+* Stop Point ID
+* Stop Point Line (route)
+* Walking Time - how long it takes me to get from my house to that particular stop, knowing how fast I walk and the terrain
+
+Although not an excessive amount of data, this information is specific (personalised) to me and has no need to be statically reference in code and in source code configuration, and certainly not shared with anyone else.
+
+Our specific lambda build and deployment using the 'serverless framework' uses webpack to create the smallest packages (ZIP) to upload to S3 bucket for subsequent deployment via CloudFormation.
+The approach I have therefore taken is to include this personal data (`const ... require '.../resources/busData.json'`) and add a `.gitignore` to prevent the data from being committed.
 
 # TODO
 * A customised source; currently assumes 'my house'. Should locate the "tfl stop points" nearest to the location of the given Alexa when the skill is added. Allow for the 'Alexa location' to be overriden.

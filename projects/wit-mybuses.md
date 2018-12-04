@@ -635,12 +635,14 @@ The significant point to note in the above URL is the base name "StopPoint", fol
 
 For me, depending on where I want to get to, I can use one of many stops. I might not choose the stop nearest me, preferring one which is easier for me to catch, or have better protection from the weather. So I queried multiple stop points in different locations based on my preferance.
 
+Also, because I am choosing my preferred stops for a given destination, I need to filter the arrivals at that stop based on how long it will take me to walk there; little point in saying "next bus in 2 minutes", when it's going to take me 4 minutes to get there.
+
 So I have prepared the following data for each of my preferred destination:
 * Stop Point ID
 * Stop Point Line (route)
 * Walking Time - how long it takes me to get from my house to that particular stop, knowing how fast I walk and the terrain
 
-Although not an excessive amount of data, this information is specific (personalised) to me and has no need to be statically reference in code and in source code configuration, and certainly not shared with anyone else.
+Although not an excessive amount of data, this information is specific (personalised) to me and has no right to be statically reference in code and in source code configuration, and certainly not shared with anyone else.
 
 Our specific lambda build and deployment using the 'serverless framework' uses webpack to create the smallest packages (ZIP) to upload to S3 bucket for subsequent deployment via CloudFormation.
 The approach I have therefore taken is to include this personal data (`const ... require '.../resources/busData.json'`) and add a `.gitignore` to prevent the data from being committed.

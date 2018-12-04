@@ -581,6 +581,54 @@ Basic formatting https://api.slack.com/docs/message-formatting and more advanced
 
 Before writing any code, you first need to create the incoming web hook, for which you first need to create a Slack application: https://api.slack.com/incoming-webhooks. I created Slack app called `wit-alexa-myBuses`, and then create an incoming webhook against it having nominated your channel.
 
+## TFL API
+The TFL API is a public service providing a wealth of information across all of London Transport; bus, rail, tube, et al: https://api-portal.tfl.gov.uk.
+
+For my purposes here, I am interested in buses, and more so, the next set of arrivals at bus stops I use. You need to register and then create an App ID/key (secret) pair. Keep them safe and do not share with anyone else. Here, I am storing my App ID/key pair in AWS Secrets Manager, and have an IAM role assigned to this Lambda that allow it to query (read) that Secret.
+
+Bus Stops (as all locations where you catch a mode of transport within the TFL API) are known as Stop Points. It is typical in London that bus stops are positioned across from each other on each side of the road; each such stop has a different stop point ID. It is also typical in London that even if the bus stops are position closely either side of the road, then can be identified as different names, as per the side road nearest to it.
+
+You can search for stop points by their common name (name as it is known whilst sat on the bus as is come to arrive at the stop); in the example below, the Stop Point I am searching for is "MY STOP" (note, the URL encode for space):
+* https://api.tfl.gov.uk/StopPoint/Search?query=MY%20STOP&app_key=<app key>&app_id=<app id>
+
+The JSON data returned is of the format (I've removed unnecessary attributes, like latitude/longitude and modes of transport and of course I have obfruscated the actual data - those ids are made up):
+```
+{
+    "$type": "Tfl.Api.Presentation.Entities.SearchResponse, Tfl.Api.Presentation.Entities",
+    "query": "MY STOP",
+    "total": 4,
+    "matches": [
+        {
+            "id": "490G00083754",
+            "name": "MY STOP / MY CROSS ONE",
+        },
+        {
+            "id": "490G000738457",
+            "name": "MY STOP / MY CROSS TWO",
+        },
+        {
+            "id": "490G00025643",
+            "name": "MY STOP / MY CROSS 3",
+        },
+        {
+            "id": "490G00093843",
+            "name": "MY STOP / MY CROSS 4",2
+        }
+    ]
+}
+```
+
+The above shows that for a given stop point by name "MY STOP", there are four matches; this is because "MY STOP" is a cross road and there are indeed four different directions. Each of the above is a stop point group (because at this crossroad, a bus can go in one of two directions in four ways - 8 different routes).
+
+Need to take each given match, `/matches/id` and do a second lookup, with the example below showing the lookup for the third match above:
+* https://api.tfl.gov.uk/StopPoint/490G00025643?app_key=<app key>&app_id=<app id>
+
+This returns a much richer data set for that given stop point:
+* gdgdf
+* gdgdfgf
+
+For me, depending on where I want to get to, I can use one of many stops. I might not choose the stop nearest me, preferring one which is easier for me to catch, or have better protection from the weather, so I queried multiple stop points in different locations.
+
 # TODO
 * A customised source; currently assumes 'my house'. Should locate the "tfl stop points" nearest to the location of the given Alexa when the skill is added. Allow for the 'Alexa location' to be overriden.
 * A customised set of destinations; currently assumes 'my given destinations' only. For each source, show the lines that run through that source, allowing a 'destination' to be assigned.

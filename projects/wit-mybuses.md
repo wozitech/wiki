@@ -546,7 +546,7 @@ A typical response to an Alexa skill looks like:
         "shouldEndSession": true
     }
   }
-	```
+```
 	
 The `card` is for non-audio type responses; such as, the Alexa mobile app, Echo Spot or Echo Show devices (those with visual output). The `response` is the main output, with either simple or "plainText" and "ssml" .
 

@@ -451,6 +451,9 @@ The Alexa Skill JSON:
 }
 ```
 
+## Dialog Management
+Conversation is a rich two-way activity. The Alexa Skills Kit allows for this with Dialogs. [Dialog Management Guide](/uploads/aws/dialog-management-guide.pdf "Dialog Management Guide")
+
 # Lambda Function
 All code can be found here: https://github.com/wozitech/alexa.
 

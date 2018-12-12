@@ -5,6 +5,7 @@
 Platform Technologies:
 * [JavaScript](/technologies/javascript)
 * [TypeScript](/technologies/typescript)
+* [postgreSQL](/technologies/postgresSQL)
 * [Jest](/technologies/jest)
 * [React Redux](/technologies/react)
 * [Anisble](/technologies/ansible)

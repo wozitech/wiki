@@ -2,4 +2,7 @@
 <!-- TITLE: Postgressql -->
 <!-- SUBTITLE: A quick summary of Postgressql -->
 
-# Header
+# General
+
+# Create Database
+`createdb [name of DB]`

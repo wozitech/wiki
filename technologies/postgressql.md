@@ -9,9 +9,12 @@ https://www.if-not-true-then-false.com/2012/install-postgresql-on-fedora-centos-
 ## hda conf
 `/var/lib/pgsql/11/data/pg_hba.conf`:
 ```
+#host    all             all             127.0.0.1/32            ident
+#host    all             all             ::1/128                 ident
 host    all             all              192.168.1.0/24         md5
 host    all             all              10.0.0.0/24            md5
-host    all             all              127.0.0.1/32            md5
+host    all             all              127.0.0.1/32           md5
+host    all             all               ::1/128               md5
 ```
 
 To effect changes:  `systemctl restart postgresql-11.service`

@@ -30,3 +30,6 @@ CREATE ROLE [username] WITH SUPERUSER LOGIN PASSWORD 'password';
 
 # Login as user
 `psql -h [ip] -u [username] -p`
+
+# Backup/Export
+ `pg_dump -U [user] -h [hostname/IP] -W  --schema=[schema name] [database name] > backup-filename.sql`

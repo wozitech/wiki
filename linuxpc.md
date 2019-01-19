@@ -41,7 +41,6 @@ dnf install dkms "kernel-devel-uname-r == $(uname -r)"
 * Standard boot: `grub2-mkconfig -o /boot/grub2/grub.cfg`
 
 5. Reboot.
-
 6. Now, because we've install Fedora server we need to install a [desktop environment](https://docs.fedoraproject.org/en-US/quick-docs/switching-desktop-environments/).
 7. Before leaving the PC, enable SSH `systemctl enable sshd` and start SSH `systemctl start sshd`.
 8. Login remotely (putty/ssh) and become `root`.

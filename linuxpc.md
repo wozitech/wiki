@@ -50,4 +50,4 @@ dnf install dkms "kernel-devel-uname-r == $(uname -r)"
 ```
 dnf install @workstation-product-environment
 ```
-
+11. Now reboot. _And cross your fingers_

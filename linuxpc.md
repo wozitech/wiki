@@ -42,7 +42,7 @@ dnf install dkms "kernel-devel-uname-r == $(uname -r)"
 
 5. Reboot.
 6. Now, because we've install Fedora server we need to install a [desktop environment](https://docs.fedoraproject.org/en-US/quick-docs/switching-desktop-environments/).
-7. Before leaving the PC, enable SSH `systemctl enable sshd` and start SSH `systemctl start sshd`.
+7. Before leaving the PC, enable SSH `systemctl enable sshd` and start SSH `systemctl start sshd`. By having remote SSH enabled, if after installing desktop enviroment below, the displays are inactive you can always get back onto the PC.
 8. Login remotely (putty/ssh) and become `root`.
 9. List the available desktops environments: `dnf grouplist -v | grep -i workstation` or `dnf grouplist -v | grep -i desktop` (for runtimes like KDE, Mate and Cinnamon.
 10. Install the desktop environment, e.g. (note the "@" prefix):

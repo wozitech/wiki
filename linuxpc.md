@@ -16,7 +16,9 @@ Fedora 29 latest at time of install. Fedora default desktop is Gnome 3; I like i
 However, anyone who's ever tried installing a desktop distro with one of the latest graphics cards will know its a pain; especially with UHD monitors.
 
 ## Server
-So I will start with Fedora Server image. At the boot prompt, edit the command line and append: `nomodeset nouveau.modeset=0`, followed by <CTRL-X> to continue.
+So I will start with Fedora Server image. Using [Fedora Media Writer](https://getfedora.org/en/workstation/download/). Install and launch, and have a USB stick to hand (at least 8GB).
+
+With the USB stick in target PC, boot from the stick (typically `F12` or `F9` usually to enter boot menu). At the boot prompt, edit the command line and append: `nomodeset nouveau.modeset=0`, followed by <CTRL-X> to continue.
 
 This will launch Fedora install in text mode; use the text installer to install base image.
 
@@ -33,10 +35,20 @@ dnf install dkms "kernel-devel-uname-r == $(uname -r)"
 ```
 
 3. Edit grub `vi /etc/default/grub` and add `nouveau.modeset=0` to the end of the `GRUB_CMDLINE_LINUX` line. Save and exit vi (`:wq`).
-4. Rebuild grub as root:
+4. Rebuild grub as `root`:
 
 * UEFI boot: `grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg`
 * Standard boot: `grub2-mkconfig -o /boot/grub2/grub.cfg`
 
 5. Reboot.
+
+6. Now, because we've install Fedora server we need to install a [desktop environment](https://docs.fedoraproject.org/en-US/quick-docs/switching-desktop-environments/).
+7. Before leaving the PC, enable SSH `systemctl enable sshd` and start SSH `systemctl start sshd`.
+8. Login remotely (putty/ssh) and become `root`.
+9. List the available desktops environments: `dnf grouplist -v | grep -i workstation` or `dnf grouplist -v | grep -i desktop` (for runtimes like KDE, Mate and Cinnamon.
+10. Install the desktop environment, e.g. (note the "@" prefix):
+
+```
+dnf install @workstation-product-environment
+```
 

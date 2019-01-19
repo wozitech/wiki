@@ -51,3 +51,22 @@ dnf install dkms "kernel-devel-uname-r == $(uname -r)"
 dnf install @workstation-product-environment
 ```
 11. Now reboot. _And cross your fingers_
+12. All being good, you're boot at the login prompt. It's time to install the nvidia drivers.
+13. Remotely SSH back into the PC, and become root.
+14. Upload the Linux nvidia driver downloaded above (`scp`/`sftp`/`winscp`) to you home directory.
+15. Then run the nividia driver installer (replacing the name of the driver as downloaded). Let nvidia install update your X configuration.
+```
+systemctl isolate multi-user.target
+bash /home/aylingw/NVIDIA-Linux-x86_64-410.93.run
+```
+16. After install, start X: `startx`.
+17. All being well, Gnome will start and you can start having fun.
+
+18. To be sure that X starts every time you boot:
+
+```
+ systemctl enable gdm.service
+ systemctl start gdm.service
+```
+
+19. Reboot to be sure.

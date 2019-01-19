@@ -4,7 +4,7 @@
 # PC
 * Intel i7
 * 32GB DDR3 (2*16GB)
-* PNG GeForce 2000 4*DP 5GB graphics card
+* PNG GeForce Quadro P2000 5GB graphics card
 * 1TB Intel M2 SSD - boot and OS disk (it's fast!)
 * 2*2TB SSD/HDD RAID disks - data disk (RAID1 - mirror for data availability).
 
@@ -12,3 +12,31 @@
 Fedora is my preferred Linux distro. Good regular updates. Good open source community.
 
 Fedora 29 latest at time of install. Fedora default desktop is Gnome 3; I like it, many don't. But I also like the Mate desktop too. Can install multiple desktops and switch.
+
+However, anyone who's ever tried installing a desktop distro with one of the latest graphics cards will know its a pain; especially with UHD monitors.
+
+## Server
+So I will start with Fedora Server image. At the boot prompt, edit the command line and append: `nomodeset nouveau.modeset=0`, followed by <CTRL-X> to continue.
+
+This will launch Fedora install in text mode; use the text installer to install base image.
+
+After install and reboot, login, and ensure latest packages are installed: `dnf update`.
+
+## Nvidia (PNY) Display Drivers
+Following this excellent guide: https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-fedora-29-linux.
+1. First download the nvidia driver for Linux x86/x64 for the specific graphics card: https://www.nvidia.com/Download/index.aspx.
+2. As root, install the following two package sets:
+
+```
+dnf groupinstall "Development Tools"
+dnf install dkms "kernel-devel-uname-r == $(uname -r)"
+```
+
+3. Edit grub `vi /etc/default/grub` and add `nouveau.modeset=0` to the end of the `GRUB_CMDLINE_LINUX` line. Save and exit vi (`:wq`).
+4. Rebuild grub as root:
+
+* UEFI boot: `grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg`
+* Standard boot: `grub2-mkconfig -o /boot/grub2/grub.cfg`
+
+5. Reboot.
+

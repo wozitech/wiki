@@ -5,3 +5,4 @@
 # WOZiTech WIKI
 * [Technologies](/technologies)
 * [Projects](/projects)
+* [Linux PC](/linuxpc)

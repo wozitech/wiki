@@ -68,6 +68,7 @@ bash /home/aylingw/NVIDIA-Linux-x86_64-410.93.run
  systemctl enable gdm.service
  systemctl start gdm.service
  systemctl isolate runlevel5.target, graphical.target 
+ systemctl set-default graphical.target
 ```
 
 19. Reboot to be sure.

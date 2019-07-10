@@ -13,6 +13,8 @@ To see a list of all running containers: `docker ps -a`.
 
 To see a list of all local volumes: `docker volume ls`.
 
+To monitor the logs: `docker logs --follow <container name | id>`.
+
 To start/stop container: `docker stop <container name | id>` or `docker start <container name | id>`.
 
 To delete a container (having stopped it): `docker rm <container name | id>`.

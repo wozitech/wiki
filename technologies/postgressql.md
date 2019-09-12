@@ -33,3 +33,6 @@ CREATE ROLE [username] WITH SUPERUSER LOGIN PASSWORD 'password';
 
 # Backup/Export
  `pg_dump -U [user] -h [hostname/IP] -W  --schema=[schema name] [database name] > backup-filename.sql`
+ 
+ # Better Display of Records
+ Using `psql` and selecting data can be hard to read. For a better view of records, use issue `\x` at the `psql` prompt.

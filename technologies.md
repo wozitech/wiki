@@ -13,6 +13,7 @@ Platform Technologies:
 * [Docker](/technologies/docker)
 * [AWS](/technologies/aws)
 * [MongoDB](/mongodb)
+* [snapd] (/snapd) - Linux application manager
 
 Headless CMS: [strpai](https://strapi.io/)
 

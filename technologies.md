@@ -14,6 +14,7 @@ Platform Technologies:
 * [AWS](/technologies/aws)
 * [MongoDB](/mongodb)
 * [snapd](/snapd) - Linux application manager
+* [VueJS](/vuejs)
 
 Headless CMS: [strpai](https://strapi.io/)
 

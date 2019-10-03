@@ -7,7 +7,7 @@ Vue.JS is a fast and lightweight Javascript framework for building data-driven s
 
 VueJS consider everything to be a component; this is much like React.
 
-[Official Homepage](https://vuejs.org/)
+[Official Homepage](https://vuejs.org/){:target="_blank"}
 
 # VuEX (State Management)
 This is the equivalent of Redux for React of NgRX for Angular.

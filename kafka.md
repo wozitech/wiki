@@ -1,4 +1,6 @@
-![Kafka Logo](/uploads/logos/kafka-logo.png "kafka Logo"){.pagelogo}
+![Kafka Logo](/uploads/logos/kafka-icon.png "kafka Logo"){.pagelogo}
+
+
 
 <!-- TITLE: kafka -->
 <!-- SUBTITLE: Confluent's platform for streaming data - the new middleware -->

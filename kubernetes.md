@@ -3,6 +3,7 @@
 <!-- SUBTITLE: The De Facto App Hosting Platform -->
 # References
 * https://www.mvps.net/docs/building-a-kubernetes-cluster-k8s-on-centos-7-in-a-kvm/ - howto build a KVM K8s (cluster)
+* https://kubernetes.io/blog/2019/03/15/kubernetes-setup-using-ansible-and-vagrant/ - vagrant and ansible
 
 # Background
 Originally developed by Google, and donated to open source community.

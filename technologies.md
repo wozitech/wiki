@@ -3,6 +3,7 @@
 
 # Technologies
 Platform Technologies:
+* [node.js](/technologies/nodejs)
 * [JavaScript](/technologies/javascript)
 * [TypeScript](/technologies/typescript)
 * [postgreSQL](/technologies/postgresSQL)

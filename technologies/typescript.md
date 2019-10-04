@@ -1,6 +1,10 @@
 ![Typescript Logo](/uploads/logos/typescript-logo.png "Typescript Logo"){.pagelogo}
 <!-- TITLE: Typescript -->
 <!-- SUBTITLE: A collection of Typescript -->
+
+# nodejs
+* Create a node.js project using typescript: https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d.
+
 # Inheritance
 ```
 interface IType {

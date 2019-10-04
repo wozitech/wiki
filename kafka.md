@@ -5,6 +5,9 @@
 The Book:
 [kafka: The Definitive Guide](/uploads/kafka/confluent-kafka-definitive-guide-complete.pdf "kafka: The Definitive Guide")
 
+Articles:
+* https://www.confluent.io/blog/building-a-microservices-ecosystem-with-kafka-streams-and-ksql/ - yet to read
+
 # Background
 kafka is made up of:
 * Consumers
@@ -29,6 +32,11 @@ kubernetes is now the industry's de facto app hosting platform. No longer are we
 kafka, even though it requires good (fast) storage and networking, Confluent fully support deployment of kafka on kubernetes, through its `Operator`offering: https://www.confluent.io/confluent-operator.
 
 # To Watch
-* Apacke storm - realtime computation
-* Apache samza - distributed stream processing events/ETL
-* Apache airflow - authoring, scheduling and monitoring of workflows using Directed Acyclic Graphs (DAGs)
+* Apacke storm - realtime computation built on top of kafka; a network of predefined bots fed by spouts (data source) - not too dissimilar from a neural network
+* Apache samza - distributed stream processing events/ETL built on top of kafka
+* Apache airflow - authoring, scheduling and monitoring of workflows using Directed Acyclic Graphs (DAGs) - could be used to workflow data streaming through kafka
+
+# Alternatives
+https://blog.scottlogic.com/2018/07/06/comparing-streaming-frameworks-pt1.html
+
+* Apache Flink - massively distributed (master/slaves architecture) computation cluster, operating on events and streams. Can use kafka as underlying storage infrastructure, but does not have to.

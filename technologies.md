@@ -17,6 +17,7 @@ Platform Technologies:
 * [snapd](/snapd) - Linux application manager
 * [VueJS](/vuejs)
 * [kafka](/kafka)
+* [kubernetes](/kubernetes)
 
 Headless CMS: [strpai](https://strapi.io/)
 

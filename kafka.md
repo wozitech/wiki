@@ -1,7 +1,7 @@
-![Vuejs Logo](/uploads/logos/vuejs-logo.png "Vuejs Logo"){.pagelogo}
+![Kafka Logo](/uploads/logos/kafka-logo.png "kafka Logo"){.pagelogo}
 
 <!-- TITLE: kafka -->
 <!-- SUBTITLE: Confluent's platform for streaming data - the new middleware -->
 # Background
-
+The Book:
 [kafka: The Definitive Guide](/uploads/kafka/confluent-kafka-definitive-guide-complete.pdf "kafka: The Definitive Guide")

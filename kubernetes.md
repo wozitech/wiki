@@ -19,6 +19,8 @@ On the `master` is found:
 * `etcd` - fast key-value store
 * `kubectl` utility - command line access to API Server
 
+_note: the master node needs a  minimum of 2 (v)CPUs, and docker "cgroupfs" must be systemd not cgroup driver._
+
 On the `worker` is found:
 * `kubelet` - daemon for creating, launching and deleting containers
 * `kube-proxy` - routes network traffic to/from the container

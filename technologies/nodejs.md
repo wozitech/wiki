@@ -7,3 +7,6 @@ https://blog.risingstack.com/node-js-12-new-features/
 * much improved async/await stack trace on error
 * private class fields - but without typescript, erroneously callign a private class field will result in SyntaxError exception at runtime!
 * still experiemental are worker threads
+
+# Object Schema Validation
+JOI: https://medium.com/@rossbulat/joi-for-node-exploring-javascript-object-schema-validation-50dd4b8e1b0f

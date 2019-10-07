@@ -28,6 +28,8 @@ On the `worker` is found:
 # Installation
 One master and two workers. vagrant/kvm/centros7/ansible/weave scripted deployment: https://github.com/wozitech/vagrant/tree/master/dev.
 
+The `master` node needs a non-root user to run `kube*` commands via. The user/group `kube` is created for that purpose - consistently across all hosts, even though it is only used on the `master`. During installation on master, the worker join command is generated and copied to a local ansible file, which is then copied to the worker and executed as `root`. Once a worker node has joined the cluster, it can be administered from the `master`.
+
 ks8 networking can be managed via one of many container network interface plugins, such as, weave or flannel. A comparison of the four major CNIs: https://rancher.com/blog/2019/2019-03-21-comparing-kubernetes-cni-providers-flannel-calico-canal-and-weave/.
 
 ### TODO

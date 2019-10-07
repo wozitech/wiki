@@ -40,7 +40,7 @@ During development of ansible scripts, I did have to remove a node from the clus
 
 ### TODO
 1. Add public ethernet - allowing pods to be presented to different networks
-2. Mount vda2 disks for docker images
+2. Mount vda2 disks for docker images; PSI plugins for persistent storage stateful containers
 3. docker `cgroupfs` to `systemd`
 
 _Note: the master node needs a  minimum of 2 (v)CPUs, and docker "cgroupfs" must be systemd not cgroup driver._

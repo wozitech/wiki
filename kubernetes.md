@@ -36,6 +36,8 @@ To check cluster:
 * `kubectl get nodes`
 * `kubectl get pods --all-namespaces`
 
+During development of ansible scripts, I did have to remove a node from the cluster; on the worker node, `kubeadm reset`.
+
 ### TODO
 1. Add public ethernet - allowing pods to be presented to different networks
 2. Mount vda2 disks for docker images
@@ -43,6 +45,10 @@ To check cluster:
 
 _Note: the master node needs a  minimum of 2 (v)CPUs, and docker "cgroupfs" must be systemd not cgroup driver._
 _Note: docker cgroupfs should be systemd not cgroups (as default on install)._
+
+# Administration
+## Drain
+To perform maintenance on a k8s worker node, drain all apps (pods) first. On the master: `kubectl drain <name of worker>`.
 
 # Monitoring
 ## Prometheus

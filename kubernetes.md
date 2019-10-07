@@ -38,6 +38,11 @@ To check cluster:
 
 During development of ansible scripts, I did have to remove a node from the cluster; on the worker node, `kubeadm reset`.
 
+### Web UI
+The [kubernetes web dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) is not installed (deployed) by default.
+
+To install: `kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yaml`. This deploys the web UI as a pod (application). But to access the Web UI, need to start a proxy for the _k8s_: `kubectl proxy --address <IP>` will start the proxy on port 8001 (default) against the given IP address; if you don't specific the IP address, then kubernetes will bind to localhost only.
+
 ### TODO
 1. Add public ethernet - allowing pods to be presented to different networks
 2. Mount vda2 disks for docker images; PSI plugins for persistent storage stateful containers

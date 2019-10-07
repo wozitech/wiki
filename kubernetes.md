@@ -43,7 +43,7 @@ The [kubernetes web dashboard](https://kubernetes.io/docs/tasks/access-applicati
 
 To install: `kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yaml`. This deploys the web UI as a pod (application). But to access the Web UI, need to start a proxy for the _k8s_: `kubectl proxy --address <IP>` will start the proxy on port 8001 (default) against the given IP address; if you don't specific the IP address, then kubernetes will bind to localhost only.
 
-> When trying to access the Web UI console remotely though; get forbidden response. The installation talks of token based access only.
+> When trying to access the Web UI console remotely though; get forbidden response. The installation talks of token based access only. To create an `admin-user`: https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md. Created the service user/group, but the instructions as shown on how to present the token on first login are not relevant here because I can't get to the kubernetes Web UI application login screen!
 
 ### TODO
 1. Add public ethernet - allowing pods to be presented to different networks

@@ -32,6 +32,10 @@ The `master` node needs a non-root user to run `kube*` commands via. The user/gr
 
 ks8 networking can be managed via one of many container network interface plugins, such as, weave or flannel. A comparison of the four major CNIs: https://rancher.com/blog/2019/2019-03-21-comparing-kubernetes-cni-providers-flannel-calico-canal-and-weave/.
 
+To check cluster:
+* `kubectl get nodes`
+* `kubectl get pods --all-namespaces`
+
 ### TODO
 1. Add public ethernet - allowing pods to be presented to different networks
 2. Mount vda2 disks for docker images

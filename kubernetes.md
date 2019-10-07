@@ -19,13 +19,22 @@ On the `master` is found:
 * `etcd` - fast key-value store
 * `kubectl` utility - command line access to API Server
 
-_note: the master node needs a  minimum of 2 (v)CPUs, and docker "cgroupfs" must be systemd not cgroup driver._
 
 On the `worker` is found:
 * `kubelet` - daemon for creating, launching and deleting containers
 * `kube-proxy` - routes network traffic to/from the container
 * `pod` - application _logical set_ on this worker.
 
+# Installation
+One master and two workers. vagrant/kvm/centros7/ansible scripted deployment: https://github.com/wozitech/vagrant.
+
+### TODO
+1. Add public ethernet - allowing pods to be presented to different networks
+2. Mount vda2 disks for docker images
+3. docker `cgroupfs` to `systemd`
+
+_Note: the master node needs a  minimum of 2 (v)CPUs, and docker "cgroupfs" must be systemd not cgroup driver._
+_Note: docker cgroupfs should be systemd not cgroups (as default on install)._
 
 # Monitoring
 ## Prometheus

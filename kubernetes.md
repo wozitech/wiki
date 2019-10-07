@@ -26,7 +26,9 @@ On the `worker` is found:
 * `pod` - application _logical set_ on this worker.
 
 # Installation
-One master and two workers. vagrant/kvm/centros7/ansible scripted deployment: https://github.com/wozitech/vagrant.
+One master and two workers. vagrant/kvm/centros7/ansible/weave scripted deployment: https://github.com/wozitech/vagrant.
+
+ks8 networking can be managed via one of many container network interface plugins, such as, weave or flannel. A comparison of the four major CNIs: https://rancher.com/blog/2019/2019-03-21-comparing-kubernetes-cni-providers-flannel-calico-canal-and-weave/.
 
 ### TODO
 1. Add public ethernet - allowing pods to be presented to different networks

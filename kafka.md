@@ -32,6 +32,10 @@ kubernetes is now the industry's de facto app hosting platform. No longer are we
 
 kafka, even though it requires good (fast) storage and networking, Confluent fully support deployment of kafka on kubernetes, through its `Operator`offering: https://www.confluent.io/confluent-operator.
 
+https://www.confluent.io/blog/apache-kafka-kubernetes-could-you-should-you
+
+_NOTE: k8s cluster to allow for persistent storage and stateful pods._
+
 # To Watch
 * Apacke storm - realtime computation built on top of kafka; a network of predefined bots fed by spouts (data source) - not too dissimilar from a neural network
 * Apache samza - distributed stream processing events/ETL built on top of kafka

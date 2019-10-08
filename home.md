@@ -6,3 +6,8 @@
 * [Technologies](/technologies)
 * [Projects](/projects)
 * [Linux PC](/linuxpc)
+
+
+Online Print Bureaus
+* https://www.fileprint.org/print-prices.php
+* https://www.doxdirect.com/document-binding/unbound-document-printing/

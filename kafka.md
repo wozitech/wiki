@@ -8,6 +8,7 @@ The Book:
 Articles:
 * https://www.confluent.io/blog/building-a-microservices-ecosystem-with-kafka-streams-and-ksql/ - yet to read
 * https://hmh.engineering/experimenting-with-apache-kafka-and-nodejs-5c0604211196 - read, but need to try example
+* https://www.confluent.io/blog/iot-with-kafka-connect-mqtt-and-rest-proxy - MQTT and kafta
 
 # Background
 kafka is made up of:

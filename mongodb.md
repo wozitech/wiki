@@ -6,6 +6,9 @@ This differs to export/import - which is to output/input pure JSON data.
 
 Backup & restore are the traditional database backup/restore utilities; backing up a full database and being able to restore it. This is a precursor for being able to move databases.
 
+# Working Set Optimisation
+https://www.vividcortex.com/blog/how-to-tell-if-your-mongodb-server-is-correctly-sized-for-your-working-set
+
 ## Backup
 `mongodump` backs up a database. 
 

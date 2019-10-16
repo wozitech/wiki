@@ -2,6 +2,8 @@
 <!-- TITLE: node.js -->
 <!-- SUBTITLE: The buzz around node.js -->
 
+# Faster web _framework_
+https://levelup.gitconnected.com/will-node-js-forever-be-the-sluggish-golang-f632130e5c7a
 # V12
 https://blog.risingstack.com/node-js-12-new-features/
 * much improved async/await stack trace on error

@@ -2,6 +2,8 @@
 <!-- TITLE: node.js -->
 <!-- SUBTITLE: The buzz around node.js -->
 
+# Scoping variables
+https://stackoverflow.com/questions/22156326/private-properties-in-javascript-es6-classes
 # Faster web _framework_
 https://levelup.gitconnected.com/will-node-js-forever-be-the-sluggish-golang-f632130e5c7a
 # V12

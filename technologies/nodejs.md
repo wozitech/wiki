@@ -2,6 +2,8 @@
 <!-- TITLE: node.js -->
 <!-- SUBTITLE: The buzz around node.js -->
 
+# babel allows for transpiling from ES7, ES8 and ES9
+Using javascript features not made available to node.js: https://www.greycampus.com/blog/programming/java-script-versions.
 # Scoping variables
 https://stackoverflow.com/questions/22156326/private-properties-in-javascript-es6-classes
 # Faster web _framework_

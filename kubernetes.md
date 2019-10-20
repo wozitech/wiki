@@ -5,6 +5,13 @@
 * https://www.mvps.net/docs/building-a-kubernetes-cluster-k8s-on-centos-7-in-a-kvm/ - howto build a KVM K8s (cluster)
 * https://kubernetes.io/blog/2019/03/15/kubernetes-setup-using-ansible-and-vagrant/ - vagrant and ansible
 
+Look some more at:
+* Kaniko- https://github.com/GoogleContainerTools/kaniko
+* Istio - https://istio.io/docs/concepts/what-is-istio/
+* OpenTracing - https://www.hawkular.org/blog/2017/06/26/opentracing-appmetrics.html
+
+Looking at using kubernetes to deploy distributed application services over a service mesh with full service tracing.
+
 # Background
 Originally developed by Google, and donated to open source community.
 

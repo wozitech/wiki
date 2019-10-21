@@ -18,6 +18,7 @@ Platform Technologies:
 * [VueJS](/vuejs)
 * [kafka](/kafka)
 * [kubernetes](/kubernetes)
+* [ASP.NET/C#](/aspnet-csharp)
 
 Headless CMS: [strpai](https://strapi.io/)
 

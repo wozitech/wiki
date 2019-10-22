@@ -22,7 +22,7 @@ Note - this would typically require content to be presented landscape.
 # On the Road
 Tablets and smart phones are pervasive; everyone has at least one of these devices.
 
-[AWS Amplify](https://aws-amplify.github.io/) takes an existing VueJS application (`wit-myDash`) and provides additional components and services that allow for a good highly managed mobile application, including authentication, push notification and messaging.
+[AWS Amplify](https://aws-amplify.github.io/docs/js/start?ref=amplify-js-btn&platform=purejs) takes an existing VueJS application (`wit-myDash`) and provides additional components and services that allow for a good highly managed mobile application, including authentication, push notification and messaging.
 
 The challenge here would be how much of the content as would work on a mobile device compared to a 55" Ultra Definition TV. Also, content that is specific to a given office, e.g. a lunch offer promotion, is relevant to the mobile device.
 

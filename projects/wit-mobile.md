@@ -21,3 +21,14 @@ Note - this would typically require content to be presented landscape.
 
 # On the Road
 Tablets and smart phones are pervasive; everyone has 
+
+[AWS Amplify](https://aws-amplify.github.io/) takes an existing VueJS application and provides additional components and services that allow for a good highly managed mobile application.
+
+The challenge here would be how much of the content as would work on a mobile device compared to a 55" Ultra Definition TV. Also, content that is specific to a given office, e.g. a lunch offer promotion, is relevant to the mobile device.
+
+It would still be up to the content providers using `wit-dash` to provide and control content channels; mobile would simply be an additional channel.
+
+To whether the content is landscape or portrait should not matter, as the mobile device can be rotated. Push notifications could be used to highlight when new content is available.
+
+## Mobile Projections
+It is now also easy enough to project (cast) mobile screen output to TVs, allowing "offline" personal displays, e.g. business conferences. Simply create a wifi hotspot on your phone, connect the SmartTV wifi to hotspot and then cast screen.

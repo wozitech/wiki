@@ -1,19 +1,23 @@
 ![Wiki Official White Circle](/uploads/corporate/wiki-official-white-circle.png "Wiki Official White Circle"){.pagelogo}
 <!-- TITLE: wit-mobile -->
-<!-- SUBTITLE: The base platform of WIT mobile applications -->
+<!-- SUBTITLE: wit-myDash on the go -->
 
 # Background
-`wit-mobile` showcases WOZiTech skills using React and Redux to build rich UI interactive web applications. As a mobile application, it is to be deployed to Windows, Apple and Android devices alike, phones and tablets, leveraging the native experience to be enjoyed on each platform. Initial thoughts were on using Apache Cordova as the cross-platform runtime, able to support any web based technology. But React Native, from the clever fellows at Facebook, is cross-platform albeit specific to React applications only.
+The original basis for these projects is to present content to a large display in prime/common areas of a building. Could be a doctors waiting area, a hositpal ward, a large concert venue or all the office canteens for a UK nationwide transport company.
 
-Given `wit-mobile` is a platform to showcase React, then React Native is an obvious choice for cross-platform deployment.
-# Reference
-Will be following [this article](https://medium.com/the-web-tub/creating-a-cordova-hybrid-app-with-react-redux-and-webpack-13fe24b6b272) for my first application example. And deployment to iOS/Andorid using React Native as covered by [this article]().
+But work patterns are changing; less and less are people going to an office. Home working, remote working and working on road the road are common practices.
 
-# Technologies
-`wit-mobile` platform is a web platform running 'native' on mobile devices is built on:
-* [React](https://reactjs.org/) / [Redux](https://redux.js.org/introduction)
-* [Onsen UI](https://onsen.io)
-* [React Native](http://www.reactnative.com/)
+So there is a need to access the same information but without specifically provisioning/dedicating a large screen.
 
-![React Logo](/uploads/logos/react-logo.jpg "React Logo")
-![Redux Logo](/uploads/logos/redux-logo.jpg "Redux Logo")
+# At Home or Remote Office Location
+This is the simplest to solve. The home or remote office can be assumed to have an Internet connection. This is simply about making `wit-myDash` production ready but running for a desktop - be it Windows, Linux or MacOS. As a PWA, `wit-myDash` can run on any platform. But as an application alone, it is restricted to development use only to test new content before publishing. Used standalone, there is no need for license or authentication services.
+
+`wit-mobileDesktop` is simply a repackaged PWA that includes the additional licensing and authentication services running in "Service Workers".
+
+## Screensaver
+What work is required to turn this into a dynamic screensaver?
+
+Note - this would typically require content to be presented landscape.
+
+# On the Road
+Tablets and smart phones are pervasive; everyone has 

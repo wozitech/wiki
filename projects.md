@@ -34,7 +34,7 @@ Now customise the repo:
 * [wit-serve](/projects/wit-serve)
 * [wit-pi](/projects/wit-pi)
 	* [wit-piDash](/projects/wit-piDash)
-  * ~~wit-mobile(/projects/wit-mobile)~~ - retired in favour of wit-mydash being a PWA
+* [wit-mobile](/projects/wit-mobile)
 * [wit-dash](/projects/wit-dash)
 * Know Your Numbers
 	* [wit-kyn](/projects/wit-kyn)

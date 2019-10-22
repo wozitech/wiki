@@ -9,6 +9,10 @@
 VueJS Progressive Web Application (`wit-myDash`) PWA.
 
 Is used locally to test content presentation; requires an online connection to `wit-serve`.
+# References
+* https://medium.com/backticks-tildes/build-your-first-progressive-web-app-a-weight-converter-app-and-deploy-to-netlify-b55ed4a86413
+* https://hackernoon.com/a-progressive-web-app-in-vue-tutorial-part-1-the-vue-app-f9231b032a0b
+	* https://hackernoon.com/build-a-progressive-web-app-in-vuejs-from-zero-to-hero-part-2-the-service-worker-d9babc3d756f - offline, `Service Worker` and `CacheStorage`
 
 # JSON
 Content is still JSON; content is stored centrally with access via [wit-serve](/projects/wit-serve). 

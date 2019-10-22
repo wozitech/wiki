@@ -17,3 +17,19 @@ All `wit-pi` applications will be using:
 * [pi-gen with ansible](https://github.com/RPi-Distro/pi-gen)
 
 ![Vuejs Logo](/uploads/logos/vuejs-logo.png "Vuejs Logo") ![Quasar Logo](/uploads/logos/quasar-logo.png "Quasar Logo") ![Electron Logo](/uploads/logos/electron-logo.png "Electron Logo") {.align-center}
+
+## Image Creation
+This project is specific to creating a customised image that can be easily downloaded and burnt to SD, making it easy to create a personal display.
+
+But what technologies will be used to create the image?
+* packer
+
+## Application Deployment and Updates
+In respect of deploying the `wit-myDash` app, how will this be done on the PI. As a PWA, the application should be able to update itself, but do we want something with a little more control, such as docker. This would at least make it easier to for the localised `wit` registration, licensing and authentication and being able to publish updates to them.
+
+## Device Management
+It's all very well having personal displays, but for those that are online, it will be necessary to remotely manage and monitor those devices.
+
+What technology we will use for this?
+
+A cloud service for this yes. AWS IOT: https://aws.amazon.com/iot/#. Pick and choose and grow as necessary, from simple device management, to security to analytics.

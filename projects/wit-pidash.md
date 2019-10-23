@@ -13,3 +13,18 @@ VueJS Progressive Web Application (`wit-myDash`) PWA using `CacheStorage` for of
 `wit-piDash` can run offline, but content will need to be sync'd first by being online.
 
 For content to be updated, the device will need to be put back online, whereby it will quickly resync. This can be a easy as simply re-attaching the WiFi USB dongle within the same wifi network used during initial registration of the device .
+
+## Multi-Function
+If wanting to present `wit-piDash` as an interactive device, consider multiple applications with Latte dockL https://www.techrepublic.com/article/how-to-install-the-latte-dock-on-kde/.
+
+# Interactive
+The `wit-myDash` application running on `wit-pi` will be interactive.
+
+## Gesture
+With a USB webcam, the idea is to be able to control pages using gestures.
+
+## Audio
+Alexa enabled, the `wit-piDash` will be able to run to specific content.
+
+## Buttons
+With Bluetooth or Wired buttons, key content can be quickly accessed, for example, fire evacuation instructions.

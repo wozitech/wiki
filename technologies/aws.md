@@ -22,6 +22,9 @@ Expires Nov 28, 2020:
 
 [Notes](technologies/aws/certifications/associate/developer)
 
+## Facts and Figures
+[Notes](technologies/aws/certifications/associate/factsAndFigures)
+
 # Overview
 AWS is a public cloud provder, with an extensive set of resources available on a pay per use (subscription) price model. A public cloud makes it easy to get into new technology, because you can start small and grow as load on your application/service grows.
 

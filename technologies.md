@@ -4,6 +4,8 @@
 # Technologies
 Platform Technologies:
 * [node.js](/technologies/nodejs)
+* [AWS](/technologies/aws)
+* [MongoDB](/mongodb)
 * [JavaScript](/technologies/javascript)
 * [TypeScript](/technologies/typescript)
 * [postgreSQL](/technologies/postgresSQL)
@@ -12,8 +14,6 @@ Platform Technologies:
 * [Anisble](/technologies/ansible)
 * [Terraform](/technologies/terraform)
 * [Docker](/technologies/docker)
-* [AWS](/technologies/aws)
-* [MongoDB](/mongodb)
 * [snapd](/snapd) - Linux application manager
 * [VueJS](/vuejs)
 * [kafka](/kafka)

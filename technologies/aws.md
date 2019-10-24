@@ -12,11 +12,15 @@ Expires Feb 13, 2021:
 	<img width="120px" src="images/aws-certified-solution-architect-logo.png" alt="Architect - expires Feb 13, 2021"/>
 </a>
 
+[Notes](technologies/aws/certifications/associate/solutionsArchitect)
+
 ## Associate Developer
 Expires Nov 28, 2020:
 <a target="_blank" href="https://www.certmetrics.com/amazon/public/badge.aspx?i=2&t=c&d=2017-11-27&ci=AWS00359784">
 	<img width="120px" src="images/aws-certified-developer-associate.gif" alt="Developer - expires Nov 28, 2020"/>
 </a>
+
+[Notes](technologies/aws/certifications/associate/developer)
 
 # Overview
 AWS is a public cloud provder, with an extensive set of resources available on a pay per use (subscription) price model. A public cloud makes it easy to get into new technology, because you can start small and grow as load on your application/service grows.

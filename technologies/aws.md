@@ -20,8 +20,6 @@ Expires Nov 28, 2020:
 	<img width="120px" src="images/aws-certified-developer-associate.gif" alt="Developer - expires Nov 28, 2020"/>
 </a>
 
-[Notes](technologies/aws/certifications/associate/developer)
-
 ## Facts and Figures
 [Notes](technologies/aws/certifications/associate/factsAndFigures)
 

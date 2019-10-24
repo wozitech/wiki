@@ -79,4 +79,77 @@
 * Guaranteed delivery once and in sequence
 * Workers - programs that interact with SWF to "do stuff"
 * Decider - programs that control interaction re order, sequence and concurrency
-* 
+
+# Elastic BeanStalk (EB)
+* Platforms: Node.js,PHP,Python,Ruby,Tomcat,.NET,Java,Go,Packer(custom AMI), Docker: Glassfish, Go, Python
+* No redundacny, multi-AZ or custom
+* Load Balancing & Auto Scaling
+* Application/Infrastructure - Rolling Updates/Immutable/Partial (e.g. test new releases)
+* Recommend to provision RDS prior to BEanStalk and then elect into other RDS instance is deleted when EB is deleted.
+* EB is free.
+
+# S3
+* Bucket name:
+	* The bucket name can be between 3 and 63 characters long, and can contain only lower-case characters, numbers, periods, and dashes.
+	* Each label in the bucket name must start with a lowercase letter or number.
+	* The bucket name cannot contain underscores, end with a dash, have consecutive periods, or use dashes adjacent to periods.
+	* The bucket name cannot be formatted as an IP address (198.51.100.24).
+* Read after write on new objects
+* Eventual read on updates/deletes
+* Multipart upload  > 100MB
+* Max PUT is 5GB file
+* Min file size 0 byte on standard; **128KB on IA**
+* Retention minmum 30 days on IA.
+* Up to 100 buckets (more on request)
+* Durability:
+	* 99.9999999% Standard
+	* 99.99% on IA
+* Availability:
+	* 99.99% - Standard
+	* 99.9% - IA
+* CORS policy
+* `x-amz-server-side-encryption` header to apply server side encryption
+
+# Glazier
+* 90 days minimum retention (charged prorata for anything less)
+* 32KB metadata in Glacier and 8KB metadata in S3 for ref object
+* Retrieval:
+	* Expedited: up to 5 minutes
+	* Standard: 3-5 hours
+	* Bulk: 5-12 hours
+
+# Snowball
+* Using 1Gb link - up to 70TB in 7 days.
+* Not practical for less than 10TB.
+* 80TB model available in all regions.
+
+# SMS (Server Migration Service)
+* 50 concurrent migrations
+
+# CloudWatch
+* Retention - 2 weeks
+* Default - 5 minutes
+* Min - 1 minute
+
+# EC2/EBS
+* Uptime/availability: 99.95%
+* Mim/Max Sizing:
+	* General Purpose (SDD): 1GB (min) to 16TB (max)
+	* Provisioned IO (SSD): 4GB (min) to 16TB (max)
+	* Cold HDD/Throughput Optimised: 500GB (min) to 16TB (max)
+* I/Os:
+	* Standard SSD: 3000 IOP burst on standard - at 1TB; 3 IOPs per GiB
+	* Provisioned: upto 20000
+	* Throughput: 500
+	* Cold: 250
+* Throughput (HDD based on 1MB blocksize; SSD on 16KB block size):
+	* General Purpose: 160MB/s
+	* Provisioned IO: 320MB/s
+	* Throughput optimised: 500MB/s
+	* Cold: 250MB/s
+* Root partition - 10GB max for instance store, 1TB or 2TB for SSD
+* Up to 40 attached EBS volumes (not a hard limit)
+* Reserved Instance (RI) categories:
+	* Standard - maximum discount - fixed for duration
+	* Convertible - less discount, but can be changed only if it results in a high value RI (you pay more)
+	* Scheduled - to launch within a given time window (e.g. overnight batch processing)

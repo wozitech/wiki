@@ -1,3 +1,4 @@
+![AWS Logo](/uploads/logos/aws-logo.png "AWS Logo"){.pagelogo}
 <!-- TITLE: AWS Facts and Figures -->
 <!-- SUBTITLE: Collected during preparation for Associate Certifications -->
 

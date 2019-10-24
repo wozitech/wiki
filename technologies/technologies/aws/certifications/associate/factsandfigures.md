@@ -41,3 +41,42 @@
 * `BatchGetItem` - upto 16MB and 100 documents;UnprocessedKeys to get next batch
 * `BatchWriteItem` - upto 16MB and 25 documents; puts and deletes, cannot update
 
+# Redshift
+* Starts with single node having 160GB of storage.
+* Then scales with one leader node, and one or more compute nodes.
+* Upto 128 compute nodes.
+* Max 100 database per account (increase on request).
+* Max 100 tables per database (increase on request).
+* Max 20000 partitions per table (increase on request).
+* Max 500 connections per cluster.
+* All data is encrypted at rest; defauly is SSE (Amazon own) but KMS is also supported.
+* One available zone only.
+* Automated snapshots enabled by default; every 8 hours or 5GB of changed data. Default retention is 1 day (can be changed). All snapshots are deleted when cluster is deleted.Only Redshift can delete an automated snaphot. Set retention to 0 to delete all snapshots.
+* Manual snapshots have to be deleted manually.
+* Redshift includes same amount of S3 storage for snapshots as for data itself; charged if using more owing to large number of snapshots.
+* Redshift automated snapshots can be copied to one other region (setup in configuration). Default retention period in copu region is 7 days.
+
+
+# SQS
+* 256KB text, billed in 64KB chunks
+* Up to 10 messages in one request
+* Standard queue does not guarantee once delivery or in sequence delivery
+* Visibility timeout, defaults 30 seconds up to 12 hour maximum
+	* `ChangeMessageVisibility`
+* Retention - min 60 seconds, 4 days default to maximum 14 days
+* Long poll - maximum 20 seconds; `ReceiveMessageWaitTimeSeconds` to non-zero.
+* FIFO - 300 trans per second; FIFO queue names "MUST" have ".fifo" suffix.
+
+# SNS
+* Email, text, SQS or web service including Lambda
+* Push direct to mobile devices
+* Deliver once guarantee, but no guarantee on order.
+* Email - plain (human) and JSON variants (machine); must confirm subscription by reply
+* Customised messages for target subscription (_one message type for SMS another for email_)
+
+# SWF
+* Retention - 1 year measured in seconds
+* Guaranteed delivery once and in sequence
+* Workers - programs that interact with SWF to "do stuff"
+* Decider - programs that control interaction re order, sequence and concurrency
+* 

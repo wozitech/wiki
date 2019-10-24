@@ -1,6 +1,8 @@
 <!-- TITLE: AWS Facts and Figures -->
 <!-- SUBTITLE: Collected during preparation for Associate Certifications -->
 
+[Associate Solution Architect](technologies/aws/certifications/associate/solutionsArchitect)
+[Associate Developer](technologies/aws/certifications/associate/developer)
 # DynamoDB Throughput Calculations
 * Reads:
 	* 10 items of 6KB per second - eventual consistency = 10 * (2 blocks of 4KB) = 20 then divide 2 = 10.

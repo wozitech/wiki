@@ -130,6 +130,13 @@
 * Retention - 2 weeks
 * Default - 5 minutes
 * Min - 1 minute
+* CPU, disk, network and status (system/instance) are by default.
+* RAM is not - requiring custom metric and some code.
+* Default: every 5 minute polling. Up to 1 minute frequency.
+* Alarms sent to queue or email (SQS/SNS).
+* Emails must be acknowledge before used; up to 72 hours to confirm email.
+* Actions, such as restart/terminate instance.
+* Events, such as run lamdba function to add EC2 to ELB once started
 
 # EC2/EBS
 * Uptime/availability: 99.95%
@@ -153,3 +160,106 @@
 	* Standard - maximum discount - fixed for duration
 	* Convertible - less discount, but can be changed only if it results in a high value RI (you pay more)
 	* Scheduled - to launch within a given time window (e.g. overnight batch processing)
+
+# EFS (Elastic File System)
+* NFSv4
+* Read after write consistency
+
+# Route 53
+* Routing Policies:
+	* Simple - single resource
+	* Weighted - by comparison of value, e.g. 50/50, 1/2/3. 99/99/33
+	* Latency - AWS returns the lowest latency to end user
+	* Failover - primary & failover with healthcheck
+	* Geolocation - based on country of origin of end user
+* Healthchecks - all, except simple, support healthchecks and mapped to:
+	* IP/DNS of target
+	* Other Route 53 healthchecks
+	* CloudWatch alarm
+* Alias:
+	* ELB
+	* BeanStalk
+	* S3 bucket (as static web site only)
+	* CloudFront
+	* Route 53 hosted zone records
+
+# CloudFormation
+* Upto 200 stacks by default (can request more)
+* No limit to number of templates
+* Is free to use.
+* Resolves all dependencies, e.g. create VPC before subnets before EC2 before deploying app
+* JSON and YAML supported
+* AWS Config to track changes
+* Templates can be stored in S3, and have embedded templates.
+* Automatic rollback on error
+* `WaitCondition` - to wait for applications to be deployed (how?)
+
+# Lambda
+* node.js, java, python. C# (recently)
+* Priced duration and #requests
+* Duration priced on #GB (RAM) per second
+* First 1million requests are free; then $0.20 per million.
+* Triggers: CloudWatch alarm or S3 putobject or SNS/SQS trigger, CodeBuild, Kenesis, IoT, Alexa Skillset or via the AWS API Gateway.
+* Each function is autonomous - can't interact with others except through queue or events
+
+# RDS
+* 6TB maximum storage (for provisioned IOPs) and a maximum of 30000 IOPs.
+* 1 or 3 year contract with reserved pricing.
+* All up front, partial up front and no up front discounting (greatest to least).
+* Read Replicas: 5 max for MySQL, MariaDB and postgres, 15 max for Aurora
+	* MariaDB/MySQL only - read replica can be a different region
+* Automated backup - Retention: 1 day (min) 7 days (default) up to 35 days. 0 disables backups
+* Read replica; async replication. Multi-AZ; sync replication.
+* Automated backups must be enabled for read-replicas.
+
+# VPC
+* `/16` max and `/28` smallest - VPC and subnet
+* subnet cannot span AV.
+* AWS reserves 5 IPs within a subnet:
+	* network - e.g. x.x.x.0
+	* broadcast - e.g. x.x.x.255
+	* gateway - e.g. x.x.x.1
+	* Reserved for future use (except DNS server below) - e.g. x.x.x.2
+	* Reserved for future use - e.g. x.x.x.3
+* A VPC has a single DNS server running on the second IP of the VPC CIDR, e.g. x.x.x.2.
+* Up to 5 VPCs per region and upto 200 subnets per region (increased on request).
+* Never delete the default VPC!
+* VPC peering can be within and between AWS accounts; e.g. for cooperation between two customer's VPCs (IP address clashes though).
+* Default VPC includes one default subnet for each region within VPC. Default ACL is to allow all in and out, and all subnets are public (with a route to the Internet).
+* NAT Instance - disable source/destination check.
+* Network ACLs are applied in a sequence order. Security group applies ALL rules.
+* Must associate subnet with a Network ACL; one one Network ACL per subnet. Multiple subnets can use the same Network ACL.
+* Don't forget that a VPC needs an IGW (Internet GW) and the Route Table for the subnet must have a default route 0.0.0.0/0 to the IGW.
+
+
+# STS (Security Token Service)
+* Identity Broker (takes identity from A and joins it to B); have create own Identity Brokers.
+* Identity Store - e.g. AD, Facebook, Google.
+* Identity - User.
+* STS Federation approach:
+	* Develop an Identity Broker to communicate with LDAP/AD and AWS. Can be by user or by role (LDAP group).
+	* The Identity Broker always authenticate with LDAP/AD first, then AWS STS to access a named policy.
+	* Application then gets temporary access to AWS resources
+* Three Identity Brokers provided by AWS - using "claim based authentication":
+	* Federated - AssumeRoleWithSAML - SAML, as used with AD/LDAP
+	* Federated Mobile - AssumeRoleWithWebIdentity - openID, as used with Facebook, Google, github, Amazon (preferred for own apps).
+	* Accounts - other AWS accounts
+* AWS Cognito is a managed "Identity Broker" service facilitating federated login with OpenID, oAuth2 and SAML "Identity Stores".
+
+# AWS CLI
+* `ec2 describe-instances`
+* `ec2 describe-images (--owner self) --filter ""`
+* `ec2 run-instances`
+* `ec2 start-instances` - only starts existing instances
+* `ec2 terminate-instances`
+* `--dryrun`
+# AWS SDK
+* browser (restful!), NodeJS (Javascript), C++, PHP, Java, .NET, Android, python, ruby and Go
+# MetaData
+* curl http://169.254.169.254/latest/meta-data/
+* Not a localhost loookup. Trottled by AWS.
+
+# Kenesis
+* 1 shard alows 5 reads per second up to 2MB per second
+* 1 shared allows 1000 records per second write up to 1MB (very fast writes)
+* 

@@ -14,7 +14,7 @@ This is the simplest to solve. The home or remote office can be assumed to have 
 
 `wit-mobileDesktop` is simply a repackaged PWA that includes the additional licensing and authentication services running in "Service Workers".
 
-> VueJS PWA (progressive web app) plugin - https://www.npmjs.com/package/@vue/cli-plugin-pwa
+> VueJS PWA (progressive web app) plugin - https://www.npmjs.com/package/@vue/cli-plugin-pwa. Includes packaging of manifect and icons - the quintiessential of PWA.
 
 ## Screensaver
 What work is required to turn this into a dynamic screensaver?

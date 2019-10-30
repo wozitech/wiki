@@ -143,3 +143,41 @@ myFunction.apply(null, args);
 // or
 myFunction(...args);
 ```
+
+# Object freeze/seal
+All objects in Javascript inherit `freeze` and `seal` methods:
+* `freeze` prevents any changes to the object (new/deleted properties) and to the value of the properties themselves
+* `seal` prevents any changes to the object (new/deleted properties), but existing properties can be changed
+
+
+# async/await map
+```
+const list = [] //...an array filled with values
+
+const functionWithPromise = item => { //a function that returns a promise
+  return Promise.resolve('ok')
+}
+
+const anAsyncFunction = async item => {
+  return await functionWithPromise(item)
+}
+
+const getData = async () => {
+  return await Promise.all(list.map(item => anAsyncFunction(item)))
+}
+
+getData().then(data => {
+  console.log(data)
+})
+```
+
+or simply:
+```
+await Promise.all(mySet.map(async item => { item.doThis() });
+```
+
+# async/await reduce
+```
+const starterDeletedPromise = Promise.resolve(null);
+await this._readyForDeletionWorkers.reduce((p, thisWorkerToDelete) => p.then(() => thisWorkerToDelete.archive(savedBy, externalTransaction, true).then(log)), starterDeletedPromise);
+```

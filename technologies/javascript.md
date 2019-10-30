@@ -31,7 +31,7 @@ Global, local and block (ES6)
 Without `"use strict";` though, the declaration of `b=3` within a function will make it global.
 
 ## Closures
-This is where a function returns another function:
+This is where an inner function has access to the variables in an outer function's scope:
 ```
 function generator(input) {
       var index = 0;
@@ -190,3 +190,6 @@ await Promise.all(mySet.map(async item => { item.doThis() });
 const starterDeletedPromise = Promise.resolve(null);
 await this._readyForDeletionWorkers.reduce((p, thisWorkerToDelete) => p.then(() => thisWorkerToDelete.archive(savedBy, externalTransaction, true).then(log)), starterDeletedPromise);
 ```
+
+# integers are floats
+In JavaScript, all integers are just floats. `console.log(0.1 + 0.2 == 0.3);` may not be true, because `0.1+0.2` may be `0.30000000001`.

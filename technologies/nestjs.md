@@ -9,8 +9,8 @@ Effectively Angular for the backend, a typescript framework with:
 3. Interfaces - well defined data structures for controllers and providers
 4. Schema - GraphQL schema
 5. Modules - for stitching controlers, services, GraphQL schema and interfaces to build more complex APIs (more complex the app, the less microservice it is)
-	6.  _nest.js encourages jest test specifications for each service, locating the test file within the same module directory_
-7. Dependency Injection - loosely coupled
+	_nest.js encourages jest test specifications for each service, locating the test file within the same module directory_
+6. Dependency Injection - loosely coupled
 
 # Reference
 1. [nest.js reference](https://nestjs.com/)

@@ -9,7 +9,7 @@ Effectively Angular for the backend, a typescript framework with:
 3. Interfaces - well defined data structures for controllers and providers
 4. Schema - GraphQL schema
 5. Modules - for stitching controlers, services, GraphQL schema and interfaces to build more complex APIs (more complex the app, the less microservice it is)
-	_nest.js encourages jest test specifications for each service, locating the test file within the same module directory_
+	_nest.js encourages jest test specifications for each module, adding service and controller default tests within the same module directory, when using the `cli` scaffolding_
 6. Dependency Injection - loosely coupled
 
 # Reference
@@ -66,5 +66,7 @@ export const CustomerSchema = new mongoose.Schema({
 > 3.A folder `schemas` for mongoose schemas will clash with GraphQL schemas.
 
 ## CLI Generators
-Module: `nest generate module <mymodule>`
-Service: `nest generate service <myservice>`
+Note - in the examples below, "myname" is the context name for the module and is passed when creating the module, the module's default service and the module's controller:
+Module: `nest generate module <myname>`
+Service: `nest generate service <myname>`
+Controller: `nest generate controller <myname>`

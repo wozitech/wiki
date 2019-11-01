@@ -10,6 +10,7 @@ Platform Technologies:
 * [TypeScript](/technologies/typescript)
 * [postgreSQL](/technologies/postgresSQL)
 * [Jest](/technologies/jest)
+* [nest.js](/technologies/nestjs)
 * [React Redux](/technologies/react)
 * [Anisble](/technologies/ansible)
 * [Terraform](/technologies/terraform)

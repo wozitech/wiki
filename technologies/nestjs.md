@@ -14,4 +14,4 @@ Effectively Angular for the backend, a typescript framework with:
 # Reference
 1. [nest.js reference](https://nestjs.com/)
 2. [Getting Started Tutorial](https://scotch.io/tutorials/getting-started-with-nestjs)
-3. 
+3. [nest.js, vue.js and MongoDB modern app example](https://scotch.io/tutorials/building-a-modern-app-using-nestjs-mongodb-and-vuejs)

@@ -17,6 +17,13 @@ Effectively Angular for the backend, a typescript framework with:
 2. [Getting Started Tutorial](https://scotch.io/tutorials/getting-started-with-nestjs)
 3. [nest.js, vue.js and MongoDB modern app example](https://scotch.io/tutorials/building-a-modern-app-using-nestjs-mongodb-and-vuejs)
 
+# Tips
+## HTTP Error Codes
+Out of the box, the nest.js controllers properly handle the HTTP errors; such as, _findById_ returning a 404 (NOT FOUND) or 500 (service error).
+
+## __v
+Mongoose adds a `__v` property to every document on create. This is aligned with MongoDB Data Modelling best practice to always version your documents, allowing for schema changes going forward.
+
 # Tricks
 Use nest.js scaffolding: `npm install -g @nestjs/cli`.
 

@@ -16,6 +16,10 @@ Effectively Angular for the backend, a typescript framework with:
 1. [nest.js reference](https://nestjs.com/)
 2. [Getting Started Tutorial](https://scotch.io/tutorials/getting-started-with-nestjs)
 3. [nest.js, vue.js and MongoDB modern app example](https://scotch.io/tutorials/building-a-modern-app-using-nestjs-mongodb-and-vuejs)
+
+> TODO:
+>   1. Validation on input to return HTTP 400 and not 500
+
 4.[Angluar, nest.js, fastify and MongoDB modern app example]( https://www.djamware.com/post/5d2898430707cc5968d9d57f/build-a-web-app-using-nestjs-fastify-mongodb-and-angular-8)
 
 # Tips
@@ -31,7 +35,7 @@ Mongoose adds a `__v` property to every document on create. This is aligned with
 `@nestjs/platform-fastify` plugin swaps the default express framework for fastify; see the exmaple in the reference.
 
 ## Class cast/validation
-Look to https://github.com/typestack/class-validator.
+https://docs.nestjs.com/techniques/validation
 
 # Tricks
 Use nest.js scaffolding: `npm install -g @nestjs/cli`.

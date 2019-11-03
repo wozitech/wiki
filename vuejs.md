@@ -8,6 +8,7 @@ Vue.JS is a fast and lightweight Javascript framework for building data-driven s
 VueJS consider everything to be a component; this is much like React.
 
 [Official Homepage](https://vuejs.org/){:target="_blank"}
+[Awesome Vue](https://github.com/vuejs/awesome-vue) - a collection of tips and tricks
 
 # DevTools
 https://github.com/vuejs/vue-devtools#vue-devtools

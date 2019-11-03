@@ -24,9 +24,9 @@ Effectively Angular for the backend, a typescript framework with:
 
 # Tips
 ## HTTP Error Codes
-Out of the box, the nest.js controllers properly handle the HTTP errors; such as, _findById_ returning a 404 (NOT FOUND) or 500 (service error). But it doesn't fail so well on cast conversion errors with the mongoose schema: returning 500 rather than 400:
+Out of the box, the nest.js controllers properly handle the HTTP errors; such as, _findById_ returning a 404 (NOT FOUND) or 500 (service error). But it doesn't fail so well on cast conversion errors with the mongoose schema: returning 500 rather than 400 - see validation below:
 
-> Need to trap on `CastError` exception  from `mongoose` library.
+> A crude approach is to trap on `CastError` exception  from `mongoose` library.
 
 ## __v
 Mongoose adds a `__v` property to every document on create. This is aligned with MongoDB Data Modelling best practice to always version your documents, allowing for schema changes going forward.
@@ -35,7 +35,10 @@ Mongoose adds a `__v` property to every document on create. This is aligned with
 `@nestjs/platform-fastify` plugin swaps the default express framework for fastify; see the exmaple in the reference.
 
 ## Class cast/validation
-https://docs.nestjs.com/techniques/validation
+Uses nest.js pipeline to incept the input using [class-validaotr](https://github.com/typestack/class-validator): refer to https://docs.nestjs.com/techniques/validation. Uses the pipeline allows for a consistent approach to data validation across HTTP, Web Socket and microservices.
+
+## Transformation
+**In addition to validating, can transform the input data to that of the given DTO - an approach for versioning of the API.**
 
 # Tricks
 Use nest.js scaffolding: `npm install -g @nestjs/cli`.

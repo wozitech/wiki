@@ -16,6 +16,7 @@ Effectively Angular for the backend, a typescript framework with:
 1. [nest.js reference](https://nestjs.com/)
 2. [Getting Started Tutorial](https://scotch.io/tutorials/getting-started-with-nestjs)
 3. [nest.js, vue.js and MongoDB modern app example](https://scotch.io/tutorials/building-a-modern-app-using-nestjs-mongodb-and-vuejs)
+4.[Angluar, nest.js, fastify and MongoDB modern app example]( https://www.djamware.com/post/5d2898430707cc5968d9d57f/build-a-web-app-using-nestjs-fastify-mongodb-and-angular-8)
 
 # Tips
 ## HTTP Error Codes
@@ -25,6 +26,12 @@ Out of the box, the nest.js controllers properly handle the HTTP errors; such as
 
 ## __v
 Mongoose adds a `__v` property to every document on create. This is aligned with MongoDB Data Modelling best practice to always version your documents, allowing for schema changes going forward.
+
+## Fasitfy
+`@nestjs/platform-fastify` plugin swaps the default express framework for fastify; see the exmaple in the reference.
+
+## Class cast/validation
+Look to https://github.com/typestack/class-validator.
 
 # Tricks
 Use nest.js scaffolding: `npm install -g @nestjs/cli`.

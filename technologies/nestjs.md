@@ -19,7 +19,9 @@ Effectively Angular for the backend, a typescript framework with:
 
 # Tips
 ## HTTP Error Codes
-Out of the box, the nest.js controllers properly handle the HTTP errors; such as, _findById_ returning a 404 (NOT FOUND) or 500 (service error).
+Out of the box, the nest.js controllers properly handle the HTTP errors; such as, _findById_ returning a 404 (NOT FOUND) or 500 (service error). But it doesn't fail so well on cast conversion errors with the mongoose schema: returning 500 rather than 400:
+
+> Need to trap on `CastError` exception  from `mongoose` library.
 
 ## __v
 Mongoose adds a `__v` property to every document on create. This is aligned with MongoDB Data Modelling best practice to always version your documents, allowing for schema changes going forward.

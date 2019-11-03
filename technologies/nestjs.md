@@ -26,6 +26,8 @@ Use nest.js scaffolding: `npm install -g @nestjs/cli`.
 ### mongoose
 https://docs.nestjs.com/techniques/mongodb
 
+Read also, strongly typed models with Mongoose and typescript: https://medium.com/@tomanagle/strongly-typed-models-with-mongoose-and-typescript-7bc2f7197722.
+
 First, install the mongoose dependencies:
 ```
 npm install --save @nestjs/mongoose mongoose @types/mongoose
@@ -45,7 +47,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 export class AppModule {}
 ```
 
-Having bound the database connection, need to define one of more mongoose schema files. Using nest.js good structure, one of more schemas can be defined for each module. Create a `schemas` directory within the module directory, and create a mongoose schema file, e.g.:
+Having bound the database connection, need to define one of more mongoose schema files. Using nest.js good structure, one of more schemas can be defined for each module. Create a `schemas` subdirectory within the module directory, and create a mongoose schema file, e.g.:
 ```
 import * as mongoose from 'mongoose';
 
@@ -60,10 +62,26 @@ export const CustomerSchema = new mongoose.Schema({
 });
 ```
 
+And then within the module's definition file `.../myname.module.ts`, bind the schema with the global `mongoose` module:
+```
+...
+import { MongooseModule } from '@nestjs/mongoose';
+import { CustomerSchema } from './schemas/customer.schema';
+@Module({
+  imports: [
+    MongooseModule.forFeature([{ name: 'Customer', schema: CustomerSchema }])
+  ],
+	...
+})
+```
+
 > TODO
 > 1. Custom config including connection pool size, and wtiteConcern
 > 2. mongoose likes to impose schema on data; write own module that uses the MongoDB driver directly, create the connection and expose the MongoDB driver
 > 3.A folder `schemas` for mongoose schemas will clash with GraphQL schemas.
+
+## CORS
+Cross Origin Resource Sharing (CORS); add `app.enableCors();` to the `main.ts` file.
 
 ## CLI Generators
 Note - in the examples below, "myname" is the context name for the module and is passed when creating the module, the module's default service and the module's controller:

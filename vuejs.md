@@ -9,7 +9,7 @@ VueJS consider everything to be a component; this is much like React.
 
 [Official Homepage](https://vuejs.org/){:target="_blank"}
 [Awesome Vue](https://github.com/vuejs/awesome-vue) - a collection of tips and tricks
-[Vue Loader](https://vue-loader.vuejs.org/) - allows for single file components (everything for a component is written in a single file - the template, the script and custom blocks, such as, documentation)
+[Vue Loader](https://vue-loader.vuejs.org/) - webpack loader for single file components (everything for a component is written in a single file - the template, the script and custom blocks, such as, documentation)
 
 # DevTools
 https://github.com/vuejs/vue-devtools#vue-devtools

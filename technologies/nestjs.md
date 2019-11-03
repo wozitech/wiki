@@ -88,3 +88,9 @@ Note - in the examples below, "myname" is the context name for the module and is
 Module: `nest generate module <myname>`
 Service: `nest generate service <myname>`
 Controller: `nest generate controller <myname>`
+
+
+### Modules
+When creating a module and then a service/controller, the CLI registers the module in `app.module.ts`, but does not register the controller sep\arately.
+
+If creating a controller without a module, the CLI registers the controller in `app.module.ts`.

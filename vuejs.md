@@ -14,6 +14,13 @@ VueJS consider everything to be a component; this is much like React.
 # DevTools
 https://github.com/vuejs/vue-devtools#vue-devtools
 Like React, there are browser plugins for Chrome and Firefox that make working with Vue.JS easier.
+
+# vscode
+[Vetur plugin](https://vuejs.github.io/vetur/setup.html)
+
+# bootstrap CSS
+When creating a Vue.JS app form the CLI (e.g. `vue create <name of app>`, it does not use any CSS framework. `bootstrap` is athe de facto CSS library. To add bootstrap to an existing Vue.JS app: https://travishorn.com/adding-bootstrap-to-a-vue-cli-project-98c2a30e0ed0.
+
 # VuEX (State Management)
 This is the equivalent of Redux for React of NgRX for Angular.
 

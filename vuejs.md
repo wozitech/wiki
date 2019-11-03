@@ -9,6 +9,9 @@ VueJS consider everything to be a component; this is much like React.
 
 [Official Homepage](https://vuejs.org/){:target="_blank"}
 
+# DevTools
+https://github.com/vuejs/vue-devtools#vue-devtools
+Like React, there are browser plugins for Chrome and Firefox that make working with Vue.JS easier.
 # VuEX (State Management)
 This is the equivalent of Redux for React of NgRX for Angular.
 

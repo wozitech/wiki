@@ -28,4 +28,9 @@ Monitoring Technologies:
 * [ManageIQ](http://manageiq.org/) - watching this at present. When used with Hawkular, can be used to monitor local/custom and cloud (public and private) based functions, integrated with standard hosting metrics (server, network and storage).
 * [Epsagon](https://epsagon.com/) - "Follow the Money (Path)" (AWS Xray alternative) to application metrics to map across applications and functions.
 
+# APIs
+* [Filter, Pagainate and Sort](https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/#)
+* [Microservices Principles](http://wozitech-ltd.co.uk/technologies/microservices.html)
+* [Microservices nest.js](https://docs.nestjs.com/microservices/basics)
+
 Public Reverse Proxy - [ngrok](https://ngrok.com/product)

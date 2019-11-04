@@ -21,6 +21,11 @@ Like React, there are browser plugins for Chrome and Firefox that make working w
 # bootstrap CSS
 When creating a Vue.JS app form the CLI (e.g. `vue create <name of app>`, it does not use any CSS framework. `bootstrap` is athe de facto CSS library. To add bootstrap to an existing Vue.JS app: https://travishorn.com/adding-bootstrap-to-a-vue-cli-project-98c2a30e0ed0.
 
+Or simply add the following to the `<head>` section in `public/index.html`:
+```
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+```
+
 # VuEX (State Management)
 This is the equivalent of Redux for React of NgRX for Angular.
 

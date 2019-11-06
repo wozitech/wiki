@@ -15,7 +15,7 @@ Looking at using kubernetes to deploy distributed application services over a se
 # Background
 Originally developed by Google, and donated to open source community.
 
-Requires a `master` node and one of more `worker` nodes (PODs). K8s can be installed as a standalone host - both master and one worker; this is how Microsoft Docker Desktop works (a hyperV VM being the k8s, against which docker images are deployed and executed).
+Requires a `master` node and one of more worker `nodes` (formerly called minions). K8s can be installed as a standalone host - both master and one worker; this is how Microsoft Docker Desktop works (a hyperV VM being the k8s, against which docker images are deployed and executed).
 
 A Pod is an application specific "logical host"; e.g. web servers, app1 servers, ...
 
@@ -27,12 +27,12 @@ On the `master` is found:
 * `kubectl` utility - command line access to API Server
 
 
-On the `worker` is found:
+On the `node` is found:
 * `kubelet` - daemon for creating, launching and deleting containers
 * `kube-proxy` - routes network traffic to/from the container
 * `pod` - application _logical set_ on this worker - consisting of one (atypical) or more containers that work as a single unit.
 
-A `deployment` is a `replication set` of pods across the k8s; it defines, as a minimum, the number of pods required across the cluster. The `deployment` ensures this number of pods is maintained, regardless of whether a pod fails, the host on which a pod fails, of the number of pods as defined within the deployment is changed. A single node can have more than one instance of the same pod running on it (if deployment says 4 but only three nodes, then one node must run two pod instances). A `deployment` is managed; it manages the pods including supporting rolling updates. _Note - a `Daemon Set` is replciation set that runs on all nodes within the cluster (such as, cluster storage systems, application caches, like Hasicorp consul and log collectors, like logstash. It would be typical to split a daemon based on cluster  node profile - for example, the size of node (RAM or local storage) - it wouldn't make sense to deploy a large storage cache to a node with limited storage. _
+A `deployment` is a `replication set` of pods across the k8s; it defines, as a minimum, the number of pods required across the cluster. The `deployment` ensures this number of pods is maintained, regardless of whether a pod fails, the host on which a pod fails, of the number of pods as defined within the deployment is changed. A single node can have more than one instance of the same pod running on it (if deployment says 4 but only three nodes, then one node must run two pod instances). A `deployment` is managed; it manages the pods including supporting rolling updates. _Note - a `Daemon Set` is replciation set that runs on all nodes within the cluster (such as, cluster storage systems, application caches, like Hasicorp consul and log collectors, like logstash. It would be typical to split a daemon based on cluster  node profile - for example, the size of node (RAM or local storage) - it wouldn't make sense to deploy a large storage cache to a node with limited storage. For this to work best, nodes should be properly labelled (described/tagged). _
 
 A `service` is the single entry point to a given deployment; no matter when/if the configuration of the deployment changes, the `service` identity does not change. A `service` has a common IP address, port and label selector making it available for external use. A `service` can be discovered by other `services` - for example, a `frontend` service can discovered and thus use a `backend` service.
 

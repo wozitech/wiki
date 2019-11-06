@@ -10,7 +10,7 @@ Wed 6th Nov
 09:00 - Can Kubernetes keep a secret (Docker/Kubenetes) 
 09:30 - Anatomy of a Continuous Delivey Pipeline (DevOps pipeline)
 10:00 - What You See Is What you Get for AWS Infrastructure (Architecture)
-1~~0:30 - Event Driven Computing with Kubernetes (Docker/Kubenetes)~~ - *canncelled*
+~~10:30 - Event Driven Computing with Kubernetes (Docker/Kubenetes)~~ - *canncelled*
 12:00 - OWASP Juice Shop: The Ultimate All Vuln WebApp (OWASP)
 14:00 - Deploying Microservices to AWS Fargate (Archiecture)
 
@@ -102,9 +102,19 @@ Allows visualising regions, VPCs, security groups, auto-scaling groups, RDS et a
 
 [terragrunt](https://github.com/gruntwork-io/terragrunt) - orchestrate terraform configurations - where there are exclusive aspects of the deployment which can be done in parallel
 
-## Event Driven Computing with Kubernetes (Docker/Kubenetes)
-
 ## OWASP Juice Shop: The Ultimate All Vuln WebApp (OWASP)
+This [Juice Shop](https://www2.owasp.org/www-project-juice-shop/#)  looks like any typical ecommerce shop; login  (demo/demo) to be able to add products to card. It's served locally on port 3000 (node/express/sequelize (with sequelite)/angular). And there is a full suite of reference tests in protractor, jasmine and mocha. Easy to download and run locally; but there are docker and vagrant images available.
+
+This insecure app is great for testing:
+![Juice Ship Categories](/uploads/misc/juice-ship-categories.png "Juice Ship Categories")
+
+There are challenges for newbies and veterans alike, whereby you get to work through vulnerabilities to identify and fix. There is an "online instructor" to help beginners get started.
+
+A great demo by the speaker showing SQL injection on login using `--` SQL comment and `true`.
+
+Works with [CTFd](https://ctfd.io/about/); Some of the problems (CTF) requires starting the shop up with `NODE_ENV` variable.
+
+Presenter has offered a free security lecture: https://github.com/bkimminich/it-security-lecture.
 
 ## Deploying Microservices to AWS Fargate (Archiecture)
 

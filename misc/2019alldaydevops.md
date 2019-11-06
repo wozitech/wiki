@@ -33,7 +33,7 @@ Addidas CI/CD Piepline:
 ## Can Kubernetes keep a secret (Docker/Kubenetes) 
 "Super Devs" - write code, deploy to production and monitor/fix, but they need help:
 
-Based on a gitops solution, it is easy to deploy into a k8s cluster, but how to pass secrets.
+Based on a [gitops](https://www.weave.works/blog/what-is-gitops-really) solution, it is easy to deploy into a k8s cluster, but how to pass secrets.
 
 The kubernetes `manifest` can incldue secrets (kubernetes has a "secret" type  - but it is just base64). Can sign the secrets using gitops, but it means the secets is committed into git (because the `manifest` is a managed file).
 

@@ -27,6 +27,8 @@ Thurs 7th Nov:
 
 
 # Talks
+![2019 Addo Addiias Ci Cd Pipeline](/uploads/misc/2019-addo-addiias-ci-cd-pipeline.png "2019 Addo Addiias Ci Cd Pipeline")
+
 ## Can Kubernetes keep a secret (Docker/Kubenetes) 
 
 ## Anatomy of a Continuous Delivey Pipeline (DevOps pipeline)

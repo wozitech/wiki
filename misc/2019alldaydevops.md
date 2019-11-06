@@ -97,7 +97,7 @@ By Anton Babenko - maintains the terraform aws modules! medium.com/@anton.babenk
 ** 3D style architecture visualisations - [cloudcraft.co](https://cloudcraft.co/) - free account forever**
 Allows visualising regions, VPCs, security groups, auto-scaling groups, RDS et al, but also properties on them such as estimated costs and IAM roles.
 
-[modules.tf](https://modules.tf/#!/)- integrated into cloudcraft, and exports the visualused infrastructure to terraform code.
+[modules.tf](https://modules.tf/#!/)- integrated into cloudcraft, and exports the visualused infrastructure to terraform code, incorporates opinated best practice.
 ![Cloudcraft](/uploads/misc/cloudcraft.png "Cloudcraft")
 
 [terragrunt](https://github.com/gruntwork-io/terragrunt) - orchestrate terraform configurations - where there are exclusive aspects of the deployment which can be done in parallel

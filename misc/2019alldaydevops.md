@@ -27,6 +27,7 @@ Thurs 7th Nov:
 
 
 # Talks
+Addidas CI/CD Piepline:
 ![2019 Addo Addiias Ci Cd Pipeline](/uploads/misc/2019-addo-addiias-ci-cd-pipeline.png "2019 Addo Addiias Ci Cd Pipeline")
 
 ## Can Kubernetes keep a secret (Docker/Kubenetes) 

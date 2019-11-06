@@ -24,3 +24,19 @@ Wed 6th Nov:
 Thurs 7th Nov:
 01:30 - OWASP Top 10 Overview (OWASP)
 05:30 - Secure Your Kubernetes Containers (Docker/Kubenetes)
+
+
+# Talks
+## Can Kubernetes keep a secret (Docker/Kubenetes) 
+
+## Anatomy of a Continuous Delivey Pipeline (DevOps pipeline)
+
+## What you see if what you Get for AWS Infrastructure (Architecture)
+
+## Event Driven Computing with Kubernetes (Docker/Kubenetes)
+
+## OWASP Juice Shop: The Ultimate All Vuln WebApp (OWASP)
+
+## Deploying Microservices to AWS Fargate (Archiecture)
+
+# Catch Up

@@ -10,7 +10,7 @@ Wed 6th Nov
 09:00 - Can Kubernetes keep a secret (Docker/Kubenetes) 
 09:30 - Anatomy of a Continuous Delivey Pipeline (DevOps pipeline)
 10:00 - What You See Is What you Get for AWS Infrastructure (Architecture)
-10:30 - Event Driven Computing with Kubernetes (Docker/Kubenetes)
+1~~0:30 - Event Driven Computing with Kubernetes (Docker/Kubenetes)~~ - *canncelled*
 12:00 - OWASP Juice Shop: The Ultimate All Vuln WebApp (OWASP)
 14:00 - Deploying Microservices to AWS Fargate (Archiecture)
 

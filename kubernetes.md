@@ -30,7 +30,18 @@ On the `master` is found:
 On the `worker` is found:
 * `kubelet` - daemon for creating, launching and deleting containers
 * `kube-proxy` - routes network traffic to/from the container
-* `pod` - application _logical set_ on this worker.
+* `pod` - application _logical set_ on this worker - consisting of one (atypical) or more containers that work as a single unit.
+
+A `deployment` is a `replication set` of pods across the k8s; it defines, as a minimum, the number of pods required across the cluster. The `deployment` ensures this number of pods is maintained, regardless of whether a pod fails, the host on which a pod fails, of the number of pods as defined within the deployment is changed. A single node can have more than one instance of the same pod running on it (if deployment says 4 but only three nodes, then one node must run two pod instances). A `deployment` is managed; it manages the pods including supporting rolling updates. _Note - a `Daemon Set` is replciation set that runs on all nodes within the cluster (such as, cluster storage systems, application caches, like Hasicorp consul and log collectors, like logstash. It would be typical to split a daemon based on cluster  node profile - for example, the size of node (RAM or local storage) - it wouldn't make sense to deploy a large storage cache to a node with limited storage. _
+
+A `service` is the single entry point to a given deployment; no matter when/if the configuration of the deployment changes, the `service` identity does not change. A `service` has a common IP address, port and label selector making it available for external use. A `service` can be discovered by other `services` - for example, a `frontend` service can discovered and thus use a `backend` service.
+
+A `service` can be discovered in one of two ways:
+* Environment Variable - only works between services on the same node - and therefore, not scalable
+* Cluster DNS (by DNS name) - preferre, and comprises of:
+	* `etcd` - for distributing the DNS values across the clsuter for read and write
+	* `skydns` - a DNS service that can read from `etcd`
+	* `kube2sky` - watches for `service` changes on the master and write to `etcd` thus consequentially making the service available via DNS
 
 # Installation
 One master and two workers. vagrant/kvm/centros7/ansible/weave scripted deployment: https://github.com/wozitech/vagrant/tree/master/dev.

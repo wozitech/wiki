@@ -31,6 +31,23 @@ Addidas CI/CD Piepline:
 ![2019 Addo Addiias Ci Cd Pipeline](/uploads/misc/2019-addo-addiias-ci-cd-pipeline.png "2019 Addo Addiias Ci Cd Pipeline")
 
 ## Can Kubernetes keep a secret (Docker/Kubenetes) 
+"Super Devs" - write code, deploy to production and monitor/fix, but they need help:
+
+Based on a gitops solution, it is easy to deploy into a k8s cluster, but how to pass secrets.
+
+The kubernetes `manifest` can incldue secrets (kubernetes has a "secret" type  - but it is just base64). Can sign the secrets using gitops, but it means the secets is committed into git (because the `manifest` is a managed file).
+
+Hashicorp Vault - has native kibernetes integration. The presenter did mention cloud alternative Azure KeyStore, and AWS Secret Manager. The presenter suggested that having secrets stored separately to their code created a problem (I don't agree myself).
+
+He referenced Travis and signing secrets in travis build files - but travis is a deployment tool - which would replace gitops.
+
+But came upon this open source [kamus](https://github.com/Soluto/kamus). Each pod (service) has an account token (JWT), which can be used with kamus, to allow for decrypting the given keys (the application deployed in the pod will w.
+
+```
+helm install kamus solutop/kamus
+```
+
+The open source project is looking to extend it's relevance beyond kubernetes.
 
 ## Anatomy of a Continuous Delivey Pipeline (DevOps pipeline)
 

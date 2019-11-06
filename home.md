@@ -4,6 +4,7 @@
 
 # WOZiTech WIKI
 * [Technologies](/technologies)
+* [Miscellaneous](/misc)
 * [Projects](/projects)
 * [Linux PC](/linuxpc)
 * [IR35](/ir35)

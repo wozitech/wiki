@@ -76,6 +76,8 @@ Basic Pipeline:
 * Deploy - infrastrcuture as code
 * Release - rboust logging and monitoring
 
+Summerised with:
+![Pipeline Stages](/uploads/misc/pipeline-stages.png "Pipeline Stages")
 
 > Totally disagree with the presenter saying to commit code often and that Pull Requests can be reviewed and approved by anyone; they're not for approval. This is non-sense as crap will so quickly get into the code.
 
@@ -87,8 +89,7 @@ Feature Tracking/Toggles" is esential:
 * being able to deploy into production even if a feature has not been fully tested allows it to be subsequently switched one once tested
 * but can also disable if it turns out the feature is not that good (without a redeployment!)
 
-Extend this release approach further to have feature toggling/tracking not just on/off, but segmented by user role, 
-
+Extend this release approach further to have feature toggling/tracking not just on/off, but segmented by user location (IP address/country), user role/type. This allows new features to be easily trailed.
 
 ## What you see if what you Get for AWS Infrastructure (Architecture)
 

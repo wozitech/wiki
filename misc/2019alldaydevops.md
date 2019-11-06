@@ -50,6 +50,45 @@ helm install kamus solutop/kamus
 The open source project is looking to extend it's relevance beyond kubernetes.
 
 ## Anatomy of a Continuous Delivey Pipeline (DevOps pipeline)
+Everyone needs:
+* shorter release cycles
+* continuous integration
+* quality assurance
+* security
+
+Common comments:
+* We have DevOps tools, but still not delivery fast enough
+* To mych lead time from UAT to production
+* Doing CI/CD but still can't release when they want
+* We still see production issues
+
+To get better, there are many aspects to consider:
+![Aspects To Cover In Pipeline](/uploads/misc/aspects-to-cover-in-pipeline.png "Aspects To Cover In Pipeline")
+
+**CD - Contunous Delivery - is to get your code ready to deploy and release at anytime**
+
+Basic Pipeline:
+* Develop
+* Build - build on the platform you're going to run on - containerise your app
+* Test
+	* fail fast, fail early and fix early - unit tests (+80% coverage)
+	* autpomate your tests - integration, UI, acceptance, security
+* Deploy - infrastrcuture as code
+* Release - rboust logging and monitoring
+
+
+> Totally disagree with the presenter saying to commit code often and that Pull Requests can be reviewed and approved by anyone; they're not for approval. This is non-sense as crap will so quickly get into the code.
+
+The significance here is the "deploy/release" stage. Getting the pipeline to d3ev, build and test is well understood, and even being able to deploy into live. But the significance is the separation of production deployment and production release.
+
+Deploying into production without actually releasing allows you to subsequently release at a future time whenever you want:.
+
+Feature Tracking/Toggles" is esential:
+* being able to deploy into production even if a feature has not been fully tested allows it to be subsequently switched one once tested
+* but can also disable if it turns out the feature is not that good (without a redeployment!)
+
+Extend this release approach further to have feature toggling/tracking not just on/off, but segmented by user role, 
+
 
 ## What you see if what you Get for AWS Infrastructure (Architecture)
 

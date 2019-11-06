@@ -9,7 +9,7 @@ All Day DevOps Schedule
 Wed 6th Nov
 09:00 - Can Kubernetes keep a secret (Docker/Kubenetes) 
 09:30 - Anatomy of a Continuous Delivey Pipeline (DevOps pipeline)
-10:00 - What you see if what you Get for AWS Infrastructure (Architecture)
+10:00 - What You See Is What you Get for AWS Infrastructure (Architecture)
 10:30 - Event Driven Computing with Kubernetes (Docker/Kubenetes)
 12:00 - OWASP Juice Shop: The Ultimate All Vuln WebApp (OWASP)
 14:00 - Deploying Microservices to AWS Fargate (Archiecture)
@@ -91,7 +91,15 @@ Feature Tracking/Toggles" is esential:
 
 Extend this release approach further to have feature toggling/tracking not just on/off, but segmented by user location (IP address/country), user role/type. This allows new features to be easily trailed.
 
-## What you see if what you Get for AWS Infrastructure (Architecture)
+## What You See Is What you Get for AWS Infrastructure (Architecture)
+By Anton Babenko - maintains the terraform aws modules! medium.com/@anton.babenko
+
+** 3D style architecture visualisations - [cloudcraft.co](https://cloudcraft.co/) - free account forever**
+Allows visualising VPCs, security groups, auto-scaling groups, RDS et al, but also properties on them such as estimated costs and IAM roles.
+
+[modules.tf](https://modules.tf/#!/)- integrated into cloudcraft, and exports the visualused infrastructure to terraform code.
+
+[terragrunt](https://github.com/gruntwork-io/terragrunt) - orchestrate terraform configurations
 
 ## Event Driven Computing with Kubernetes (Docker/Kubenetes)
 

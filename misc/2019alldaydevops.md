@@ -117,5 +117,14 @@ Works with [CTFd](https://ctfd.io/about/); Some of the problems (CTF) requires s
 Presenter has offered a free security lecture: https://github.com/bkimminich/it-security-lecture.
 
 ## Deploying Microservices to AWS Fargate (Archiecture)
+Advantage of fargate over say ECS/EKS/kubernetes - not having to manage a cluster (such as node sizes and number of nodes), and certainly for own kubernates cluster, not having to patch the cluster. They did use AWS ECR registry for their docker images.
+
+Fargate does not support updating running container images; this has been done external to the Fargate service.
+
+Fargate runs within your own VPC; you own the networking, subs, NACLs and security groups.
+Access is via Applicatoin Load Balancer with AWS WAF and SSL termination.
+
+
+They were using git hooks to trigger `Jenkins Pipeline` to download a reference docimker image, checkout the code, build the new docker image with version number and then upload to AWS ECR. On every commit this is quite extreme, especially as there is no testing.
 
 # Catch Up

@@ -1,6 +1,13 @@
 <!-- TITLE: Mongodb -->
 <!-- SUBTITLE: MongoDB - Tips and Tricks -->
 
+# University
+* [M220 - node.js app](/mongodb/uni/m220)
+* [M121 - aggregation](/mongodb/uni/m121)
+* [M320 - Data Modelling](/mongodb/uni/m320)
+* [M201 - Performance](/mongodb/uni/m201)
+
+
 # Working Set Optimisation
 https://www.vividcortex.com/blog/how-to-tell-if-your-mongodb-server-is-correctly-sized-for-your-working-set
 # Circular Buffer style "Capped" Collections
@@ -59,9 +66,3 @@ _where `your-mongodb` is the name of your local docker instance._
 When restoring, the path given for the backup must be the root of the backup directory as given on `mongodump`; this is true even if wanting to restore a specific database only.
 
 If wanting to restore the full backup, don't provide the database name in the URI. If wanting to restore a specific database, include the database name in the URI.
-
-# University
-* [M220 - node.js app](/mongodb/uni/m220)
-* [M121 - aggregation](/mongodb/uni/m121)
-* [M320 - Data Modelling](/mongodb/uni/m320)
-* [M201 - Performance](/mongodb/uni/m201)

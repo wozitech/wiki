@@ -34,4 +34,7 @@ To install a package: `pip3 install flask`.
 
 To install packages given in a `requirements.txt` (python's equivalent of npm's `package.json`: `pip3 install -r requirements.txt`.
 
-To generate a `requirements.txt`: `pip3 freeze > requirements.txt`,
+To generate a `requirements.txt`: `pip3 freeze > requirements.txt`.
+
+# For node.js developers
+https://itnext.io/python-essentials-for-node-js-developers-708bb9487d70

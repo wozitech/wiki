@@ -6,6 +6,9 @@
 ## Tips and Tricks
 https://medium.com/@me_37286/19-ways-to-become-a-better-node-js-developer-in-2019-ffd3a8fbfe38
 
+## Decorators
+Built in to typescript, but supported in JavaScript (and babel/webpack polyfill), decorators revitalise functions as first class citizens, allowing easy to read consistent code: https://www.sitepoint.com/javascript-decorators-what-they-are/.
+
 ## hoisting and functions
 Hoisting is where a delcaration can be used prior to definiion.
 ```

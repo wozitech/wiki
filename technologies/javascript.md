@@ -4,6 +4,8 @@
 
 # JavaScript
 ## Tips and Tricks
+https://medium.com/@me_37286/19-ways-to-become-a-better-node-js-developer-in-2019-ffd3a8fbfe38
+
 ## hoisting and functions
 Hoisting is where a delcaration can be used prior to definiion.
 ```

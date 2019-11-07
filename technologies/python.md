@@ -47,5 +47,4 @@ From the command line:
 ```
 alias python=python3
 ./node_modules/.bin/nodemon python3 training.py
-
 ```

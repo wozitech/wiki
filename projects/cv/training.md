@@ -11,3 +11,5 @@ Uses Flask as the web server.
 
 ## Connexion
 On top of flask, `connexion` is used to create well documented (swagger) RESTful endpoint: https://github.com/zalando/connexion.
+
+https://realpython.com/flask-connexion-rest-api/

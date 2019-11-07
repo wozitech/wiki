@@ -38,3 +38,14 @@ To generate a `requirements.txt`: `pip3 freeze > requirements.txt`.
 
 # For node.js developers
 https://itnext.io/python-essentials-for-node-js-developers-708bb9487d70
+
+`nodemon` can be used to monitor for changes in python files.
+
+> But I can't get it to run via python3!!!
+
+From the command line:
+```
+alias python=python3
+./node_modules/.bin/nodemon python3 training.py
+
+```

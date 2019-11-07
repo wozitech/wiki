@@ -1,7 +1,6 @@
-<!-- TITLE: Python -->
-<!-- SUBTITLE: A quick summary of Python -->
-
-![Python Logo 1](/uploads/logos/python-logo-1.png "Python Logo 1")
+![Python Logo 1](/uploads/logos/python-logo-1.png "Python Logo 1"){.pagelogo}
+<!-- TITLE: python -->
+<!-- SUBTITLE: Tips, Tricks, Features of python -->
 
 # References
 # Flask

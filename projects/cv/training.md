@@ -13,3 +13,51 @@ Uses Flask as the web server.
 On top of flask, `connexion` is used to create well documented (swagger) RESTful endpoint: https://github.com/zalando/connexion.
 
 https://realpython.com/flask-connexion-rest-api/
+
+# Data
+JSON data - training record:
+```
+{
+	id: <int>,
+	title: <string>,
+	achieved: <ISO Date only - YYYY-MM-DD>,
+	expires?: <ISO Date only - YYYY-MM-DD>,
+	description: <string>,
+	provider: {
+		name: <string> | "other",
+		other?: <string>
+	},
+	tags: [<string>]
+}
+```
+# RESTful Endpoints
+## List
+`[GET] /` - returns all training records as a JSON array, in reverse chronological order on date `achieved`:
+```
+[
+		{ training #1 },
+		{ training #2 },
+		...
+		{ training #n }
+]
+```
+
+## Get One
+`[GET] /:id` - returns a single training record
+
+## Create
+`[POST] /` - creates a single training record
+
+Requires valid JWT.
+
+## Update
+`[PUT] /:id` - updates a single training record
+
+Requires valid JWT.
+
+## Delete
+`[DELETE] /:id` - deletes the training record
+
+Requires valid JWT.
+
+## Swagger Documentation

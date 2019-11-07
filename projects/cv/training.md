@@ -23,6 +23,7 @@ JSON data - training record:
 	achieved: <ISO Date only - YYYY-MM-DD>,
 	expires?: <ISO Date only - YYYY-MM-DD>,
 	description: <string>,
+	scope: <string>,
 	provider: {
 		name: <string> | "other",
 		other?: <string>

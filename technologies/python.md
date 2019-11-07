@@ -7,4 +7,4 @@
 This is for python what express is for node; a web fraemwork. It's gained popularity over Django.
 
 * [Reference](https://github.com/pallets/flask)
-* [Intro}(https://www.fullstackpython.com/flask.html)
+* [Intro](https://www.fullstackpython.com/flask.html)

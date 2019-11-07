@@ -8,6 +8,7 @@ Platform Technologies:
 * [MongoDB](/mongodb)
 * [JavaScript](/technologies/javascript)
 * [TypeScript](/technologies/typescript)
+* [python](/technologies/python)
 * [postgreSQL](/technologies/postgresSQL)
 * [Jest](/technologies/jest)
 * [nest.js](/technologies/nestjs)

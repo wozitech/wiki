@@ -27,7 +27,13 @@ Now customise the repo:
 	3.5. (add): `provider.role` (to a known IAM role)
 	3.6. (add) `provider.timeout` and `provider.memorySize`
 	
-# Projects
+# CV Project
+This is a revitalisation (mdoernisation) of my online resume - by using a microservice/GraphQL backend against a Vue.JS client application.
+* [UI](/projects/cv/ui) - the Vue.JS frontend - uses material UI components
+* [training](/projects/cv/training) - a python RESTful API endpoint using flask and connexion against a postgres data store - to be deployed locally, by serverless (lambda) and docker
+* [career](/projects/cv/career) - a nest.js RESTful API endpoint against MongoDB data store  - to be deployed locally, by serverless (lambda) and docker
+* [professional](/projects/cv/professional) - a Golang RESTful API endpoint against a postgres data store - to be deployed locally, by serverless (lambda) and docker
+# WIT Projects
 * [wit-myBuses](/projects/wit-myBuses) - an Alexa skill to tell me when my next bus is for given locations
 * [wit-domain](/projects/wit-domain)
 * [wit-myDash](/projects/wit-myDash) - flagship content display app

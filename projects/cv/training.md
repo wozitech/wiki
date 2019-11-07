@@ -33,7 +33,7 @@ JSON data - training record:
 ```
 # RESTful Endpoints
 ## List
-`[GET] /` - returns all training records as a JSON array, in reverse chronological order on date `achieved`:
+`[GET] /api` - returns all training records as a JSON array, in reverse chronological order on date `achieved`:
 ```
 [
 		{ training #1 },
@@ -44,20 +44,20 @@ JSON data - training record:
 ```
 
 ## Get One
-`[GET] /:id` - returns a single training record
+`[GET] /api/:id` - returns a single training record
 
 ## Create
-`[POST] /` - creates a single training record
+`[POST] /api` - creates a single training record
 
 Requires valid JWT.
 
 ## Update
-`[PUT] /:id` - updates a single training record
+`[PUT] /api/:id` - updates a single training record
 
 Requires valid JWT.
 
 ## Delete
-`[DELETE] /:id` - deletes the training record
+`[DELETE] /api/:id` - deletes the training record
 
 Requires valid JWT.
 

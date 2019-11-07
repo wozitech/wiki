@@ -17,6 +17,8 @@ Effectively Angular for the backend, a typescript framework with:
 2. [Getting Started Tutorial](https://scotch.io/tutorials/getting-started-with-nestjs)
 3. [nest.js, vue.js and MongoDB modern app example](https://scotch.io/tutorials/building-a-modern-app-using-nestjs-mongodb-and-vuejs)
 
+We have Awesome Vue.JS and now awesome Nest.JS: https://dev.to/rubiin/awesome-nestjs-4pm7
+
 > TODO:
 >   1. Validation on input to return HTTP 400 and not 500
 

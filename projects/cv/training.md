@@ -20,6 +20,7 @@ https://www.peterbe.com/plog/jsonschema-validate-10x-faster-in-python - Fast JSO
 8. Integration (Interface) Testing - jest
 9. Security Testing
 10. Code Static Testing
+11. Monitoring - Zipkin/promoetheus
 
 # Dependencies
 ## Flask

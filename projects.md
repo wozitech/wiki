@@ -28,12 +28,9 @@ Now customise the repo:
 	3.6. (add) `provider.timeout` and `provider.memorySize`
 	
 # CV Project
-This is a revitalisation (mdoernisation) of my online resume - by using a microservice/GraphQL backend against a Vue.JS client application.
-* [UI](/projects/cv/ui) - the Vue.JS frontend - uses material UI components
-* [training](/projects/cv/training) - a python RESTful API endpoint using flask and connexion against a postgres data store - to be deployed locally, by serverless (lambda) and docker
-* [career](/projects/cv/career) - a nest.js RESTful API endpoint against MongoDB data store  - to be deployed locally, by serverless (lambda) and docker
-* [professional](/projects/cv/professional) - a Golang RESTful API endpoint against a postgres data store - to be deployed locally, by serverless (lambda) and docker
-* [skills](/projects/cv/skills) - a C#.NET RESTful API - to be deployed locally, by serverless (lambda) and docker
+ Warren Ayling resume took SPA to the extreme resulting in a very large `index.html` to my profile, career, professional memberings, certifications, acheivements, skills and competencies all listed in one file. It required HTML formatting on each block of data.
+ 
+ The [CV](/project/cv) project is a modernisiatoin of Warren Ayling online resume. It separates the data from the presentation.
 # WIT Projects
 * [wit-myBuses](/projects/wit-myBuses) - an Alexa skill to tell me when my next bus is for given locations
 * [wit-domain](/projects/wit-domain)

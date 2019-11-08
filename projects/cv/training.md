@@ -4,6 +4,20 @@
 # Repo
 https://github.com/wozitech-cv/service-training.git
 
+# TODO
+https://realpython.com/python-testing/ - python testing
+
+1. [GET] - query parameters: limit, since, total, facetted "scope"
+2. [POST], [PUT], [DELETE] - authorization (JWT)
+3. serverlesss framework - refactoring to allow reuse
+4. Docker file
+5. swagger - strict schema - especially around dates and objects
+6. POST/PUT - data validation
+7. Unit Testing
+8. Integration (Interface) Testing - jest
+9. Security Testing
+10. Code Static Testing
+
 # Dependencies
 ## Flask
 https://www.fullstackpython.com/flask.html
@@ -15,6 +29,8 @@ On top of flask, `connexion` is used to create well documented (swagger) RESTful
 https://realpython.com/flask-connexion-rest-api/
 
 # Data
+https://swagger.io/docs
+
 JSON data - training record:
 ```
 {

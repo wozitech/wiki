@@ -7,6 +7,8 @@ https://github.com/wozitech-cv/service-training.git
 # TODO
 https://realpython.com/python-testing/ - python testing
 https://www.toptal.com/python/an-introduction-to-mocking-in-python - python test mocking
+https://www.peterbe.com/plog/jsonschema-validate-10x-faster-in-python - Fast JSON schema validation
+
 
 1. [GET] - query parameters: limit, since, total, facetted "scope"
 2. [POST], [PUT], [DELETE] - authorization (JWT)

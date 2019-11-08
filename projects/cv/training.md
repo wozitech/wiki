@@ -6,6 +6,7 @@ https://github.com/wozitech-cv/service-training.git
 
 # TODO
 https://realpython.com/python-testing/ - python testing
+https://www.toptal.com/python/an-introduction-to-mocking-in-python - python test mocking
 
 1. [GET] - query parameters: limit, since, total, facetted "scope"
 2. [POST], [PUT], [DELETE] - authorization (JWT)

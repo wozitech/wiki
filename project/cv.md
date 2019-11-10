@@ -41,7 +41,9 @@ With the initial solution in place, each of the strapi custom type APIs will be 
 `terraform` will be used for all the AWS configuration, including RDS, ECS and API Gateway with all necessary IAM.
 `Circle CI` will be used to build (ECR) and deploy (ECS) the containers, for each microservice change that has passed acceptance testing.
 
-Note - API Gateway is used to access the ECS services (this is a better serverless solution compared to the more traditional ELB/ECS - but moreso, API Gateway as an always free tier - whereas their is no free tier on ELB).
+Note:
+* API Gateway is used to access the ECS services (this is a better serverless solution compared to the more traditional ELB/ECS - but moreso, API Gateway as an always free tier - whereas their is no free tier on ELB).
+* API Gateway supports custom domain on APIs that can then be used as a Route 53 alias (CNAMES). But to do so, it has to create a CloudFront distribution and CloudFront is only available for the first 12 months as free tier. Hence, the WOZiTech CV UI uses the AWS API Gateway provided URL
 
 All microservices must run locaolly - no runtime. `Docker Swarm` will be used to run a single instance of each microservice locally - allowing for Interface and Integration tests. `kubernetes` will be used locally for integration, accpetance and load tests.
 

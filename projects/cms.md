@@ -24,7 +24,7 @@ Deploy is the local dev/test environment, showing how the WOZiTech customised st
 2. built as a container, using a reference image (to be decided) onto which node.js and pm2 is installed
 	3. Note  - pm2 with node.js dockerhub image: https://hub.docker.com/r/keymetrics/pm2/ - uses only the formal releases of node.js
 4. The resulting docker image registered in local sonatype Nexus
-5. terraform used to deploy locally (to docker runtime - assumes an already running docker mongo container for database) - this is to allows for interface testing of the container image
+5. docker swarm used to deploy locally (includes running mongodb container for database) - this is to allows for interface testing of the container image, which includes being able to test for old and new custom content types, and managing the mongoDB reference backup image for system testing
 	6. terraform is overkill for local deployment, but the deployment template can be reused for kubernetes deployment and subsequently AWS ECS deployment.
 6. terraform used to deploy locally to k8s - at least two CMS app instances (pods) and as shared MongoDB app instance (pod).
 	7. Used for integration and acceptance testing.

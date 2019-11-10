@@ -28,3 +28,5 @@ Deploy is the local dev/test environment, showing how the WOZiTech customised st
 	6. terraform is overkill for local deployment, but the deployment template can be reused for kubernetes deployment and subsequently AWS ECS deployment.
 6. terraform used to deploy locally to k8s - at least two CMS app instances (pods) and as shared MongoDB app instance (pod).
 	7. Used for integration and acceptance testing.
+	8. The test environment is created from scratch everytime.The mongodb ref database imported during the pod creation from a reference backup in github.
+	

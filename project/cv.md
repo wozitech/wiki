@@ -32,7 +32,7 @@ The Vue.JS application is built via Circle CI and deployed to the S3 - so whenve
 
 # Initial Solution
 The initial solution will be for WOZiTech CV to consume content direct from WOZiTech CMS:
-
+![Wozitech Cv Initial Solution](/uploads/cv/wozitech-cv-initial-solution.png "Wozitech Cv Initial Solution")
 
 # Target Solution
 With the initial solution in place, each of the strapi custom type APIs will be refactored to individual microservices. strapi, will trigger on updates (new content, changed content and deleted) content and will invoke with JWT the microservice `POST`, `PUT` and `DELETE` endpoints to ensure the data knwon to the microservice is relevant. The micrsoervice when starting up, if no data, will pull all data from WOZiTech CMS.

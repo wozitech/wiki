@@ -18,7 +18,7 @@ Triggers can be registered against custom Content Types, allowing the before/aft
 
 # Build, Deploy and Test
 Deploy is the local dev/test environment, showing how the WOZiTech customised strapi application is:
-
+![Wozitech Cms Test](/uploads/projects/wozitech-cms-test.png "Wozitech Cms Test")
 
 1. cloned from guthub
 2. built as a container, using a reference image (to be decided) onto which node.js and pm2 is installed

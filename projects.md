@@ -27,6 +27,11 @@ Now customise the repo:
 	3.5. (add): `provider.role` (to a known IAM role)
 	3.6. (add) `provider.timeout` and `provider.memorySize`
 	
+# CMS
+Whilst working on SFC project at Sopra Steria, I did some evaluations on an API driven CMS; out of four contenders, [strapi](https://strapi.io/) came out the strongest for APIs and it supports MongoDB Atlas - which opens up the realms of streams an, stitch and the rest of the AWS set of services for integration and workflow. The admin UI was good, although pending a feature to add ACLs within the UI.
+
+Having a [WOZiTech CMS](/projects/cms) with RESTful APIs is a good place to prototyping new applications.
+
 # CV Project
  Warren Ayling resume took SPA to the extreme resulting in a very large `index.html` to my profile, career, professional memberings, certifications, acheivements, skills and competencies all listed in one file. It required HTML formatting on each block of data.
  

@@ -1,6 +1,21 @@
 <!-- TITLE: WOZiTech CMS -->
 <!-- SUBTITLE: Uses strapi - aeadless CMS with strong APIs yet a good Admin UI -->
 
+# Repo
+https://github.com/wozitech/strapi.git
+
+# Develop and Deploy
+strapi provides alot of the functionality out of the box, but there are times when it will be necessary to custom strapi:
+* Trigger on local updates (new, change and delete) to custom custom to update microservices
+
+Consequently, need to be able to develop such features, commit to github repo, and then deploy for testing and deploy to production.
+
+## Custom Content Types
+Content types can be created on any instance, but ideally, we want to manage the content types across environments of local dev, local test, deployed test and deployed production - to ensure the content types are consistent.
+
+## Custom Content Type Triggers
+Triggers can be registered against custom Content Types, allowing the before/after new, update and delete events to be captured to allow the subsequential RESTful update via microservices.
+
 # Build, Deploy and Test
 Deploy is the local dev/test environment, showing how the WOZiTech customised strapi application is:
 

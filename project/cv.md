@@ -16,7 +16,7 @@ Only the profile, career history and professional certifications/bodies will be 
 Separate tabs for training and skills. With skills, should allow for filtering, order and pagination and ideally facetted search.
 
 # Initial Solution
-The initial solution will be for 
+The initial solution will be for WOZiTech CV to consume content direct from WOZiTech CMS.
 
 
 # Target Solution
@@ -26,3 +26,15 @@ The initial solution will be for
 * [career](/projects/cv/career) - a nest.js RESTful API endpoint against MongoDB data store  - to be deployed locally, by serverless (lambda) and docker
 * [professional](/projects/cv/professional) - a Golang RESTful API endpoint against a postgres data store - to be deployed locally, by serverless (lambda) and docker
 * [skills](/projects/cv/skills) - a C#.NET RESTful API - to be deployed locally, by serverless (lambda) and docker
+
+## Tests
+Each microservice:
+* Static Code Stats
+* Unit tests - 100% coverage
+* Interface tests - jest with supertest and includes error code
+
+Across all deployed microservices:
+* Integration tests - jest with supertest - covers only expected behaviour
+
+Across all deployed microservices and UI:
+* Acceptance test - protractor (and possibl cumcumber for BDD (user story) style test cases)

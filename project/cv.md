@@ -3,6 +3,9 @@
 
 This is a revitalisation (mdoernisation) of my online resume - by using a microservice/GraphQL backend against a Vue.JS client application.
 
+All resume content is store in strapi (CMS): https://github.com/wozitech/strapi.git.
+
+
 # The Components
 * [UI](/projects/cv/ui) - the Vue.JS frontend - uses material UI components
 * [training](/projects/cv/training) - a python RESTful API endpoint using flask and connexion against a postgres data store - to be deployed locally, by serverless (lambda) and docker

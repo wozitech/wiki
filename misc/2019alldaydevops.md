@@ -1,7 +1,7 @@
 <!-- TITLE: 2019 All Day Dev Ops -->
 
-# Schedule
-https://www.alldaydevops.com/2019-live-schedule?utm_campaign=ADDO%202019&utm_source=hs_automation&utm_medium=email&utm_content=71598814&_hsenc=p2ANqtz-81-Orl8lKBhfheas5cR-3iHMjIDfeBcEYKx4q8ORDMt_0CfL-hhdmxa59GWXFQmcDQ7G5flVZJIg5E0VAnTIYN5ODR5IZ-AWMHiE78C4AJ9wdPDUQ&_hsmi=71598814
+# All Recordings
+https://www.alldaydevops.com/2019-live-schedule?utm_campaign=ADDO%202019&utm_source=hs_email&utm_medium=email&utm_content=79094693&_hsenc=p2ANqtz--XiYcDpPp_StAQip5Z1Of1XWFClXF-gCghvWnCFX7KOqytJx9YAXxgxhFjAmDBt3WEvtBi7hp6T9GZ_qj1VgnT-7rUKvueBb_d6ZvBT9Scc_iMTQE&_hsmi=79094518
 
 ## My Schedule
 All Day DevOps Schedule

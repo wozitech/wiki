@@ -51,8 +51,8 @@ All microservices must run locaolly - no runtime. `Docker Swarm` will be used to
 * [training](/projects/cv/training) - a python RESTful API endpoint using flask and connexion against a postgres data store - to be deployed locally, by serverless (lambda) and docker
 * [career](/projects/cv/career) - a nest.js RESTful API endpoint against MongoDB data store  - to be deployed locally, by serverless (lambda) and docker
 * [professional](/projects/cv/professional) - a Golang RESTful API endpoint against a postgres data store - to be deployed locally, by serverless (lambda) and docker
-* [skills](/projects/cv/skills) - a C#.NET RESTful API - to be deployed locally, by serverless (lambda) and docker
-* TBC - [achievements]() - a Java RESTful API - to be deployed locally, by serverless (lambda) and docker
+* [skills](/projects/cv/skills) - a C#.NET RESTful API against an S3 data store - to be deployed locally, by serverless (lambda) and docker
+* TBC - [achievements]() - a Java RESTful API against a DynamoDB store - to be deployed locally, by serverless (lambda) and docker; note [DynamoDB local](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html)
 
 ## Serverless
 Not shown, but should also consider showing how this could run with serverless (lambda) - this is especially true given the low performance requirements. Support a mixed mode environment - AWS API GW allows for a single endpoint, but both ECS and lambda.

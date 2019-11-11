@@ -200,3 +200,10 @@ docker run -e "DATABASE_HOST=cms-db" -p 8080:1337 --link cms-db --name cms -d wo
 
 To connect to the db container: `docker exec -it cms-db /bin/bash`.
 
+To start/stop/remove:
+```
+docker stop cms
+docker start cms
+docker rm cms
+```
+

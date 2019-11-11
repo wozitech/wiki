@@ -1,5 +1,5 @@
 <!-- TITLE: WOZiTech CMS -->
-<!-- SUBTITLE: Uses strapi - aeadless CMS with strong APIs yet a good Admin UI -->
+<!-- SUBTITLE: Uses strapi - headless CMS with strong APIs yet a good Admin UI -->
 
 # Repo
 https://github.com/wozitech/strapi.git

@@ -5,6 +5,9 @@
 # Free Digital Training
 https://www.aws.training/Details/eLearning?id=34146 - Exam Readiness DevOps Engineer Professional
 
+# Local Stack
+All the popular AWS services available locally: https://github.com/localstack/localstack.
+
 # Certifications
 ## Associate Solutions Architect
 Expires Feb 13, 2021:

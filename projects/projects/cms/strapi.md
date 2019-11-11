@@ -194,7 +194,7 @@ WOZiTech CMS (strapi) requires a MongoDB instance to start. When running up the 
 docker run -d --name cms-db mongo:latest
 
 # then (with env_file environment variables)
-docker run --env-file=env_file -p 8080:1337 --link cms-db --name cms -d wozitech/wozitech-cms
+docker run --env-file=./env_file -p 8080:1337 --link cms-db --name cms -d wozitech/wozitech-cms
 
 # or - (with command line environment variables
 docker run -e "DATABASE_HOST=cms-db" -p 8080:1337 --link cms-db --name cms -d wozitech/wozitech-cms

@@ -95,8 +95,9 @@ To use this with strapi though, need to simply extract the hostname after the "@
         "database": "wozitech-cms",
         "host": "cms-mwoin.mongodb.net",
         "srv": true,
+				"port": 27017,
         "username": "wozitech-cms",
-        "password": "wozitech-cms"
+        "password": "<wozitech-cms-not-real-password>"
       },
       "options": {
         "authenticationDatabase": "",
@@ -108,6 +109,11 @@ To use this with strapi though, need to simply extract the hostname after the "@
 ```
 
 Note - the "ssl" `options` is vital.
+
+But as we said above, sensitive information such as user credentials (and even the hostname) should not be committed in code. Therefore, it is better to start using environment variables (assumes bash style command line):
+```
+DATABASE_HOST='cms-mwoin.mongodb.net' DATABASE_NAME='wozitech-cms' DATABASE_SRV=true DATABASE_SSL=true DATABASE_USERNAME='wozitech-cms' DATABASE_PASSWORD='<wozitech-cms-not-real-password>' NODE_ENV=production npm run start
+```
 
 ## New Database
 Whren starting up strapi against a new database, strapi will not fail; it simply prompts to the admin user credentials and will then proceed to create all the default tables.

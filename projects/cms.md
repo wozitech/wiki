@@ -4,6 +4,22 @@
 # Repo
 https://github.com/wozitech/strapi.git
 
+# Decompose
+WOZiTech CMS is built on `strapi`:
+```
+npm install -g strapi
+strapi new wozitech-cv
+```
+
+This creates a new strapi CMS application, using a wizard to guide through the customisation, namely, to select "MongoDB" as the backend store with the connection details to that database (use a local MongoDB instance first - available on localhost:27001).
+
+It then continues to builds the Angular UI and then starts up the application, launching a web browser to complete the installation by providing the initial admin username and password (go for a non-descript username and password - i used `admin/password`).
+
+You can then add the project to a newly created github repo; and there you have you initial strapi application:
+1. github repo
+2. local MongoDB database
+
+[How strapi Works](projects/cms/strapi)
 # Develop and Deploy
 strapi provides alot of the functionality out of the box, but there are times when it will be necessary to custom strapi:
 * Trigger on local updates (new, change and delete) to custom custom to update microservices

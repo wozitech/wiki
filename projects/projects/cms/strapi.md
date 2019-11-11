@@ -180,6 +180,8 @@ The documentation says the admin UI can be extended. However, when creating the 
 
 When trying to pass `--dev` using `strapi` CLI version "3.0.0-beta-17.5" - it said "--dev" option unknown.
 
+**But look to this blog: https://strapi.io/blog/how-to-change-the-wysiwyg-in-strapi?redirectPage=1**
+
 
 # Dockerising
 Initial notes taken from node reference: https://nodejs.org/de/docs/guides/nodejs-docker-webapp/.

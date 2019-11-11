@@ -25,6 +25,7 @@ Platform Technologies:
 Headless CMS: [strpai](https://strapi.io/)
 
 * [LokiJS](https://github.com/techfort/LokiJS) - in-memory Javascript document database
+* [postal.js](https://github.com/postaljs/postal.js/) - in-memory Javascript pub/sub - it's more than just emitters
 
 Monitoring Technologies:
 * [Hawkular](http://www.hawkular.org/overview/) - watching this at present; to be used with ManageIQ (see below). More interested here in serverless application instrumentation.

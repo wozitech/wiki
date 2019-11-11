@@ -179,3 +179,20 @@ https://strapi.io/documentation/3.0.0-alpha.x/advanced/customize-admin.html#cust
 The documentation says the admin UI can be extended. However, when creating the project need to pass the `--dev` flag, in which the `strapi` CLI will then create (scaffold) the project including creating the `./admin` directory with all the admin files.
 
 When trying to pass `--dev` using `strapi` CLI version "3.0.0-beta-17.5" - it said "--dev" option unknown.
+
+
+# Dockerising
+Initial notes taken from node reference: https://nodejs.org/de/docs/guides/nodejs-docker-webapp/.
+
+To build the docker image locally (from within the `docker` folder): `docker build -t wozitech/wozitech-cms .`.
+
+WOZiTech CMS (strapi) requires a MongoDB instance to start. When running up the container, need to associated the container with an existing MongoDB container.
+
+```
+docker run -d --name cms-db mongo:latest
+docker run --env-file=env_file -p 8080:1337 --link cms-db --name cms -d wozitech/wozitech-cms
+```
+
+To connect to the db container: `docker exec -it cms-db /bin/bash`.
+
+But the when the CMS container starts (using "npm run start"), without explicitly declaring `NODE_ENV` it will start in development mode, and will default to trying to connect to mongo database on localhost. When linking containers, each container is a separare host, but the linked container (in this case, `cms-db`) will be known by name. Therefore, the hostname needs to br 

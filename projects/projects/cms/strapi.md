@@ -4,6 +4,8 @@
 # Reference
 https://strapi.io/documentation/
 
+# Database Connection
+Having created the initial strpai application using the `strpai` CLI, I recommended using a local MongoDB database (with or without authentication).
 # Custom Types
 The primary purrpose of strapi as a CMS is to define custom types (effectively data tables) to hold a custom list of data. Each custom type becomes an API, to which you can then assign RESTful endpoints and look down access to those endpoint with authentication.
 

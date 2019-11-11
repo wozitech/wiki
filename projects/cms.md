@@ -11,7 +11,7 @@ npm install -g strapi
 strapi new wozitech-cv
 ```
 
-This creates a new strapi CMS application, using a wizard to guide through the customisation, namely, to select "MongoDB" as the backend store with the connection details to that database (use a local MongoDB instance first - available on localhost:27001).
+This creates a new strapi CMS application, using a wizard to guide through the customisation, namely, to select "MongoDB" as the backend store with the connection details to that database (use a local MongoDB instance first - available on localhost:27001 with no authentication - because you will be committing this back to github).
 
 It then continues to builds the Angular UI and then starts up the application, launching a web browser to complete the installation by providing the initial admin username and password (go for a non-descript username and password - i used `admin/password`).
 

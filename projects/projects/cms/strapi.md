@@ -115,6 +115,8 @@ But as we said above, sensitive information such as user credentials (and even t
 DATABASE_HOST='cms-mwoin.mongodb.net' DATABASE_NAME='wozitech-cms' DATABASE_SRV=true DATABASE_SSL=true DATABASE_USERNAME='wozitech-cms' DATABASE_PASSWORD='<wozitech-cms-not-real-password>' NODE_ENV=production npm run start
 ```
 
+**NOTICE** - using `NODE_ENV` with value of production to utilise the `.../config/environment/production/*` properties, which includes reading database details from env vars.
+
 ## New Database
 Whren starting up strapi against a new database, strapi will not fail; it simply prompts to the admin user credentials and will then proceed to create all the default tables.
 # Custom Types

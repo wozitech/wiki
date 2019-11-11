@@ -9,6 +9,9 @@ https://medium.com/@me_37286/19-ways-to-become-a-better-node-js-developer-in-201
 ## Static Analysis
 https://flow.org/
 
+## Runtime Analysis/Profiling
+https://www.npmjs.com/package/clinic
+
 ## Decorators
 Built in to typescript, but supported in JavaScript (and babel/webpack polyfill), decorators revitalise functions as first class citizens, allowing easy to read consistent code: https://www.sitepoint.com/javascript-decorators-what-they-are/.
 

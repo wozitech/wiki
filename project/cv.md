@@ -11,6 +11,7 @@ Custom Content types for:
 * Training
 * Skills
 * Profesionalism
+* TBC - Acheivements
 
 The GET/LIST API endpoints on each of the above content types for public access.
 
@@ -56,6 +57,18 @@ All microservices must run locaolly - no runtime. `Docker Swarm` will be used to
 
 ## Serverless
 Not shown, but should also consider showing how this could run with serverless (lambda) - this is especially true given the low performance requirements. Support a mixed mode environment - AWS API GW allows for a single endpoint, but both ECS and lambda.
+
+## Common Services
+### Logging
+All microservices should log to a "Logging" service. All logs should include a distriibuted ID for trackling across services.
+
+_Technology - TBC_
+
+### Monitoring
+All mircoservices should be monitored. At the basic level, this includes the status of the status. But moreso, this includes monitoring ot the application within the microservices too - application monitoring.
+
+* [Zipkin](https://zipkin.io/) - for application monitoring
+* [prometheus](https://prometheus.io/) - with grafana, for overall monitoring including infrastructure and application (fed via Zipkin)
 
 ## Tests
 Each microservice:

@@ -173,3 +173,9 @@ For example:
 Note - each of the strapi environments (`...config/environments/<env>`) has a `custom.json` file which can be used to add environment specific customised definitions; viz. target WOZiTech CV microservice API  endpoints.
 
 Don't forget to use `process.env.<var>` to hold anything sensitive.
+
+# Admin UI
+https://strapi.io/documentation/3.0.0-alpha.x/advanced/customize-admin.html#customization
+The documentation says the admin UI can be extended. However, when creating the project need to pass the `--dev` flag, in which the `strapi` CLI will then create (scaffold) the project including creating the `./admin` directory with all the admin files.
+
+When trying to pass `--dev` using `strapi` CLI version "3.0.0-beta-17.5" - it said "--dev" option unknown.

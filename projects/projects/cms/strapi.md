@@ -70,6 +70,47 @@ Staging/Production `database.json` are then same:
 Here, it can be seen that all settings are taken from environment variables. This more than sufficient for WOZiTech CMS as it will be deployed as a docker image, and docker supports passthrough on environment variables.
 
 _No need to bootsrap any specific sensisble data loading solution._
+
+## MongoDB Atlas
+By default, Atlas databases are clusters and SSL is enabled by default requiring a username/password to be used for authentication on all database connections.
+
+strapi includes a section on using Atlas: https://strapi.io/documentation/3.0.0-alpha.x/guides/databases.html#mongodb-installation.
+
+However, those notes are outdated, because mongoose does support `srv` connections.
+
+Create a new cluster if necessary (free tier cluster is always good for trying things out) in your Atlas account:
+1. Add local IP address to whitelist 
+2. Create new user (with default privileges "read/write" to a named database - "wozitech-cms" (for my use)
+
+Then on your cluster, select "Connect" and application from the popup, select driver **node.js** and **version 3.0** of later and copy the example URI to clipboard. It will look something like this: `mongodb+srv://wozitech-cms:<password>@cms-mwoin.mongodb.net/test?retryWrites=true&w=majority`.
+
+To use this with strapi though, need to simply extract the hostname after the "@"; in this case `cms-mwoin.mongodb.net`. And below is an example `database.json`:
+```
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-mongoose",
+      "settings": {
+        "database": "wozitech-cms",
+        "host": "cms-mwoin.mongodb.net",
+        "srv": true,
+        "username": "wozitech-cms",
+        "password": "wozitech-cms"
+      },
+      "options": {
+        "authenticationDatabase": "",
+        "ssl": true
+      }
+    }
+  }
+}
+```
+
+Note - the "ssl" `options` is vital.
+
+## New Database
+Whren starting up strapi against a new database, strapi will not fail; it simply prompts to the admin user credentials and will then proceed to create all the default tables.
 # Custom Types
 The primary purrpose of strapi as a CMS is to define custom types (effectively data tables) to hold a custom list of data. Each custom type becomes an API, to which you can then assign RESTful endpoints and look down access to those endpoint with authentication.
 

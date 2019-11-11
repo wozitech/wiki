@@ -32,6 +32,8 @@ To upgrade pip: `pip3 install --upgrade pip` (sudo to upgrade globally). Note - 
 
 To install a package: `pip3 install flask`.
 
+To install a package into your user's own local repo: `pip install --user flask`.
+
 To install packages given in a `requirements.txt` (python's equivalent of npm's `package.json`: `pip3 install -r requirements.txt`.
 
 To generate a `requirements.txt`: `pip3 freeze > requirements.txt`.

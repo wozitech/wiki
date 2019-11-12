@@ -80,6 +80,9 @@ _Note: the master node needs a  minimum of 2 (v)CPUs, and docker "cgroupfs" must
 _Note: docker cgroupfs should be systemd not cgroups (as default on install)._
 
 # Administration
+## Cockpit
+Deployment dashboard: https://cockpit-project.org/guide/133/feature-kubernetes.html
+
 ## Drain
 To perform maintenance on a k8s worker node, drain all apps (pods) first. On the master: `kubectl drain <name of worker>`.
 

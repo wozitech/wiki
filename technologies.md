@@ -38,3 +38,7 @@ Monitoring Technologies:
 * [Microservices nest.js](https://docs.nestjs.com/microservices/basics)
 
 Public Reverse Proxy - [ngrok](https://ngrok.com/product)
+
+
+# Watching
+* [Project Atomic - containised stack including docker, kubernetes and cockpit](http://www.projectatomic.io)

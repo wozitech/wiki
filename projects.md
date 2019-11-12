@@ -27,6 +27,9 @@ Now customise the repo:
 	3.5. (add): `provider.role` (to a known IAM role)
 	3.6. (add) `provider.timeout` and `provider.memorySize`
 	
+# Nexus
+Have a local Nexus server, using nginx reverse SSL proxy coming off proxy context path `/nexus`. To get this to work, have to set the Nexus context path to `/nexus` too:
+
 # CMS
 Whilst working on SFC project at Sopra Steria, I did some evaluations on an API driven CMS; out of four contenders, [strapi](https://strapi.io/) came out the strongest for APIs and it supports MongoDB Atlas - which opens up the realms of streams an, stitch and the rest of the AWS set of services for integration and workflow. The admin UI was good, although pending a feature to add ACLs within the UI.
 

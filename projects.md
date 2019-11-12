@@ -35,7 +35,7 @@ Then to create and use nexus as a docker repo: https://blog.sonatype.com/using-n
 When creating Nexus docker repos, in addition to the Nexus base URL, each repo can have a dedicated listener. On my Nexus instance, port 9080 is for the hosted docker repo (private) and port 9081 is for the proxy docker repo. The group doocker repo (includes hosted and proxy) has no dedicated port.
 
 ## WOZiTech DEV LAN
-From hosts on the DEV LAN, the firewall allows direct passthrough to the Nexus server (x.x.x.32)  on ENTERPRISE LAN.
+From hosts on the DEV LAN, the firewall allows direct passthrough to the Nexus server (x.x.x.32)  on ENTERPRISE LAN. These LANs are isolated from Internet/wireless and therefore password security credentials without SSL OK.
 
 Create (or update) `/etc/docker/daemon.json` and restart docker services `systemctl restart docker`:
 ```
@@ -79,8 +79,10 @@ What is important to note for then working with docker commands is the "auth" na
 
 To pull an DockerHub image (use the proxy port - ergo 9081 in my case: `docker pull 10.0.0.32:9081/httpd:2.4-alpine`.
 
-To search on DockerHu (use the proxy port): `docker search 10.0.0.32:9081/httpd:2.4`
+To search on DockerHu (use the proxy port): `docker search 10.0.0.32:9081/httpd:2.4`.
 
+## Home LAN 
+Passing user ceredentials without SSL over the home network (wifi) or externally via Internet is a no go.
 # CMS
 Whilst working on SFC project at Sopra Steria, I did some evaluations on an API driven CMS; out of four contenders, [strapi](https://strapi.io/) came out the strongest for APIs and it supports MongoDB Atlas - which opens up the realms of streams an, stitch and the rest of the AWS set of services for integration and workflow. The admin UI was good, although pending a feature to add ACLs within the UI.
 

@@ -32,6 +32,55 @@ Have a local Nexus server, using nginx reverse SSL proxy coming off proxy contex
 
 Then to create and use nexus as a docker repo: https://blog.sonatype.com/using-nexus-3-as-your-repository-part-3-docker-images.
 
+When creating Nexus docker repos, in addition to the Nexus base URL, each repo can have a dedicated listener. On my Nexus instance, port 9080 is for the hosted docker repo (private) and port 9081 is for the proxy docker repo. The group doocker repo (includes hosted and proxy) has no dedicated port.
+
+## WOZiTech DEV LAN
+From hosts on the DEV LAN, the firewall allows direct passthrough to the Nexus server (x.x.x.32)  on ENTERPRISE LAN.
+
+Create (or update) `/etc/docker/daemon.json` and restart docker services `systemctl restart docker`:
+```
+{
+  "insecure-registries": [
+    "10.0.0.32:9080",
+    "10.0.0.32:9081"
+  ]
+}
+```
+
+Note - these hosts/ports must be available for docker to start correctly.
+
+Must then login to Nexus repostiroy:
+```
+docker login --username aylingw http://10.0.0.32:9080
+docker login --username aylingw http://10.0.0.32:9081
+```
+
+This will create entries in `~/.docker/config.json`, e.g.:
+```
+{
+	"auths": {
+		"10.0.0.32:9080": {
+			"auth": "YXlsaW5ndzpRdWluaWUwMA=="
+		},
+		"10.0.0.32:9081": {
+			"auth": "YXlsaW5ndzpRdWluaWUwMA=="
+		},
+		"wozitech.asuscomm.com": {
+			"auth": "YXlsaW5ndzpRdWluaWUwMA=="
+		}
+	},
+	"HttpHeaders": {
+		"User-Agent": "Docker-Client/19.03.2 (linux)"
+	}
+}
+```
+
+What is important to note for then working with docker commands is the "auth" name, e.g. `10.0.0.32:9080`  - no http or https prefix.
+
+To pull an DockerHub image (use the proxy port - ergo 9081 in my case: `docker pull 10.0.0.32:9081/httpd:2.4-alpine`.
+
+To search on DockerHu (use the proxy port): `docker search 10.0.0.32:9081/httpd:2.4`
+
 # CMS
 Whilst working on SFC project at Sopra Steria, I did some evaluations on an API driven CMS; out of four contenders, [strapi](https://strapi.io/) came out the strongest for APIs and it supports MongoDB Atlas - which opens up the realms of streams an, stitch and the rest of the AWS set of services for integration and workflow. The admin UI was good, although pending a feature to add ACLs within the UI.
 

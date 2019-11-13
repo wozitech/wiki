@@ -6,19 +6,33 @@ Have a local Nexus server on x.x.x.32.
 
 Have a local nginx proxy server on x.x.x.10, with Lets Encrypt SSL, against DDNS `wozitech.asuscomm.com`.
 
-, using nginx reverse SSL proxy coming off proxy context path `/nexus`. To get this to work, have to set the Nexus context path to `/nexus` too.
-
+# Using Nexus as Docker repo
 Then to create and use nexus as a docker repo: https://blog.sonatype.com/using-nexus-3-as-your-repository-part-3-docker-images.
+
+In short:
+* Docker proxy repo - to buffer and cache DockerHub
+* Docker hosted repo - private docker repo
+* Docker group repo - to combine the proxy and hosted repos, so `search`/`pull` commands against against public and private images.
 
 When creating Nexus docker repos, in addition to the Nexus base URL, each repo can have a dedicated listener. On my Nexus instance, port 9080 is for the hosted docker repo (private) and port 9081 is for the proxy docker repo. The group docker repo (includes hosted and proxy) has no dedicated port.
 
+It is not expected that you can push to a group repo, and must instead opt to have the dedicated port (http connector) to push against. However,  this article shows a little nginx proxy rewrite to map GET requests to the group repository (called just docker in his case) and all PUT/POT/PATCH et al methods to the hosted repository, thus effectively looking like you're getting and pushing from the same repo: https://stackoverflow.com/questions/47178055/nexus3-push-to-docker-group-repo.
+
+# nexus context root
+The DDNS (via Asus Router) does not allow for subdomains, so only have one inbound name: wozitech.asuscomm.com - and that root is served direct to wiki.js - which does not support anything but `/` content root.
+
+Using nginx reverse SSL proxy coming off proxy context path `/nexus`. To get this to work, have to set the Nexus context path to `/nexus` too.
+
 Excited as I was to get this configuration working (I could login to the Nexus admin UI using https via the Extranet proxy with SSL, the `docker` client is not able to support docker repo with a context root other than `/`: https://support.sonatype.com/hc/en-us/articles/115013153887-Docker-Repository-Configuration-and-Client-Connection. This is forcing me to map ports through the reverse proxy to create the necessary SSL connection to the individual repo http connector ports.
 
-Also, it is not expected that you can push to a group repo, and must instead opt to have the dedicated port (http connector) to push against. However,  this article shows a little nginx proxy rewrite to map GET requests to the group repository (called just docker in his case) and all PUT/POT/PATCH et al methods to the hosted repository, thus effectively looking like you're getting and pushing from the same repo: https://stackoverflow.com/questions/47178055/nexus3-push-to-docker-group-repo.
+So, if I am having to map additional ports (given I can't have DDNS subdomains) then I might aswell put Nexus context root back to `/` and serve Nexus from the same port 4431, via the nginx proxy and use nginx rewriting to make it look like `push` and `pull` are to the same repo.
+
 
 
 ## WOZiTech DEV LAN
 From hosts on the DEV LAN, the firewall allows direct passthrough to the Nexus server (x.x.x.32)  on ENTERPRISE LAN. These LANs are isolated from Internet/wireless and therefore password security credentials without SSL OK.
+
+So rather than going via the proxy, it makes sense use the repo specific HTTP connector ports which requires insecure docker connection.
 
 Create (or update) `/etc/docker/daemon.json` and restart docker services `systemctl restart docker`:
 ```

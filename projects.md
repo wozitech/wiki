@@ -83,6 +83,19 @@ To search on DockerHu (use the proxy port): `docker search 10.0.0.32:9081/httpd:
 
 ## Home LAN 
 Passing user ceredentials without SSL over the home network (wifi) or externally via Internet is a no go.
+
+> As a temporarily solution, to prove uploading private images, have mapped 192.168.1.201:8083 to the Nexus docker hosted repository, and on my dev PC have added as an insecure registry.
+
+Build the docker image locally, e.g. `docker build -t wozitech/wozitech-cms .`, in the local docker repository (`docker image ls`) is an image called `wozitech/wozitech-cms`.
+
+To upload (where the docker image name is `wozitech-cms`:
+```
+docker login --username aylingw http://192.168.1.201:8083
+docker tag wozitech/wozitech-cms 192.168.1.201:8083/wozitech-cms
+docker push 192.168.1.201:8083/wozitech-cms
+```
+
+The `docker tag` command tags your local image with the target repo name (do a `docker image ls` to prove it). The `docker push`  command then forces the local image to the remote repo.
 # CMS
 Whilst working on SFC project at Sopra Steria, I did some evaluations on an API driven CMS; out of four contenders, [strapi](https://strapi.io/) came out the strongest for APIs and it supports MongoDB Atlas - which opens up the realms of streams an, stitch and the rest of the AWS set of services for integration and workflow. The admin UI was good, although pending a feature to add ACLs within the UI.
 

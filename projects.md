@@ -28,6 +28,10 @@ Now customise the repo:
 	3.6. (add) `provider.timeout` and `provider.memorySize`
 	
 # Nexus
+Available on https://wozitech.asuscomm.com:4431 - both the UI and the docker repository.
+
+[Nexus Build](/projects/nexus)
+
 Have a local Nexus server, using nginx reverse SSL proxy coming off proxy context path `/nexus`. To get this to work, have to set the Nexus context path to `/nexus` too.
 
 Then to create and use nexus as a docker repo: https://blog.sonatype.com/using-nexus-3-as-your-repository-part-3-docker-images.

@@ -32,7 +32,14 @@ Have a local Nexus server, using nginx reverse SSL proxy coming off proxy contex
 
 Then to create and use nexus as a docker repo: https://blog.sonatype.com/using-nexus-3-as-your-repository-part-3-docker-images.
 
-When creating Nexus docker repos, in addition to the Nexus base URL, each repo can have a dedicated listener. On my Nexus instance, port 9080 is for the hosted docker repo (private) and port 9081 is for the proxy docker repo. The group doocker repo (includes hosted and proxy) has no dedicated port.
+When creating Nexus docker repos, in addition to the Nexus base URL, each repo can have a dedicated listener. On my Nexus instance, port 9080 is for the hosted docker repo (private) and port 9081 is for the proxy docker repo. The group docker repo (includes hosted and proxy) has no dedicated port.
+
+Excited as I was to get this configuration working (I could login to the Nexus admin UI using https via the Extranet proxy with SSL, the `docker` client is not able to support docker repo with a context root other than `/`: https://support.sonatype.com/hc/en-us/articles/115013153887-Docker-Repository-Configuration-and-Client-Connection. This is forcing me to map ports through the reverse proxy to create the necessary SSL connection to the individual repo http connector ports.
+
+Also, it is not expected that you can push to a group repo, and must instead opt to have the dedicated port (http connector) to push against. However,  this article shows a little nginx proxy rewrite to map GET requests to the group repository (called just docker in his case) and all PUT/POT/PATCH et al methods to the hosted repository, thus effectively looking like you're getting and pushing from the same repo: https://stackoverflow.com/questions/47178055/nexus3-push-to-docker-group-repo.
+
+
+
 
 ## WOZiTech DEV LAN
 From hosts on the DEV LAN, the firewall allows direct passthrough to the Nexus server (x.x.x.32)  on ENTERPRISE LAN. These LANs are isolated from Internet/wireless and therefore password security credentials without SSL OK.
@@ -79,7 +86,13 @@ What is important to note for then working with docker commands is the "auth" na
 
 To pull an DockerHub image (use the proxy port - ergo 9081 in my case: `docker pull 10.0.0.32:9081/httpd:2.4-alpine`.
 
-To search on DockerHu (use the proxy port): `docker search 10.0.0.32:9081/httpd:2.4`.
+To search on Docker Hub (use the proxy port): `docker search 10.0.0.32:9081/httpd:2.4`.
+
+To push to Docker hosted repo ((assumes you have a local imaged tagged as `wozitech/wozitech-cms`):
+```
+docker tag wozitech/wozitech-cms 192.168.1.201:8083/wozitech-cms
+docker push 192.168.1.201:8083/wozitech-cms
+```
 
 ## Home LAN 
 Passing user ceredentials without SSL over the home network (wifi) or externally via Internet is a no go.

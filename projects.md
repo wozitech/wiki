@@ -27,20 +27,11 @@ Now customise the repo:
 	3.5. (add): `provider.role` (to a known IAM role)
 	3.6. (add) `provider.timeout` and `provider.memorySize`
 	
-# Nexus
-Available on https://wozitech.asuscomm.com:4431 - both the UI and the docker repository.
-
-[Nexus Build](/projects/nexus)
-
-# CMS
-Whilst working on SFC project at Sopra Steria, I did some evaluations on an API driven CMS; out of four contenders, [strapi](https://strapi.io/) came out the strongest for APIs and it supports MongoDB Atlas - which opens up the realms of streams an, stitch and the rest of the AWS set of services for integration and workflow. The admin UI was good, although pending a feature to add ACLs within the UI.
-
-Having a [WOZiTech CMS](/projects/cms) with RESTful APIs is a good place to prototyping new applications.
-
 # CV Project
  Warren Ayling resume took SPA to the extreme resulting in a very large `index.html` to my profile, career, professional memberings, certifications, acheivements, skills and competencies all listed in one file. It required HTML formatting on each block of data.
  
  The [CV](/project/cv) project is a modernisiatoin of Warren Ayling online resume. It separates the data from the presentation.
+ 
 # WIT Projects
 * [wit-myBuses](/projects/wit-myBuses) - an Alexa skill to tell me when my next bus is for given locations
 * [wit-domain](/projects/wit-domain)
@@ -52,4 +43,21 @@ Having a [WOZiTech CMS](/projects/cms) with RESTful APIs is a good place to prot
 * [wit-dash](/projects/wit-dash)
 * Know Your Numbers
 	* [wit-kyn](/projects/wit-kyn)
-	* [kyn]
+
+# Home Network
+## Nexus
+Available on https://wozitech.asuscomm.com:4431 - both the UI and the docker repository.
+
+[Nexus Build](/projects/nexus)
+
+## CMS
+Whilst working on SFC project at Sopra Steria, I did some evaluations on an API driven CMS; out of four contenders, [strapi](https://strapi.io/) came out the strongest for APIs and it supports MongoDB Atlas - which opens up the realms of streams an, stitch and the rest of the AWS set of services for integration and workflow. The admin UI was good, although pending a feature to add ACLs within the UI.
+
+Having a [WOZiTech CMS](/projects/cms) with RESTful APIs is a good place to prototyping new applications.
+
+## Web2
+`web1` was a dedicated node.js virtual server, running wiki.js version and a local monogdb instance. `web2` is a new virtual server instance, running multiple web applications as docker containers:
+* WOZiTech CMS (strapi) - uses MongoDB Atlas
+* wikijs V2 - uses built-in sqllite
+
+[wozitech web2](/projects/web2)

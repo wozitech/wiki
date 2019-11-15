@@ -65,7 +65,7 @@ Having a [WOZiTech CMS](/projects/cms) with RESTful APIs is a good place to prot
 ## Proxy
 Using DDNS service: https://www.dynu.com. It's free - bonus.
 
-Registered wozitech.myddns.rocks.
+Registered wozitech.myddns.rocks. To update with current public IP, the following is ran every 30 minutes: `curl -X GET https://api.dynu.com/nic/update" -H "Authorization: d296a...lMDAK"`. where the `Authorization` header is BASE64 encoded `username:password`. This is done with a simple cron job `*/30 * * * * /bin/curl -X GET https://api.dynu.com/nic/update -H "Authorization: d29...AK"`. **NOTE - not ansible automated owing to the sensitivity of keeping the Authorization code in github.**
 
 Significantly, created CNAME records, referring back to the root DDNS domain, which hits this proxy, which uses multiple nginx domain _servers_ for each of:
 * wiki - wiki.wozitech.myddns.rocks

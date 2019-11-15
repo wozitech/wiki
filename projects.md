@@ -61,3 +61,17 @@ Having a [WOZiTech CMS](/projects/cms) with RESTful APIs is a good place to prot
 * wikijs V2 - uses built-in sqllite
 
 [wozitech web2](/projects/web2)
+
+## Proxy
+Using DDNS service: https://www.dynu.com. It's free - bonus.
+
+Registered wozitech.myddns.rocks.
+
+Significantly, created CNAME records, referring back to the root DDNS domain, which hits this proxy, which uses multiple nginx domain _servers_ for each of:
+* wiki - wiki.wozitech.myddns.rocks
+* cms - cms.wozitech.myddns.rocks
+* nexus - nexus.wozitech.myddns.rocks
+
+For security, using Lets Encrypt, and `gordonchan/auto-letsencrypt` excellent docker service which can create and manage SSL certificates for multiple domains.
+
+The nginx proxy reloads frequently to pick up on renew certificates as necessary.

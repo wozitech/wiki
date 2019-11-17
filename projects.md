@@ -50,6 +50,16 @@ Available on https://nexus.wozitech.myddns.rocks - both the UI and the docker re
 
 [Nexus Build](/projects/nexus)
 
+```
+docker login --username aylingw https://nexus.wozitech.myddns.rocks
+docker search nexus.wozitech.myddns.rocks/httpd
+docker search nexus.wozitech.myddns.rocks/wozitech
+
+
+docker tag wozitech/wozitech-cms nexus.wozitech.myddns.rocks/wozitech-cms
+docker push nexus.wozitech.myddns.rocks/wozitech-cms
+```
+
 ## CMS
 Available on https://cms.wozitech.myddns.rocks - the public, api and the admin.
 

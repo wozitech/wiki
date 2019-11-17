@@ -46,14 +46,19 @@ Now customise the repo:
 
 # Home Network
 ## Nexus
-Available on https://wozitech.asuscomm.com:4431 - both the UI and the docker repository.
+Available on https://nexus.wozitech.myddns.rocks - both the UI and the docker repository.
 
 [Nexus Build](/projects/nexus)
 
 ## CMS
+Available on https://cms.wozitech.myddns.rocks - the public, api and the admin.
+
 Whilst working on SFC project at Sopra Steria, I did some evaluations on an API driven CMS; out of four contenders, [strapi](https://strapi.io/) came out the strongest for APIs and it supports MongoDB Atlas - which opens up the realms of streams an, stitch and the rest of the AWS set of services for integration and workflow. The admin UI was good, although pending a feature to add ACLs within the UI.
 
 Having a [WOZiTech CMS](/projects/cms) with RESTful APIs is a good place to prototyping new applications.
+
+## wiki2
+Available on https://wiki.wozitech.myddns.rocks.
 
 ## Web2
 `web1` was a dedicated node.js virtual server, running wiki.js version and a local monogdb instance. `web2` is a new virtual server instance, running multiple web applications as docker containers:
@@ -72,6 +77,8 @@ Significantly, created CNAME records, referring back to the root DDNS domain, wh
 * cms - `cms.wozitech.myddns.rocks`
 * nexus - `nexus.wozitech.myddns.rocks`
 
-For security, using Lets Encrypt, and `gordonchan/auto-letsencrypt` excellent docker service which can create and manage SSL certificates for multiple domains.
+Separate "named servers" in nginx configuration for each of the above sub domains.
 
-The nginx proxy reloads frequently to pick up on renew certificates as necessary.
+For security, using Lets Encrypt, and `gordonchan/auto-letsencrypt` excellent docker service which can create and manage SSL certificates, including aliases (e.g. www. prefix). A separate letsencrypt container for each domain.
+
+The `letencrypts` container forces a reload on the `nginx` container having renewed renew certificates.

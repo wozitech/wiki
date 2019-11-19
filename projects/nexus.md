@@ -103,6 +103,7 @@ The `docker tag` command tags your local image with the target repo name (do a `
 # Upgrade
 The nexus server is built using ansible; more specially the `ansible-thoteam.nexus3-oss` role. This playbook includes being able to [upgrade](https://github.com/ansible-ThoTeam/nexus3-oss#upgrade-nexus-to-latest-version) the Nexus installation to latest version.
 
+## Take Snapshot
 But before upgrading, using KVM snapshots to allow winding back if the upgrade is not successful (note, replace YYYYMMDD with today's date:
 ```
 virsh shutdown enterprise_nexus
@@ -112,15 +113,31 @@ virsh snapshot-list --domain enterprise_nexus
 virsh snapshot-info --domain enterprise_nexus --snapshotname 20191119_snapshot
 ```
 
+## Add a nexus ansible upgrade task only
+To nexus.yml add (or uncomment):
+```
+    # upgrade nexus
+    - role: ansible-thoteam.nexus3-oss
+      become: yes
+      nexus_upgrade: true
+```
 
+And then run the ansible provision through vagrant: `vagrant provision nexus`.
+
+Note - the ansible task will evenetually fail owing to admin password having changed. It's not a problem on upgrade.
+
+## Wait and login
+Nexus takes a good age to start (it is java). But once the 8081 port has binded, login and confirm Nexus is running as expected.
+
+## Delete the snapshot
 All being well and the upgrade is successful:, delete the snapshot
 ```
 virsh snapshot-list --domain enterprise_nexus
 virsh snapshot-delete --domain enterprise_nexus --snapshotname YYYYMMDD_snapshot
 ```
 
-## To revert the snapshot
-Remembering to replace the YYYYMMDD:
+### To revert the snapshot
+If confirmation of Nexus upgrade has not been successful, then revert back to last snapshot, remembering to replace the YYYYMMDD:
 ```
 virsh snapshot-list --domain enterprise_nexus
 virsh shutdown --domain enterprise_nexus

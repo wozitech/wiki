@@ -37,4 +37,5 @@ That docker repo requires authentication. `$ANSIBLE_ARGS` environment variable i
 ## wiki
 With wiki.js, it notices it's first time setup, but all the CSS, images and most significantly javascript (like that to render the setup screens) are all referenced from `/` too.
 
-There is nothing in the wiki V2 documentation that suggests being able to configure a context root, so it looks like it's still not supported even in V2.
+### Authentication Google
+Has created a Google App called "WOZiTech wiki", but unverified domain (on `wozitech.myddns.rocks`) is preventing me from adding the necessary wikijs Google redirects.

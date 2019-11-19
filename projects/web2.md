@@ -24,8 +24,15 @@ The web applications on web2 are exposed via the WOZiTech Proxy:
 
 Updated the proxy with path contexts `cms` and `wiki` respectively.
 
+# Ansible/Docker
+The CMS and wiki containers are deployed using ansible, with images taken from the WOZiTech Nexus (local) docker repo.
+
+That docker repo requires authentication. `$ANSIBLE_ARGS` environment variable is consumed via vagrant and passed to ansible. On my DevOps vagrant/terraform console desktop, I've set `$ANSIBLE_ARGS` from within `~/.bash_profile` to:
+```
+--extra-vars "NEXUS_USERNAME=docker_read NEXUS_PASSWORD=<guess!!!!>"
+```
+
 ## CMS
-With CMS, can get to the public page, but the admin UI is anchored off `/` and thus fails. `strapi` allows customised path prefix on requests in `request.json`, but that only applies to the API not the admin UI.
 
 ## wiki
 With wiki.js, it notices it's first time setup, but all the CSS, images and most significantly javascript (like that to render the setup screens) are all referenced from `/` too.

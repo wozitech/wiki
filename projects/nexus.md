@@ -99,3 +99,32 @@ docker push 192.168.1.201:8083/wozitech-cms
 ```
 
 The `docker tag` command tags your local image with the target repo name (do a `docker image ls` to prove it). The `docker push`  command then forces the local image to the remote repo.
+
+# Upgrade
+The nexus server is built using ansible; more specially the `ansible-thoteam.nexus3-oss` role. This playbook includes being able to [upgrade](https://github.com/ansible-ThoTeam/nexus3-oss#upgrade-nexus-to-latest-version) the Nexus installation to latest version.
+
+But before upgrading, using KVM snapshots to allow winding back if the upgrade is not successful (note, replace YYYYMMDD with today's date:
+```
+virsh shutdown enterprise_nexus
+virsh snapshot-create-as --domain enterprise_nexus --name YYYYMMDD_snapshot --description "Nexus upgrade"
+virsh start enterprise_nexus
+virsh snapshot-list --domain enterprise_nexus
+virsh snapshot-info --domain enterprise_nexus --snapshotname 20191119_snapshot
+```
+
+
+All being well and the upgrade is successful:, delete the snapshot
+```
+virsh snapshot-list --domain enterprise_nexus
+virsh snapshot-delete --domain enterprise_nexus --snapshotname YYYYMMDD_snapshot
+```
+
+## To revert the snapshot
+Remembering to replace the YYYYMMDD:
+```
+virsh snapshot-list --domain enterprise_nexus
+virsh shutdown --domain enterprise_nexus
+virsh snapshot-revert --domain enterprise_nexus --snapshotname YYYYMMDD_snapshot --running 
+```
+
+

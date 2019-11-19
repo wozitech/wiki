@@ -92,3 +92,12 @@ Separate "named servers" in nginx configuration for each of the above sub domain
 For security, using Lets Encrypt, and `gordonchan/auto-letsencrypt` excellent docker service which can create and manage SSL certificates, including aliases (e.g. www. prefix). A separate letsencrypt container for each domain.
 
 The `letencrypts` container forces a reload on the `nginx` container having renewed renew certificates.
+
+# CentOS 8
+Tried usign the CentOS Vagrant server image for`web2`; no python on it. I did install python2 via ansible (had to disable facts checks), but then the networking ansible roles failed to run owing to SELinux/python; no suitable libselinux_python for python2 - and the lib is installed automaticalyl when installing python3.
+
+Current ansible is V2.7.0  on the "devops" console desktop - which itself is Fedora 28.
+
+The version of vagrant is way out of date; restricted to version 2 when setting this up over a year ago.
+
+Before looking to build CentOS, I should look to build a new DevOps console desktop - with the latest vagrant  and ansible on the latest fedora console runtime.

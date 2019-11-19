@@ -14,10 +14,9 @@ docker pull 10.0.0.32:9080/wozitech-cms
 
 ## Proxy
 The web applications on web2 are exposed via the WOZiTech Proxy:
-1. https://wozitech.asuscomm.com/wikijs - wikijs - port 8081
-2.https://wozitech.asuscomm.com/cms - WOZiTech CMS - port 8080
-# Upgrade
-Having confirm installation configuration using trial build, reprovision `web2` using CentOS V8 (released Sept2019).
+1. https://wiki.wozitech.myddns.rocks - wikijs -  via `web2` host port 8081
+2. https://cms.wozitech.myddns.rocks - CMS - via `web2` host port 8080
+
 
 # Trail Build
 `docker run --env-file=env_file -p 8080:1337 --name cms -d 10.0.0.32:9080/wozitech-cms`

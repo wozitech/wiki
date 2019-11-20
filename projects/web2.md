@@ -2,7 +2,7 @@
 title: WOZiTech web2
 description: Dockerised Enterprise LAN web server
 published: true
-date: 2019-11-20T05:41:56.057Z
+date: 2019-11-20T05:46:20.890Z
 tags: 
 ---
 
@@ -32,12 +32,19 @@ Updated the proxy with path contexts `cms` and `wiki` respectively.
 # Ansible/Docker
 The CMS and wiki containers are deployed using ansible, with images taken from the WOZiTech Nexus (local) docker repo.
 
-That docker repo requires authentication. `$ANSIBLE_ARGS` environment variable is consumed via vagrant and passed to ansible. On my DevOps vagrant/terraform console desktop, I've set `$ANSIBLE_ARGS` from within `~/.bash_profile` to:
+The Nexus docker repo requires authentication. `$ANSIBLE_ARGS` environment variable is consumed via vagrant and passed to ansible, providing the ansible variables `NEXUS_USERNAME` and `NEXUS_PASSWORD`.
+
+The CMS deocker remotely connects to a MongoDB Atlas instance; the database password and hostname are sentisive even with the Atlas whitelist IP network restriction. `$ANSIBLE_ARGS` environment variable is consumed via vagrant and passed to ansible, providing the ansible variables `NEXUS_USERNAME` and `NEXUS_PASSWORD`.
+
+
+On my DevOps vagrant/terraform console desktop, I've set `$ANSIBLE_ARGS` from within `~/.bash_profile` to:
 ```
---extra-vars "NEXUS_USERNAME=docker_read NEXUS_PASSWORD=<guess!!!!> CMS_DB_PASSWORD=wozitech-cms"
+--extra-vars "NEXUS_USERNAME=docker_read NEXUS_PASSWORD=<guess!!!!>  CMS_DB_HOST=<guess> CMS_DB_PASSWORD=<guess>"
 ```
 
 ## CMS
+
+Varagnt
 
 ## wiki
 ansible with `docker_container` creates a postrges container and a wikijs container. postgres container includes username/password in the ansible script, because the container is not port mapped to host (only available to other docker containers on that host. The wikijs container is linked back to the postgres container.

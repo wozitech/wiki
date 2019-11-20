@@ -2,7 +2,7 @@
 title: WOZiTech web2
 description: Dockerised Enterprise LAN web server
 published: true
-date: 2019-11-20T05:46:20.890Z
+date: 2019-11-20T05:46:47.027Z
 tags: 
 ---
 
@@ -34,8 +34,7 @@ The CMS and wiki containers are deployed using ansible, with images taken from t
 
 The Nexus docker repo requires authentication. `$ANSIBLE_ARGS` environment variable is consumed via vagrant and passed to ansible, providing the ansible variables `NEXUS_USERNAME` and `NEXUS_PASSWORD`.
 
-The CMS deocker remotely connects to a MongoDB Atlas instance; the database password and hostname are sentisive even with the Atlas whitelist IP network restriction. `$ANSIBLE_ARGS` environment variable is consumed via vagrant and passed to ansible, providing the ansible variables `NEXUS_USERNAME` and `NEXUS_PASSWORD`.
-
+The CMS deocker remotely connects to a MongoDB Atlas instance; the database password and hostname are sentisive even with the Atlas whitelist IP network restriction. `$ANSIBLE_ARGS` environment variable is consumed via vagrant and passed to ansible, providing the ansible variables `CMS_DB_HOST` and `CMS_DB_PASSWORD`.
 
 On my DevOps vagrant/terraform console desktop, I've set `$ANSIBLE_ARGS` from within `~/.bash_profile` to:
 ```

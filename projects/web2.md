@@ -2,7 +2,7 @@
 title: WOZiTech web2
 description: Dockerised Enterprise LAN web server
 published: true
-date: 2019-11-19T17:41:33.353Z
+date: 2019-11-20T05:41:43.576Z
 tags: 
 ---
 
@@ -34,7 +34,7 @@ The CMS and wiki containers are deployed using ansible, with images taken from t
 
 That docker repo requires authentication. `$ANSIBLE_ARGS` environment variable is consumed via vagrant and passed to ansible. On my DevOps vagrant/terraform console desktop, I've set `$ANSIBLE_ARGS` from within `~/.bash_profile` to:
 ```
---extra-vars "NEXUS_USERNAME=docker_read NEXUS_PASSWORD=<guess!!!!>"
+--extra-vars "NEXUS_USERNAME=docker_read NEXUS_PASSWORD=<guess!!!!> CMS_DB_PASSWORD=wozitech-cms""
 ```
 
 ## CMS

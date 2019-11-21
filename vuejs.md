@@ -1,3 +1,11 @@
+---
+title: vuejs
+description: 
+published: true
+date: 2019-11-21T15:48:23.788Z
+tags: 
+---
+
 ![Vuejs Logo](/uploads/logos/vuejs-logo.png "Vuejs Logo"){.pagelogo}
 
 <!-- TITLE: VueJS -->
@@ -25,6 +33,10 @@ Or simply add the following to the `<head>` section in `public/index.html`:
 ```
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 ```
+
+# Generators
+* [gridsome](https://gridsome.org/)
+* [Nuxt](https://nuxtjs.org/)
 
 # VuEX (State Management)
 This is the equivalent of Redux for React of NgRX for Angular.

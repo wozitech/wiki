@@ -1,5 +1,10 @@
-<!-- TITLE: WOZiTech CV -->
-<!-- SUBTITLE: A refactoring of online resume to make more interactive, separate data from presentation, with data served via GraphQL across a set of microservices -->
+---
+title: WOZiTech CV
+description: A refactoring of online resume to make more interactive, separate data from presentation, with data served via GraphQL across a set of microservices
+published: true
+date: 2019-11-21T15:47:52.902Z
+tags: 
+---
 
 This is a revitalisation (mdoernisation) of my online resume - by using a microservice/GraphQL backend against a Vue.JS client application.
 
@@ -20,7 +25,11 @@ Atlas Backups will be enabled.
 Insomnia Project - across all the APIs, including showing the filtering, ordering and pagination on the skills data.
 
 ## Frontend/UI
-VueJS web application; the only fix content will be the profile. [UI](/projects/cv/ui) - the Vue.JS frontend - uses material UI components
+VueJS web application; the only fix content will be the profile. [UI](/projects/cv/ui) - the Vue.JS frontend - uses material UI components.
+
+Consider one of the Vue.JS generators:
+* [gridsome](https://gridsome.org/)
+* [Nuxt](https://nuxtjs.org/)
 
 All other data via external APIs. 
 

@@ -1,3 +1,11 @@
+---
+title: projects
+description: 
+published: true
+date: 2019-11-21T15:41:00.411Z
+tags: 
+---
+
 ![Wiki Official Blue Circle](/uploads/corporate/wiki-official-blue-circle.png "Wiki Official Blue Circle"){.pagelogo}
 <!-- TITLE: Projects -->
 
@@ -64,6 +72,8 @@ docker push nexus.wozitech.myddns.rocks/wozitech-cms
 Available on https://cms.wozitech.myddns.rocks - the public, api and the admin.
 
 Whilst working on SFC project at Sopra Steria, I did some evaluations on an API driven CMS; out of four contenders, [strapi](https://strapi.io/) came out the strongest for APIs and it supports MongoDB Atlas - which opens up the realms of streams an, stitch and the rest of the AWS set of services for integration and workflow. The admin UI was good, although pending a feature to add ACLs within the UI.
+
+Note - an alternative headless CMS with nothing to install: [Cosmic JS](https://www.cosmicjs.com/).
 
 Having a [WOZiTech CMS](/projects/cms) with RESTful APIs is a good place to prototyping new applications.
 

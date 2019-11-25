@@ -2,7 +2,7 @@
 title: typescript
 description: 
 published: true
-date: 2019-11-25T14:04:03.274Z
+date: 2019-11-25T14:04:10.833Z
 tags: 
 ---
 
@@ -12,8 +12,7 @@ tags:
 
 # nodejs
 * Create a node.js project using typescript: https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d.
-
-[reference project and instructions for a node.js typescript project](https://github.com/microsoft/TypeScript-Node-Starter)
+* [reference project and instructions for a node.js typescript project](https://github.com/microsoft/TypeScript-Node-Starter)
 
 # Inheritance
 ```

@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2019-11-28T14:58:09.133Z
+date: 2019-11-28T15:21:28.276Z
 tags: 
 ---
 
@@ -109,6 +109,7 @@ For those having docker experience: https://kubernetes.io/docs/reference/kubectl
 * `kubectl get pods --all-namespaces` - all pods
 * `kubectl get pods --namespace <namespace>` - use `-o wide` to get more information
 * `kubectl get pods --namespace <namespace> --sort-by='.status.containerStatuses[0].restartCount' - to sort by restarts
+* `kubectl describe pod --namespace <namespace> <pod id>`
 
 ## Deployments
 * `kubectl get --namespace <namespace> deployments.v1.apps`

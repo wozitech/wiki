@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2019-11-28T14:56:05.704Z
+date: 2019-11-28T14:58:09.133Z
 tags: 
 ---
 
@@ -98,6 +98,8 @@ To perform maintenance on a k8s worker node, drain all apps (pods) first. On the
 ## Prometheus
 
 # CLI
+For those having docker experience: https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/.
+
 ## Services
 * `kubectl get services`
 * `kubectl get services --all-namespaces`

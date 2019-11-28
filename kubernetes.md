@@ -1,3 +1,11 @@
+---
+title: kubernetes
+description: 
+published: true
+date: 2019-11-28T14:56:05.704Z
+tags: 
+---
+
 ![Kubernetes Logo](/uploads/logos/kubernetes-logo.png "kubernetes Logo"){.pagelogo}
 <!-- TITLE: kubernetes -->
 <!-- SUBTITLE: The De Facto App Hosting Platform -->
@@ -88,3 +96,18 @@ To perform maintenance on a k8s worker node, drain all apps (pods) first. On the
 
 # Monitoring
 ## Prometheus
+
+# CLI
+## Services
+* `kubectl get services`
+* `kubectl get services --all-namespaces`
+* `kubectl get services --namespace wd-audio-platform-local -o wide` - returns full details, including a column highlighting those that have External-IP and what that IP is
+
+## Pods (Apps by node)
+* `kubectl get pods --all-namespaces` - all pods
+* `kubectl get pods --namespace <namespace>` - use `-o wide` to get more information
+* `kubectl get pods --namespace <namespace> --sort-by='.status.containerStatuses[0].restartCount' - to sort by restarts
+
+## Deployments
+* `kubectl get --namespace <namespace> deployments.v1.apps`
+* `kubectl get --all-namespaces deployments`

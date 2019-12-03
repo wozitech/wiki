@@ -1,3 +1,11 @@
+---
+title: Home
+description: Home
+published: true
+date: 2019-12-03T06:01:21.532Z
+tags: 
+---
+
 ![Wiki Official](/uploads/corporate/wiki-official.png "Wiki Official"){.pagelogo}
 <!-- TITLE: Home -->
 <!-- SUBTITLE: WOZiTech Limited wiki -->
@@ -17,5 +25,4 @@ Online Print Bureaus
 Online Free Images
 * [Unsplash](https://unsplash.com/)
 
-# Local Services
-Nexus: https://wozitech.asuscomm.com/nexus
+Check If Your Email Has Been Compromised - www.haveibeenpwned.com

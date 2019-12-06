@@ -2,7 +2,7 @@
 title: Docker
 description: A quick summary of Docker
 published: true
-date: 2019-12-06T07:37:49.262Z
+date: 2019-12-06T07:39:42.390Z
 tags: 
 ---
 
@@ -55,6 +55,12 @@ No need to link containers, simply manage you're own networks.
 
 Creating private networks is simple: `docker network create myprivnetwork`.
 
-To create a container presented on that private network: `docker run -d --name mydb --network=myprivnetwork -p 9042:9042 cassandra:3`.
+To create a container presented on that private network:
+```
+docker run -d --name mydb --network=myprivnetwork -p 9042:9042 cassandra:3
+```
 
-To create a client container: `docker run --network=mynetwork -e "DATABASE=cassandra" -e "DB_HOST=mydb" -d my:container`.
+To create a client container:
+```
+docker run --network=mynetwork -e "DATABASE=cassandra" -e "DB_HOST=mydb" -d my:container
+```

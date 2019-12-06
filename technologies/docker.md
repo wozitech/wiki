@@ -1,5 +1,10 @@
-<!-- TITLE: Docker -->
-<!-- SUBTITLE: A quick summary of Docker -->
+---
+title: Docker
+description: A quick summary of Docker
+published: true
+date: 2019-12-06T07:37:49.262Z
+tags: 
+---
 
 # General Docker Commands
 
@@ -44,3 +49,12 @@ docker run -p 10080:80 \
         -d dpage/pgadmin4 \
 				--mount source=pgadmin,target=/var/lib/pgadmin
 ```
+
+# Networks
+No need to link containers, simply manage you're own networks.
+
+Creating private networks is simple: `docker network create myprivnetwork`.
+
+To create a container presented on that private network: `docker run -d --name mydb --network=myprivnetwork -p 9042:9042 cassandra:3`.
+
+To create a client container: `docker run --network=mynetwork -e "DATABASE=cassandra" -e "DB_HOST=mydb" -d my:container`.

@@ -1,3 +1,11 @@
+---
+title: javascript
+description: 
+published: true
+date: 2019-12-18T07:24:55.766Z
+tags: 
+---
+
 ![Javascript Logo](/uploads/logos/javascript-logo.jpg "Javascript Logo"){.pagelogo}
 <!-- TITLE: Javascript -->
 <!-- SUBTITLE: A collection of JavaScript/TypeScript -->
@@ -8,6 +16,9 @@ https://medium.com/@me_37286/19-ways-to-become-a-better-node-js-developer-in-201
 
 ## Static Analysis
 https://flow.org/
+
+## Debugger Rocks
+https://peterlyons.com/js-debug/
 
 ## Runtime Analysis/Profiling
 https://www.npmjs.com/package/clinic

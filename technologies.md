@@ -1,5 +1,10 @@
-<!-- TITLE: Technologies -->
-<!-- SUBTITLE: These are the technologies I used -->
+---
+title: Technologies
+description: These are the technologies I used
+published: true
+date: 2019-12-18T07:45:11.567Z
+tags: 
+---
 
 # Technologies
 Platform Technologies:
@@ -42,3 +47,4 @@ Public Reverse Proxy - [ngrok](https://ngrok.com/product)
 
 # Watching
 * [Project Atomic - containised stack including docker, kubernetes and cockpit](http://www.projectatomic.io)
+* [snyk](https://snyk.io/) - static vulnerability assessment and faciliated automated update. Integrates with github and PRs. Integrates within a Circle CI pipeline. Good reporting. Includes Docker images.

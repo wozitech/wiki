@@ -2,7 +2,7 @@
 title: Docker
 description: A quick summary of Docker
 published: true
-date: 2019-12-06T07:39:42.390Z
+date: 2019-12-24T15:59:03.295Z
 tags: 
 ---
 
@@ -35,6 +35,11 @@ docker run -p 10080:80 \
 
 _10080 is the local port mapping on to 80 within the container._
 _/home/pgadmin/var is the local directory mapping to the /var/lib/pgadmin directory within the container.
+
+## Build
+`docker build -t <tag> .`
+
+With repeated local build it is often necessary to run `docker image prune` regular to clean up dangling images.
 
 ## Volumes
 Volumes are the preferred method to present local storage to containers. Volumes are managed by docker and therefore you don't get the usual shanigans associated with unix file permissions for creating local directories.

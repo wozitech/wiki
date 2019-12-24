@@ -2,7 +2,7 @@
 title: PostgreSQL
 description: 
 published: true
-date: 2019-12-24T09:28:22.704Z
+date: 2019-12-24T09:29:03.848Z
 tags: 
 ---
 
@@ -44,3 +44,7 @@ CREATE ROLE [username] WITH SUPERUSER LOGIN PASSWORD 'password';
  
  # Better Display of Records
  Using `psql` and selecting data can be hard to read. For a better view of records, use issue `\x` at the `psql` prompt.
+ 
+ # Copy a Database
+ `createdb -T sfcdevdb sfcrefdb`
+ 

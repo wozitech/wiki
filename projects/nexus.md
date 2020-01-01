@@ -2,7 +2,7 @@
 title: Nexus
 description: Nexus Build Notes
 published: true
-date: 2020-01-01T13:47:03.576Z
+date: 2020-01-01T13:47:17.097Z
 tags: 
 ---
 
@@ -95,13 +95,6 @@ Passing user ceredentials without SSL over the home network (wifi) or externally
 > As a temporarily solution, to prove uploading private images, have mapped 192.168.1.201:8083 to the Nexus docker hosted repository, and on my dev PC have added as an insecure registry.
 
 Build the docker image locally, e.g. `docker build -t wozitech/wozitech-cms .`, in the local docker repository (`docker image ls`) is an image called `wozitech/wozitech-cms`.
-
-To upload (where the docker image name is `wozitech-cms`:
-```
-docker login --username aylingw http://192.168.1.201:8083
-docker tag wozitech/wozitech-cms 192.168.1.201:8083/wozitech-cms
-docker push 192.168.1.201:8083/wozitech-cms
-```
 
 The `docker tag` command tags your local image with the target repo name (do a `docker image ls` to prove it). The `docker push`  command then forces the local image to the remote repo.
 

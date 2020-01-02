@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T14:04:48.769Z
+date: 2020-01-02T14:39:19.616Z
 tags: 
 ---
 
@@ -100,8 +100,10 @@ _Note: the master node needs a  minimum of 2 (v)CPUs, and docker "cgroupfs" must
 _Note: docker cgroupfs should be systemd not cgroups (as default on install)._
 
 # Administration
-## Cockpit
-Deployment dashboard: https://cockpit-project.org/guide/133/feature-kubernetes.html
+## Dashboard
+https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard
+
+Note - requries an admin-user token to login - https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md. **save each of the service account user and ClusterRoleBinding defs in separate files - and run `kubectl apply -f <name of file>.yaml` separately.
 
 ## Drain
 To perform maintenance on a k8s worker node, drain all apps (pods) first. On the master: `kubectl drain <name of worker>`.

@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T16:42:30.635Z
+date: 2020-01-02T16:46:10.068Z
 tags: 
 ---
 
@@ -50,9 +50,11 @@ By default, when a service is created, it is created with a Cluster IP address; 
 
 There are other `ServiceTypes` - taken https://kubernetes.io/docs/concepts/services-networking/service/:
 * `NodePort`: Exposes the Service on each Node’s IP at a static port (the NodePort). A ClusterIP Service, to which the NodePort Service routes, is automatically created. You’ll be able to contact the NodePort Service, from outside the cluster, by requesting `<NodeIP>:<NodePort>`.
-* `LoadBalancer`: Exposes the Service externally using a cloud provider’s load balancer. NodePort and ClusterIP Services, to which the external load balancer routes, are automatically created.
+* `LoadBalancer`: Exposes the Service externally using a **cloud provider’s** load balancer.
+  * `ExternalIP`: within the service definition yaml file can additionally specify the externalIPs of the load balancer.
+  * If using `minikube` can run `minikube tunnel`, and still use `loadbalancer` type.
 * `ExternalName`: Maps the Service to the contents of the externalName field (e.g. foo.bar.example.com), by returning a CNAME record
-* `ExternalIP`: Maps a given service by name, to an external IP. That IP address is not managed by the kubernetes cluster.
+
 
 A `service` can be discovered in one of two ways:
 * Environment Variable - only works between services on the same node - and therefore, not scalable

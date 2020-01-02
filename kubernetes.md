@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T14:53:48.750Z
+date: 2020-01-02T16:12:48.835Z
 tags: 
 ---
 
@@ -89,7 +89,7 @@ The [kubernetes web dashboard](https://kubernetes.io/docs/tasks/access-applicati
 
 To install: `kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yaml`. This deploys the web UI as a pod (application). 
 
-Need to create an `admin-user` and get it's token as described [here](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md). **Save each of the service account user and ClusterRoleBinding defs in separate files - and run `kubectl apply -f <name of file>.yaml` separately.**
+Need to create an `admin-user` and get it's token as described [here](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md). **Save each of the service account user and ClusterRoleBinding defs in separate files - and run `kubectl apply -f <name of file>.yaml` separately, or a single file using `---` to separate each.**
 
 To access this dashboard outside of the k8s cluster, need to create a non-clutserIP service, and also, need to be sure on which host the dashboard will run (so restrict the deployment above):
 ```
@@ -128,6 +128,23 @@ With kubernetes DNS service installed, e.g. kube-dns or core-dns, then services 
 If you have a Service called "my-service" in a Kubernetes Namespace "my-ns", the control plane and the DNS Service acting together create a DNS record for "my-service.my-ns".
 
 Kubernetes also supports DNS SRV (Service) records for named ports. If the "my-service.my-ns" Service has a port named "http" with protocol set to TCP, you can do a DNS SRV query for _http._tcp.my-service.my-ns to discover the port number for "http", as well as the IP address.
+
+To debug DNS is can be useful to run up the following interactive container: `kubectl run curl --image=radial/busyboxplus:curl -i --tty`.
+
+Once in, issue `nslookup bob` and it will return the DNS domain server used and it's fully qualified domain name. e.g.:
+```
+Server:    10.96.0.10
+Address 1: 10.96.0.10 kube-dns.kube-system.svc.cluster.local
+```
+
+In this example, `svc.cluster.local` is the cluster root DNS domain.
+
+To lookup say the dashboard:
+```
+nslookup kubernetes-dashboard.kubernetes-dashboard.svc.cluster.local
+```
+
+Note - `kubernetes-dashboard` is both the name of the container and the namespace.
 
 # CLI
 For those having docker experience: https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/.

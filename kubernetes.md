@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T16:12:48.835Z
+date: 2020-01-02T16:42:30.635Z
 tags: 
 ---
 
@@ -91,7 +91,7 @@ To install: `kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashb
 
 Need to create an `admin-user` and get it's token as described [here](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md). **Save each of the service account user and ClusterRoleBinding defs in separate files - and run `kubectl apply -f <name of file>.yaml` separately, or a single file using `---` to separate each.**
 
-To access this dashboard outside of the k8s cluster, need to create a non-clutserIP service, and also, need to be sure on which host the dashboard will run (so restrict the deployment above):
+To access this dashboard outside of the k8s cluster, need to create a non-clutserIP service:
 ```
 kubectl expose --namespace kubernetes-dashboard deployment kubernetes-dashboard --type=LoadBalancer --name=lb-kubernetes-dashboard
 
@@ -104,7 +104,7 @@ _Using a "LoadBalancer" service type, will automatically apply a NodePort bindin
 kubectl describe --namespace kubernetes-dashboard services
 ```
 
-Can then port forward/forward proxy to the host and port.
+Can then port forward/forward proxy to the to any one of the k8s host (all will use the same port and resolve internally to whichever node the dashboard app is running on).
 
 
 ### TODO

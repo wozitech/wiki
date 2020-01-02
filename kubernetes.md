@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T16:52:54.807Z
+date: 2020-01-02T16:57:23.658Z
 tags: 
 ---
 
@@ -109,8 +109,21 @@ Having created the service, can then get to the host's port:
 kubectl describe --namespace kubernetes-dashboard services port-kubernetes-dashboard
 ```
 
-Can then port forward/forward proxy to the to any one of the k8s host (all will use the same port and resolve internally to whichever node the dashboard app is running on).
+And then port forward/forward proxy to the to any one of the k8s host (all will use the same port and resolve internally to whichever node the dashboard app is running on).
 
+Alternatively, use a loadbalancer mapped direct to an external IP - typically, loadbalancer service requries a cloud provisioner with load balancing capability.
+
+But in my case, I simply bound an additional IP address to the master server (vagrant/ansible provisioning). And then ran the following:
+
+```
+kubectl expose --namespace kubernetes-dashboard deployment kubernetes-dashboard --type=LoadBalancer --name=lb-kubernetes-dashboard
+
+kubectl patch service lb-kubernetes-dashboard --namespace kubernetes-dashboard -p '{"spec": {"type": "LoadBalancer", "externalIPs":["x.x.100.200"]}}'
+
+kubectl describe --namespace kubernetes-dashboard services lb-kubernetes-dashboard
+```
+
+Where x.x.100.200 is the additional IP address. The original dashboard application port 8443 is made available x.x.100.200:8443. Can then port forward/forward proxy to that known IP/port. kubernetes is clever enough to only create the iptables NAT on the hose with the given IP address bound.
 
 _Using a "LoadBalancer" service type, will automatically apply a NodePort binding too._ 
 

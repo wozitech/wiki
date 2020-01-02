@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2019-11-28T15:21:28.276Z
+date: 2020-01-02T09:49:40.323Z
 tags: 
 ---
 
@@ -27,7 +27,7 @@ Requires a `master` node and one of more worker `nodes` (formerly called minions
 
 A Pod is an application specific "logical host"; e.g. web servers, app1 servers, ...
 
-On the `master` is found:
+On the `master` is found - assume `kube` user:
 * `API Server` - REST API using JSON/yaml
 * `Scheduler` - scheduled tasks, such as, launching contrainers of worker nodes
 * `Controller Manager` - monitors and scales the current number of pods 
@@ -35,7 +35,7 @@ On the `master` is found:
 * `kubectl` utility - command line access to API Server
 
 
-On the `node` is found:
+On the `node` is found - assume `kube` user:
 * `kubelet` - daemon for creating, launching and deleting containers
 * `kube-proxy` - routes network traffic to/from the container
 * `pod` - application _logical set_ on this worker - consisting of one (atypical) or more containers that work as a single unit.

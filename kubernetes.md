@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T14:39:19.616Z
+date: 2020-01-02T14:39:26.452Z
 tags: 
 ---
 
@@ -103,7 +103,7 @@ _Note: docker cgroupfs should be systemd not cgroups (as default on install)._
 ## Dashboard
 https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard
 
-Note - requries an admin-user token to login - https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md. **save each of the service account user and ClusterRoleBinding defs in separate files - and run `kubectl apply -f <name of file>.yaml` separately.
+Note - requries an admin-user token to login - https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md. **save each of the service account user and ClusterRoleBinding defs in separate files - and run `kubectl apply -f <name of file>.yaml` separately.**
 
 ## Drain
 To perform maintenance on a k8s worker node, drain all apps (pods) first. On the master: `kubectl drain <name of worker>`.

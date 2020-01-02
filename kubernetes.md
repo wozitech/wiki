@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T11:14:42.246Z
+date: 2020-01-02T11:19:49.670Z
 tags: 
 ---
 
@@ -45,6 +45,13 @@ A `deployment` is a `replication set` of pods across the k8s; it defines, as a m
 `kubectl get --all-namespaces deployments`
 
 A `service` is the single entry point to a given deployment; no matter when/if the configuration of the deployment changes, the `service` identity does not change. A `service` has a common IP address, port and label selector making it available for external use. A `service` can be discovered by other `services` - for example, a `frontend` service can discovered and thus use a `backend` service.
+
+By default, when a service is created, it is created with a Cluster IP address; that is a address known within the kubernetes cluster.
+
+There are other `ServiceTypes` - taken https://kubernetes.io/docs/concepts/services-networking/service/:
+* `NodePort`: Exposes the Service on each Node’s IP at a static port (the NodePort). A ClusterIP Service, to which the NodePort Service routes, is automatically created. You’ll be able to contact the NodePort Service, from outside the cluster, by requesting `<NodeIP>:<NodePort>`.
+* `LoadBalancer`: Exposes the Service externally using a cloud provider’s load balancer. NodePort and ClusterIP Services, to which the external load balancer routes, are automatically created.
+* `ExternalName`: Maps the Service to the contents of the externalName field (e.g. foo.bar.example.com), by returning a CNAME record
 
 A `service` can be discovered in one of two ways:
 * Environment Variable - only works between services on the same node - and therefore, not scalable

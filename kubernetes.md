@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T11:19:49.670Z
+date: 2020-01-02T14:04:48.769Z
 tags: 
 ---
 
@@ -52,6 +52,7 @@ There are other `ServiceTypes` - taken https://kubernetes.io/docs/concepts/servi
 * `NodePort`: Exposes the Service on each Node’s IP at a static port (the NodePort). A ClusterIP Service, to which the NodePort Service routes, is automatically created. You’ll be able to contact the NodePort Service, from outside the cluster, by requesting `<NodeIP>:<NodePort>`.
 * `LoadBalancer`: Exposes the Service externally using a cloud provider’s load balancer. NodePort and ClusterIP Services, to which the external load balancer routes, are automatically created.
 * `ExternalName`: Maps the Service to the contents of the externalName field (e.g. foo.bar.example.com), by returning a CNAME record
+* `ExternalIP`: Maps a given service by name, to an external IP. That IP address is not managed by the kubernetes cluster.
 
 A `service` can be discovered in one of two ways:
 * Environment Variable - only works between services on the same node - and therefore, not scalable
@@ -67,6 +68,8 @@ A `services` can interacrt with a `daemon` in one of four ways:
 * IP and port - the pods use the node's (host) IP and port for the daemon
 * DNS - the daemons are accessed by name
 * Service - the daemons are presented as a service, and pods on the host coukld use a daemon on a different host, or most importantly, still access a daemon if the host on which the pod has been launched doesn't have such a daemon instance (e.g. a storage cluster daemon on a node with no local storage)
+
+A `namespace` is a virutalised set of services & pods. It allows a single k8s cluster to be separated in many ways. e.g. a "dev" namespace, or a "systemtest" namespace. To `get` or `describe` or `expose` for a specific namesapce, use the `--namesace <my namespace>` argument to `kubectl`.
 
 # Installation
 One master and two workers. vagrant/kvm/centros7/ansible/weave scripted deployment: https://github.com/wozitech/vagrant/tree/master/dev.

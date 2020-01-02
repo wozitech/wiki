@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T10:21:58.766Z
+date: 2020-01-02T10:29:24.999Z
 tags: 
 ---
 
@@ -101,6 +101,9 @@ To perform maintenance on a k8s worker node, drain all apps (pods) first. On the
 
 # CLI
 For those having docker experience: https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/.
+
+## Available k8s Services
+`kubectl api-resources`
 
 ## Services
 * `kubectl get services`

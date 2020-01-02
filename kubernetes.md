@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T10:31:17.336Z
+date: 2020-01-02T10:31:35.950Z
 tags: 
 ---
 
@@ -105,7 +105,7 @@ For those having docker experience: https://kubernetes.io/docs/reference/kubectl
 ## Available k8s Services
 `kubectl api-resources`
 
-e.g. pods, nodes, jobs, networkpolicies, ...
+e.g. `pods`, `nodes`, `jobs`, `networkpolicies`, ...
 
 ## Services
 * `kubectl get services`

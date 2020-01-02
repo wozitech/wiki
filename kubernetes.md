@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T09:49:40.323Z
+date: 2020-01-02T10:21:58.766Z
 tags: 
 ---
 
@@ -42,6 +42,8 @@ On the `node` is found - assume `kube` user:
 
 A `deployment` is a `replication set` of pods across the k8s; it defines, as a minimum, the number of pods required across the cluster. The `deployment` ensures this number of pods is maintained, regardless of whether a pod fails, the host on which a pod fails, of the number of pods as defined within the deployment is changed. A single node can have more than one instance of the same pod running on it (if deployment says 4 but only three nodes, then one node must run two pod instances). A `deployment` is managed; it manages the pods including supporting rolling updates. 
 
+`kubectl get --all-namespaces deployments`
+
 A `service` is the single entry point to a given deployment; no matter when/if the configuration of the deployment changes, the `service` identity does not change. A `service` has a common IP address, port and label selector making it available for external use. A `service` can be discovered by other `services` - for example, a `frontend` service can discovered and thus use a `backend` service.
 
 A `service` can be discovered in one of two ways:
@@ -68,7 +70,7 @@ ks8 networking can be managed via one of many container network interface plugin
 
 To check cluster:
 * `kubectl get nodes`
-* `kubectl get pods --all-namespaces`
+* `kubectl get pods --all-namespaces -o wide`
 
 During development of ansible scripts, I did have to remove a node from the cluster; on the worker node, `kubeadm reset`.
 

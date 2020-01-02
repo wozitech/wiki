@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T16:46:10.068Z
+date: 2020-01-02T16:52:54.807Z
 tags: 
 ---
 
@@ -93,7 +93,9 @@ To install: `kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashb
 
 Need to create an `admin-user` and get it's token as described [here](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md). **Save each of the service account user and ClusterRoleBinding defs in separate files - and run `kubectl apply -f <name of file>.yaml` separately, or a single file using `---` to separate each.**
 
-To access this dashboard outside of the k8s cluster, need to create a non-clutserIP service:
+To access this dashboard outside of the k8s cluster, need to create a non-clutserIP service.
+
+The simplest is as a nodeport - which binds the same high level port to all hosts. 
 ```
 kubectl expose --namespace kubernetes-dashboard deployment kubernetes-dashboard --type=LoadBalancer --name=lb-kubernetes-dashboard
 
@@ -101,13 +103,16 @@ or
 
 kubectl expose --namespace kubernetes-dashboard deployment kubernetes-dashboard --type=NodePort --name=port-kubernetes-dashboard
 ```
-_Using a "LoadBalancer" service type, will automatically apply a NodePort binding too._ Having created the service, can then get to the host's port:
+
+Having created the service, can then get to the host's port:
 ```
-kubectl describe --namespace kubernetes-dashboard services
+kubectl describe --namespace kubernetes-dashboard services port-kubernetes-dashboard
 ```
 
 Can then port forward/forward proxy to the to any one of the k8s host (all will use the same port and resolve internally to whichever node the dashboard app is running on).
 
+
+_Using a "LoadBalancer" service type, will automatically apply a NodePort binding too._ 
 
 ### TODO
 1. Add public ethernet - allowing pods to be presented to different networks

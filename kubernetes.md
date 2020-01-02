@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T14:39:26.452Z
+date: 2020-01-02T14:53:48.750Z
 tags: 
 ---
 
@@ -87,9 +87,25 @@ During development of ansible scripts, I did have to remove a node from the clus
 ### Web UI
 The [kubernetes web dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) is not installed (deployed) by default.
 
-To install: `kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yaml`. This deploys the web UI as a pod (application). But to access the Web UI, need to start a proxy for the _k8s_: `kubectl proxy --address <IP>` will start the proxy on port 8001 (default) against the given IP address; if you don't specific the IP address, then kubernetes will bind to localhost only.
+To install: `kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yaml`. This deploys the web UI as a pod (application). 
 
-> When trying to access the Web UI console remotely though; get forbidden response. The installation talks of token based access only. To create an `admin-user`: https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md. Created the service user/group, but the instructions as shown on how to present the token on first login are not relevant here because I can't get to the kubernetes Web UI application login screen!
+Need to create an `admin-user` and get it's token as described [here](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md). **Save each of the service account user and ClusterRoleBinding defs in separate files - and run `kubectl apply -f <name of file>.yaml` separately.**
+
+To access this dashboard outside of the k8s cluster, need to create a non-clutserIP service, and also, need to be sure on which host the dashboard will run (so restrict the deployment above):
+```
+kubectl expose --namespace kubernetes-dashboard deployment kubernetes-dashboard --type=LoadBalancer --name=lb-kubernetes-dashboard
+
+or
+
+kubectl expose --namespace kubernetes-dashboard deployment kubernetes-dashboard --type=NodePort --name=port-kubernetes-dashboard
+```
+_Using a "LoadBalancer" service type, will automatically apply a NodePort binding too._ Having created the service, can then get to the host's port:
+```
+kubectl describe --namespace kubernetes-dashboard services
+```
+
+Can then port forward/forward proxy to the host and port.
+
 
 ### TODO
 1. Add public ethernet - allowing pods to be presented to different networks
@@ -100,11 +116,6 @@ _Note: the master node needs a  minimum of 2 (v)CPUs, and docker "cgroupfs" must
 _Note: docker cgroupfs should be systemd not cgroups (as default on install)._
 
 # Administration
-## Dashboard
-https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard
-
-Note - requries an admin-user token to login - https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md. **save each of the service account user and ClusterRoleBinding defs in separate files - and run `kubectl apply -f <name of file>.yaml` separately.**
-
 ## Drain
 To perform maintenance on a k8s worker node, drain all apps (pods) first. On the master: `kubectl drain <name of worker>`.
 

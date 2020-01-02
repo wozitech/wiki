@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T10:31:35.950Z
+date: 2020-01-02T11:14:42.246Z
 tags: 
 ---
 
@@ -98,6 +98,13 @@ To perform maintenance on a k8s worker node, drain all apps (pods) first. On the
 
 # Monitoring
 ## Prometheus
+
+# DNS
+With kubernetes DNS service installed, e.g. kube-dns or core-dns, then services and pods can be resolved by DNS name. Taken from https://kubernetes.io/docs/concepts/services-networking/service/,
+
+If you have a Service called "my-service" in a Kubernetes Namespace "my-ns", the control plane and the DNS Service acting together create a DNS record for "my-service.my-ns".
+
+Kubernetes also supports DNS SRV (Service) records for named ports. If the "my-service.my-ns" Service has a port named "http" with protocol set to TCP, you can do a DNS SRV query for _http._tcp.my-service.my-ns to discover the port number for "http", as well as the IP address.
 
 # CLI
 For those having docker experience: https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/.

@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-02T16:57:23.658Z
+date: 2020-01-03T15:03:40.055Z
 tags: 
 ---
 
@@ -72,6 +72,8 @@ A `services` can interacrt with a `daemon` in one of four ways:
 * Service - the daemons are presented as a service, and pods on the host coukld use a daemon on a different host, or most importantly, still access a daemon if the host on which the pod has been launched doesn't have such a daemon instance (e.g. a storage cluster daemon on a node with no local storage)
 
 A `namespace` is a virutalised set of services & pods. It allows a single k8s cluster to be separated in many ways. e.g. a "dev" namespace, or a "systemtest" namespace. To `get` or `describe` or `expose` for a specific namesapce, use the `--namesace <my namespace>` argument to `kubectl`.
+
+An [ingest controller](/kubernetes/ingestController) proxies http/https requests for the k8s cluster. A single point of ingest for all RESTful requests.
 
 # Installation
 One master and two workers. vagrant/kvm/centros7/ansible/weave scripted deployment: https://github.com/wozitech/vagrant/tree/master/dev.

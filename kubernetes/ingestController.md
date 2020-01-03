@@ -2,11 +2,16 @@
 title: Kubernetes Ingest Controller
 description: k8s ingest
 published: true
-date: 2020-01-03T15:03:21.653Z
+date: 2020-01-03T15:05:17.380Z
 tags: kubernetes, ingest, microservices
 ---
 
 ![Kubernetes Logo](/uploads/logos/kubernetes-logo.png "kubernetes Logo"){.pagelogo}
 
-# k8s Ingest Controller
-Your content here
+<!-- TITLE: k8s Ingest Controlller -->
+<!-- SUBTITLE: A single http(s) entry point into k8s cluster -->
+
+# References
+* https://kubernetes.io/docs/concepts/services-networking/ingress/
+
+# 

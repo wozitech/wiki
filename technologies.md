@@ -2,7 +2,7 @@
 title: Technologies
 description: These are the technologies I used
 published: true
-date: 2019-12-18T07:45:11.567Z
+date: 2020-01-09T13:54:47.974Z
 tags: 
 ---
 
@@ -26,6 +26,7 @@ Platform Technologies:
 * [kafka](/kafka)
 * [kubernetes](/kubernetes)
 * [ASP.NET/C#](/aspnet-csharp)
+* [JWT](/technology/jwt)
 
 Headless CMS: [strpai](https://strapi.io/)
 

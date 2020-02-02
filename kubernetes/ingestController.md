@@ -2,7 +2,7 @@
 title: Kubernetes Ingest Controller
 description: k8s ingest
 published: true
-date: 2020-02-02T11:41:10.278Z
+date: 2020-02-02T14:18:19.374Z
 tags: kubernetes, ingest, microservices
 ---
 
@@ -24,4 +24,4 @@ Simple to install.
 
 It is not your typical ingress controller implementation, Kong extends the ingress controller API with CRD (Custom Resource Defintions) to allow for the support of proxy behaviour. 
 
-Additional CRDs are created during install which allow for the full control (mgmt) of Kong.
+Additional CRDs are created during install which allow for the full control (mgmt) of Kong, viz consumers and plugins.

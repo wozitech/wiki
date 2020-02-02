@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-01-03T15:03:40.055Z
+date: 2020-02-02T10:40:44.613Z
 tags: 
 ---
 
@@ -73,7 +73,7 @@ A `services` can interacrt with a `daemon` in one of four ways:
 
 A `namespace` is a virutalised set of services & pods. It allows a single k8s cluster to be separated in many ways. e.g. a "dev" namespace, or a "systemtest" namespace. To `get` or `describe` or `expose` for a specific namesapce, use the `--namesace <my namespace>` argument to `kubectl`.
 
-An [ingest controller](/kubernetes/ingestController) proxies http/https requests for the k8s cluster. A single point of ingest for all RESTful requests.
+An [ingress controller](/kubernetes/ingestController) proxies http/https requests for the k8s cluster. A single point of ingest for all RESTful requests.
 
 # Installation
 One master and two workers. vagrant/kvm/centros7/ansible/weave scripted deployment: https://github.com/wozitech/vagrant/tree/master/dev.

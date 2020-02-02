@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-02-02T10:40:44.613Z
+date: 2020-02-02T11:46:02.429Z
 tags: 
 ---
 
@@ -19,6 +19,10 @@ Look some more at:
 * OpenTracing - https://www.hawkular.org/blog/2017/06/26/opentracing-appmetrics.html
 
 Looking at using kubernetes to deploy distributed application services over a service mesh with full service tracing.
+
+# My k8s
+## Dev
+My [dev kubernetes cluster (k8s)](/kubernetes/dev/k8s).
 
 # Background
 Originally developed by Google, and donated to open source community.

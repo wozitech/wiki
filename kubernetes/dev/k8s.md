@@ -2,7 +2,7 @@
 title: My Dev k9s
 description: 
 published: true
-date: 2020-02-02T14:20:09.030Z
+date: 2020-02-02T14:30:37.910Z
 tags: 
 ---
 
@@ -23,3 +23,5 @@ Proxied via untangle firewall (NAT/PAT).
 * Dashboard - token login, and presented to local network on port 7433
 * Kong Ingress Controller - presented on local network on port 6433
 * Redis - installed via operator; one redis replica set presented using sentinel by cluster service "rfs-redisfailover"
+
+![wozitech_home_infrastructre_-_k8s_dev.png](/uploads/kubernetes/wozitech_home_infrastructre_-_k8s_dev.png)

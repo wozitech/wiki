@@ -2,7 +2,7 @@
 title: Kubernetes Ingest Controller
 description: k8s ingest
 published: true
-date: 2020-02-02T10:43:56.434Z
+date: 2020-02-02T10:57:20.549Z
 tags: kubernetes, ingest, microservices
 ---
 
@@ -14,9 +14,14 @@ tags: kubernetes, ingest, microservices
 # References
 * https://kubernetes.io/docs/concepts/services-networking/ingress/
 
+# Introduction
+An ingress controller is an http/https entry point into a k8s cluster. k8s supports more than one ingress controller - deployments name the specific controller they are using.
+
 #  Kong
 An extension to nginx, Kong is an API gateway: https://github.com/Kong/kubernetes-ingress-controller.
 
-Simple to install. As a ingress controller, Kong configuration (routes) can be updated from deployments into the cluster. No need for separate management.
+Simple to install.
 
-Moreso, CRDs allows full control of Kong.
+It is not your typical ingress controller implementation, Kong extends the ingress controller API with CRD (Custom Resource Defintions) to allow for the support of proxy behaviour. 
+
+Additional CRDs are created during install which allow for the full control (mgmt) of Kong.

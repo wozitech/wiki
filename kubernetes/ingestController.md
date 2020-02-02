@@ -2,7 +2,7 @@
 title: Kubernetes Ingest Controller
 description: k8s ingest
 published: true
-date: 2020-02-02T14:18:19.374Z
+date: 2020-02-02T14:19:32.347Z
 tags: kubernetes, ingest, microservices
 ---
 

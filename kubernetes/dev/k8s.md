@@ -2,7 +2,7 @@
 title: My Dev k9s
 description: 
 published: true
-date: 2020-02-02T11:56:03.909Z
+date: 2020-02-02T14:20:09.030Z
 tags: 
 ---
 
@@ -14,6 +14,8 @@ tags:
 A two node cluster plus master, running on KVM provisioned via vagrant/ansible: https://github.com/wozitech/vagrant/tree/master/dev.
 
 Deployed on a dev network only accessible within kvm environment.
+
+k8s network stack is `weave`.
 
 Proxied via untangle firewall (NAT/PAT).
 

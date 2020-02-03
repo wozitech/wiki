@@ -2,7 +2,7 @@
 title: My Dev k9s
 description: 
 published: true
-date: 2020-02-03T06:47:24.085Z
+date: 2020-02-03T06:58:56.466Z
 tags: 
 ---
 
@@ -23,9 +23,11 @@ Proxied via untangle firewall (NAT/PAT).
 * Dashboard - token login, and presented to local network on port 7433
 * Kong Ingress Controller - presented on local network on port 6433
 * Redis - installed via operator; one redis replica set presented using sentinel by cluster service "rfs-redisfailover"
-* Todo:
-  * Kong Operator - https://github.com/Kong/kong-operator
-  * kafka Operator - https://github.com/banzaicloud/kafka-operator
-  * kubeless - https://kubeless.io/
+
+
+> Todo:
+>  * Kong Operator - https://github.com/Kong/kong-operator
+>  * kafka Operator - https://github.com/banzaicloud/kafka-operator
+>  * kubeless - https://kubeless.io/
 
 ![wozitech_home_infrastructre_-_k8s_dev.png](/uploads/kubernetes/wozitech_home_infrastructre_-_k8s_dev.png)

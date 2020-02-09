@@ -2,7 +2,7 @@
 title: My Dev k9s
 description: 
 published: true
-date: 2020-02-09T10:20:07.901Z
+date: 2020-02-09T10:23:13.011Z
 tags: 
 ---
 
@@ -24,6 +24,7 @@ Proxied via untangle firewall (NAT/PAT).
 * Kong Ingress Controller - presented on local network on port 6433
   * Deployed with `kong-proxy` service of type "loadbalancer" - bound to x.x.x.201 IP address on the master host
   * Deployed [without a database](https://github.com/Kong/kubernetes-ingress-controller/blob/master/docs/concepts/deployment.md) - a single pod with both "controller" and "data plane".
+  Useful guides: https://github.com/Kong/kubernetes-ingress-controller/tree/master/docs/guides
   Kong Gateway OSS (open source - not enterprise)
 * Redis - installed via operator; one redis replica set presented using sentinel by cluster service "rfs-redisfailover"
 

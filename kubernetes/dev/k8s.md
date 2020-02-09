@@ -2,7 +2,7 @@
 title: My Dev k9s
 description: 
 published: true
-date: 2020-02-09T10:32:28.751Z
+date: 2020-02-09T15:26:50.553Z
 tags: 
 ---
 
@@ -28,8 +28,36 @@ Proxied via untangle firewall (NAT/PAT).
 * Kong Ingress Controller - presented on local network on port 6433
   * Deployed with `kong-proxy` service of type "loadbalancer" - bound to x.x.x.201 IP address on the master host
   * Deployed [without a database](https://github.com/Kong/kubernetes-ingress-controller/blob/master/docs/concepts/deployment.md) - a single pod with both "controller" and "data plane".
-  Useful guides: https://github.com/Kong/kubernetes-ingress-controller/tree/master/docs/guides
-  Kong Gateway OSS (open source - not enterprise)
+  * Useful guides: https://github.com/Kong/kubernetes-ingress-controller/tree/master/docs/guides
+  * Kong Gateway OSS (open source - not enterprise)
+  
+```
+  ---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+    service.beta.kubernetes.io/aws-load-balancer-type: nlb
+  name: kong-proxy
+  namespace: kong
+spec:
+  externalTrafficPolicy: Local
+  ports:
+  - name: proxy
+    port: 80
+    protocol: TCP
+    targetPort: 8000
+  - name: proxy-ssl
+    port: 443
+    protocol: TCP
+    targetPort: 8443
+  selector:
+    app: ingress-kong
+  type: LoadBalancer
+  externalIPs:
+    - 192.168.100.201
+```
 * Redis - installed via operator; one redis replica set presented using sentinel by cluster service "rfs-redisfailover"
 
 
@@ -39,3 +67,4 @@ Proxied via untangle firewall (NAT/PAT).
 >  * kubeless - https://kubeless.io/
 
 ![wozitech_home_infrastructre_-_k8s_dev.png](/uploads/kubernetes/wozitech_home_infrastructre_-_k8s_dev.png)
+

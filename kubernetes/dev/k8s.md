@@ -2,7 +2,7 @@
 title: My Dev k9s
 description: 
 published: true
-date: 2020-02-09T10:23:13.011Z
+date: 2020-02-09T10:32:28.751Z
 tags: 
 ---
 
@@ -12,6 +12,10 @@ tags:
 
 # Topology
 A two node cluster plus master, running on KVM provisioned via vagrant/ansible: https://github.com/wozitech/vagrant/tree/master/dev.
+
+The master API is not exposed. All deployments are done via logging on to the master, and becoming user `kong`.
+
+The master has `kustomize` and `helm` installed: `/usr/local/bin`.
 
 Deployed on a dev network only accessible within kvm environment.
 
@@ -30,7 +34,7 @@ Proxied via untangle firewall (NAT/PAT).
 
 
 > Todo:
->  * Kong Operator - https://github.com/Kong/kong-operator
+>  * ~~Kong Operator - https://github.com/Kong/kong-operator~~
 >  * kafka Operator - https://github.com/banzaicloud/kafka-operator
 >  * kubeless - https://kubeless.io/
 

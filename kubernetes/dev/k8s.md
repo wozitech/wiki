@@ -2,7 +2,7 @@
 title: My Dev k9s
 description: 
 published: true
-date: 2020-02-09T15:26:50.553Z
+date: 2020-02-23T14:16:31.011Z
 tags: 
 ---
 
@@ -65,6 +65,7 @@ spec:
 >  * ~~Kong Operator - https://github.com/Kong/kong-operator~~
 >  * kafka Operator - https://github.com/banzaicloud/kafka-operator
 >  * kubeless - https://kubeless.io/
+>  * ORK Kratos, Hyrda and Kets - Authentication and Authorisation
 
 ![wozitech_home_infrastructre_-_k8s_dev.png](/uploads/kubernetes/wozitech_home_infrastructre_-_k8s_dev.png)
 

@@ -2,8 +2,8 @@
 title: Ory Hyrda
 description: Open Source Authentication Server support OAuth2 and OpenID
 published: true
-date: 2020-03-01T11:43:18.196Z
-tags: hydra, ory, authentication server, oauth2, OpenID
+date: 2020-03-01T11:53:22.753Z
+tags: ory, hydra, authentication server, oAuth2, OpenID
 ---
 
 # References

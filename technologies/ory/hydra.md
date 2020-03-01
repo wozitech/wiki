@@ -2,13 +2,14 @@
 title: Ory Hydra
 description: 
 published: true
-date: 2020-03-01T11:51:23.730Z
+date: 2020-03-01T12:06:50.155Z
 tags: Hydra, Authentication Server, OAuth2, OpenID
 ---
 
 # References
 * https://github.com/ory/hydra - the source
 * https://github.com/segmentio/ory-hydra/blob/master/docs/oauth2.md - Hydra docs
+& https://www.ory.sh/docs/hydra/ - the official docs
 * https://hub.docker.com/r/oryd/hydra/ - DockerHub image
 * https://www.ory.sh/run-oauth2-server-open-source-api-security/ - an easy example for setting up Hydra
 

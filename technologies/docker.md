@@ -2,7 +2,7 @@
 title: Docker
 description: A quick summary of Docker
 published: true
-date: 2020-01-31T11:50:43.430Z
+date: 2020-03-15T16:50:51.411Z
 tags: 
 ---
 
@@ -40,6 +40,13 @@ _/home/pgadmin/var is the local directory mapping to the /var/lib/pgadmin direct
 `docker build -t <tag> .`
 
 With repeated local build it is often necessary to run `docker image prune` regular to clean up dangling images. It is also usefuyl to frequently prune dead containers: `docker container prune`.
+
+### Multi-Stage Build
+In any cloud-first development environment, especially when applications are being built from source code (ergo, Golang, Java and rust), you may have separate Dockerfiles to create the "builder" image and then the "runtime" image.
+
+A multi-stage Dockerfile can be used instead; you can pass in a `target` to build up to a given stage (namely, the "builder" image).
+
+https://docs.docker.com/develop/develop-images/multistage-build/
 
 ## Volumes
 Volumes are the preferred method to present local storage to containers. Volumes are managed by docker and therefore you don't get the usual shanigans associated with unix file permissions for creating local directories.

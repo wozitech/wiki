@@ -2,7 +2,7 @@
 title: Home
 description: Home
 published: true
-date: 2019-12-06T05:11:01.298Z
+date: 2020-03-24T09:10:19.515Z
 tags: 
 ---
 
@@ -17,6 +17,8 @@ tags:
 * [Linux PC](/linuxpc)
 * [IR35](/ir35)
 
+Misc
+* vscode color stamp - multiple vscode projects open? https://marketplace.visualstudio.com/items?itemName=s3anmorrow.color-stamp
 
 Online Print Bureaus
 * https://www.fileprint.org/print-prices.php

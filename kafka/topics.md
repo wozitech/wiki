@@ -2,8 +2,8 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-11T09:40:54.559Z
-tags: kafka, topics, patition, partitoining
+date: 2020-04-11T09:41:28.506Z
+tags: kafka, partitioning, keys, TTL
 ---
 
 # Kafa Topics

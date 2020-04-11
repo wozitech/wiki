@@ -2,8 +2,8 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-11T10:03:31.439Z
-tags: kafka, consumers
+date: 2020-04-11T10:03:48.759Z
+tags: kafka, partitions, consumers, groups
 ---
 
 # Kafka Consumers

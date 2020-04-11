@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-11T10:12:19.025Z
+date: 2020-04-11T10:16:02.928Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics
 ---
 
@@ -33,3 +33,7 @@ These consumed offets are called within a system topic called, `__consumer_offse
 When the "consumer group" has processed (not read) data from a topic, it _should_ commit it's offsets. This allows the consumer group to recover from consumer failures (be them intentional or unintentional).
 
 ## Delivery Semantics
+Consumers choose when to write their offsets, choosing one of three schemes:
+* At most once - committed as soon as the message is read. If something goes wrong after reading, the message is lost.
+* At least onne - _preferred_ comitted on when processed. The consumers must be idempotent (reprocessing the same message should not cause a problem). Remember, messages in the same partition are read in sequence.
+* Exactly Once - this is only available kafka => kafka workflows using the Kafka Streams API.

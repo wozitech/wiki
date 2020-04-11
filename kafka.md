@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-11T09:48:30.510Z
+date: 2020-04-11T10:35:41.210Z
 tags: 
 ---
 
@@ -30,6 +30,8 @@ kafka is made up of:
 Messages are typically JSON/XML self describing content, but can be any binary or text format. Ideally, the format of the message should exist alongside the message itself making it self describing. This is why JSON and XML are good with JSON Schemas and XML Schemas. But more and more, folks are using Apache Avro, not just because its an efficient binary format and self describing, but because the data definition schema can be versioned too.
 
 In kafka, all messages are sent to a topic (stream); FIFO. Partitions (shards) can be created on a topic based on a predefined key; each message within the partition is still FIFO. kafta distributively stores all messages, thus providing resilience, and each topic/partition having an `offset` allowing to stops and restarts for consumers with no loss of data.
+
+![kafka-overview.png](/uploads/kafka/kafka-overview.png)
 
 # zookeeper
 This an Apache technology for maintaining configration, control and monitoring of distributed services. Zookeeper can be deployed with kafka to monitor the kafka ecosystem (clusters, topics, partitiions, ...).

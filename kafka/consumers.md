@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-11T10:16:02.928Z
+date: 2020-04-11T10:17:00.413Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics
 ---
 
@@ -35,5 +35,5 @@ When the "consumer group" has processed (not read) data from a topic, it _should
 ## Delivery Semantics
 Consumers choose when to write their offsets, choosing one of three schemes:
 * At most once - committed as soon as the message is read. If something goes wrong after reading, the message is lost.
-* At least onne - _preferred_ comitted on when processed. The consumers must be idempotent (reprocessing the same message should not cause a problem). Remember, messages in the same partition are read in sequence.
+* At least onne - _preferred_ committed  only when processed. The consumers must be idempotent (reprocessing the same message should not cause a problem). Remember, messages in the same partition are read in sequence.
 * Exactly Once - this is only available kafka => kafka workflows using the Kafka Streams API.

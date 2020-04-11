@@ -2,14 +2,14 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-11T10:17:00.413Z
+date: 2020-04-11T10:17:37.926Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics
 ---
 
 # Kafka Consumers
 Consumers read data from a topic.
 
-Consumers connect to all brokers (the cluster partions) and know which broker to read data from. If a broker fails, the consumer knows which re-elected leader to read from.
+Consumers connect to all brokers (the cluster partions; via a bootstrap) and know which broker to read data from. If a broker fails, the consumer knows which re-elected leader to read from.
 
 
 ## Partitions

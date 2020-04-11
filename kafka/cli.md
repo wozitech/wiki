@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-11T14:24:56.685Z
+date: 2020-04-11T14:28:48.554Z
 tags: kafka, cli
 ---
 
@@ -97,3 +97,7 @@ To launch a consumer, you only need one broker in the cluster; to bootsrap. If s
 ```
 <kafka>/kafka-console-consumer.sh --broker-list localhost:9092 --topic <NAME OF TOPIC>
 ```
+
+Notes:
+* By default, the consumer only starts to receive messages from the point after which it started.
+  * But you can specify the `--from-beginning` option or indeed the `--offset <id>` option.

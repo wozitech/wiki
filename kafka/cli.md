@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-11T14:11:30.797Z
+date: 2020-04-11T14:12:50.312Z
 tags: kafka, cli
 ---
 
@@ -74,8 +74,10 @@ Notes:
 kafka cli supports creating of producers (publishers to topics) using `<kafka>/kafka-console-producer.sh`.
 
 ### launch
-```
+To launch a producer, you need a list of ALL brokers in the cluster. If started locally, you have a single broker.
 
+```
+`<kafka>/kafka-console-producer.sh` --broker-list localhost:9092 --topic <NAME OF TOPIC>
 ```
 
 

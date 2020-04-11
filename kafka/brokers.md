@@ -2,7 +2,7 @@
 title: Kafka Brokers
 description: 
 published: true
-date: 2020-04-11T10:29:08.878Z
+date: 2020-04-11T10:31:19.977Z
 tags: kafka, replication, partitions, distributed, leaders, zookeeper
 ---
 
@@ -39,7 +39,7 @@ This dictates the number of copies each broker makes of each of its partitions. 
 
 A replication partition for a topic can exist on brokers where there is no primary partition for that topic. Every broker in the cluster is equal.
 
-A replication factor of two, allows for continued operation when one broker fails. A replication factor of three, allowed for continued operation when two brokers fail.
+A replication factor of two, allows for continued operation when one broker fails. A replication factor of three, allowed for continued operation when two brokers fail. N-1.
 
 ### leader
 At any one time, only one broker can be the leader for a partition.

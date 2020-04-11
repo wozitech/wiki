@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-11T14:12:50.312Z
+date: 2020-04-11T14:20:19.660Z
 tags: kafka, cli
 ---
 
@@ -77,8 +77,16 @@ kafka cli supports creating of producers (publishers to topics) using `<kafka>/k
 To launch a producer, you need a list of ALL brokers in the cluster. If started locally, you have a single broker.
 
 ```
-`<kafka>/kafka-console-producer.sh` --broker-list localhost:9092 --topic <NAME OF TOPIC>
+`<kafka>/kafka-console-producer.sh` --broker-list localhost:9092 --topic <NAME OF TOPIC> --producer-property acks=all
+...message 1
+...message 2
+...
 ```
+
+Notes:
+* The topic does NOT have to exist. It won't error when launching, and it might warn when posting to the topic as the leader is elected.
+  * The topic is created with defaults (defined in `server.properties` - such as number of partitions and number of replications. It is best to create topic first.
+* `<CTRL><D>` to stop sending messages.
 
 
 

@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-11T10:04:23.148Z
+date: 2020-04-11T10:06:07.007Z
 tags: kafka, partitions, consumers, groups
 ---
 
@@ -20,3 +20,7 @@ Consumers read from one or more (including ALL) partitions in parallel.  Data fr
 A single consumer, does not have to read from all partitions. This allow multiple consumers to spread the load of consuming data. These are called "consumer groups". 
 
 Across the consumer group, all partitions must be read.
+
+Only one consumer within the group, can read from a given partition.
+
+Multiple "consumer groups" (multiple subscribers) can read across all partitions.

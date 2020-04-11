@@ -2,7 +2,7 @@
 title: Kafka Brokers
 description: 
 published: true
-date: 2020-04-11T09:43:24.081Z
+date: 2020-04-11T09:43:51.143Z
 tags: kafka, replication, partitions, distributed, leaders, zookeeper
 ---
 
@@ -56,6 +56,6 @@ When submitting the message topic, you can define a key that will be used to ide
 
 The key is optional. If no key (null), then producers will write to all partitions using _round robin_.
 
-The key ensures all messages are written to the same partition - so messages are guaranteed to be in the same order.
+The key ensures all messages are written to the same partition (key hashing) - so messages are guaranteed to be in the same order.
 
 Choose a key wisely though; a bad key will result in non-uniform data across partitions.

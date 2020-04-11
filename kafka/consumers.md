@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-11T10:03:48.759Z
+date: 2020-04-11T10:04:23.148Z
 tags: kafka, partitions, consumers, groups
 ---
 
@@ -13,7 +13,7 @@ Consumers connect to all brokers (the cluster partions) and know which broker to
 
 
 ## Partitions
-Consumers read from one or more partitions in parallel.  Data from a single partition arrives in sequence.
+Consumers read from one or more (including ALL) partitions in parallel.  Data from a single partition arrives in sequence.
 
 
 ## Groups

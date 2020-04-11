@@ -2,8 +2,8 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-11T09:46:56.173Z
-tags: kafka, producers, keys
+date: 2020-04-11T09:47:39.592Z
+tags: kafka, keys, producers, acks
 ---
 
 # Kafka Producers

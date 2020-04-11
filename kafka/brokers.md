@@ -2,7 +2,7 @@
 title: Kafka Brokers
 description: 
 published: true
-date: 2020-04-11T10:25:44.379Z
+date: 2020-04-11T10:29:08.878Z
 tags: kafka, replication, partitions, distributed, leaders, zookeeper
 ---
 
@@ -55,3 +55,7 @@ Manages all brokers within the cluster.
 zookeeper managers the process of leader election on partitions.
 
 zookeeper sends events whenever changes are made on a broker, including (but limited to), create/delete topic, broker up/down.
+
+zookeeper can only operate with an odd number of brokers; "dat is de rule".
+
+zookeeper has the concept of a leader/followers. Just one of the zookeeper servers (broker) is the leader (does all writes); the rest are followers. If the leader is lost (fails), a new leader is re-elected from the remaining set of followers.

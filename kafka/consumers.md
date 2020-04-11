@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-11T10:06:07.007Z
+date: 2020-04-11T10:11:48.554Z
 tags: kafka, partitions, consumers, groups
 ---
 
@@ -24,3 +24,12 @@ Across the consumer group, all partitions must be read.
 Only one consumer within the group, can read from a given partition.
 
 Multiple "consumer groups" (multiple subscribers) can read across all partitions.
+
+## Offsets
+kafka stores the partition offsets (for each partition) for each "consumer group".
+
+These consumed offets are called within a system topic called, `__consumer_offsets`.
+
+When the "consumer group" has processed (not read) data from a topic, it _should_ commit it's offsets. This allows the consumer group to recover from consumer failures (be them intentional or unintentional).
+
+## Delivery Semantics

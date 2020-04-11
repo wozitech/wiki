@@ -2,7 +2,7 @@
 title: Kafka Brokers
 description: 
 published: true
-date: 2020-04-11T09:13:43.186Z
+date: 2020-04-11T09:18:24.732Z
 tags: kafka, brokers
 ---
 
@@ -18,7 +18,7 @@ Start with a cluster of three brokers. This allows for one Broker to be taken of
 There is no limit to the number of brokers.
 
 ## storage
-As brokers store _topic partitions_ 
+As brokers store _topic partitions_, storage and fast storage is key. The fastest storage is of course RAM. Scale out horizontally using RAM. But don't simply scale your topics to have 100 partitions and 100 brokers, if your topic has a poor _parition key_. 
 
 ## distribution
 A topic's partitions are distributed across the brokers at the time the topic ia created. kafka will try to ensure no two partitions of the same topic are stored on the same broker.
@@ -26,3 +26,8 @@ A topic's partitions are distributed across the brokers at the time the topic ia
 But if your topic has more partitions than brokers, then multiple partitions will end up on the same broker.
 
 Partitions are spread across all brokers in a predetermined but dsitribution manner; _random_ like - but it is deterministic based on broker load.
+
+## replication
+When creating a topic, you decided on the replication factor; greater than one, but typically 2 or 3.
+
+This dictates the number of copies each broker makes of each of its partitions. If that broker were to become unavailable (either intetionally or unintentionally), one of the other brokers can continue to serve the topic.

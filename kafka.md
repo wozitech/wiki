@@ -1,3 +1,11 @@
+---
+title: kafka
+description: 
+published: true
+date: 2020-04-11T08:47:21.030Z
+tags: 
+---
+
 ![Kafka Logo](/uploads/logos/kafka-icon.png "kafka Logo"){.pagelogo}
 <!-- TITLE: kafka -->
 <!-- SUBTITLE: Confluent's platform for streaming data - the new middleware -->
@@ -15,6 +23,7 @@ kafka is made up of:
 * Consumers
 * Producers
 * Connect API
+* Topics
 * Streams
 * KSQL
 
@@ -23,13 +32,13 @@ Messages are typically JSON/XML self describing content, but can be any binary o
 In kafka, all messages are sent to a topic (stream); FIFO. Partitions (shards) can be created on a topic based on a predefined key; each message within the partition is still FIFO. kafta distributively stores all messages, thus providing resilience, and each topic/partition having an `offset` allowing to stops and restarts for consumers with no loss of data.
 
 # zookeeper
-This an Apache technology for maintaining configration, control and monitoring of distributed services. Zookeeper can be deployed with kafka to monitoring the kafka ecosystem (clusters, topics, partitiions, ...).
+This an Apache technology for maintaining configration, control and monitoring of distributed services. Zookeeper can be deployed with kafka to monitor the kafka ecosystem (clusters, topics, partitiions, ...).
 
-# prometheus
+# prometheus/New Relic
 > TBC
 
 # kubernetes
-kubernetes is now the industry's de facto app hosting platform. No longer are we virtualising servers to host applications, we simpy package (dockerise) applications and deploy on kubernetes. kubernetes has good scaling and monitoring options (least not Prometheus), so we do it yourself and moreso, why no consolidate on a common platform so the deployment, scaling and monitoring of all applications is consistent.
+kubernetes is now the industry's de facto app hosting platform. No longer are we virtualising servers to host applications, we simpy package (dockerise) applications and deploy on kubernetes. kubernetes has good scaling and monitoring options (least not Prometheus). So we DIY it and benefit from consolidating on a common platform so the deployment, scaling and monitoring of all applications is consistent.
 
 kafka, even though it requires good (fast) storage and networking, Confluent fully support deployment of kafka on kubernetes, through its `Operator`offering: https://www.confluent.io/confluent-operator.
 

@@ -2,7 +2,7 @@
 title: Kafka Brokers
 description: 
 published: true
-date: 2020-04-11T10:31:19.977Z
+date: 2020-04-11T10:31:44.024Z
 tags: kafka, replication, partitions, distributed, leaders, zookeeper
 ---
 

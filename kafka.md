@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-11T13:46:46.136Z
+date: 2020-04-11T13:48:48.492Z
 tags: 
 ---
 
@@ -36,8 +36,11 @@ In kafka, all messages are sent to a topic (stream); FIFO. Partitions (shards) c
 
 ![kafka-overview.png](/uploads/kafka/kafka-overview.png)
 
+## CLI
+Typically kafka is accessed via custom applications using the kafka API. For administrative purposes, kafka has a [cli](/kafka/cli).
+
 # zookeeper
-This an Apache technology for maintaining configration, control and monitoring of distributed services. Zookeeper can be deployed with kafka to monitor the kafka ecosystem (clusters, topics, partitiions, ...).
+This an Apache technology for maintaining configration, control and monitoring of distributed services. Zookeeper must be deployed with kafka to control/amange the brokers and to monitor the kafka ecosystem (clusters, topics, partitiions, ...).
 
 # prometheus/New Relic
 > TBC

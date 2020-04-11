@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-11T14:04:33.865Z
+date: 2020-04-11T14:05:42.745Z
 tags: kafka, cli
 ---
 
@@ -52,4 +52,9 @@ kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --create --parti
 ### List Topics
 ```
 kafka-topics --zookeeper localhost:2181 --list
+```
+
+## Describe Topic
+```
+kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --describe
 ```

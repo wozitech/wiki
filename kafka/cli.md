@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-11T14:20:19.660Z
+date: 2020-04-11T14:24:56.685Z
 tags: kafka, cli
 ---
 
@@ -77,7 +77,7 @@ kafka cli supports creating of producers (publishers to topics) using `<kafka>/k
 To launch a producer, you need a list of ALL brokers in the cluster. If started locally, you have a single broker.
 
 ```
-`<kafka>/kafka-console-producer.sh` --broker-list localhost:9092 --topic <NAME OF TOPIC> --producer-property acks=all
+`<kafka>/kafka-console-producer.sh --broker-list localhost:9092 --topic <NAME OF TOPIC> --producer-property acks=all
 ...message 1
 ...message 2
 ...
@@ -89,6 +89,11 @@ Notes:
 * `<CTRL><D>` to stop sending messages.
 
 
+## Consumer
+kafka cli supports creating of consumers (subscribers to topics) using `<kafka>/kafka-console-consumer.sh`.
 
-
-_
+## launch
+To launch a consumer, you only need one broker in the cluster; to bootsrap. If started locally, you have a single broker.
+```
+<kafka>/kafka-console-consumer.sh --broker-list localhost:9092 --topic <NAME OF TOPIC>
+```

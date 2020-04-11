@@ -2,7 +2,7 @@
 title: Kafka Brokers
 description: 
 published: true
-date: 2020-04-11T09:18:24.732Z
+date: 2020-04-11T09:22:17.652Z
 tags: kafka, brokers
 ---
 
@@ -31,3 +31,7 @@ Partitions are spread across all brokers in a predetermined but dsitribution man
 When creating a topic, you decided on the replication factor; greater than one, but typically 2 or 3.
 
 This dictates the number of copies each broker makes of each of its partitions. If that broker were to become unavailable (either intetionally or unintentionally), one of the other brokers can continue to serve the topic.
+
+A replication partition for a topic can exist on brokers where there is no primary partition for that topic. Every broker in the cluster is equal.
+
+A replication factor of two, allows for continued operation when one broker fails. A replication factor of three, allowed for continued operation when two brokers fail.

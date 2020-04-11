@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-11T14:28:48.554Z
+date: 2020-04-11T14:30:40.814Z
 tags: kafka, cli
 ---
 
@@ -100,4 +100,5 @@ To launch a consumer, you only need one broker in the cluster; to bootsrap. If s
 
 Notes:
 * By default, the consumer only starts to receive messages from the point after which it started.
-  * But you can specify the `--from-beginning` option or indeed the `--offset <id>` option.
+  * But you can specify the `--from-beginning` option or indeed the `--offset <id>` option.`
+  * The order of the messages is per partition and sequentially in the each partition; so not the order in which the messages were sent to the topic.

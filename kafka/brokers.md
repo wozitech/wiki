@@ -2,7 +2,7 @@
 title: Kafka Brokers
 description: 
 published: true
-date: 2020-04-11T09:44:46.564Z
+date: 2020-04-11T10:21:02.640Z
 tags: kafka, replication, partitions, distributed, leaders, zookeeper
 ---
 
@@ -10,7 +10,9 @@ tags: kafka, replication, partitions, distributed, leaders, zookeeper
 A kafka cluster is composed of brokers (servers is you will). Each broker is identified by a number (there is no predefined numbering). Each broker stores a set of _topic_ partitions.
 
 ## bootstrap
-All brokers run as a cluster. When you connect to any broker, you are connected to the cluster. The broker you connect to is called the "bootstrap broker".
+All brokers run as a cluster. Producers and Consumer connect to any broker; but just one broker. The initial broker used on connection to is called the "bootstrap broker".
+
+Each broker knows about all other brokers in the cluster (regardless of topic. Each Broker knows about all topics and all partitions across the cluster; as metadata.
 
 ## minimum and maximum
 Start with a cluster of three brokers. This allows for one Broker to be taken offline, and still maintain the cluster availability.

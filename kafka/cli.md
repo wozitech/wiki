@@ -2,11 +2,12 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-11T13:56:48.737Z
+date: 2020-04-11T14:04:33.865Z
 tags: kafka, cli
 ---
 
 # kafka cli
+_Note - the kafka cli works by connecting to zookeeper, that then issues commands to the broker/cluster._
 
 
 ## Local Start
@@ -38,3 +39,17 @@ log.dirs=<kafka>/data/kafka
 All is well when `kafka` is listening on port 9092 (can be changed in `server.properties`).
 
 By default, the broker id is `0` (can be changed in `server.properties`).
+
+
+## Topics
+Use the `kafka-topic.sh` script found in `<kafka>/bin`.
+
+### Create Topic
+```
+kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --create --partitions <#> --replication-factor <#>
+```
+
+### List Topics
+```
+kafka-topics --zookeeper localhost:2181 --list
+```

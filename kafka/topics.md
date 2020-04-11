@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-11T09:02:36.642Z
+date: 2020-04-11T09:03:47.330Z
 tags: kafka, topics, patition, partitoining
 ---
 

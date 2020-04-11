@@ -2,7 +2,7 @@
 title: Kafka Brokers
 description: 
 published: true
-date: 2020-04-11T09:30:59.944Z
+date: 2020-04-11T09:39:17.868Z
 tags: kafka, replication, partitions, distributed, leaders, zookeeper
 ---
 
@@ -42,3 +42,10 @@ At any one time, only one broker can be the leader for a partition.
 Only the leader can receive (from producers) and serve (to consumers) data for a topic for a given partition. The other copies (replicated) of  the partition are known as "in-sync replicas" (ISRs). This is managed by zookeeper.
 
 When a broker goes offline, all the partitions which were leaders are re-elected to other brokers. When that broker comes back online, it re-elects itself as leader on the original set of partitions.
+
+
+## Acks
+When a producer writes to a partition, it (the producer) can choose what level of acknowledgements (ack) to wait upon:
+* acks=0 - producer does noy wait (possible data loss)
+* acks=1 - producer only waits for the leader (limited data loss); this is default
+* acks=all - producer waits for leader and ISRs (no data loss).

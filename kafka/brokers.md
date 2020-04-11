@@ -2,7 +2,7 @@
 title: Kafka Brokers
 description: 
 published: true
-date: 2020-04-11T09:22:17.652Z
+date: 2020-04-11T09:26:05.367Z
 tags: kafka, brokers
 ---
 
@@ -35,3 +35,8 @@ This dictates the number of copies each broker makes of each of its partitions. 
 A replication partition for a topic can exist on brokers where there is no primary partition for that topic. Every broker in the cluster is equal.
 
 A replication factor of two, allows for continued operation when one broker fails. A replication factor of three, allowed for continued operation when two brokers fail.
+
+### leader
+At any one time, only one broker can be the leader for a partition.
+
+Only the leader can receive (from producers) and serve (to consumers) data for a topic for a given partition. The other copies (replicated) of  the partition are known as "in-sync replicas" (ISRs).

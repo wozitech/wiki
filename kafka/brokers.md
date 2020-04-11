@@ -2,8 +2,8 @@
 title: Kafka Brokers
 description: 
 published: true
-date: 2020-04-11T09:26:05.367Z
-tags: kafka, brokers
+date: 2020-04-11T09:29:13.431Z
+tags: kafka, replication, partitions, distributed, leaders
 ---
 
 # Kafka Brokers
@@ -40,3 +40,5 @@ A replication factor of two, allows for continued operation when one broker fail
 At any one time, only one broker can be the leader for a partition.
 
 Only the leader can receive (from producers) and serve (to consumers) data for a topic for a given partition. The other copies (replicated) of  the partition are known as "in-sync replicas" (ISRs).
+
+When a broker goes offline, all the partitions which were leaders are re-elected to other brokers. When that broker comes back online, it re-elects itself as leader on the original set of partitions.

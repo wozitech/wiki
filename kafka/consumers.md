@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-11T10:18:50.571Z
+date: 2020-04-11T10:29:46.102Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics, bootstrap
 ---
 
@@ -31,6 +31,8 @@ kafka stores the partition offsets (for each partition) for each "consumer group
 These consumed offets are called within a system topic called, `__consumer_offsets`.
 
 When the "consumer group" has processed (not read) data from a topic, it _should_ commit it's offsets. This allows the consumer group to recover from consumer failures (be them intentional or unintentional).
+
+_Note - prior to V0.10 of kafka, consumer offsets were written to zookeeper._
 
 ## Delivery Semantics
 Consumers choose when to write their offsets, choosing one of three schemes:

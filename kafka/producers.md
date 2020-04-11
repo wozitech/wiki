@@ -2,14 +2,14 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-11T09:47:39.592Z
+date: 2020-04-11T09:56:27.022Z
 tags: kafka, keys, producers, acks
 ---
 
 # Kafka Producers
 Producers write messages to paritions via the brokers of the cluster.
 
-A producer writes to all partitions of a topic, via the partitions' leader brokers.
+A producer writes to all partitions of a topic, via the partitions' leader brokers. If a broker becomes unavailable, the producer know how to write to the re-elected leader.
 
 ## Acks
 When a producer writes to a partition, it (the producer) can choose what level of acknowledgements (ack) to wait upon:

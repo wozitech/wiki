@@ -2,12 +2,12 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-11T14:05:42.745Z
+date: 2020-04-11T14:11:30.797Z
 tags: kafka, cli
 ---
 
 # kafka cli
-_Note - the kafka cli works by connecting to zookeeper, that then issues commands to the broker/cluster._
+
 
 
 ## Local Start
@@ -42,7 +42,7 @@ By default, the broker id is `0` (can be changed in `server.properties`).
 
 
 ## Topics
-Use the `kafka-topic.sh` script found in `<kafka>/bin`.
+Use the `kafka-topic.sh` script found in `<kafka>/bin`. _Note - the kafka cli works by connecting to zookeeper, that then issues commands to the broker/cluster._
 
 ### Create Topic
 ```
@@ -54,7 +54,31 @@ kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --create --parti
 kafka-topics --zookeeper localhost:2181 --list
 ```
 
-## Describe Topic
+### Describe Topic
 ```
 kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --describe
 ```
+
+
+### Delete Topic
+```
+kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --delete
+```
+
+Notes:
+* topics are only marked for deletion; they are not deleted straight away.
+* topics need their property `delete.topic.enable` set to true.
+
+
+## Producer
+kafka cli supports creating of producers (publishers to topics) using `<kafka>/kafka-console-producer.sh`.
+
+### launch
+```
+
+```
+
+
+
+
+_

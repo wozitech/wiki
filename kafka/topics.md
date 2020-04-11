@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-11T09:01:07.018Z
+date: 2020-04-11T09:02:36.642Z
 tags: kafka, topics, patition, partitoining
 ---
 
@@ -16,4 +16,11 @@ A topic must be created with a given number of partitions (_the number of partit
 
 A message is referenced by "topic:partition:offset".
 
-Order of messages is only guaranteed within a partition; not across partition. If you have data which is temporal, then choose a partition key that ensures the data is written to the same partition. If all events are time based, choose a temporal database (like [promtetheus](https://en.wikipedia.org/wiki/Time_series_database)) as a consumer and stream from the topic, .
+Order of messages is only guaranteed within a partition; not across partition. If you have data which is temporal, then choose a partition key that ensures the data is written to the same partition. If all events are time based, choose a temporal database (like [promtetheus](https://en.wikipedia.org/wiki/Time_series_database)) as a consumer and stream from the topic.
+
+## TTL
+Data within a topic expires after a given duration; the default is one week.
+
+
+## Immutable
+Once data is written to a partition, it can not be updated.

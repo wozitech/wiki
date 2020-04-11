@@ -2,8 +2,8 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-11T10:11:48.554Z
-tags: kafka, partitions, consumers, groups
+date: 2020-04-11T10:12:19.025Z
+tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics
 ---
 
 # Kafka Consumers

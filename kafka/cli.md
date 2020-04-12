@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-11T14:30:40.814Z
+date: 2020-04-12T06:00:28.947Z
 tags: kafka, cli
 ---
 
@@ -92,7 +92,7 @@ Notes:
 ## Consumer
 kafka cli supports creating of consumers (subscribers to topics) using `<kafka>/kafka-console-consumer.sh`.
 
-## launch
+### launch
 To launch a consumer, you only need one broker in the cluster; to bootsrap. If started locally, you have a single broker.
 ```
 <kafka>/kafka-console-consumer.sh --broker-list localhost:9092 --topic <NAME OF TOPIC>
@@ -102,3 +102,12 @@ Notes:
 * By default, the consumer only starts to receive messages from the point after which it started.
   * But you can specify the `--from-beginning` option or indeed the `--offset <id>` option.`
   * The order of the messages is per partition and sequentially in the each partition; so not the order in which the messages were sent to the topic.
+  
+  
+### groups
+`kafka-console-consumer.sh` participants in a consumer group, by passing `--group` parameter. There is no need to provie a partition id. As more consumers are added to the group, the partitions are shared between the consumers. When a consumer is stopped, the partition(s) it had are redistributed among the remaining consumers.
+
+#### from beginning
+As a consumer group, when the group is first started, it defaults to listening for messages from the time it is started. It can also be started to listen from the begginging, by simnply passing the `--from-beginning` flag.
+
+But as a group, the consumer offset is written, so when starting the same group with the `--from-beginning` flag, it has no effect; the consumer offset takes precedence.

@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-12T06:44:49.757Z
+date: 2020-04-12T07:58:15.402Z
 tags: kafka, cli
 ---
 
@@ -75,7 +75,7 @@ Notes:
 ## Producer
 kafka cli supports creating of producers (publishers to topics) using `<kafka>/kafka-console-producer.sh`.
 
-The producer CLI usings _string serializer_.
+The producer CLI usings _string serializer_ (both key and value).
 
 ### launch
 To launch a producer, you need a list of ALL brokers in the cluster. If started locally, you have a single broker.
@@ -105,7 +105,7 @@ Notes:
 ## Consumer
 kafka cli supports creating of consumers (subscribers to topics) using `<kafka>/kafka-console-consumer.sh`.
 
-The producer CLI usings _string deserializer_.
+The producer CLI usings _string deserializer_ (both key and value).
 
 ### launch
 To launch a consumer, you only need one broker in the cluster; to bootsrap. If started locally, you have a single broker.

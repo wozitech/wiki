@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-11T13:48:48.492Z
+date: 2020-04-12T05:51:45.874Z
 tags: 
 ---
 
@@ -26,6 +26,7 @@ kafka is made up of:
 * [Consumers](/kafka/consumers)
 * [Producers](/kafka/producers)
 * Connect API
+* [CLI](/kafka/cli)
 * [Brokers](/kafka/brokers) and [Topics](/kafka/topics)
 * Streams
 * KSQL

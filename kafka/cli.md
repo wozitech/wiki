@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-12T06:09:26.415Z
+date: 2020-04-12T06:16:14.768Z
 tags: kafka, cli
 ---
 
@@ -128,3 +128,14 @@ describe:
 ```
 <kafka>/kafka-consumer-groups.sh  --bootstrap-server localhost:9092 --group <GROUP NAME> --describe
 ```
+
+#### offsets
+`kafka-consumer-groups.sh` supports resetting the _consumer offsets_, with the `--reset-offsets` parameter which takes one of the following options:
+* --to-datetime
+* --to-earlist
+* --to-latest
+* --shift-by
+* --from-file
+* --to-current
+
+Each of the above options are combined with one of `--dryrun` or `--execute`.

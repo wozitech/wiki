@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-12T06:24:31.336Z
+date: 2020-04-12T06:26:32.842Z
 tags: kafka, cli
 ---
 
@@ -115,6 +115,10 @@ Notes:
   * The order of the messages is per partition and sequentially in the each partition; so not the order in which the messages were sent to the topic.
   
   
+### keys
+`kafka-console-consumer.sh` when messages are posted to topics with keys, the keys are used to map to a partition, but the consumer by default does not display the key (it is metadata on the message). To display the key along with the message, suffix `--property print.key=true --property key.separator=,` to the consumer.
+
+
 ### groups
 `kafka-console-consumer.sh` participants in a _consumer group_, by passing `--group` parameter. There is no need to provie a partition id (optional). As more consumers are added to the group, the partitions are shared between the consumers. When a consumer is stopped, the partition(s) it had are redistributed among the remaining consumers.
 

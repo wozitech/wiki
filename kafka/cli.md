@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-12T06:18:34.068Z
+date: 2020-04-12T06:19:26.253Z
 tags: kafka, cli
 ---
 
@@ -134,7 +134,7 @@ describe:
 * --to-datetime
 * --to-earlist
 * --to-latest
-* --shift-by
+* --shift-by - forward with a positive integer and back with a negative integer
 * --from-file
 * --to-current
 

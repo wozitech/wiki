@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-12T06:22:36.138Z
+date: 2020-04-12T06:24:31.336Z
 tags: kafka, cli
 ---
 
@@ -19,6 +19,7 @@ _Assumed downloaded and installed (unpacked) kafka to `<kafka>`._
 _Assumed directory `<kafka>/data/zookeeper`._
 
 Edit the file `<kafka>/config/zookeeper.properties` and change `dataDir` to:
+
 ```
 dataDir=/home/aylingw/bin/kafka_2.13-2.4.1/data/zookeeper
 ```
@@ -32,6 +33,7 @@ _Assumed directory `<kafka>/data/kafka`._
 
 
 Edit the file `<kafka>/config/server.properties` and change `log.dirs` to:
+
 ```
 log.dirs=<kafka>/data/kafka
 ```
@@ -129,12 +131,14 @@ And as a group, when all the consumers are down, can keep posting messages to th
 ### manage
 `kafka-consumer-groups.sh` manages _consumer groups_.
 
-list:
+* list
+
 ```
-<kafka/kafka-consumer-groups.sh  --bootstrap-server localhost:9092 --list
+<kafka>/kafka-consumer-groups.sh  --bootstrap-server localhost:9092 --list
 ```
 
-describe:
+* describe
+
 ```
 <kafka>/kafka-consumer-groups.sh  --bootstrap-server localhost:9092 --group <GROUP NAME> --describe
 ```

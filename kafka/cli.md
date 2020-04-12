@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-12T06:19:26.253Z
+date: 2020-04-12T06:22:36.138Z
 tags: kafka, cli
 ---
 
@@ -88,6 +88,15 @@ Notes:
   * The topic is created with defaults (defined in `server.properties` - such as number of partitions and number of replications. It is best to create topic first.
 * `<CTRL><D>` to stop sending messages.
 
+### keys
+`kafka-console-producer.sh`  consumer can also post messages with a key. Specify the key separator on the command line using `--property` parameter, e.g:
+```
+<kafka>/kafka-console-consumer.sh --broker-list localhost:9092 --topic <NAME OF TOPIC> parse.key=true --property key.separator=,
+```
+
+> key1,message1
+> key2,message1
+> key1,message2
 
 ## Consumer
 kafka cli supports creating of consumers (subscribers to topics) using `<kafka>/kafka-console-consumer.sh`.
@@ -115,6 +124,7 @@ As a _consumer group_, when the group is first started, it defaults to listening
 But as a _consumer group_, the _consumer offset_ is written. So when starting the same group with the `--from-beginning` flag, it has no effect; the consumer offset takes precedence.
 
 And as a group, when all the consumers are down, can keep posting messages to the topic. When one of more consumers in the group start up, messages since the _consumer offset_ are replayed.
+
 
 ### manage
 `kafka-consumer-groups.sh` manages _consumer groups_.

@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-12T06:04:41.975Z
+date: 2020-04-12T06:09:26.415Z
 tags: kafka, cli
 ---
 
@@ -107,9 +107,24 @@ Notes:
 ### groups
 `kafka-console-consumer.sh` participants in a _consumer group_, by passing `--group` parameter. There is no need to provie a partition id (optional). As more consumers are added to the group, the partitions are shared between the consumers. When a consumer is stopped, the partition(s) it had are redistributed among the remaining consumers.
 
+Note - when launching a consumer without a group, the a group is created automaticaly with a random name.
+
 #### from beginning
 As a _consumer group_, when the group is first started, it defaults to listening for messages from the time it is started. It can also be started to listen from the begginging, by simnply passing the `--from-beginning` flag.
 
 But as a _consumer group_, the _consumer offset_ is written. So when starting the same group with the `--from-beginning` flag, it has no effect; the consumer offset takes precedence.
 
 And as a group, when all the consumers are down, can keep posting messages to the topic. When one of more consumers in the group start up, messages since the _consumer offset_ are replayed.
+
+### manage
+`kafka-consumer-groups.sh` manages _consumer groups_.
+
+list:
+```
+<kafka/kafka-consumer-groups.sh  --bootstrap-server localhost:9092 --list
+```
+
+describe:
+```
+<kafka>/kafka-consumer-groups.sh  --bootstrap-server localhost:9092 --group <GROUP NAME> --describe
+```

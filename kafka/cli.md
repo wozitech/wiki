@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-12T06:16:14.768Z
+date: 2020-04-12T06:18:34.068Z
 tags: kafka, cli
 ---
 
@@ -139,3 +139,11 @@ describe:
 * --to-current
 
 Each of the above options are combined with one of `--dryrun` or `--execute`.
+
+When resettinga _consumer group's_ offsets, it can be done by an individual topic or all topics associated with that consumer.
+
+
+e.g:
+```
+<kafka>/kafka-consumer-groups.sh  --bootstrap-server localhost:9092 --group <GROUP NAME> --reset-offsets --execute --to-earlist --topic <NAME OF TOPIC>
+```

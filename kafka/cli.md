@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-12T07:58:15.402Z
+date: 2020-04-12T08:10:40.673Z
 tags: kafka, cli
 ---
 

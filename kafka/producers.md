@@ -2,7 +2,7 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-13T09:37:45.515Z
+date: 2020-04-13T09:39:34.902Z
 tags: kafka, keys, producers, acks
 ---
 
@@ -57,3 +57,5 @@ Since kafka V0.11, when the producer posts to topic, it posts with a unique id. 
 ![kafka-idempotent-producer-effect.png](/uploads/kafka/kafka-idempotent-producer-effect.png)
 
 With idempotent producers and kafka V1.0+, kafka can continue to assure message sequence with `max.inflight.requests.per.connection` set to the default of 5.
+
+To benefit, you must set `enable.idempotence` to true when creating your producer.

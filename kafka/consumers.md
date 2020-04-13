@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-13T14:45:43.425Z
+date: 2020-04-13T14:47:04.756Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics, bootstrap
 ---
 
@@ -34,17 +34,18 @@ When the "consumer group" has processed (not read) data from a topic, it _should
 
 _Note - prior to V0.10 of kafka, consumer offsets were written to zookeeper._
 
-Two strategies for consumer commits:
-* [easy] `enable.auto.commit` = true with syncrhonous processing of batches
-  * `auto-.commit.interval.ms` defaults to 5000 (every five seconds) and when closing the consumer
-* [harder] `enable.auto.commit` = false with manual commit of offsets
-
-
-## Delivery Semantics
+### Delivery Semantics
 Consumers choose when to write their offsets, choosing one of three schemes:
 * At most once - committed as soon as the message is read. If something goes wrong after reading, the message is lost.
 * At least onne - _preferred_ committed  only when processed. The consumers must be idempotent (reprocessing the same message should not cause a problem). Remember, messages in the same partition are read in sequence.
 * Exactly Once - this is only available kafka => kafka workflows using the Kafka Streams API.
+
+Two strategies for consumer commits:
+* [easy] `enable.auto.commit` = true with syncrhonous processing of batches
+  * `auto-.commit.interval.ms` defaults to 5000 (every five seconds) and when closing the consumer
+  * but if the batch fails, the commits have already been made and you're operating in "at most once"
+* [harder] `enable.auto.commit` = false with manual commit of offsets
+
 
 
 ## Versions

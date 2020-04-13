@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-13T14:53:46.521Z
+date: 2020-04-13T15:04:19.143Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics, bootstrap
 ---
 
@@ -33,6 +33,18 @@ These consumed offets are called within a system topic called, `__consumer_offse
 When the "consumer group" has processed (not read) data from a topic, it _should_ commit it's offsets. This allows the consumer group to recover from consumer failures (be them intentional or unintentional).
 
 _Note - prior to V0.10 of kafka, consumer offsets were written to zookeeper._
+
+### Retentions
+kafka expects a consumer to continuously stream the data from a topic. If kafka topic has a retention say 7 days, but the consumer does not commit their offsets within 7 days, those offsets will become void.
+
+If the consumer starts up with _earliest_ or _latest_ offsets, the offsets will be rebuilt. Any other setting, and kafka will throw an exception.
+
+kafka also have a broker defined period where (`offset.retention.minutes`) it demands all consumers to have committed offsets within. If the consumer is online for longer than that period, its offsets will be deleted:
+* <V2.0 - 1 day
+* >V2.0 - 7 days
+
+
+
 
 ### Delivery Semantics
 Consumers choose when to write their offsets, choosing one of three schemes:

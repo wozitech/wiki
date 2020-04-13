@@ -2,7 +2,7 @@
 title: kafka cli
 description: 
 published: true
-date: 2020-04-12T08:10:40.673Z
+date: 2020-04-13T08:58:54.851Z
 tags: kafka, cli
 ---
 
@@ -48,28 +48,41 @@ Use the `kafka-topic.sh` script found in `<kafka>/bin`. _Note - the kafka cli wo
 
 ### Create Topic
 ```
-kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --create --partitions <#> --replication-factor <#>
+<kafka>/kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --create --partitions <#> --replication-factor <#>
 ```
 
 ### List Topics
 ```
-kafka-topics --zookeeper localhost:2181 --list
+<kafka>/kafka-topics --zookeeper localhost:2181 --list
 ```
 
 ### Describe Topic
 ```
-kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --describe
+<kafka>/kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --describe
 ```
-
 
 ### Delete Topic
 ```
-kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --delete
+<kafka>/kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --delete
 ```
 
 Notes:
 * topics are only marked for deletion; they are not deleted straight away.
 * topics need their property `delete.topic.enable` set to true.
+
+
+### Min ISR
+The minimum number of in-sync replicas (`min.insync.replicas`) can be set on the broker or topic. The property is used only when `acks` is "all" (or -1) on posting a message to a topic. It is the minimum number of _following_ (not leader) partitions that must confirm write acknowledgement.
+
+Can be set as a default property on the topic:
+```
+<kafka>/kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --alter --config min.insync.replicas=1 
+```
+
+### Change Partitions/Replication Factor
+```
+<kafka>/kafka-topics --zookeeper localhost:2181 --topic <NAME OF TOPIC> --alter --partitions <#> --replication-factor <#>
+```
 
 
 ## Producer

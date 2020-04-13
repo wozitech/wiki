@@ -2,7 +2,7 @@
 title: Kafka Brokers
 description: 
 published: true
-date: 2020-04-11T10:31:44.024Z
+date: 2020-04-13T08:49:40.100Z
 tags: kafka, replication, partitions, distributed, leaders, zookeeper
 ---
 
@@ -47,6 +47,11 @@ At any one time, only one broker can be the leader for a partition.
 Only the leader can receive (from producers) and serve (to consumers) data for a topic for a given partition. The other copies (replicated) of  the partition are known as "in-sync replicas" (ISRs).
 
 When a broker goes offline, all the partitions which were leaders are re-elected to other brokers. When that broker comes back online, it re-elects itself as leader on the original set of partitions.
+
+### min ISR
+The minimum number of in-sync replicas (`min.insync.replicas`) can be set on the broker or topic. The property is used only when `acks` is "all" (or -1), and is the minimum number of following partitions that must confirm write acknowledgement.
+
+When set on a broker, the property is added `server.properties`, and appleis to all partitions on which the broker is leading on.
 
 
 ## zookeeper

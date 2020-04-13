@@ -2,7 +2,7 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-13T09:13:00.017Z
+date: 2020-04-13T09:37:45.515Z
 tags: kafka, keys, producers, acks
 ---
 
@@ -45,4 +45,15 @@ Along with `retries`, there is a `retry.backoff.ms` property, which defaults to 
 
 In addition, there is the `delivery.timeout.ms` property, which defaults to 2 minutes, which is the ultimate upper bound.
 
-During retry, there is a chance that messages can be sent out of sequence. This is owing to a producer having multiple threads/connections (`max.inflight.requests.per.connection` - default is 5) - the sequence of which cannot be guaranteed when retrying. 
+During retry, there is a chance that messages can be sent out of sequence. This is owing to a producer having multiple threads/connections (`max.inflight.requests.per.connection` - default is 5) - the sequence of which cannot be guaranteed when retrying.
+
+## Idempotent Producer
+Owing to network errors, it is possible for a producer to duplicate messages:
+![kafka-idempotent-producer-why.png](/uploads/kafka/kafka-idempotent-producer-why.png)
+
+Here it can be seen that the _ack_ to the second message is not received, but it was committed; the producer retries with a duplicate message.
+
+Since kafka V0.11, when the producer posts to topic, it posts with a unique id. When the producer retries, it reuses that unique id which kafka uses to trap a duplicate, returning what would have been the original ack; no duplicate message:
+![kafka-idempotent-producer-effect.png](/uploads/kafka/kafka-idempotent-producer-effect.png)
+
+With idempotent producers and kafka V1.0+, kafka can continue to assure message sequence with `max.inflight.requests.per.connection` set to the default of 5.

@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-13T14:35:40.880Z
+date: 2020-04-13T14:39:01.616Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics, bootstrap
 ---
 
@@ -59,3 +59,9 @@ This polling behaviour can be tuned.
 
 * `fetch.min.bytes`- default is 1; how many bytes to wait until releasing messages for processing - equvalent to a producer's `batch.size` property
 * `max.poll.records` - default is 500; how many records to wait until releasing messages for processing - equvalent to a producer's `linger.ms` property
+
+Introducing latency on very fast streaming messages typically improves performance.
+
+`max.partitions.fetch.bytes` - default 1MB; top level of data that can be returned by each broker for each partition of a topic; lots of memory will be required if you have a topic with lots of partitions.
+
+`fetch.max.bytes` - default is 50MB; top level of data that can be returned in one request (across all brokers and partitions).

@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-13T15:09:24.386Z
+date: 2020-04-13T15:11:19.986Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics, bootstrap
 ---
 
@@ -86,3 +86,6 @@ Introducing latency on very fast streaming messages typically improves performan
 
 ## Re Balancing
 Consumers within a group have a heartbeat, which if it fails, is used to re-balance a topic's partitions across remaining consumers or when new consumers are added to the group.
+
+* `session.timeout.ms` - default is 10 second; will wait for this period to assume the consumer is no more
+* `heartbeat.interval.ms` - default is 3 seconds; this is the poll period. Rule of thumb, set this to one third of the session timeout.

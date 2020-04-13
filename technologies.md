@@ -2,7 +2,7 @@
 title: Technologies
 description: These are the technologies I used
 published: true
-date: 2020-03-01T11:46:12.741Z
+date: 2020-04-13T06:46:06.368Z
 tags: 
 ---
 
@@ -50,3 +50,4 @@ Public Reverse Proxy - [ngrok](https://ngrok.com/product)
 # Watching
 * [Project Atomic - containised stack including docker, kubernetes and cockpit](http://www.projectatomic.io)
 * [snyk](https://snyk.io/) - static vulnerability assessment and faciliated automated update. Integrates with github and PRs. Integrates within a Circle CI pipeline. Good reporting. Includes Docker images.
+* Contract Tests - [PACT](https://github.com/pact-foundation/pact-node)

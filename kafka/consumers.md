@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-11T10:29:46.102Z
+date: 2020-04-13T09:04:52.316Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics, bootstrap
 ---
 
@@ -39,3 +39,13 @@ Consumers choose when to write their offsets, choosing one of three schemes:
 * At most once - committed as soon as the message is read. If something goes wrong after reading, the message is lost.
 * At least onne - _preferred_ committed  only when processed. The consumers must be idempotent (reprocessing the same message should not cause a problem). Remember, messages in the same partition are read in sequence.
 * Exactly Once - this is only available kafka => kafka workflows using the Kafka Streams API.
+
+
+## Versions
+Two major versions of kafka:
+* V1
+* V2
+
+A V2 consumer can subscribe to both a V1 and V2 topic.
+
+A V1 consumer can subscribe only to a V1 topic.

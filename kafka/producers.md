@@ -2,7 +2,7 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-13T10:34:18.030Z
+date: 2020-04-13T13:55:14.351Z
 tags: kafka, keys, producers, acks
 ---
 

@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-13T15:13:52.627Z
+date: 2020-04-13T15:15:41.980Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics, bootstrap
 ---
 

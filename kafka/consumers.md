@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-13T15:04:30.610Z
+date: 2020-04-13T15:09:24.386Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics, bootstrap
 ---
 
@@ -82,3 +82,7 @@ Introducing latency on very fast streaming messages typically improves performan
 `max.partitions.fetch.bytes` - default 1MB; top level of data that can be returned by each broker for each partition of a topic; lots of memory will be required if you have a topic with lots of partitions.
 
 `fetch.max.bytes` - default is 50MB; top level of data that can be returned in one request (across all brokers and partitions).
+
+
+## Re Balancing
+Consumers within a group have a heartbeat, which if it fails, is used to re-balance a topic's partitions across remaining consumers or when new consumers are added to the group.

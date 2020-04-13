@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-13T14:44:25.877Z
+date: 2020-04-13T14:45:43.425Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics, bootstrap
 ---
 
@@ -36,6 +36,7 @@ _Note - prior to V0.10 of kafka, consumer offsets were written to zookeeper._
 
 Two strategies for consumer commits:
 * [easy] `enable.auto.commit` = true with syncrhonous processing of batches
+  * `auto-.commit.interval.ms` defaults to 5000 (every five seconds) and when closing the consumer
 * [harder] `enable.auto.commit` = false with manual commit of offsets
 
 

@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-13T09:04:52.316Z
+date: 2020-04-13T14:32:54.983Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics, bootstrap
 ---
 
@@ -49,3 +49,8 @@ Two major versions of kafka:
 A V2 consumer can subscribe to both a V1 and V2 topic.
 
 A V1 consumer can subscribe only to a V1 topic.
+
+
+## Long Poll
+The kafka consumer effectively polls for data from brokers:
+![kafka-long-poll.png](/uploads/kafka/kafka-long-poll.png)

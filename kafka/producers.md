@@ -2,7 +2,7 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-13T10:21:05.118Z
+date: 2020-04-13T10:23:31.833Z
 tags: kafka, keys, producers, acks
 ---
 
@@ -91,3 +91,12 @@ kafka has two properties that control batches:
   * _real world events have shown that introducing some lag on producers can result in more throughout as messages as dsitributed in batches._
 * `batch.size` - volume of batch, e.g. 32KB; if the message backlog hits this before `linger.ms` is reached, the set (_batched_) messages will be sent.
   * _A message greater than the `batch.size` will be sent directly._
+
+
+### Fast Producer
+The properties to set for a fast producer:
+
+* `compression.type` - snappy (_assumed text based, e.g. log or JSON_)
+* `linger.ms` - 20
+* `batch.size` - 32KB
+* `max.inflight.requests.per.connection` - leave as default of 5

@@ -2,7 +2,7 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-13T10:18:17.816Z
+date: 2020-04-13T10:21:05.118Z
 tags: kafka, keys, producers, acks
 ---
 
@@ -89,4 +89,5 @@ If the volume of messages inbound is greater, kafka will automatically start to 
 kafka has two properties that control batches:
 * `linger.ms` - defaults to 0; being the time in ms that kafka is willing to wait before sending message
   * _real world events have shown that introducing some lag on producers can result in more throughout as messages as dsitributed in batches._
-* `batch.size` - maximum number of messages; if the message backlog hits this before `linger.ms` is reached, the set (_batched_) messages will be sent.
+* `batch.size` - volume of batch, e.g. 32KB; if the message backlog hits this before `linger.ms` is reached, the set (_batched_) messages will be sent.
+  * _A message greater than the `batch.size` will be sent directly._

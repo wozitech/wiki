@@ -2,7 +2,7 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-13T10:05:40.548Z
+date: 2020-04-13T10:09:25.195Z
 tags: kafka, keys, producers, acks
 ---
 
@@ -67,3 +67,14 @@ The properties to set for a safe producer (messages assured to be sent and sent 
 * `acks` - "all" (or -1)
 * `retries` - leave as default
 * `max.inflight.requests.per.connection` - leave as default of 5
+
+
+## Compression
+Compression (`compression.type`) can be set when a producer posts a message. Can be one of:
+* none
+* gzip
+* lz4
+* snappy
+
+
+Compression works better on batches of messages or messages with lots of repeating data (e.g. JSON arrays).

@@ -2,7 +2,7 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-11T10:18:15.360Z
+date: 2020-04-13T09:09:09.519Z
 tags: kafka, keys, producers, acks
 ---
 
@@ -26,3 +26,21 @@ The key is optional. If no key (null), then producers will write to all partitio
 The key ensures all messages are written to the same partition (key hashing) - so messages are guaranteed to be in the same order.
 
 Choose a key wisely though; a bad key will result in non-uniform data across partitions.
+
+## Versions
+Two major versions of kafka:
+* V1
+* V2
+
+A V2 producer can post to both a V1 and V2 topic.
+
+A V1 producer can post only to a V1 topic.
+
+## Retries
+A producer can error when posting to a topic. For example `NotEnoughReplicasException` (when using `acks` of "all" and there are insufficient number of In-Sync Replicas (ISRs).
+
+<= V2.0, retries defaulted to 0. >V2.0 and retries defaults to 2^16.
+
+Along with `retries`, there is a `retry.backoff.ms` property, which defaults to 100ms.
+
+In addition, there is the `delivery.timeout.ms` property, which defaults to 2 minutes, which is the ultimate upper bound.

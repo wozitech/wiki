@@ -2,7 +2,7 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-13T10:26:17.330Z
+date: 2020-04-13T10:31:31.190Z
 tags: kafka, keys, producers, acks
 ---
 
@@ -106,3 +106,9 @@ The properties to set for a fast producer:
 * `linger.ms` - 20
 * `batch.size` - 32KB
 * `max.inflight.requests.per.connection` - leave as default of 5
+
+
+## Buffers
+When posting data to a topic, kafka returns immediately, because the message is added to a buffer. The size of that buffer is control by `buffer.memory` (defaults to 32MB),
+
+If posting faster than kafka is able to send or is unable to send (all brokers are down), this buffer will overflow, and kafka will start to block on all posts. The duration of the block is given by the property `max.block.ms` (defaults to 60 seconds).

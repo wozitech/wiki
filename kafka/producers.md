@@ -2,7 +2,7 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-13T09:39:34.902Z
+date: 2020-04-13T10:05:40.548Z
 tags: kafka, keys, producers, acks
 ---
 
@@ -59,3 +59,11 @@ Since kafka V0.11, when the producer posts to topic, it posts with a unique id. 
 With idempotent producers and kafka V1.0+, kafka can continue to assure message sequence with `max.inflight.requests.per.connection` set to the default of 5.
 
 To benefit, you must set `enable.idempotence` to true when creating your producer.
+
+### Safe Producer
+The properties to set for a safe producer (messages assured to be sent and sent just once) for kafka V1.0+:
+
+* `enable.idempotence` - true
+* `acks` - "all" (or -1)
+* `retries` - leave as default
+* `max.inflight.requests.per.connection` - leave as default of 5

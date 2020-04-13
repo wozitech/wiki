@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-13T15:04:19.143Z
+date: 2020-04-13T15:04:30.610Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics, bootstrap
 ---
 
@@ -42,8 +42,6 @@ If the consumer starts up with _earliest_ or _latest_ offsets, the offsets will 
 kafka also have a broker defined period where (`offset.retention.minutes`) it demands all consumers to have committed offsets within. If the consumer is online for longer than that period, its offsets will be deleted:
 * <V2.0 - 1 day
 * >V2.0 - 7 days
-
-
 
 
 ### Delivery Semantics

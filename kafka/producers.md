@@ -2,7 +2,7 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-13T10:23:31.833Z
+date: 2020-04-13T10:26:17.330Z
 tags: kafka, keys, producers, acks
 ---
 
@@ -26,6 +26,12 @@ The key is optional. If no key (null), then producers will write to all partitio
 The key ensures all messages are written to the same partition (key hashing) - so messages are guaranteed to be in the same order.
 
 Choose a key wisely though; a bad key will result in non-uniform data across partitions.
+
+### hashing
+kafka uses the "murmur2" algorithm to create hashes.
+
+Can set the `partioner.class` property to provide own hash algorithm (but be careful).
+
 
 ## Versions
 Two major versions of kafka:

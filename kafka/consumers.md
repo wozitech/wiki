@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-13T15:11:19.986Z
+date: 2020-04-13T15:13:52.627Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics, bootstrap
 ---
 
@@ -83,6 +83,8 @@ Introducing latency on very fast streaming messages typically improves performan
 
 `fetch.max.bytes` - default is 50MB; top level of data that can be returned in one request (across all brokers and partitions).
 
+### Poll Frequently
+Ideally, you should poll as frequently as possible and avoid long period of processing. In Big Data scenarios, this is not always possible. Kafka monitors the poll frequency of consumers, and it will assume consumers have stopped working (either intentionally or unintentionally) if the time between two consecutive polls exceeds `max.poll.interval.ms` (defaults to 5 minutes).
 
 ## Re Balancing
 Consumers within a group have a heartbeat, which if it fails, is used to re-balance a topic's partitions across remaining consumers or when new consumers are added to the group.

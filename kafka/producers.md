@@ -2,7 +2,7 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-13T09:12:15.182Z
+date: 2020-04-13T09:13:00.017Z
 tags: kafka, keys, producers, acks
 ---
 
@@ -45,4 +45,4 @@ Along with `retries`, there is a `retry.backoff.ms` property, which defaults to 
 
 In addition, there is the `delivery.timeout.ms` property, which defaults to 2 minutes, which is the ultimate upper bound.
 
-During retry, there is a chance that messages can be sent out of sequence. This is owing to a producer having multiple threads/connections (`max.inflight.requests.per.connection`) - the sequence of which cannot be guaranteed when retrying. 
+During retry, there is a chance that messages can be sent out of sequence. This is owing to a producer having multiple threads/connections (`max.inflight.requests.per.connection` - default is 5) - the sequence of which cannot be guaranteed when retrying. 

@@ -2,7 +2,7 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-13T10:09:25.195Z
+date: 2020-04-13T10:11:00.395Z
 tags: kafka, keys, producers, acks
 ---
 
@@ -72,7 +72,7 @@ The properties to set for a safe producer (messages assured to be sent and sent 
 ## Compression
 Compression (`compression.type`) can be set when a producer posts a message. Can be one of:
 * none
-* gzip
+* gzip (highest compression but slowest)
 * lz4
 * snappy
 

@@ -2,7 +2,7 @@
 title: kafka producers
 description: 
 published: true
-date: 2020-04-13T10:11:00.395Z
+date: 2020-04-13T10:18:17.816Z
 tags: kafka, keys, producers, acks
 ---
 
@@ -78,3 +78,15 @@ Compression (`compression.type`) can be set when a producer posts a message. Can
 
 
 Compression works better on batches of messages or messages with lots of repeating data (e.g. JSON arrays).
+
+## Batches
+A producer can post to a topic individual messages, or can batch up messages and post in bulk.
+
+kafka tries to send messags as soon as possible; by default it can keep 5 messages in flight.
+
+If the volume of messages inbound is greater, kafka will automatically start to batch messages to increase throughput (given parition resolution).
+
+kafka has two properties that control batches:
+* `linger.ms` - defaults to 0; being the time in ms that kafka is willing to wait before sending message
+  * _real world events have shown that introducing some lag on producers can result in more throughout as messages as dsitributed in batches._
+* `batch.size` - maximum number of messages; if the message backlog hits this before `linger.ms` is reached, the set (_batched_) messages will be sent.

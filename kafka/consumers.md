@@ -2,7 +2,7 @@
 title: kafka consumers
 description: 
 published: true
-date: 2020-04-13T14:39:01.616Z
+date: 2020-04-13T14:39:51.495Z
 tags: kafka, partitions, consumers, offsets, consumer groups, delivery semantics, bootstrap
 ---
 
@@ -55,7 +55,7 @@ A V1 consumer can subscribe only to a V1 topic.
 The kafka consumer effectively polls for data from brokers:
 ![kafka-long-poll.png](/uploads/kafka/kafka-long-poll.png)
 
-This polling behaviour can be tuned.
+This polling behaviour can be tuned. BUT - only tune if getting exceptions. The defaults have proven to work well in most scenarios.
 
 * `fetch.min.bytes`- default is 1; how many bytes to wait until releasing messages for processing - equvalent to a producer's `batch.size` property
 * `max.poll.records` - default is 500; how many records to wait until releasing messages for processing - equvalent to a producer's `linger.ms` property

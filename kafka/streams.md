@@ -2,7 +2,7 @@
 title: kafka streams
 description: 
 published: true
-date: 2020-04-14T05:57:07.552Z
+date: 2020-04-14T05:57:46.773Z
 tags: kafka, streams
 ---
 
@@ -22,3 +22,4 @@ kafka stremas ia a JAVA API (library). There is a good node.js wrapper library: 
 
 Provides set of operators that be used to filter and transform data; filter, map, reduce, ...
 
+You build one or more `kstreams`, and start each of those kstreams within the cluster.

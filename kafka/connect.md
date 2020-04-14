@@ -2,7 +2,7 @@
 title: kafka Connect API
 description: 
 published: true
-date: 2020-04-14T05:20:37.939Z
+date: 2020-04-14T05:22:57.617Z
 tags: kafka, connect, API
 ---
 

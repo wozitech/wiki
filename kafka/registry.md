@@ -2,7 +2,7 @@
 title: kafka Schema Registry
 description: 
 published: true
-date: 2020-04-14T06:02:03.443Z
+date: 2020-04-14T06:03:40.986Z
 tags: kafka, schema, registry
 ---
 
@@ -17,6 +17,6 @@ It supports:
 * schemas
   * with evolution
 * lightweight
-
+* forward, backward, full and partial compatability
 
 Uses Apache Avro.

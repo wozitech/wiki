@@ -2,7 +2,7 @@
 title: kafka Connect API
 description: 
 published: true
-date: 2020-04-14T05:20:31.187Z
+date: 2020-04-14T05:20:37.939Z
 tags: kafka, connect, API
 ---
 
@@ -42,5 +42,6 @@ To start the connector simply run from within the parent folder of the connector
 <kafka>/bin/connect-standalone.sh ./connect-standalone.properties <./<connector.properties>`
 ```
 
-_where <connector.properties> is the custom properties file you created when installing the connector.
+_where <connector.properties> is the custom properties file you created when installing the connector._
+
 

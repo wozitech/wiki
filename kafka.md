@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-14T04:57:50.310Z
+date: 2020-04-14T05:23:23.498Z
 tags: 
 ---
 
@@ -29,7 +29,7 @@ kafka is made up of:
 * [Connect API](/kafka/connect)
 * [CLI](/kafka/cli)
 * [Brokers](/kafka/brokers) and [Topics](/kafka/topics)
-* Streams API
+* [Streams API](/kafka/streams)
   * KSQL
 
 Messages are typically JSON/XML self describing content, but can be any binary or text format. Ideally, the format of the message should exist alongside the message itself making it self describing. This is why JSON and XML are good with JSON Schemas and XML Schemas. But more and more, folks are using Apache Avro, not just because its an efficient binary format and self describing, but because the data definition schema can be versioned too.

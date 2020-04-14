@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-12T05:51:45.874Z
+date: 2020-04-14T04:46:48.288Z
 tags: 
 ---
 
@@ -25,7 +25,7 @@ https://kafka.apache.org/downloads
 kafka is made up of:
 * [Consumers](/kafka/consumers)
 * [Producers](/kafka/producers)
-* Connect API
+* [Connect API](/kafka/connect)
 * [CLI](/kafka/cli)
 * [Brokers](/kafka/brokers) and [Topics](/kafka/topics)
 * Streams

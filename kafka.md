@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-14T04:54:18.004Z
+date: 2020-04-14T04:54:43.455Z
 tags: 
 ---
 
@@ -38,13 +38,13 @@ https://kafka.apache.org/downloads
 
 # Background
 kafka is made up of:
-* [Consumers](/kafka/consumers)
-* [Producers](/kafka/producers)
+* [Consumers API](/kafka/consumers)
+* [Producers API](/kafka/producers)
 * [Connect API](/kafka/connect)
 * [CLI](/kafka/cli)
 * [Brokers](/kafka/brokers) and [Topics](/kafka/topics)
-* Streams
-* KSQL
+* Streams API
+  * KSQL
 
 Messages are typically JSON/XML self describing content, but can be any binary or text format. Ideally, the format of the message should exist alongside the message itself making it self describing. This is why JSON and XML are good with JSON Schemas and XML Schemas. But more and more, folks are using Apache Avro, not just because its an efficient binary format and self describing, but because the data definition schema can be versioned too.
 

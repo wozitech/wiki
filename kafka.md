@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-14T04:56:53.907Z
+date: 2020-04-14T04:57:50.310Z
 tags: 
 ---
 
@@ -18,26 +18,7 @@ Articles:
 * https://hmh.engineering/experimenting-with-apache-kafka-and-nodejs-5c0604211196 - read, but need to try example
 * https://www.confluent.io/blog/iot-with-kafka-connect-mqtt-and-rest-proxy - MQTT and kafta
 
-# History
-Developed by LinkedIn, open sourced in 2011, and incubated by Apache late 2012. Based on the "commit log" principle.
-
-* 2013 kafka 0.8x
-  * Topic replicatoin, Log compaction
-  * Simplified  producer client API
-* 2015 kafka 0.9x
-  * Simplified consumer API, without zookeeper
-  * Added security
-  * kafka Connect API
-* 2016 kafka 0.10.0
-  * Kafka Streams API
-* 2017 kafka 0.10.1/0.10.2
-  * Improved Connect API, Single Message Transforms API
-
-* V1.0
-* v1.1
-* v2.0
-
-  
+ 
 # Download
 https://kafka.apache.org/downloads
 

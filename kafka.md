@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-14T05:58:34.627Z
+date: 2020-04-14T06:04:59.149Z
 tags: 
 ---
 
@@ -17,6 +17,7 @@ Articles:
 * https://www.confluent.io/blog/building-a-microservices-ecosystem-with-kafka-streams-and-ksql/ - yet to read
 * https://hmh.engineering/experimenting-with-apache-kafka-and-nodejs-5c0604211196 - read, but need to try example
 * https://www.confluent.io/blog/iot-with-kafka-connect-mqtt-and-rest-proxy - MQTT and kafta
+* https://medium.com/@stephane.maarek/the-kafka-api-battle-producer-vs-consumer-vs-kafka-connect-vs-kafka-streams-vs-ksql-ef584274c1e
 
  
 # Download

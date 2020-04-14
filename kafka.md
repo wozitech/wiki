@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-14T05:23:23.498Z
+date: 2020-04-14T05:24:24.193Z
 tags: 
 ---
 
@@ -24,11 +24,11 @@ https://kafka.apache.org/downloads
 
 # Background
 kafka is made up of:
+* [Brokers](/kafka/brokers) and [Topics](/kafka/topics)
+* [CLI](/kafka/cli)
 * [Consumers API](/kafka/consumers)
 * [Producers API](/kafka/producers)
 * [Connect API](/kafka/connect)
-* [CLI](/kafka/cli)
-* [Brokers](/kafka/brokers) and [Topics](/kafka/topics)
 * [Streams API](/kafka/streams)
   * KSQL
 

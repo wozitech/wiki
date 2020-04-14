@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-14T04:54:43.455Z
+date: 2020-04-14T04:56:53.907Z
 tags: 
 ---
 
@@ -32,6 +32,11 @@ Developed by LinkedIn, open sourced in 2011, and incubated by Apache late 2012. 
   * Kafka Streams API
 * 2017 kafka 0.10.1/0.10.2
   * Improved Connect API, Single Message Transforms API
+
+* V1.0
+* v1.1
+* v2.0
+
   
 # Download
 https://kafka.apache.org/downloads

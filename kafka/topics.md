@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-15T04:58:06.418Z
+date: 2020-04-15T05:03:50.749Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -23,6 +23,21 @@ Although you can increase the partition count and replication factor after a top
 * Increasing partition count breaks key order guarantee - for in-flight messages
 * INcreasing replication factor puts additional load on your cluster and decreases performance whilst the partitions are replicated; the bigger & higher number of partitions the greater the impact
 
+#### Partitions
+Each partition can handle a throughput of a few MB/s - but measure it for your environment.
+
+More partitions mean:
+* Better concurrency - throughput
+* To run more producers and consumers in a group
+  * Size for maximum (peak) throughput
+* Leverage more brokers in your cluster
+* But:
+  * More re-elections to perform for Zookeeper
+  * More open files in kafka
+
+Rule of thumb:
+* Small cluster (< 6 brokers): 2 x  #brokers
+* Big cluster (> 12 brokers); 1 x #brokers
 
 ### Keys
 Note - keys are not defined against a topic is created (unlike a database table index). A key is against a message; see Brokers.

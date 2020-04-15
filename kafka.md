@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-15T06:06:27.398Z
+date: 2020-04-15T06:09:08.215Z
 tags: 
 ---
 
@@ -105,6 +105,8 @@ Different tools can be  deployed:
 * Confluence has an enterprise (paid) Connect source
 
 When you replicate, it does not preserve offsets; the replicated cluster's offsets are created as new.
+
+https://www.confluent.io/kafka-summit-sf17/multitenant-multicluster-and-hieracrchical-kafka-messaging-service/
 
 # kubernetes
 kubernetes is now the industry's de facto app hosting platform. No longer are we virtualising servers to host applications, we simpy package (dockerise) applications and deploy on kubernetes. kubernetes has good scaling and monitoring options (least not Prometheus). So we DIY it and benefit from consolidating on a common platform so the deployment, scaling and monitoring of all applications is consistent.

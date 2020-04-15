@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-15T05:58:34.329Z
+date: 2020-04-15T06:05:28.951Z
 tags: 
 ---
 
@@ -92,6 +92,17 @@ Clients authenticate to the bootstrap broker.
 
 ## Authorisation
 kafka supports acccess control lists against authenticated users, such subscribe/publish to a given topic.
+
+
+# Multi-Region Clusters and Replication
+kafka clusters can share data; replication between clusters is little more than a producer and consumer, right!
+
+Different tools can be  deployed:
+* Mirror Maker (MM) - ships with kafka
+* netflix using flink (not open source)
+* uber uses uReplicator - improves upon Mirror Maker
+* Comacst open source kafka Connect source
+* Confluence has an enterprise (paid) Connect source
 
 # kubernetes
 kubernetes is now the industry's de facto app hosting platform. No longer are we virtualising servers to host applications, we simpy package (dockerise) applications and deploy on kubernetes. kubernetes has good scaling and monitoring options (least not Prometheus). So we DIY it and benefit from consolidating on a common platform so the deployment, scaling and monitoring of all applications is consistent.

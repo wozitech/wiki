@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-15T05:08:43.958Z
+date: 2020-04-15T05:10:56.733Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -71,3 +71,5 @@ Data within a topic expires after a given duration; the default is one week.
 ## Immutable
 Once data is written to a partition, it can not be updated.
 
+## Naming Convention
+Although topics can have any name, it is best to pick a naming convention up front. A dot notation based on business and function (like java packages) is a good choice.

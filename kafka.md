@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-15T05:36:57.470Z
+date: 2020-04-15T05:48:05.505Z
 tags: 
 ---
 
@@ -54,8 +54,16 @@ An event platform like kafka is perfect for building a CQRS application:
 # Patterns
 [kafka patterns](/kafka/patterns)
 
-# prometheus/New Relic
-> TBC
+# Monitoring & Ops
+As a Java platform, kafka is exposed via JMX. These can be exported to an ELK service, Datadog, New Relic, Confluence Control Centre, Prometheus/Grafana, ....
+
+https://kafka.apache.org/documentation/#monitoring
+
+## Important Metrics
+* Under replicated Partitions - number of partitions having trouble with ISR (in-sync replicas). May indicate high load.
+* Request Handlers - utilisation of threads (overall utilisation of a kafka broker)
+* Request Timing - how long it is taking to process requests; lower is better (duh).
+
 
 # kubernetes
 kubernetes is now the industry's de facto app hosting platform. No longer are we virtualising servers to host applications, we simpy package (dockerise) applications and deploy on kubernetes. kubernetes has good scaling and monitoring options (least not Prometheus). So we DIY it and benefit from consolidating on a common platform so the deployment, scaling and monitoring of all applications is consistent.

@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-14T06:06:26.438Z
+date: 2020-04-15T05:30:13.886Z
 tags: 
 ---
 
@@ -45,6 +45,9 @@ Typically kafka is accessed via custom applications using the kafka API. For adm
 
 # zookeeper
 This an Apache technology for maintaining configration, control and monitoring of distributed services. Zookeeper must be deployed with kafka to control/amange the brokers and to monitor the kafka ecosystem (clusters, topics, partitiions, ...).
+
+# CQRS - Command Query Responsibility Separation
+An event platform like kafka is perfect for building a CQRS application: https://www.confluent.io/blog/event-sourcing-cqrs-stream-processing-apache-kafka-whats-connection.
 
 # prometheus/New Relic
 > TBC

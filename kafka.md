@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-15T06:09:51.933Z
+date: 2020-04-15T06:10:47.461Z
 tags: 
 ---
 
@@ -101,7 +101,7 @@ Different tools can be  deployed:
 * Mirror Maker (MM) - ships with kafka
 * netflix using flink (not open source)
 * uber uses [uReplicator](https://eng.uber.com/ureplicator-apache-kafka-replicator/) - improves upon Mirror Maker
-* Comacst open source kafka Connect source
+* [Comcast](https://github.com/Comcast/MirrorTool-for-Kafka-Connect) open source kafka Connect source
 * Confluence has an enterprise (paid) Connect source
 
 When you replicate, it does not preserve offsets; the replicated cluster's offsets are created as new.

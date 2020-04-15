@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-15T05:49:37.492Z
+date: 2020-04-15T05:53:58.219Z
 tags: 
 ---
 
@@ -71,6 +71,15 @@ https://kafka.apache.org/documentation/#monitoring
 * increasing replication factor
 * adding/replcaing/removing a broker
 * upgrading kafka with zero downtime
+
+# Security
+kafka supports authentication, authorisations and transport encryption.
+
+## Encryption
+TLS - between brokers and clients.  Port 9092 is non-secure. Port 9093 is secure.
+
+There is no TLS between the brokers; ensure good edge security around your cluster, especially with respect to the CLI.
+
 
 # kubernetes
 kubernetes is now the industry's de facto app hosting platform. No longer are we virtualising servers to host applications, we simpy package (dockerise) applications and deploy on kubernetes. kubernetes has good scaling and monitoring options (least not Prometheus). So we DIY it and benefit from consolidating on a common platform so the deployment, scaling and monitoring of all applications is consistent.

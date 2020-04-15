@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-15T05:56:11.902Z
+date: 2020-04-15T05:57:36.534Z
 tags: 
 ---
 
@@ -71,6 +71,7 @@ https://kafka.apache.org/documentation/#monitoring
 * increasing replication factor
 * adding/replcaing/removing a broker
 * upgrading kafka with zero downtime
+* maintaining ACLs (and possibly _client_ users)
 
 # Security
 kafka supports authentication, authorisations and transport encryption.
@@ -89,6 +90,8 @@ Clients authenticate to the bootstrap broker.
   * Kerberos - hard to setup; strong and federated
   * SCRAM - effectively username/password - strong and easy to setup
 
+## Authorisation
+kafka supports acccess control lists against authenticated users, such subscribe/publish to a given topic.
 
 # kubernetes
 kubernetes is now the industry's de facto app hosting platform. No longer are we virtualising servers to host applications, we simpy package (dockerise) applications and deploy on kubernetes. kubernetes has good scaling and monitoring options (least not Prometheus). So we DIY it and benefit from consolidating on a common platform so the deployment, scaling and monitoring of all applications is consistent.

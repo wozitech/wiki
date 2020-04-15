@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-15T05:53:58.219Z
+date: 2020-04-15T05:56:11.902Z
 tags: 
 ---
 
@@ -79,6 +79,15 @@ kafka supports authentication, authorisations and transport encryption.
 TLS - between brokers and clients.  Port 9092 is non-secure. Port 9093 is secure.
 
 There is no TLS between the brokers; ensure good edge security around your cluster, especially with respect to the CLI.
+
+## Authentication
+Clients authenticate to the bootstrap broker.
+
+* SSL client certiicates
+* SASL:
+  * plain - username/password - easy but weak
+  * Kerberos - hard to setup; strong and federated
+  * SCRAM - effectively username/password - strong and easy to setup
 
 
 # kubernetes

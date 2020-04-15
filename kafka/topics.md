@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-15T05:03:50.749Z
+date: 2020-04-15T05:08:43.958Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -38,6 +38,27 @@ More partitions mean:
 Rule of thumb:
 * Small cluster (< 6 brokers): 2 x  #brokers
 * Big cluster (> 12 brokers); 1 x #brokers
+
+#### Replication Factor
+Should be at least 2, usually 3, maximum 4.
+
+Higher replication factor means:
+* Better resilience
+* But:
+  * More replication means higher latency (acks=all)
+  * More disk space on brokers - 50% more if replication factor is 3 instead 2)
+  
+Rule of thumb:
+* Set it to 3 (you must have at least three brokers)
+* If latency too high, get a better broker (do not compromise on replication)
+* Never set to 1 in production
+
+#### Brokers
+It is generally accepted that:
+* a broker should not hold more than 20000 to 40000 partitions across all topics
+* a cluster should have a maximum 200000 partitions across all brokers
+
+This is owing to the volume of partition re-elections required by zookeeper if a broker goes down.
 
 ### Keys
 Note - keys are not defined against a topic is created (unlike a database table index). A key is against a message; see Brokers.

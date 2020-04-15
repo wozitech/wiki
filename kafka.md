@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-15T05:31:39.904Z
+date: 2020-04-15T05:36:57.470Z
 tags: 
 ---
 
@@ -50,6 +50,9 @@ This an Apache technology for maintaining configration, control and monitoring o
 An event platform like kafka is perfect for building a CQRS application:
 * https://www.confluent.io/blog/event-sourcing-cqrs-stream-processing-apache-kafka-whats-connection
 * https://medium.com/@qasimsoomro/building-microservices-using-node-js-with-ddd-cqrs-and-event-sourcing-part-1-of-2-52e0dc3d81df
+
+# Patterns
+[kafka patterns](/kafka/patterns)
 
 # prometheus/New Relic
 > TBC

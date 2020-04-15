@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-15T05:10:56.733Z
+date: 2020-04-15T05:12:19.811Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -73,3 +73,5 @@ Once data is written to a partition, it can not be updated.
 
 ## Naming Convention
 Although topics can have any name, it is best to pick a naming convention up front. A dot notation based on business and function (like java packages) is a good choice.
+
+More depth article: https://riccomini.name/how-paint-bike-shed-kafka-topic-naming-conventions.

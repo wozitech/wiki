@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-15T05:48:05.505Z
+date: 2020-04-15T05:49:37.492Z
 tags: 
 ---
 
@@ -64,6 +64,13 @@ https://kafka.apache.org/documentation/#monitoring
 * Request Handlers - utilisation of threads (overall utilisation of a kafka broker)
 * Request Timing - how long it is taking to process requests; lower is better (duh).
 
+# Typical Operations
+* rolling restarts of brokers
+* updating configs
+* rebalancing partitions
+* increasing replication factor
+* adding/replcaing/removing a broker
+* upgrading kafka with zero downtime
 
 # kubernetes
 kubernetes is now the industry's de facto app hosting platform. No longer are we virtualising servers to host applications, we simpy package (dockerise) applications and deploy on kubernetes. kubernetes has good scaling and monitoring options (least not Prometheus). So we DIY it and benefit from consolidating on a common platform so the deployment, scaling and monitoring of all applications is consistent.

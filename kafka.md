@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-15T06:09:08.215Z
+date: 2020-04-15T06:09:51.933Z
 tags: 
 ---
 
@@ -100,7 +100,7 @@ kafka clusters can share data; replication between clusters is little more than 
 Different tools can be  deployed:
 * Mirror Maker (MM) - ships with kafka
 * netflix using flink (not open source)
-* uber uses uReplicator - improves upon Mirror Maker
+* uber uses [uReplicator](https://eng.uber.com/ureplicator-apache-kafka-replicator/) - improves upon Mirror Maker
 * Comacst open source kafka Connect source
 * Confluence has an enterprise (paid) Connect source
 

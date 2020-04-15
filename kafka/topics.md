@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-13T08:53:32.234Z
+date: 2020-04-15T04:58:06.418Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -17,6 +17,12 @@ A topic must be created with a given number of partitions (_the number of partit
 A message is referenced by "topic:partition:offset".
 
 Order of messages is only guaranteed within a partition; not across partition. If you have data which is temporal, then choose a key that ensures the data is written to the same partition for the given time eseries. If all events are time based, choose a temporal database (like [promtetheus](https://en.wikipedia.org/wiki/Time_series_database)) as a consumer and stream from the topic.
+
+### Get it Right First Time
+Although you can increase the partition count and replication factor after a topic has been created, it is best to _get it right_ the first time:
+* Increasing partition count breaks key order guarantee - for in-flight messages
+* INcreasing replication factor puts additional load on your cluster and decreases performance whilst the partitions are replicated; the bigger & higher number of partitions the greater the impact
+
 
 ### Keys
 Note - keys are not defined against a topic is created (unlike a database table index). A key is against a message; see Brokers.

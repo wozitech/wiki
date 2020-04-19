@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-19T07:55:46.505Z
+date: 2020-04-19T07:59:11.918Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -17,6 +17,14 @@ A topic must be created with a given number of partitions (_the number of partit
 A message is referenced by "topic:partition:offset".
 
 Order of messages is only guaranteed within a partition; not across partition. If you have data which is temporal, then choose a key that ensures the data is written to the same partition for the given time eseries. If all events are time based, choose a temporal database (like [promtetheus](https://en.wikipedia.org/wiki/Time_series_database)) as a consumer and stream from the topic.
+
+### Segments
+A partition on a single broker is provided through a series of segments; each segment contains consecutive range of offsets. Only one (the latest segment) is ever opened.
+
+Two properties are dedicated to segments:
+* `log.seegment.bytes` - maximum size of a single segment in bytes (default 1GB)
+* `log.segmnet.ms` - the max time kafka will wait before committing (closing the active segment) if not full (default 7 days)
+
 
 ### Get it Right First Time
 Although you can increase the partition count and replication factor after a topic has been created, it is best to _get it right_ the first time:

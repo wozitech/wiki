@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-19T08:15:55.481Z
+date: 2020-04-19T08:21:08.725Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -83,6 +83,14 @@ Note - keys are not defined against a topic is created (unlike a database table 
 
 ## TTL
 Data within a topic expires after a given duration; the default is one week.
+
+This is set by the `log.retention.hours` property on the topic.
+
+_Alternatively - or complementary - retention can be set at log size, using the `log.retention.bytes` topic property._
+
+* To bound data by size only, set `log.retention.hours` high and set `log.retention.bytes`.
+* To bound data by time only, set `log.retention.hours` and set `log.retention.bytes` to -1 (infinite).
+* To bound data by time & size only, set `log.retention.hours` and set `log.retention.bytes`.
 
 
 ## Immutable

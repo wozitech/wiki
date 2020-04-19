@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-19T08:34:42.240Z
+date: 2020-04-19T08:35:30.832Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -139,5 +139,6 @@ Properties to use for log compacting:
 * `segment.bytes` - equivalent to `log.retention.bytes` on delete, and is used to determine when to close active segment and trigger compacting (default is 1Gb)
 * 'min.compaction.lag.ms` - time to wait before compacting a single message (default is 0 - disabled)
 * `deletye.retention.ms` - time to wait before actually deleting the data (default is 24 hours)
+`min.cleanable.dirty.ratio` - higher is less, more efficient cleaning (default is 0.5).
 
 _In kafka 2.0, log compaction does stop, and need to restart kafka._

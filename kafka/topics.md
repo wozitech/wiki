@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-19T08:23:29.484Z
+date: 2020-04-19T08:26:43.126Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -128,3 +128,5 @@ Two policies:
   * Only delete old duplicates keys **after** the active segment is committed
 
 Compacting logs is the equivalent of a log snapshot. Over time, data is published to a topic with a key (an index to the data). That data changes over time. When compacting, only the last copy of the data for that given key is stored.
+
+When compacting, kafka creates new segments (and complemenatary indexes). The order of the offsets remains the same (the offset index remains the same).

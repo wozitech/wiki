@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-19T09:00:30.911Z
+date: 2020-04-19T09:14:53.041Z
 tags: 
 ---
 
@@ -23,7 +23,7 @@ Articles:
 # Download
 https://kafka.apache.org/downloads
 
-# Background
+# Overview
 kafka is made up of:
 * [Brokers](/kafka/brokers) and [Topics](/kafka/topics)
 * [CLI](/kafka/cli)
@@ -60,6 +60,19 @@ https://github.com/simplesteph/kafka-stack-docker-compose
 
 # zookeeper
 This an Apache technology for maintaining configration, control and monitoring of distributed services. Zookeeper must be deployed with kafka to control/amange the brokers and to monitor the kafka ecosystem (clusters, topics, partitiions, ...).
+
+# Advertised Host
+A broker has a single "Advertised Host" - this can be set to a public DNS/IP address or private:
+
+## Private
+Set of private identify, if all clients are within the private network:
+![kafka-advertised-host.png](/uploads/kafka/kafka-advertised-host.png)
+
+## Public
+Set of private identify, if all clients are within the public network.
+
+# Private and Public
+Create a DMZ in which to host your private clients and use the "public" identity.
 
 # CQRS - Command Query Responsibility Separation
 An event platform like kafka is perfect for building a CQRS application:

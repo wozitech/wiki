@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-19T08:13:57.955Z
+date: 2020-04-19T08:15:55.481Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -108,6 +108,8 @@ Note - to change a config property, use `--add-config`.
 
 ## Log Cleanup
 All data in kafka has a TTL. 	Deleting old data is called "log cleanup".
+
+Happens on each broker whenever the active segment is closed. Consumes CPU/RAM - and may impact on performace.
 
 Two policies:
 * `log.cleanup.policy=delete` - this is the default policy for all user topics:

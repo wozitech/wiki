@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-19T07:59:11.918Z
+date: 2020-04-19T08:04:35.275Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -20,6 +20,11 @@ Order of messages is only guaranteed within a partition; not across partition. I
 
 ### Segments
 A partition on a single broker is provided through a series of segments; each segment contains consecutive range of offsets. Only one (the latest segment) is ever opened.
+
+![kafka-segments.png](/uploads/kafka/kafka-segments.png)
+Each segment file is complemented with two index files:
+* An offset to position index; is used to locate individual messages
+* A timestamp to offset index; for filtering based on time
 
 Two properties are dedicated to segments:
 * `log.seegment.bytes` - maximum size of a single segment in bytes (default 1GB)

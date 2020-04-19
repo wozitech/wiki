@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-15T06:10:47.461Z
+date: 2020-04-19T08:53:49.979Z
 tags: 
 ---
 
@@ -42,6 +42,20 @@ In kafka, all messages are sent to a topic (stream); FIFO. Partitions (shards) c
 
 ## CLI
 Typically kafka is accessed via custom applications using the kafka API. For administrative purposes, kafka has a [cli](/kafka/cli).
+
+### Confluent
+Download from: https://docs.confluent.io/current/cli/index.html. Federates control of `kafka`, `zookeeper`, `schema-registry`, `kafka-rest`, `connect` and `ksql-server`.
+
+```
+./confluent local [start|stop|destroy]
+```
+
+A special case is to start only `kafka` and `zookeeper`:
+```
+./confluent local start kafka
+```
+
+
 
 # zookeeper
 This an Apache technology for maintaining configration, control and monitoring of distributed services. Zookeeper must be deployed with kafka to control/amange the brokers and to monitor the kafka ecosystem (clusters, topics, partitiions, ...).

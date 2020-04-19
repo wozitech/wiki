@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-19T08:26:43.126Z
+date: 2020-04-19T08:28:23.256Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -117,7 +117,7 @@ Note - to change a config property, use `--add-config`.
 ## Log Cleanup
 All data in kafka has a TTL. 	Deleting old data is called "log cleanup".
 
-Happens on each broker whenever the active segment is closed. Consumes CPU/RAM - and may impact on performace.
+Happens on each broker whenever the active segment is closed. Consumes CPU/RAM - and may impact on performance especiallty if using "compact" mode.
 
 Two policies:
 * `log.cleanup.policy=delete` - this is the default policy for all user topics:
@@ -130,3 +130,5 @@ Two policies:
 Compacting logs is the equivalent of a log snapshot. Over time, data is published to a topic with a key (an index to the data). That data changes over time. When compacting, only the last copy of the data for that given key is stored.
 
 When compacting, kafka creates new segments (and complemenatary indexes). The order of the offsets remains the same (the offset index remains the same).
+
+_In kafka 2.0, log compaction does stop, and need to restart kafka._

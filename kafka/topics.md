@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-19T08:04:35.275Z
+date: 2020-04-19T08:13:57.955Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -28,7 +28,11 @@ Each segment file is complemented with two index files:
 
 Two properties are dedicated to segments:
 * `log.seegment.bytes` - maximum size of a single segment in bytes (default 1GB)
-* `log.segmnet.ms` - the max time kafka will wait before committing (closing the active segment) if not full (default 7 days)
+* `log.segment.ms` - the max time kafka will wait before committing (closing the active segment) if not full (default 7 days)
+
+The smaller the segment files, the more segment files you will have and log compacttion happens more (think of this like Java garbage collection). The more segment files you have, the larger the number of files kafka has to keep open (because it is able to return data from any segment). Fast streaming data may require you to increase the segment size.
+
+The smaller the segment time, the more segment files and the more frequent log compaction will be.
 
 
 ### Get it Right First Time
@@ -100,3 +104,15 @@ A topic's config can be changed using the CLI `<kafka>/kafka-configs` (the same 
 ```
 
 Note - to change a config property, use `--add-config`.
+
+
+## Log Cleanup
+All data in kafka has a TTL. 	Deleting old data is called "log cleanup".
+
+Two policies:
+* `log.cleanup.policy=delete` - this is the default policy for all user topics:
+  * Deletes data based on age
+  * Delete data based on size of log (default is -1 => infinite log size)
+* `log.cleanup.policy=compact` - this is the default policy for consumer offsets
+  * Deletes based on keys of your messages
+  * Only delete old duplicates keys **after** the active segment is committed

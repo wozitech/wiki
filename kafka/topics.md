@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-19T07:45:38.520Z
+date: 2020-04-19T07:46:06.773Z
 tags: kafka, partitioning, keys, TTL
 ---
 

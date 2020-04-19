@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-19T07:46:06.773Z
+date: 2020-04-19T07:55:08.303Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -77,4 +77,13 @@ Although topics can have any name, it is best to pick a naming convention up fro
 More depth article: https://riccomini.name/how-paint-bike-shed-kafka-topic-naming-conventions.
 
 ## Config
+When creating topics, much of the topic's configuration is assumed by default parameters on the broker. Some topic properties have to be set explicitly if required, but all topic properties can be changed.
+
 A complete list of topic configurations can be found at: https://kafka.apache.org/documentation/#topicconfigs.
+
+A topic's config can be changed using the CLI `<kafka>/kafka-configs` (the same tool used to change broker properties too), which uses zookeeper to pass onto all brokers (given the a topic's partitions are spread across all brokers) - to add/delete:
+```
+<kafka>/kafka-configs.sh --zookeeper localhost:2181 --entity-type topics --entity-name <NAME OF TOPIC> --alter --add-config <config property> --delete-config <config property>
+```
+
+Note - to change a config property, use `--add-config`.

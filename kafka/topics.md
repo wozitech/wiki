@@ -2,7 +2,7 @@
 title: Kafka Topics
 description: 
 published: true
-date: 2020-04-19T08:28:23.256Z
+date: 2020-04-19T08:34:42.240Z
 tags: kafka, partitioning, keys, TTL
 ---
 
@@ -84,14 +84,7 @@ Note - keys are not defined against a topic is created (unlike a database table 
 ## TTL
 Data within a topic expires after a given duration; the default is one week.
 
-This is set by the `log.retention.hours` property on the topic.
-
-_Alternatively - or complementary - retention can be set at log size, using the `log.retention.bytes` topic property._
-
-* To bound data by size only, set `log.retention.hours` high and set `log.retention.bytes`.
-* To bound data by time only, set `log.retention.hours` and set `log.retention.bytes` to -1 (infinite).
-* To bound data by time & size only, set `log.retention.hours` and set `log.retention.bytes`.
-
+The default is that data is deleted (see log cleanup below).
 
 ## Immutable
 Once data is written to a partition, it can not be updated.
@@ -127,8 +120,24 @@ Two policies:
   * Deletes based on keys of your messages
   * Only delete old duplicates keys **after** the active segment is committed
 
+### Delete
+This is set by the `log.retention.hours` property on the topic.
+
+_Alternatively - or complementary - retention can be set at log size, using the `log.retention.bytes` topic property._
+
+* To bound data by size only, set `log.retention.hours` high and set `log.retention.bytes`.
+* To bound data by time only, set `log.retention.hours` and set `log.retention.bytes` to -1 (infinite).
+* To bound data by time & size only, set `log.retention.hours` and set `log.retention.bytes`.
+
+### Compact
 Compacting logs is the equivalent of a log snapshot. Over time, data is published to a topic with a key (an index to the data). That data changes over time. When compacting, only the last copy of the data for that given key is stored.
 
 When compacting, kafka creates new segments (and complemenatary indexes). The order of the offsets remains the same (the offset index remains the same).
+
+Properties to use for log compacting:
+* `segment.ms` - equivalent to `log.retention.hours` on delete, and is used to determine when to close active segment and trigger compacting (default 7 days)
+* `segment.bytes` - equivalent to `log.retention.bytes` on delete, and is used to determine when to close active segment and trigger compacting (default is 1Gb)
+* 'min.compaction.lag.ms` - time to wait before compacting a single message (default is 0 - disabled)
+* `deletye.retention.ms` - time to wait before actually deleting the data (default is 24 hours)
 
 _In kafka 2.0, log compaction does stop, and need to restart kafka._

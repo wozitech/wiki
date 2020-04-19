@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-19T08:53:49.979Z
+date: 2020-04-19T09:00:30.911Z
 tags: 
 ---
 
@@ -55,7 +55,8 @@ A special case is to start only `kafka` and `zookeeper`:
 ./confluent local start kafka
 ```
 
-
+# Docker
+https://github.com/simplesteph/kafka-stack-docker-compose
 
 # zookeeper
 This an Apache technology for maintaining configration, control and monitoring of distributed services. Zookeeper must be deployed with kafka to control/amange the brokers and to monitor the kafka ecosystem (clusters, topics, partitiions, ...).

@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-02-02T11:46:02.429Z
+date: 2020-04-27T06:20:15.793Z
 tags: 
 ---
 
@@ -79,7 +79,7 @@ A `namespace` is a virutalised set of services & pods. It allows a single k8s cl
 
 An [ingress controller](/kubernetes/ingestController) proxies http/https requests for the k8s cluster. A single point of ingest for all RESTful requests.
 
-# Installation
+# Local Installation
 One master and two workers. vagrant/kvm/centros7/ansible/weave scripted deployment: https://github.com/wozitech/vagrant/tree/master/dev.
 
 The `master` node needs a non-root user to run `kube*` commands via. The user/group `kube` is created for that purpose - consistently across all hosts, even though it is only used on the `master`. During installation on master, the worker join command is generated and copied to a local ansible file, which is then copied to the worker and executed as `root`. Once a worker node has joined the cluster, it can be administered from the `master`.
@@ -194,3 +194,8 @@ e.g. `pods`, `nodes`, `jobs`, `networkpolicies`, ...
 ## Deployments
 * `kubectl get --namespace <namespace> deployments.v1.apps`
 * `kubectl get --all-namespaces deployments`
+
+# AWS
+Not yet done myself, but the easist approaches:
+1. [kops](https://github.com/kubernetes/kops) - only runs on Linux/mac and requires the AWS CLI.
+2. [terraform with EKS](https://github.com/terraform-aws-modules/terraform-aws-eks)

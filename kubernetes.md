@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-04-27T06:25:39.215Z
+date: 2020-04-27T06:27:04.932Z
 tags: 
 ---
 
@@ -197,5 +197,5 @@ e.g. `pods`, `nodes`, `jobs`, `networkpolicies`, ...
 
 # AWS
 Not yet done myself, but the easist approaches (both require an AWS access key with sufficient (_admin_) priviileges:
-1. [kops](https://github.com/kubernetes/kops) - only runs on Linux/mac and requires the AWS CLI (with an S3 bucket for deployment artifacts) and a Route 53 hosted zone.
+1. [kops](https://github.com/kubernetes/kops) - only runs on Linux/mac and requires the AWS CLI (with an S3 bucket for deployment artifacts - deploys EC2 instances) and a Route 53 hosted zone.
 2. [terraform with EKS](https://github.com/terraform-aws-modules/terraform-aws-eks)

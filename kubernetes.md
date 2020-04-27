@@ -2,7 +2,7 @@
 title: kubernetes
 description: 
 published: true
-date: 2020-04-27T06:20:15.793Z
+date: 2020-04-27T06:21:00.750Z
 tags: 
 ---
 
@@ -196,6 +196,6 @@ e.g. `pods`, `nodes`, `jobs`, `networkpolicies`, ...
 * `kubectl get --all-namespaces deployments`
 
 # AWS
-Not yet done myself, but the easist approaches:
+Not yet done myself, but the easist approaches (both require an AWS access key with sufficient (_admin_) priviileges:
 1. [kops](https://github.com/kubernetes/kops) - only runs on Linux/mac and requires the AWS CLI.
 2. [terraform with EKS](https://github.com/terraform-aws-modules/terraform-aws-eks)

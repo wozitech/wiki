@@ -1,6 +1,17 @@
+---
+title: nodejs
+description: 
+published: true
+date: 2020-05-13T09:18:26.726Z
+tags: 
+---
+
 ![node.js Logo](/uploads/logos/nodejs-logo.png "nodejs Logo"){.pagelogo}
 <!-- TITLE: node.js -->
 <!-- SUBTITLE: The buzz around node.js -->
+
+# vscode - remote development
+vscoe is my goto IDE for node.js. Not only remote debugging, but now also remote development. https://code.visualstudio.com/docs/remote/containers
 
 # babel allows for transpiling from ES7, ES8 and ES9
 Using javascript features not made available to node.js: https://www.greycampus.com/blog/programming/java-script-versions.

@@ -2,7 +2,7 @@
 title: kafka
 description: 
 published: true
-date: 2020-04-19T09:14:53.041Z
+date: 2020-06-03T14:11:01.681Z
 tags: 
 ---
 
@@ -18,6 +18,9 @@ Articles:
 * https://hmh.engineering/experimenting-with-apache-kafka-and-nodejs-5c0604211196 - read, but need to try example
 * https://www.confluent.io/blog/iot-with-kafka-connect-mqtt-and-rest-proxy - MQTT and kafta
 * https://medium.com/@stephane.maarek/the-kafka-api-battle-producer-vs-consumer-vs-kafka-connect-vs-kafka-streams-vs-ksql-ef584274c1e
+* https://www.youtube.com/watch?v=BuE6JvQE_CY - is kafka a database
+* https://www.youtube.com/watch?v=IFNs6sKvb8k - Growing an engineering culture with kafka
+* 
 
  
 # Download

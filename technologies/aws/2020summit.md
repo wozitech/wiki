@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:21:21.772Z
+date: 2020-06-17T11:28:35.078Z
 tags: 
 ---
 
@@ -31,7 +31,7 @@ Referenced "nextdoor" service, connecting communtities with each other; like onl
 
 Referenced AWS DeepRacer online game/competition - dedicated to machine learning.
 
-No new services or products announced. During event driven architecture breakout session, introduced `Eventbridge`.
+No new services or products announced. During event driven architecture breakout session, introduced `Eventbridge` and CloudWatch ServiceLens.
 
 
 # Builder Fast Tracks
@@ -185,6 +185,8 @@ External partners can integrate their products with EventBridge, to open up thei
 Supports a schema registry with discovery, for events.
 
 Sometimes an event may require multiple actions; when those actions need to be coordinated across multiple functions/services, you can deploy "step functions".
+
+Event tracing is provided through X-Ray; which integrates directly with API Gateway and Lambda, with the introudction of a correlation id. That can be extended into the EventBridge to trace single events. CloudWatch Servicelens is a one-stop-shop for all traces, metrics and logs.
 
 ## A path to event sourcing with Amazon MSK
 12:45 to 13:15

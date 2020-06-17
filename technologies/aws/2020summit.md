@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T08:39:07.263Z
+date: 2020-06-17T08:39:33.643Z
 tags: 
 ---
 
@@ -28,10 +28,10 @@ Referenced "Care Connect", a new application for video appointments with doctors
 
 ## Purpose-built databases for modern applications
 
-## Full-stack mobile and web development with AWS Amplify (Level 300)
+## Full-stack mobile and web development with AWS Amplify
 
-## Application integration patterns for microservices (Level 300)
+## Application integration patterns for microservices
 
-## Event-driven architecture (Level 300)
+## Event-driven architecture
 
-## A path to event sourcing with Amazon MSK (Level 200)
+## A path to event sourcing with Amazon MSK

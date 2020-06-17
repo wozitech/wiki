@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:16:04.923Z
+date: 2020-06-17T10:18:30.023Z
 tags: 
 ---
 
@@ -133,10 +133,16 @@ Slides: [application_integration_patterns_for_microservices_-_anshul_sharma.pdf]
 
 The latter (coupling) requires async messaging for being able to operate at scale.
 
-Patterns:
-* Message exchange
+### Message exchange
+Scanerios:
   * One-way; fire and forget
   * Request-Response; requires a "return address" (callback) or "correlation id"
+   
+![aws-patterns-messasge-exchange.png](/uploads/aws/summit-2020/aws-patterns-messasge-exchange.png)
+
+Channels:
+* queue (point to point; resilient - only once)
+* topic (pub/sub)
 
 ## Event-driven architecture
 11:55 -> 12:40

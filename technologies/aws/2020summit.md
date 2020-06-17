@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:36:27.904Z
+date: 2020-06-17T11:39:42.754Z
 tags: 
 ---
 

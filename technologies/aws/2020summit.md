@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:54:47.272Z
+date: 2020-06-17T11:57:21.489Z
 tags: 
 ---
 
@@ -210,4 +210,6 @@ With events, there is a theory that you should capture all raw data in a data la
 
 Talk example:
 ![aws-event-sourcing-cqrs.png](/uploads/aws/summit-2020/aws-event-sourcing-cqrs.png)
+
+Event sourcing concept has been around for a long time; I remember it was a key aspect while at Photobox. There is a lack of framework support, and it can be more complex with more moving parts. IT has for many years been about functionality of which data was a consequence (or a pain to be managed), but of late is more about data.
 

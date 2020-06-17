@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:25:27.593Z
+date: 2020-06-17T09:25:43.897Z
 tags: 
 ---
 
@@ -38,6 +38,9 @@ No new services or products announced.
 
 ## Purpose-built databases for modern applications
 10:00 -> 10:30 - Blair Leyton, Head of Database, APJ, Public Sector
+Slides: 
+[purpose-built_databases_for_modern_applications_-_blair_layton.pdf](/uploads/aws/summit-2020/purpose-built_databases_for_modern_applications_-_blair_layton.pdf)
+
 <insert image>
 
 Choose the right DB for the right task:
@@ -75,8 +78,7 @@ timestream
 Quantum
 <sinert image>
 
-Slides: 
-[purpose-built_databases_for_modern_applications_-_blair_layton.pdf](/uploads/aws/summit-2020/purpose-built_databases_for_modern_applications_-_blair_layton.pdf)
+
 
 ## Full-stack mobile and web development with AWS Amplify
 10:35 - 11:05

@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:04:46.041Z
+date: 2020-06-17T11:05:43.006Z
 tags: 
 ---
 
@@ -171,6 +171,8 @@ APIs are hardened contracts.
 
 ### EventBridge
 An event is "when something happens"; it's a fact. An event is immutable; once an event happens, you can't change the event. If "something" changes a previous event, it is a new event.
+
+![aws-event-drive-arch-events.png](/uploads/aws/summit-2020/aws-event-drive-arch-events.png)
 
 
 

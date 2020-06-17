@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:19:23.971Z
+date: 2020-06-17T09:23:32.699Z
 tags: 
 ---
 
@@ -58,6 +58,14 @@ Aurora
 
 ### Key/Value
 Dynamo
+  
+## In-Memory
+ElasticCache
+<insert image>
+  
+## Graph
+Neptune
+<insert image>
 
 
 Slides: 

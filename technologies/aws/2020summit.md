@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:42:26.661Z
+date: 2020-06-17T09:46:04.013Z
 tags: 
 ---
 
@@ -111,7 +111,7 @@ For set of API libraries:
 ![aws-amplify-libraries.png](/uploads/aws/summit-2020/aws-amplify-libraries.png)
 
 ## Application integration patterns for microservices
-11:10 -> 11;40
+11:10 -> 11:40
 
 ## Event-driven architecture
 11:55 -> 12:40

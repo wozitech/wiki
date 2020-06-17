@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T08:50:08.130Z
+date: 2020-06-17T08:51:17.601Z
 tags: 
 ---
 
@@ -31,11 +31,16 @@ No new services or products annoucned.
 # Builder Fast Tracks
 
 ## Purpose-built databases for modern applications
+10:00 -> 10:30
 
 ## Full-stack mobile and web development with AWS Amplify
+10:35 - 11:05
 
 ## Application integration patterns for microservices
+11:10 -> 11;40
 
 ## Event-driven architecture
+11:55 -> 12:40
 
 ## A path to event sourcing with Amazon MSK
+12:45 to 13:15

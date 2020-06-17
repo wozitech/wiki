@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:57:06.155Z
+date: 2020-06-17T11:03:47.031Z
 tags: 
 ---
 
@@ -159,7 +159,18 @@ Patterns:
 11:55 -> 12:40 Danilo Poccia
 Slides: [event-driven_architecture_-_danilo_poccia.pdf](/uploads/aws/summit-2020/event-driven_architecture_-_danilo_poccia.pdf)
 
-Transition from APIs to events, using "EventBridge".
+Transition from APIs to events, using `EventBridge` and orchestration with `Step Functions`.
+
+APIs are hardened contracts.
+
+`API Gateway` allows for syandard authentication, CORS and trottling, leveraged with serverless functions (lambda).
+
+* Use functions to transform, not transport.
+* leave retry and error handling to the services themselves - not within the function.
+* Read only what you need; message filters using SNS, fine grained rules in EventBridge, query filters in RDS, S3 select.
+
+### EventBridge
+
 
 ## A path to event sourcing with Amazon MSK
 12:45 to 13:15

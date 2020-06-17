@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:13:17.318Z
+date: 2020-06-17T09:17:49.259Z
 tags: 
 ---
 
@@ -55,6 +55,10 @@ Choose the right DB for the right task:
 Aurora
 
 <insert image>
+
+### Key/Value
+Dynamo
+
 
 Slides: 
 [purpose-built_databases_for_modern_applications_-_blair_layton.pdf](/uploads/aws/summit-2020/purpose-built_databases_for_modern_applications_-_blair_layton.pdf)

@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:35:30.848Z
+date: 2020-06-17T09:39:54.906Z
 tags: 
 ---
 
@@ -92,6 +92,17 @@ Cassandra
 Marcia Villalba
 Slides: [full-stack_mobile_and_web_development_with_aws_amplify_-_marcia_villalba.pdf](/uploads/aws/summit-2020/full-stack_mobile_and_web_development_with_aws_amplify_-_marcia_villalba.pdf)
 
+AWS enables deveopers to exceed user expectations.
+
+### Amplify
+`Amplify` - an opinionated framework that supports most popular OS platforms and frameworks. iOS/Androd/webn - react and Angular.
+
+It's a CLI tool, making it easy to connect to other AWS services, such as, Cognito.
+
+Generates infrastructure as code; among the to p5 fastest growing projects on github.
+
+It's a category based selection & customisation of services:
+![aws-amplify-categories.png](/uploads/aws/summit-2020/aws-amplify-categories.png)
 
 ## Application integration patterns for microservices
 11:10 -> 11;40

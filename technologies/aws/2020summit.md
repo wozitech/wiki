@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T08:39:33.643Z
+date: 2020-06-17T08:50:08.130Z
 tags: 
 ---
 
@@ -22,6 +22,10 @@ What does a load balancer mean in 2020? Traditionally, a load balancer sits in f
 Volume of data is forever increasing. Data generation, data processing and data storage. Amazon S3 scales to what you use only, with full ACL and events; S3 can be your "content lake" (data lake). Data in -> events -> Data out. Reference was made to film studios, using snowball locally to sync to S3, to then process and render film; processing where the data is closest by multiple people in multiple teams.
 
 Referenced "Care Connect", a new application for video appointments with doctors in the US, maintaining access to vital healthcare CloudFront served by ELB & Fargate with Aurora. The app was launched in just over one week (surely Cognito for end user registration/security).
+
+Referenced "nextdoor" service, connecting communtities with each other; like online readings clubs and teddy bear treasure hunts. Performance increase using ElasticCache, and data scaling with Aurora.
+
+No new services or products annoucned.
 
 
 # Builder Fast Tracks

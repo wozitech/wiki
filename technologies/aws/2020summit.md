@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T12:02:50.448Z
+date: 2020-06-17T12:04:09.494Z
 tags: 
 ---
 
@@ -218,4 +218,4 @@ AWS MSK takes care of setup, availability, scale, monitoring and support for com
 
 AWS MSK now also supports prometheus for monitoring, allowing integration via Datadog and New Relic.
 
-With Event sourcing, model you domain as commands, events, aggregates and _materialised/projected_ views.
+With Event sourcing, model your domain as commands, events, aggregates and _materialised/projected_ views.

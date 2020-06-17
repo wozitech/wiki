@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T08:21:57.094Z
+date: 2020-06-17T08:26:53.671Z
 tags: 
 ---
 
@@ -15,6 +15,9 @@ Everyone at AWS is able to benefit from day one; free tier and security built-in
 
 Well-Architecture framework is the go to place when crafting your projects/solutions. Helps you to identify the AWS services of most relevance. Make use of the [Well Architecture Framework tool](https://aws.amazon.com/well-architected-tool/) to help you in your project journey. You can also use it for training - learn a new skill.
 
+With current circumstances, more people are working from home. Video streaming services have exploded in use in recent weeks (more than 160 billion minutes in the USA for the month of March 2020 alone - double that in March 2019!). AWS scales with your demand; auto scale (up and down) meets your users expectations and your price limitations. AWS has introduced "predicted scaling" based on machine learning of your application.
+
+What does a load balancer mean in 2020? Traditionally, a load balancer sits in front of your application to share load. But moreso now, CloudFront can provide regional optimisation, and redirecting to regional sites.
 
 
 # Builder Fast Tracks

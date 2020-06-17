@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:50:13.063Z
+date: 2020-06-17T11:52:03.891Z
 tags: 
 ---
 
@@ -199,7 +199,7 @@ Slides: [a_path_to_event_sourcing_with_amazon_msk_-_james_ousby.pdf](/uploads/aw
 * Eventing sourcing is not persisting entities and updating that entity.
 * Event sourcing is about a timeline of events, taking action on an entity.
 
-Event sourcing allows replay from any point in time (for test purposes or to correct a corruption), in addition to a natural undo (replay the reverse of the event in reverse order).
+Event sourcing allows replay from any point in time (for test purposes or to correct a corruption, or support evolution by replay history through new logic), in addition to a natural undo (replay the reverse of the event in reverse order).
 
 Close friends:
 * Domain Driven Design

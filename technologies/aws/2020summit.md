@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:03:24.174Z
+date: 2020-06-17T10:09:49.969Z
 tags: 
 ---
 
@@ -127,6 +127,7 @@ Can generate code `appsync codegen`.
 
 ## Application integration patterns for microservices
 11:10 -> 11:40
+Slides: [application_integration_patterns_for_microservices_-_anshul_sharma.pdf](/uploads/aws/summit-2020/application_integration_patterns_for_microservices_-_anshul_sharma.pdf)
 
 ## Event-driven architecture
 11:55 -> 12:40

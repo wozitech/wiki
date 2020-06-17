@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:52:03.891Z
+date: 2020-06-17T11:54:47.272Z
 tags: 
 ---
 
@@ -206,4 +206,8 @@ Close friends:
 * CQRS - Command Query Responsibility Segregation - separates read and write paths
 * Distributed Logs (ergo kafka)
 
+With events, there is a theory that you should capture all raw data in a data lake, allowing that data to be reprocessed at any time in the future.
+
+Talk example:
+![aws-event-sourcing-cqrs.png](/uploads/aws/summit-2020/aws-event-sourcing-cqrs.png)
 

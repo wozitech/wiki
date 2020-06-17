@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:46:04.013Z
+date: 2020-06-17T09:58:56.656Z
 tags: 
 ---
 
@@ -109,6 +109,16 @@ It's a category based selection & customisation of services:
 
 For set of API libraries:
 ![aws-amplify-libraries.png](/uploads/aws/summit-2020/aws-amplify-libraries.png)
+
+### AppSync
+![aws-appsync.png](/uploads/aws/summit-2020/aws-appsync.png)
+
+AppSync is a GraphQL managed service. The GraphQL resolvers can be implemented in AWS Services (e.g. lambda) or private services through http (e.g. EKS microservices).
+
+Support for offline availability on mobile clients.
+
+AppSync supports transforms:
+![aws-appsync-transforms.png](/uploads/aws/summit-2020/aws-appsync-transforms.png)
 
 ## Application integration patterns for microservices
 11:10 -> 11:40

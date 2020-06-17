@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:33:39.642Z
+date: 2020-06-17T09:35:30.848Z
 tags: 
 ---
 
@@ -89,6 +89,9 @@ Cassandra
 
 ## Full-stack mobile and web development with AWS Amplify
 10:35 - 11:05
+Marcia Villalba
+Slides: [full-stack_mobile_and_web_development_with_aws_amplify_-_marcia_villalba.pdf](/uploads/aws/summit-2020/full-stack_mobile_and_web_development_with_aws_amplify_-_marcia_villalba.pdf)
+
 
 ## Application integration patterns for microservices
 11:10 -> 11;40

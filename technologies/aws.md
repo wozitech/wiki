@@ -2,7 +2,7 @@
 title: aws
 description: 
 published: true
-date: 2020-06-17T08:02:42.807Z
+date: 2020-06-17T08:15:12.231Z
 tags: 
 ---
 
@@ -15,6 +15,9 @@ https://www.aws.training/Details/eLearning?id=34146 - Exam Readiness DevOps Engi
 
 # AWS Summit 2020
 [AWS Summit 2020](/technologies/aws/2020summit)
+
+# AWS Builders Library
+[AWS Builders Library](https://aws.amazon.com/builders-library/?cards-body.sort-by=item.additionalFields.customSort&cards-body.sort-order=asc)
 
 # Local Stack
 All the popular AWS services available locally: https://github.com/localstack/localstack.

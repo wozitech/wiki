@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:39:54.906Z
+date: 2020-06-17T09:41:25.723Z
 tags: 
 ---
 
@@ -103,6 +103,10 @@ Generates infrastructure as code; among the to p5 fastest growing projects on gi
 
 It's a category based selection & customisation of services:
 ![aws-amplify-categories.png](/uploads/aws/summit-2020/aws-amplify-categories.png)
+
+`init`, `add`, `mock`, `push`, `update` CLI commands, resulting in CloudFormation stacks:
+![aws-amplify-commands.png](/uploads/aws/summit-2020/aws-amplify-commands.png)
+
 
 ## Application integration patterns for microservices
 11:10 -> 11;40

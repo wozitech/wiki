@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:11:29.810Z
+date: 2020-06-17T11:12:31.691Z
 tags: 
 ---
 
@@ -177,7 +177,7 @@ An event is "when something happens"; it's a fact. An event is immutable; once a
 AWS Lambda now supports "success/failure event destinations"; a consequential event:
 ![aws-event-drive-arch-lambda-event-dest.png](/uploads/aws/summit-2020/aws-event-drive-arch-lambda-event-dest.png)
 
-SQS/SNS have limitation with the significant number of different types of events. Introducing the EventBridge:
+SQS/SNS have limitation with the significant number of different types of events. Introducing the EventBridge - a rule based solution for event routing:
 ![aws-event-drive-arch-eventbridge.png](/uploads/aws/summit-2020/aws-event-drive-arch-eventbridge.png)
 ## A path to event sourcing with Amazon MSK
 12:45 to 13:15

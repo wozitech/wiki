@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:31:55.304Z
+date: 2020-06-17T09:33:39.642Z
 tags: 
 ---
 
@@ -60,29 +60,32 @@ Aurora
 
 ### Key/Value
 Dynamo
-  
-## In-Memory
+![aws-db-keypair-dynamo.png](/uploads/aws/summit-2020/aws-db-keypair-dynamo.png)
+
+![aws-db-keypair-dynamo-2.png](/uploads/aws/summit-2020/aws-db-keypair-dynamo-2.png)
+
+### In-Memory
 ElasticCache
-<insert image>
+![aws-db-in-memory-elasticcahe.png](/uploads/aws/summit-2020/aws-db-in-memory-elasticcahe.png)
   
-## Graph
+### Graph
 Neptune
-<insert image>
+![aws-db-graph-neptune.png](/uploads/aws/summit-2020/aws-db-graph-neptune.png)
 
-## Time Series
+### Time Series
 timestream
-<insert image>
+![aws-db-timeseries-timestream.png](/uploads/aws/summit-2020/aws-db-timeseries-timestream.png)
   
-## Ledger
+### Ledger
 Quantum
-<sinert image>
+![aws-db-ledger-quantum.png](/uploads/aws/summit-2020/aws-db-ledger-quantum.png)
 
-## Wide Column
+### Wide Column
 Cassandra
-<insert image>
+![aws-db-wide-column-cassandra.png](/uploads/aws/summit-2020/aws-db-wide-column-cassandra.png)
   
-## Our approach
-<insert image>
+### Our approach
+![aws-db-our-approach.png](/uploads/aws/summit-2020/aws-db-our-approach.png)
 
 ## Full-stack mobile and web development with AWS Amplify
 10:35 - 11:05

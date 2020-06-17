@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:12:53.751Z
+date: 2020-06-17T10:14:38.128Z
 tags: 
 ---
 
@@ -131,7 +131,9 @@ Slides: [application_integration_patterns_for_microservices_-_anshul_sharma.pdf]
 
 "Divide and conquer" with "loose not lousy coupling".
 
-The latter (coupling) requires async messaging for being able to operate at scale. 
+The latter (coupling) requires async messaging for being able to operate at scale.
+
+
 
 ## Event-driven architecture
 11:55 -> 12:40

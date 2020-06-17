@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:27:40.365Z
+date: 2020-06-17T10:28:21.102Z
 tags: 
 ---
 
@@ -153,7 +153,7 @@ Patterns:
 * DLQ - Dead Letter Queue
 * FIFO
 * Message Filter
-* Saga
+* Saga - orchrestation of small activities through event sequences
 
 ## Event-driven architecture
 11:55 -> 12:40

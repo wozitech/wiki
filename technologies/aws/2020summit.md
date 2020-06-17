@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:25:43.897Z
+date: 2020-06-17T09:26:53.435Z
 tags: 
 ---
 
@@ -78,7 +78,9 @@ timestream
 Quantum
 <sinert image>
 
-
+## Wide Column
+Cassandra
+<insert image>
 
 ## Full-stack mobile and web development with AWS Amplify
 10:35 - 11:05

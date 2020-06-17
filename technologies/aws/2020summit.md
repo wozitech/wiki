@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:28:35.078Z
+date: 2020-06-17T11:34:20.619Z
 tags: 
 ---
 
@@ -149,7 +149,7 @@ Note - Messaging Quality of Service:
 * Exactly Once
 
 Patterns:
-* Toic Queue Chaining
+* Topic Queue Chaining
 * DLQ - Dead Letter Queue
 * FIFO
 * Message Filter
@@ -186,7 +186,11 @@ Supports a schema registry with discovery, for events.
 
 Sometimes an event may require multiple actions; when those actions need to be coordinated across multiple functions/services, you can deploy "step functions".
 
-Event tracing is provided through X-Ray; which integrates directly with API Gateway and Lambda, with the introudction of a correlation id. That can be extended into the EventBridge to trace single events. CloudWatch Servicelens is a one-stop-shop for all traces, metrics and logs.
+Event tracing is provided through X-Ray; which integrates directly with API Gateway and Lambda, with the introudction of a correlation id. That can be extended into the EventBridge to trace single events.
+
+CloudWatch Servicelens is a one-stop-shop for all traces, metrics and logs.
+
+CloudWatch Embedded Metrics - can be used to instrument code, to introduce monitoring dimensions.
 
 ## A path to event sourcing with Amazon MSK
 12:45 to 13:15

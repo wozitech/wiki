@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:25:41.613Z
+date: 2020-06-17T10:27:40.365Z
 tags: 
 ---
 
@@ -152,6 +152,7 @@ Patterns:
 * Toic Queue Chaining
 * DLQ - Dead Letter Queue
 * FIFO
+* Message Filter
 * Saga
 
 ## Event-driven architecture

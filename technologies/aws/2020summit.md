@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:14:38.128Z
+date: 2020-06-17T10:15:49.050Z
 tags: 
 ---
 
@@ -133,7 +133,10 @@ Slides: [application_integration_patterns_for_microservices_-_anshul_sharma.pdf]
 
 The latter (coupling) requires async messaging for being able to operate at scale.
 
-
+Patterns:
+* Message exchange
+  * One-way; fire and forget
+  * Request-Response; requires a correlation id
 
 ## Event-driven architecture
 11:55 -> 12:40

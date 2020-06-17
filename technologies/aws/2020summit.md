@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:58:56.656Z
+date: 2020-06-17T10:02:48.020Z
 tags: 
 ---
 
@@ -110,6 +110,8 @@ It's a category based selection & customisation of services:
 For set of API libraries:
 ![aws-amplify-libraries.png](/uploads/aws/summit-2020/aws-amplify-libraries.png)
 
+Amplify can be integrated with github for automated (managed) deployments.
+
 ### AppSync
 ![aws-appsync.png](/uploads/aws/summit-2020/aws-appsync.png)
 
@@ -119,6 +121,9 @@ Support for offline availability on mobile clients.
 
 AppSync supports transforms:
 ![aws-appsync-transforms.png](/uploads/aws/summit-2020/aws-appsync-transforms.png)
+
+
+Can generate code `appsync codegen`.
 
 ## Application integration patterns for microservices
 11:10 -> 11:40

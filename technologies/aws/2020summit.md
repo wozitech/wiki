@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T08:51:17.601Z
+date: 2020-06-17T08:52:44.823Z
 tags: 
 ---
 
@@ -25,7 +25,9 @@ Referenced "Care Connect", a new application for video appointments with doctors
 
 Referenced "nextdoor" service, connecting communtities with each other; like online readings clubs and teddy bear treasure hunts. Performance increase using ElasticCache, and data scaling with Aurora.
 
-No new services or products annoucned.
+Referenced AWS DeepRacer online game/competition - dedicated to machine learning.
+
+No new services or products announced.
 
 
 # Builder Fast Tracks

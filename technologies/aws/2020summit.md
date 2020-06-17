@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:10:57.795Z
+date: 2020-06-17T11:11:29.810Z
 tags: 
 ---
 
@@ -178,7 +178,6 @@ AWS Lambda now supports "success/failure event destinations"; a consequential ev
 ![aws-event-drive-arch-lambda-event-dest.png](/uploads/aws/summit-2020/aws-event-drive-arch-lambda-event-dest.png)
 
 SQS/SNS have limitation with the significant number of different types of events. Introducing the EventBridge:
-![aws-event-drive-arch-eventbridgepng](/uploads/aws/summit-2020/aws-event-drive-arch-eventbridgepng)
-
+![aws-event-drive-arch-eventbridge.png](/uploads/aws/summit-2020/aws-event-drive-arch-eventbridge.png)
 ## A path to event sourcing with Amazon MSK
 12:45 to 13:15

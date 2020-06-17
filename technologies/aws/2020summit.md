@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:17:49.259Z
+date: 2020-06-17T09:19:23.971Z
 tags: 
 ---
 
@@ -37,7 +37,7 @@ No new services or products announced.
 # Builder Fast Tracks
 
 ## Purpose-built databases for modern applications
-10:00 -> 10:30
+10:00 -> 10:30 - Blair Leyton, Head of Database, APJ, Public Sector
 <insert image>
 
 Choose the right DB for the right task:

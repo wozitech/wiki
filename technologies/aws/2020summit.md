@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:02:48.020Z
+date: 2020-06-17T10:03:24.174Z
 tags: 
 ---
 
@@ -121,7 +121,7 @@ Support for offline availability on mobile clients.
 
 AppSync supports transforms:
 ![aws-appsync-transforms.png](/uploads/aws/summit-2020/aws-appsync-transforms.png)
-
+![aws-appsync-overview.png](/uploads/aws/summit-2020/aws-appsync-overview.png)
 
 Can generate code `appsync codegen`.
 

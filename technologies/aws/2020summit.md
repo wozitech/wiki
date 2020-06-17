@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:18:30.023Z
+date: 2020-06-17T10:19:06.581Z
 tags: 
 ---
 
@@ -142,7 +142,7 @@ Scanerios:
 
 Channels:
 * queue (point to point; resilient - only once)
-* topic (pub/sub)
+* topic (pub/sub) - messages are bot stored by default, but can apply the "durable subscriber" pattern
 
 ## Event-driven architecture
 11:55 -> 12:40

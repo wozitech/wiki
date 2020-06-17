@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:44:25.908Z
+date: 2020-06-17T10:45:02.556Z
 tags: 
 ---
 
@@ -156,7 +156,8 @@ Patterns:
 * Saga - orchrestation of small activities through event sequences
 
 ## Event-driven architecture
-11:55 -> 12:40
+11:55 -> 12:40 Danilo Poccia
+Slides: [event-driven_architecture_-_danilo_poccia.pdf](/uploads/aws/summit-2020/event-driven_architecture_-_danilo_poccia.pdf)
 
 ## A path to event sourcing with Amazon MSK
 12:45 to 13:15

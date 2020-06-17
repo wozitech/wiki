@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:57:21.489Z
+date: 2020-06-17T12:00:33.768Z
 tags: 
 ---
 
@@ -213,3 +213,7 @@ Talk example:
 
 Event sourcing concept has been around for a long time; I remember it was a key aspect while at Photobox. There is a lack of framework support, and it can be more complex with more moving parts. IT has for many years been about functionality of which data was a consequence (or a pain to be managed), but of late is more about data.
 
+AWS MSK takes care of setup, availability, scale, monitoring and support for complex kafka clusters.
+![aws-event-sourcing-msk.png](/uploads/aws/summit-2020/aws-event-sourcing-msk.png)
+
+AWS MSK now also supports prometheus for monitoring.

@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:15:49.050Z
+date: 2020-06-17T10:16:04.923Z
 tags: 
 ---
 
@@ -136,7 +136,7 @@ The latter (coupling) requires async messaging for being able to operate at scal
 Patterns:
 * Message exchange
   * One-way; fire and forget
-  * Request-Response; requires a correlation id
+  * Request-Response; requires a "return address" (callback) or "correlation id"
 
 ## Event-driven architecture
 11:55 -> 12:40

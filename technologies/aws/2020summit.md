@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T12:00:33.768Z
+date: 2020-06-17T12:01:05.990Z
 tags: 
 ---
 
@@ -216,4 +216,4 @@ Event sourcing concept has been around for a long time; I remember it was a key 
 AWS MSK takes care of setup, availability, scale, monitoring and support for complex kafka clusters.
 ![aws-event-sourcing-msk.png](/uploads/aws/summit-2020/aws-event-sourcing-msk.png)
 
-AWS MSK now also supports prometheus for monitoring.
+AWS MSK now also supports prometheus for monitoring, allowing integration via Datadog and New Relic.

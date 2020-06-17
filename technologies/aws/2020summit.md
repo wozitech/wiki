@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:14:53.350Z
+date: 2020-06-17T11:21:21.772Z
 tags: 
 ---
 
@@ -183,6 +183,8 @@ SQS/SNS have limitation with the significant number of different types of events
 External partners can integrate their products with EventBridge, to open up their application services - push style APIs.
 
 Supports a schema registry with discovery, for events.
+
+Sometimes an event may require multiple actions; when those actions need to be coordinated across multiple functions/services, you can deploy "step functions".
 
 ## A path to event sourcing with Amazon MSK
 12:45 to 13:15

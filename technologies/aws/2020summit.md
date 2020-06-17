@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:23:32.699Z
+date: 2020-06-17T09:24:32.967Z
 tags: 
 ---
 
@@ -67,6 +67,9 @@ ElasticCache
 Neptune
 <insert image>
 
+## Time Series
+timestream
+<insert image>
 
 Slides: 
 [purpose-built_databases_for_modern_applications_-_blair_layton.pdf](/uploads/aws/summit-2020/purpose-built_databases_for_modern_applications_-_blair_layton.pdf)

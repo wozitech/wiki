@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:41:25.723Z
+date: 2020-06-17T09:42:26.661Z
 tags: 
 ---
 
@@ -107,6 +107,8 @@ It's a category based selection & customisation of services:
 `init`, `add`, `mock`, `push`, `update` CLI commands, resulting in CloudFormation stacks:
 ![aws-amplify-commands.png](/uploads/aws/summit-2020/aws-amplify-commands.png)
 
+For set of API libraries:
+![aws-amplify-libraries.png](/uploads/aws/summit-2020/aws-amplify-libraries.png)
 
 ## Application integration patterns for microservices
 11:10 -> 11;40

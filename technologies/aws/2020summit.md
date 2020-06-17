@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T08:58:27.362Z
+date: 2020-06-17T08:58:47.382Z
 tags: 
 ---
 
@@ -38,6 +38,9 @@ No new services or products announced.
 
 ## Purpose-built databases for modern applications
 10:00 -> 10:30
+
+Slides: 
+[purpose-built_databases_for_modern_applications_-_blair_layton.pdf](/uploads/aws/summit-2020/purpose-built_databases_for_modern_applications_-_blair_layton.pdf)
 
 ## Full-stack mobile and web development with AWS Amplify
 10:35 - 11:05

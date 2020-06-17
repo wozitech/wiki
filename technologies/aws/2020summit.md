@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:29:20.634Z
+date: 2020-06-17T09:31:55.304Z
 tags: 
 ---
 
@@ -41,7 +41,7 @@ No new services or products announced.
 Slides: 
 [purpose-built_databases_for_modern_applications_-_blair_layton.pdf](/uploads/aws/summit-2020/purpose-built_databases_for_modern_applications_-_blair_layton.pdf)
 
-<insert image>
+![aws-database-types.png](/uploads/aws/summit-2020/aws-database-types.png)
 
 Choose the right DB for the right task:
 * Relational
@@ -56,8 +56,7 @@ Choose the right DB for the right task:
 
 ### Relational
 Aurora
-
-<insert image>
+![aws-db-relational-aurora.png](/uploads/aws/summit-2020/aws-db-relational-aurora.png)
 
 ### Key/Value
 Dynamo

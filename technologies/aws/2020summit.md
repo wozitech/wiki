@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:07:56.873Z
+date: 2020-06-17T11:08:32.881Z
 tags: 
 ---
 
@@ -169,7 +169,7 @@ APIs are hardened contracts.
 * leave retry and error handling to the services themselves - not within the function.
 * Read only what you need; message filters using SNS, fine grained rules in EventBridge, query filters in RDS, S3 select.
 
-### EventBridge
+### EventBridge (Event Bus)
 An event is "when something happens"; it's a fact. An event is immutable; once an event happens, you can't change the event. If "something" changes a previous event, it is a new event.
 
 ![aws-event-drive-arch-events.png](/uploads/aws/summit-2020/aws-event-drive-arch-events.png)

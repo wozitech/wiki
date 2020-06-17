@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:34:20.619Z
+date: 2020-06-17T11:36:27.904Z
 tags: 
 ---
 
@@ -193,4 +193,6 @@ CloudWatch Servicelens is a one-stop-shop for all traces, metrics and logs.
 CloudWatch Embedded Metrics - can be used to instrument code, to introduce monitoring dimensions.
 
 ## A path to event sourcing with Amazon MSK
-12:45 to 13:15
+12:45 to 13:15 - James Ousby
+Slides: [a_path_to_event_sourcing_with_amazon_msk_-_james_ousby.pdf](/uploads/aws/summit-2020/a_path_to_event_sourcing_with_amazon_msk_-_james_ousby.pdf)
+

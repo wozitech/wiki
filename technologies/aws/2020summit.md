@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:45:02.556Z
+date: 2020-06-17T10:57:06.155Z
 tags: 
 ---
 
@@ -31,7 +31,7 @@ Referenced "nextdoor" service, connecting communtities with each other; like onl
 
 Referenced AWS DeepRacer online game/competition - dedicated to machine learning.
 
-No new services or products announced.
+No new services or products announced. During event driven architecture breakout session, introduced `Eventbridge`.
 
 
 # Builder Fast Tracks
@@ -158,6 +158,8 @@ Patterns:
 ## Event-driven architecture
 11:55 -> 12:40 Danilo Poccia
 Slides: [event-driven_architecture_-_danilo_poccia.pdf](/uploads/aws/summit-2020/event-driven_architecture_-_danilo_poccia.pdf)
+
+Transition from APIs to events, using "EventBridge".
 
 ## A path to event sourcing with Amazon MSK
 12:45 to 13:15

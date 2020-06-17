@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T08:58:47.382Z
+date: 2020-06-17T09:13:17.318Z
 tags: 
 ---
 
@@ -38,6 +38,23 @@ No new services or products announced.
 
 ## Purpose-built databases for modern applications
 10:00 -> 10:30
+<insert image>
+
+Choose the right DB for the right task:
+* Relational
+* Key-Value
+* Document
+* In-Memory
+* Graph
+* Times-Series
+* Ledger
+* Wide Column
+
+
+### Relational
+Aurora
+
+<insert image>
 
 Slides: 
 [purpose-built_databases_for_modern_applications_-_blair_layton.pdf](/uploads/aws/summit-2020/purpose-built_databases_for_modern_applications_-_blair_layton.pdf)

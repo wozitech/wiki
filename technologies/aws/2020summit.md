@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:10:06.002Z
+date: 2020-06-17T10:12:53.751Z
 tags: 
 ---
 
@@ -128,6 +128,10 @@ Can generate code `appsync codegen`.
 ## Application integration patterns for microservices
 11:10 -> 11:40 Anshul Sharma
 Slides: [application_integration_patterns_for_microservices_-_anshul_sharma.pdf](/uploads/aws/summit-2020/application_integration_patterns_for_microservices_-_anshul_sharma.pdf)
+
+"Divide and conquer" with "loose not lousy coupling".
+
+The latter (coupling) requires async messaging for being able to operate at scale. 
 
 ## Event-driven architecture
 11:55 -> 12:40

@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:12:31.691Z
+date: 2020-06-17T11:14:53.350Z
 tags: 
 ---
 
@@ -179,5 +179,10 @@ AWS Lambda now supports "success/failure event destinations"; a consequential ev
 
 SQS/SNS have limitation with the significant number of different types of events. Introducing the EventBridge - a rule based solution for event routing:
 ![aws-event-drive-arch-eventbridge.png](/uploads/aws/summit-2020/aws-event-drive-arch-eventbridge.png)
+
+External partners can integrate their products with EventBridge, to open up their application services - push style APIs.
+
+Supports a schema registry with discovery, for events.
+
 ## A path to event sourcing with Amazon MSK
 12:45 to 13:15

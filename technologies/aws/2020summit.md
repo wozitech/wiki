@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T10:19:06.581Z
+date: 2020-06-17T10:25:41.613Z
 tags: 
 ---
 
@@ -133,8 +133,7 @@ Slides: [application_integration_patterns_for_microservices_-_anshul_sharma.pdf]
 
 The latter (coupling) requires async messaging for being able to operate at scale.
 
-### Message exchange
-Scanerios:
+Exchange scenarios:
   * One-way; fire and forget
   * Request-Response; requires a "return address" (callback) or "correlation id"
    
@@ -143,6 +142,17 @@ Scanerios:
 Channels:
 * queue (point to point; resilient - only once)
 * topic (pub/sub) - messages are bot stored by default, but can apply the "durable subscriber" pattern
+
+Note - Messaging Quality of Service:
+* At least One
+* At most once
+* Exactly Once
+
+Patterns:
+* Toic Queue Chaining
+* DLQ - Dead Letter Queue
+* FIFO
+* Saga
 
 ## Event-driven architecture
 11:55 -> 12:40

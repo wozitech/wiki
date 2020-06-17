@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:39:42.754Z
+date: 2020-06-17T11:48:55.344Z
 tags: 
 ---
 
@@ -195,4 +195,9 @@ CloudWatch Embedded Metrics - can be used to instrument code, to introduce monit
 ## A path to event sourcing with Amazon MSK
 12:45 to 13:15 - James Ousby
 Slides: [a_path_to_event_sourcing_with_amazon_msk_-_james_ousby.pdf](/uploads/aws/summit-2020/a_path_to_event_sourcing_with_amazon_msk_-_james_ousby.pdf)
+
+* Eventing sourcing is not persisting entities and updating that entity.
+* Event sourcing is about a timeline of events, taking action on an entity.
+
+Event sourcing allows replay from any point in time, in addition to a natural undo (replay the reverse of the event in reverse order).
 

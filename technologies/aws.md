@@ -1,9 +1,20 @@
+---
+title: aws
+description: 
+published: true
+date: 2020-06-17T08:02:42.807Z
+tags: 
+---
+
 ![AWS Logo](/uploads/logos/aws-logo.png "AWS Logo"){.pagelogo}
 <!-- TITLE: AWS -->
 <!-- SUBTITLE: A quick summary of AWS -->
 
 # Free Digital Training
 https://www.aws.training/Details/eLearning?id=34146 - Exam Readiness DevOps Engineer Professional
+
+# AWS Summit 2020
+[AWS Summit 2020](/technologies/aws/2020summit)
 
 # Local Stack
 All the popular AWS services available locally: https://github.com/localstack/localstack.

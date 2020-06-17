@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T11:03:47.031Z
+date: 2020-06-17T11:04:46.041Z
 tags: 
 ---
 
@@ -170,6 +170,8 @@ APIs are hardened contracts.
 * Read only what you need; message filters using SNS, fine grained rules in EventBridge, query filters in RDS, S3 select.
 
 ### EventBridge
+An event is "when something happens"; it's a fact. An event is immutable; once an event happens, you can't change the event. If "something" changes a previous event, it is a new event.
+
 
 
 ## A path to event sourcing with Amazon MSK

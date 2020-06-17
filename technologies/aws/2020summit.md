@@ -2,7 +2,7 @@
 title: AWS Summit 20202
 description: 
 published: true
-date: 2020-06-17T09:26:53.435Z
+date: 2020-06-17T09:29:20.634Z
 tags: 
 ---
 
@@ -80,6 +80,9 @@ Quantum
 
 ## Wide Column
 Cassandra
+<insert image>
+  
+## Our approach
 <insert image>
 
 ## Full-stack mobile and web development with AWS Amplify

@@ -2,7 +2,7 @@
 title: Linux PC
 description: Fedora 29 Install on Intel i7 PNY GeForce 2000
 published: true
-date: 2020-12-22T10:28:12.388Z
+date: 2020-12-22T10:37:04.544Z
 tags: 
 ---
 
@@ -78,7 +78,7 @@ bash /home/aylingw/NVIDIA-Linux-x86_64-410.93.run
 
 19. Reboot to be sure.
   
-# Fedora 32
-Things have moved on between Fedora 29 and 32.
+# Fedora 33/32/31
+Things haven't moved on much since Fedora 29.
   
-https://tutorialforlinux.com/2020/06/01/nvidia-quadro-p2000-fedora-32-driver-installation/2/
+https://www.if-not-true-then-false.com/2015/fedora-nvidia-guide/
